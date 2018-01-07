@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367D2001E78300124BD3 /* AppDelegate.swift */; };
+		91CD36802001E78300124BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367F2001E78300124BD3 /* ViewController.swift */; };
+		91CD36832001E78300124BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36812001E78300124BD3 /* Main.storyboard */; };
+		91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36842001E78300124BD3 /* Mugic.xcdatamodeld */; };
+		91CD36882001E78300124BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36872001E78300124BD3 /* Assets.xcassets */; };
+		91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36892001E78300124BD3 /* LaunchScreen.storyboard */; };
+		91CD36962001E78300124BD3 /* MugicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36952001E78300124BD3 /* MugicTests.swift */; };
+		91CD36A12001E78300124BD3 /* MugicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36A02001E78300124BD3 /* MugicUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91CD36922001E78300124BD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91CD36722001E78200124BD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91CD36792001E78300124BD3;
+			remoteInfo = Mugic;
+		};
+		91CD369D2001E78300124BD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91CD36722001E78200124BD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91CD36792001E78300124BD3;
+			remoteInfo = Mugic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		91CD367A2001E78300124BD3 /* Mugic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mugic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91CD367D2001E78300124BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91CD367F2001E78300124BD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91CD36822001E78300124BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91CD36852001E78300124BD3 /* Mugic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mugic.xcdatamodel; sourceTree = "<group>"; };
+		91CD36872001E78300124BD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91CD368A2001E78300124BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91CD368C2001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91CD36912001E78300124BD3 /* MugicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MugicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91CD36952001E78300124BD3 /* MugicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MugicTests.swift; sourceTree = "<group>"; };
+		91CD36972001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91CD369C2001E78300124BD3 /* MugicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MugicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91CD36A02001E78300124BD3 /* MugicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MugicUITests.swift; sourceTree = "<group>"; };
+		91CD36A22001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91CD36772001E78300124BD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91CD368E2001E78300124BD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91CD36992001E78300124BD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91CD36712001E78200124BD3 = {
+			isa = PBXGroup;
+			children = (
+				91CD367C2001E78300124BD3 /* Mugic */,
+				91CD36942001E78300124BD3 /* MugicTests */,
+				91CD369F2001E78300124BD3 /* MugicUITests */,
+				91CD367B2001E78300124BD3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91CD367B2001E78300124BD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91CD367A2001E78300124BD3 /* Mugic.app */,
+				91CD36912001E78300124BD3 /* MugicTests.xctest */,
+				91CD369C2001E78300124BD3 /* MugicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91CD367C2001E78300124BD3 /* Mugic */ = {
+			isa = PBXGroup;
+			children = (
+				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
+				91CD367F2001E78300124BD3 /* ViewController.swift */,
+				91CD36812001E78300124BD3 /* Main.storyboard */,
+				91CD36872001E78300124BD3 /* Assets.xcassets */,
+				91CD36892001E78300124BD3 /* LaunchScreen.storyboard */,
+				91CD368C2001E78300124BD3 /* Info.plist */,
+				91CD36842001E78300124BD3 /* Mugic.xcdatamodeld */,
+			);
+			path = Mugic;
+			sourceTree = "<group>";
+		};
+		91CD36942001E78300124BD3 /* MugicTests */ = {
+			isa = PBXGroup;
+			children = (
+				91CD36952001E78300124BD3 /* MugicTests.swift */,
+				91CD36972001E78300124BD3 /* Info.plist */,
+			);
+			path = MugicTests;
+			sourceTree = "<group>";
+		};
+		91CD369F2001E78300124BD3 /* MugicUITests */ = {
+			isa = PBXGroup;
+			children = (
+				91CD36A02001E78300124BD3 /* MugicUITests.swift */,
+				91CD36A22001E78300124BD3 /* Info.plist */,
+			);
+			path = MugicUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91CD36792001E78300124BD3 /* Mugic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91CD36A52001E78300124BD3 /* Build configuration list for PBXNativeTarget "Mugic" */;
+			buildPhases = (
+				91CD36762001E78300124BD3 /* Sources */,
+				91CD36772001E78300124BD3 /* Frameworks */,
+				91CD36782001E78300124BD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mugic;
+			productName = Mugic;
+			productReference = 91CD367A2001E78300124BD3 /* Mugic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91CD36902001E78300124BD3 /* MugicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91CD36A82001E78300124BD3 /* Build configuration list for PBXNativeTarget "MugicTests" */;
+			buildPhases = (
+				91CD368D2001E78300124BD3 /* Sources */,
+				91CD368E2001E78300124BD3 /* Frameworks */,
+				91CD368F2001E78300124BD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91CD36932001E78300124BD3 /* PBXTargetDependency */,
+			);
+			name = MugicTests;
+			productName = MugicTests;
+			productReference = 91CD36912001E78300124BD3 /* MugicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		91CD369B2001E78300124BD3 /* MugicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91CD36AB2001E78300124BD3 /* Build configuration list for PBXNativeTarget "MugicUITests" */;
+			buildPhases = (
+				91CD36982001E78300124BD3 /* Sources */,
+				91CD36992001E78300124BD3 /* Frameworks */,
+				91CD369A2001E78300124BD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91CD369E2001E78300124BD3 /* PBXTargetDependency */,
+			);
+			name = MugicUITests;
+			productName = MugicUITests;
+			productReference = 91CD369C2001E78300124BD3 /* MugicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91CD36722001E78200124BD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jeong-Uk Lee";
+				TargetAttributes = {
+					91CD36792001E78300124BD3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					91CD36902001E78300124BD3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 91CD36792001E78300124BD3;
+					};
+					91CD369B2001E78300124BD3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 91CD36792001E78300124BD3;
+					};
+				};
+			};
+			buildConfigurationList = 91CD36752001E78200124BD3 /* Build configuration list for PBXProject "Mugic" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91CD36712001E78200124BD3;
+			productRefGroup = 91CD367B2001E78300124BD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91CD36792001E78300124BD3 /* Mugic */,
+				91CD36902001E78300124BD3 /* MugicTests */,
+				91CD369B2001E78300124BD3 /* MugicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91CD36782001E78300124BD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */,
+				91CD36882001E78300124BD3 /* Assets.xcassets in Resources */,
+				91CD36832001E78300124BD3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91CD368F2001E78300124BD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91CD369A2001E78300124BD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91CD36762001E78300124BD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
+				91CD36802001E78300124BD3 /* ViewController.swift in Sources */,
+				91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91CD368D2001E78300124BD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91CD36962001E78300124BD3 /* MugicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91CD36982001E78300124BD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91CD36A12001E78300124BD3 /* MugicUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91CD36932001E78300124BD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91CD36792001E78300124BD3 /* Mugic */;
+			targetProxy = 91CD36922001E78300124BD3 /* PBXContainerItemProxy */;
+		};
+		91CD369E2001E78300124BD3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91CD36792001E78300124BD3 /* Mugic */;
+			targetProxy = 91CD369D2001E78300124BD3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91CD36812001E78300124BD3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91CD36822001E78300124BD3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		91CD36892001E78300124BD3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91CD368A2001E78300124BD3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91CD36A32001E78300124BD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91CD36A42001E78300124BD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91CD36A62001E78300124BD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Mugic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leonljy.Mugic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91CD36A72001E78300124BD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Mugic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leonljy.Mugic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91CD36A92001E78300124BD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MugicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leonljy.MugicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mugic.app/Mugic";
+			};
+			name = Debug;
+		};
+		91CD36AA2001E78300124BD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MugicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leonljy.MugicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mugic.app/Mugic";
+			};
+			name = Release;
+		};
+		91CD36AC2001E78300124BD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MugicUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leonljy.MugicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mugic;
+			};
+			name = Debug;
+		};
+		91CD36AD2001E78300124BD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MugicUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leonljy.MugicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mugic;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91CD36752001E78200124BD3 /* Build configuration list for PBXProject "Mugic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91CD36A32001E78300124BD3 /* Debug */,
+				91CD36A42001E78300124BD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91CD36A52001E78300124BD3 /* Build configuration list for PBXNativeTarget "Mugic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91CD36A62001E78300124BD3 /* Debug */,
+				91CD36A72001E78300124BD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91CD36A82001E78300124BD3 /* Build configuration list for PBXNativeTarget "MugicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91CD36A92001E78300124BD3 /* Debug */,
+				91CD36AA2001E78300124BD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91CD36AB2001E78300124BD3 /* Build configuration list for PBXNativeTarget "MugicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91CD36AC2001E78300124BD3 /* Debug */,
+				91CD36AD2001E78300124BD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91CD36842001E78300124BD3 /* Mugic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91CD36852001E78300124BD3 /* Mugic.xcdatamodel */,
+			);
+			currentVersion = 91CD36852001E78300124BD3 /* Mugic.xcdatamodel */;
+			path = Mugic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 91CD36722001E78200124BD3 /* Project object */;
+}

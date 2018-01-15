@@ -9,6 +9,8 @@
 import XCTest
 @testable import Mugic
 
+import AudioKit
+
 class MugicTests: XCTestCase {
     
     override func setUp() {
@@ -21,16 +23,17 @@ class MugicTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCreatePiano() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let piano = Hit(bass: .C, detail: .Maj, amplitude: 0.5)
+        
+        piano.play()
+        sleep(1)
+        piano.stop()
+        
+        XCTAssertNotNil(piano)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }

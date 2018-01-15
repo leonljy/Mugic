@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioKit
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func buttonPressed(_ sender: Any) {
+        let piano = Hit(bass: .C, detail: .Maj, amplitude: 0.5)
+        piano.play()
+        sleep(1)
+        piano.stop()
+    }
+    
 }
 

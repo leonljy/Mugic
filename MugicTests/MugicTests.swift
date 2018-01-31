@@ -26,13 +26,13 @@ class MugicTests: XCTestCase {
     func testCreatePiano() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let piano = Hit(bass: .C, detail: .Maj, amplitude: 0.5)
+//        let piano = Hit(bass: .C, detail: .Maj, amplitude: 0.5)
         
-        piano.play()
-        sleep(1)
-        piano.stop()
+//        piano.play()
+//        sleep(1)
+//        piano.stop()
         
-        XCTAssertNotNil(piano)
+//        XCTAssertNotNil(piano)
     }
     
     

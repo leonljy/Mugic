@@ -10,14 +10,49 @@ import Foundation
 import AudioKit
 
 struct Hit {
-    let attackDuration: Double = 0.0
+    let attackDuration: Double = 0.1
     let decayDuration: Double = 0.2
-    let sustainLevel: Double = 0.0
+    let sustainLevel: Double = 0.2
     let releaseDuration: Double = 0.3
     let envelope: AKAmplitudeEnvelope
     
-    init(bass: BassCode, detail: DetailCode, amplitude: Double) {
-        let frequencies = [BassCode.C.rawValue, BassCode.E.rawValue, BassCode.G.rawValue]
+    init(bass: Note, detail: DetailCode, amplitude: Double) {
+        let frequencies: [Double]
+        switch detail {
+            case .maj:
+                let bassFrequency = Instrument.frequency(bass)
+                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)
+                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
+                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+            case .min:
+                let bassFrequency = Instrument.frequency(bass)
+                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MIN_TRIAD)
+                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
+                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+            case .sus4:
+                let bassFrequency = Instrument.frequency(bass)
+                let thirdFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FORTH)
+                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
+                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+            case .seventh:
+                let bassFrequency = Instrument.frequency(bass)
+                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)
+                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
+                let seventhFrequency = Instrument.frequency(bass, adding: Interval.DOMINENT_SEVENTH)
+                frequencies = [bassFrequency, thirdFrequency, fifthFrequency, seventhFrequency]
+            case .maj7:
+                let bassFrequency = Instrument.frequency(bass)
+                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)
+                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
+                let seventhFrequency = Instrument.frequency(bass, adding: Interval.MAJ_SEVENTH)
+                frequencies = [bassFrequency, thirdFrequency, fifthFrequency, seventhFrequency]
+            case .add2:
+                let bassFrequency = Instrument.frequency(bass)
+                let thirdFrequency = Instrument.frequency(bass, adding: Interval.SECOND)
+                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
+                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+        }
+        
         
         let mixer = AKMixer()
         
@@ -36,11 +71,12 @@ struct Hit {
         self.envelope.releaseDuration = self.releaseDuration
         
         AudioKit.output = self.envelope
+
     }
     
     func play() {
         AudioKit.start()
-        envelope.start()
+        self.envelope.start()
     }
     
     func stop() {

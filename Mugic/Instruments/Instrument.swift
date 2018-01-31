@@ -8,19 +8,54 @@
 
 import Foundation
 
-enum BassCode: Double {
-    case C = 261.626
-    case D = 293.665
-    case E = 329.628
-    case F = 349.228
-    case G = 391.995
-    case A = 440.000
-    case B = 493.883
+enum Note: Int {
+    case C = 40
+    case D = 42
+    case E = 44
+    case F = 45
+    case G = 47
+    case A = 49
+    case B = 51
+}
+
+enum Interval: Int {
+    case NONE = 0
+    case SECOND = 2
+    case MAJ_TRIAD = 4
+    case MIN_TRIAD = 3
+    case PERFECT_FORTH = 5
+    case PERFECT_FIFTH = 7
+    case DOMINENT_SEVENTH = 10
+    case MAJ_SEVENTH = 11
+}
+
+enum Modifier: Int {
+    case Natural = 0
+    case Sharp = 1
+    case Flat = -1
 }
 
 enum DetailCode: Int {
-    case Maj = 0
-    case Min
-    case Sus4
-    case Dominent7th
+    case maj = 0
+    case add2
+    case min
+    case sus4
+    case maj7
+    case seventh
 }
+
+struct Instrument {
+    static let OCTAVE = 12
+    static let AHz = 440
+    static func frequency(_ note: Note, modifier: Modifier = .Natural, adding: Interval = .NONE, octave: Int = 0 ) -> Double {
+        
+        let n = note.rawValue + modifier.rawValue + adding.rawValue
+        
+        let powValue = Double(n - 49) / Double(OCTAVE)
+        
+        let frequency = pow(2, powValue) * Double(AHz)
+        
+        return frequency
+    }
+}
+

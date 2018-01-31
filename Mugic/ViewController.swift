@@ -22,11 +22,23 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
-        let piano = Hit(bass: .C, detail: .Maj, amplitude: 0.5)
+        let piano = Hit(bass: .C, detail: .maj, amplitude: 0.5)
         piano.play()
-        sleep(1)
-        piano.stop()
     }
     
+    @IBAction func minor(_ sender: Any) {
+        let piano = Hit(bass: .C, detail: .maj7, amplitude: 0.5)
+        piano.play()
+    }
+    
+    @IBAction func sus4(_ sender: Any) {
+        let piano = Hit(bass: .C, detail: .seventh, amplitude: 0.5)
+        piano.play()
+    }
+    
+    @IBAction func seventh(_ sender: Any) {
+        let piano = Hit(bass: .G, detail: .seventh, amplitude: 0.5)
+        piano.play()
+    }
 }
 

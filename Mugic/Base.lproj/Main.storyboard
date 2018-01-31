@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,49 +15,188 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mugic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPA-ME-0bZ">
-                                <rect key="frame" x="64" y="66" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="C Maj"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gh5-Qv-Vk4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8Y-Rs-1pF">
-                                <rect key="frame" x="275" y="66" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="C Min"/>
-                                <connections>
-                                    <action selector="minor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MpE-Lq-YCB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhQ-j2-BZY">
-                                <rect key="frame" x="64" y="220" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="C Sus4"/>
-                                <connections>
-                                    <action selector="sus4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u2D-rC-T0K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-mL-zA9">
-                                <rect key="frame" x="275" y="220" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="C7"/>
-                                <connections>
-                                    <action selector="seventh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WhE-Rj-KA6"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QWZ-4p-21S">
+                                <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-Dv-bHs">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-3w-kem">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="tEc-05-dG6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="41" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-f5-mn0">
+                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="C#/Db"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="rs8-Lq-CiN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="42" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibt-Jm-tcL">
+                                                <rect key="frame" x="167" y="0.0" width="83" height="125"/>
+                                                <state key="normal" title="D"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="bcU-dr-S7E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="43" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoQ-G8-AV0">
+                                                <rect key="frame" x="250" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="D#/Eb"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Zd1-ry-pdA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qgg-F5-dBI">
+                                        <rect key="frame" x="0.0" y="125" width="333.5" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Wb-Jpb">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="E"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="F71-q6-JKc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="45" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aY-oF-0sa">
+                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="F"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="DBr-Ud-8Ay"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="46" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZN-P8-LID">
+                                                <rect key="frame" x="167" y="0.0" width="83" height="125"/>
+                                                <state key="normal" title="F#/Gb"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="E76-2T-ieg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="47" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBt-A3-V6x">
+                                                <rect key="frame" x="250" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="G"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="rpb-Ml-Shg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZGi-yE-vYZ">
+                                        <rect key="frame" x="0.0" y="250" width="333.5" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="48" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvW-Jp-zGf">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="G#/Ab"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="4eX-gN-hfm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l33-5h-wML">
+                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="A"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="jbd-5j-rMc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEC-Dg-iLJ">
+                                                <rect key="frame" x="167" y="0.0" width="83" height="125"/>
+                                                <state key="normal" title="A#/Bb"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="KNL-Da-kxg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcP-qC-Ewi">
+                                                <rect key="frame" x="250" y="0.0" width="83.5" height="125"/>
+                                                <state key="normal" title="B"/>
+                                                <connections>
+                                                    <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="pnt-sD-dHi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sbn-tQ-5bJ">
+                                <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XmM-BR-jsG">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="187.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rv-Of-csW">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="187.5"/>
+                                                <state key="normal" title="Maj"/>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="diI-1h-uI1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQp-lM-hF8">
+                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="187.5"/>
+                                                <state key="normal" title="Add2"/>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="fXm-3b-fIh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cau-VK-f64">
+                                                <rect key="frame" x="167" y="0.0" width="83" height="187.5"/>
+                                                <state key="normal" title="Min"/>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Tpe-EW-D2n"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4e-Uf-keB">
+                                                <rect key="frame" x="250" y="0.0" width="83.5" height="187.5"/>
+                                                <state key="normal" title="sus4"/>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="EOM-Ov-TEx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MPi-ae-kbF">
+                                        <rect key="frame" x="0.0" y="187.5" width="333.5" height="187.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBn-aT-uzl">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="187.5"/>
+                                                <state key="normal" title="maj7"/>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="8UR-V2-day"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Y8-k0-abg">
+                                                <rect key="frame" x="167" y="0.0" width="166.5" height="187.5"/>
+                                                <state key="normal" title="7th"/>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qCn-Lj-rqa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QWZ-4p-21S" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="B6y-LE-iGY"/>
+                            <constraint firstItem="QWZ-4p-21S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LjL-vI-4zc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sbn-tQ-5bJ" secondAttribute="bottom" id="NYs-e5-K96"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sbn-tQ-5bJ" secondAttribute="trailing" id="RKe-lE-OYH"/>
+                            <constraint firstItem="sbn-tQ-5bJ" firstAttribute="leading" secondItem="QWZ-4p-21S" secondAttribute="trailing" id="i3e-l3-eHF"/>
+                            <constraint firstItem="sbn-tQ-5bJ" firstAttribute="width" secondItem="QWZ-4p-21S" secondAttribute="width" id="l1N-6v-SmL"/>
+                            <constraint firstItem="sbn-tQ-5bJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oaa-uU-wF5"/>
+                            <constraint firstItem="QWZ-4p-21S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xCN-JM-t3N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.28185907046478" y="132"/>
         </scene>
     </scenes>
 </document>

@@ -11,6 +11,8 @@ import AudioKit
 
 class ViewController: UIViewController {
 
+    var noteValue: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,24 +23,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttonPressed(_ sender: Any) {
-        let piano = Hit(bass: .C, detail: .maj, amplitude: 0.5)
-        piano.play()
+    @IBAction func noteTouchDown(_ sender: UIButton) {
+        self.noteValue = sender.tag
     }
     
-    @IBAction func minor(_ sender: Any) {
-        let piano = Hit(bass: .C, detail: .maj7, amplitude: 0.5)
-        piano.play()
+    @IBAction func chordTouchDown(_ sender: UIButton) {
+        guard let note = Note(rawValue: self.noteValue), let chord = Chord(rawValue: sender.tag) else {
+            return
+        }
+        
+        let hit = Hit(bass: note, chord: chord)
+        hit.play()
     }
     
-    @IBAction func sus4(_ sender: Any) {
-        let piano = Hit(bass: .C, detail: .seventh, amplitude: 0.5)
-        piano.play()
-    }
-    
-    @IBAction func seventh(_ sender: Any) {
-        let piano = Hit(bass: .G, detail: .seventh, amplitude: 0.5)
-        piano.play()
-    }
 }
 

@@ -10,12 +10,17 @@ import Foundation
 
 enum Note: Int {
     case C = 40
-    case D = 42
-    case E = 44
-    case F = 45
-    case G = 47
-    case A = 49
-    case B = 51
+    case CSharp
+    case D
+    case DSharp
+    case E
+    case F
+    case FSharp
+    case G
+    case GSharp
+    case A
+    case ASharp
+    case B
 }
 
 enum Interval: Int {
@@ -35,7 +40,7 @@ enum Modifier: Int {
     case Flat = -1
 }
 
-enum DetailCode: Int {
+enum Chord: Int {
     case maj = 0
     case add2
     case min

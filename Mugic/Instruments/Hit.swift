@@ -10,15 +10,15 @@ import Foundation
 import AudioKit
 
 struct Hit {
-    let attackDuration: Double = 0.1
+    let attackDuration: Double = 0.0
     let decayDuration: Double = 0.2
-    let sustainLevel: Double = 0.2
-    let releaseDuration: Double = 0.3
+    let sustainLevel: Double = 0.0
+    let releaseDuration: Double = 0.0
     let envelope: AKAmplitudeEnvelope
     
-    init(bass: Note, detail: DetailCode, amplitude: Double) {
+    init(bass: Note, chord: Chord, amplitude: Double = 1.0) {
         let frequencies: [Double]
-        switch detail {
+        switch chord {
             case .maj:
                 let bassFrequency = Instrument.frequency(bass)
                 let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)

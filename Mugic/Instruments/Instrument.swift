@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import AudioKit
 
 enum Note: Int {
-    case C = 40
+    case C = 60
     case CSharp
     case D
     case DSharp
@@ -49,18 +50,35 @@ enum Chord: Int {
     case seventh
 }
 
-struct Instrument {
+class Instrument {
     static let OCTAVE = 12
     static let AHz = 440
     static func frequency(_ note: Note, modifier: Modifier = .Natural, adding: Interval = .NONE, octave: Int = 0 ) -> Double {
         
         let n = note.rawValue + modifier.rawValue + adding.rawValue
-        
-        let powValue = Double(n - 49) / Double(OCTAVE)
+        let octaveAdded = n + (OCTAVE * octave)
+        let powValue = Double(octaveAdded - 49) / Double(OCTAVE)
         
         let frequency = pow(2, powValue) * Double(AHz)
         
         return frequency
+    }
+    
+    static func adding(_ note: Note, modifier: Modifier = .Natural, interval: Interval = .NONE, octave: Int = 0 ) -> Int {
+        
+        let n = note.rawValue + modifier.rawValue + interval.rawValue
+        let octaveAdded = n + (OCTAVE * octave)
+        return octaveAdded
+    }
+    
+    let instrument = AKMIDISampler()
+    
+    init(midifileName: String = "Sounds/Sampler Instruments/Acoustic Guitar") {
+        do {
+            try self.instrument.loadEXS24(midifileName)
+        } catch  {
+            print("File not found")
+        }
     }
 }
 

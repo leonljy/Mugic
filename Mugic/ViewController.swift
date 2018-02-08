@@ -12,7 +12,7 @@ import AudioKit
 class ViewController: UIViewController {
 
     var noteValue: Int = 0
-    
+    var conductor = Conductor()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,9 +32,12 @@ class ViewController: UIViewController {
             return
         }
         
-        let hit = Hit(bass: note, chord: chord)
-        hit.play()
+        self.conductor.piano.play(root: note, chord: chord)
     }
     
+    @IBAction func chordTouchUpOutside(_ sender: Any) {
+    }
+    @IBAction func chordTouchUpInside(_ sender: Any) {
+    }
 }
 

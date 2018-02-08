@@ -16,41 +16,37 @@ struct Hit {
     let releaseDuration: Double = 0.0
     let envelope: AKAmplitudeEnvelope
     
-    init(bass: Note, chord: Chord, amplitude: Double = 1.0) {
+    init(root: Note, chord: Chord, amplitude: Double = 1.0) {
         let frequencies: [Double]
+        let lowerBass = Instrument.frequency(root, octave: -1)
+        let bass = Instrument.frequency(root)
         switch chord {
             case .maj:
-                let bassFrequency = Instrument.frequency(bass)
-                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)
-                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
-                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+                let third = Instrument.frequency(root, adding: Interval.MAJ_TRIAD)
+                let fifth = Instrument.frequency(root, adding: Interval.PERFECT_FIFTH)
+                frequencies = [lowerBass, bass, third, fifth]
             case .min:
-                let bassFrequency = Instrument.frequency(bass)
-                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MIN_TRIAD)
-                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
-                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+                let third = Instrument.frequency(root, adding: Interval.MIN_TRIAD)
+                let fifth = Instrument.frequency(root, adding: Interval.PERFECT_FIFTH)
+                frequencies = [lowerBass, bass, third, fifth]
             case .sus4:
-                let bassFrequency = Instrument.frequency(bass)
-                let thirdFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FORTH)
-                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
-                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+                let third = Instrument.frequency(root, adding: Interval.PERFECT_FORTH)
+                let fifth = Instrument.frequency(root, adding: Interval.PERFECT_FIFTH)
+                frequencies = [lowerBass, bass, third, fifth]
             case .seventh:
-                let bassFrequency = Instrument.frequency(bass)
-                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)
-                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
-                let seventhFrequency = Instrument.frequency(bass, adding: Interval.DOMINENT_SEVENTH)
-                frequencies = [bassFrequency, thirdFrequency, fifthFrequency, seventhFrequency]
+                let third = Instrument.frequency(root, adding: Interval.MAJ_TRIAD)
+                let fifth = Instrument.frequency(root, adding: Interval.PERFECT_FIFTH)
+                let seventh = Instrument.frequency(root, adding: Interval.DOMINENT_SEVENTH)
+                frequencies = [lowerBass, bass, third, fifth, seventh]
             case .maj7:
-                let bassFrequency = Instrument.frequency(bass)
-                let thirdFrequency = Instrument.frequency(bass, adding: Interval.MAJ_TRIAD)
-                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
-                let seventhFrequency = Instrument.frequency(bass, adding: Interval.MAJ_SEVENTH)
-                frequencies = [bassFrequency, thirdFrequency, fifthFrequency, seventhFrequency]
+                let third = Instrument.frequency(root, adding: Interval.MAJ_TRIAD)
+                let fifth = Instrument.frequency(root, adding: Interval.PERFECT_FIFTH)
+                let seventh = Instrument.frequency(root, adding: Interval.MAJ_SEVENTH)
+                frequencies = [lowerBass, bass, third, fifth, seventh]
             case .add2:
-                let bassFrequency = Instrument.frequency(bass)
-                let thirdFrequency = Instrument.frequency(bass, adding: Interval.SECOND)
-                let fifthFrequency = Instrument.frequency(bass, adding: Interval.PERFECT_FIFTH)
-                frequencies = [bassFrequency, thirdFrequency, fifthFrequency]
+                let third = Instrument.frequency(root, adding: Interval.SECOND)
+                let fifth = Instrument.frequency(root, adding: Interval.PERFECT_FIFTH)
+                frequencies = [lowerBass, bass, third, fifth]
         }
         
         

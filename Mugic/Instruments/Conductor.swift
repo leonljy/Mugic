@@ -12,11 +12,10 @@ import AudioKit
 
 struct Conductor {
     let piano: Piano
-    let mixer: AKMixer
+    
     init() {
         self.piano = Piano()
-        self.mixer = AKMixer(self.piano.instrument)
-        AudioKit.output = self.mixer
+        AudioKit.output = self.piano.mixer
         AudioKit.start()
     }
     

@@ -71,13 +71,34 @@ class Instrument {
         return octaveAdded
     }
     
-    let instrument = AKMIDISampler()
+    let samplers: [AKMIDISampler]
+    let mixer = AKMixer()
+    let midiFileName: String
+    let rootSampler = AKMIDISampler()
+    let thirdSampler = AKMIDISampler()
+    let fifthSampler = AKMIDISampler()
+    let seventhSampler = AKMIDISampler()
+    var noteNumbers: [Int]
     
-    init(midifileName: String = "Sounds/Sampler Instruments/Acoustic Guitar") {
+    init(midifileName: String = "Sounds/Sampler Instruments/Classical Acoustic Guitar") {
+        self.noteNumbers = []
         do {
-            try self.instrument.loadEXS24(midifileName)
+            self.midiFileName = midifileName
+            self.samplers = [self.rootSampler, self.thirdSampler, self.fifthSampler, self.seventhSampler]
+            for sampler in self.samplers {
+                try sampler.loadEXS24(midifileName)
+                self.mixer.connect(input: sampler)
+            }
+            
         } catch  {
             print("File not found")
+        }
+    }
+    
+    func stop() {
+        let midiChannel = MIDIChannel()
+        for (index, noteNumber) in self.noteNumbers.enumerated() {
+            self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
         }
     }
 }

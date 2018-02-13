@@ -22,6 +22,7 @@
 		91CD36962001E78300124BD3 /* MugicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36952001E78300124BD3 /* MugicTests.swift */; };
 		91CD36A12001E78300124BD3 /* MugicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36A02001E78300124BD3 /* MugicUITests.swift */; };
 		91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */; };
+		91CE86F020330FFC00812E42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE86EF20330FFC00812E42 /* Color.swift */; };
 		AE7C24AD6AD6BE959AB11D55 /* Pods_MugicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F718C19E7AE2B82D50BFC8 /* Pods_MugicUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		91CD36A02001E78300124BD3 /* MugicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MugicUITests.swift; sourceTree = "<group>"; };
 		91CD36A22001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Acoustic Guitars JNv2.4.sf2"; sourceTree = "<group>"; };
+		91CE86EF20330FFC00812E42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		988CCB03C0C2520F3B96BDBF /* Pods-MugicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MugicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MugicUITests/Pods-MugicUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A905E5A6E2EF9EA8D194D981 /* Pods-Mugic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mugic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mugic/Pods-Mugic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 				917ADCCA200B3A6E0062B79A /* Instruments */,
 				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
 				91CD367F2001E78300124BD3 /* ViewController.swift */,
+				91CE86EF20330FFC00812E42 /* Color.swift */,
 				91CD36812001E78300124BD3 /* Main.storyboard */,
 				91CD36872001E78300124BD3 /* Assets.xcassets */,
 				91CD36892001E78300124BD3 /* LaunchScreen.storyboard */,
@@ -513,6 +516,7 @@
 				914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */,
 				917ADCCE200B3A9D0062B79A /* Hit.swift in Sources */,
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
+				91CE86F020330FFC00812E42 /* Color.swift in Sources */,
 				91CD36802001E78300124BD3 /* ViewController.swift in Sources */,
 				91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */,
 			);

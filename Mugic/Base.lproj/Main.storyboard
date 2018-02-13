@@ -26,30 +26,50 @@
                                         <subviews>
                                             <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-3w-kem">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="94"/>
-                                                <state key="normal" title="C"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="tEc-05-dG6"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N5b-Zc-LjM"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="LUm-FK-O5H"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="62" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibt-Jm-tcL">
                                                 <rect key="frame" x="0.0" y="94" width="83.5" height="93.5"/>
-                                                <state key="normal" title="D"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="D">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="bcU-dr-S7E"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eqG-eH-ymE"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="eem-m2-YWs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="64" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-Wb-Jpb">
                                                 <rect key="frame" x="0.0" y="187.5" width="83.5" height="94"/>
-                                                <state key="normal" title="E"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="E">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="F71-q6-JKc"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1W8-jU-qfv"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="ZOY-5O-ffE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="65" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aY-oF-0sa">
                                                 <rect key="frame" x="0.0" y="281.5" width="83.5" height="93.5"/>
-                                                <state key="normal" title="F"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="F">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="DBr-Ud-8Ay"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3WH-In-xaO"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="pOg-p5-NqG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -59,29 +79,48 @@
                                         <subviews>
                                             <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-f5-mn0">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="94"/>
-                                                <state key="normal" title="C#/Db"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="C#/Db">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="rs8-Lq-CiN"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AUk-s3-5oZ"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="O8Y-kD-wqj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoQ-G8-AV0">
                                                 <rect key="frame" x="0.0" y="94" width="83.5" height="93.5"/>
-                                                <state key="normal" title="D#/Eb"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="D#/Eb">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Zd1-ry-pdA"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="85D-Ur-nrx"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="IsX-UZ-kG3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9o-VQ-D5i">
                                                 <rect key="frame" x="0.0" y="187.5" width="83.5" height="94"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="0kz-qL-4O6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="66" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZN-P8-LID">
                                                 <rect key="frame" x="0.0" y="281.5" width="83.5" height="93.5"/>
-                                                <state key="normal" title="F#/Gb"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="F#/Gb">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="E76-2T-ieg"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aGH-09-PsY"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="pHe-Eb-Ah5"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -91,27 +130,46 @@
                                         <subviews>
                                             <button opaque="NO" tag="67" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBt-A3-V6x">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="94"/>
-                                                <state key="normal" title="G"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="G">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="rpb-Ml-Shg"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dhb-7L-viQ"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="7AB-Ba-c09"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="69" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l33-5h-wML">
                                                 <rect key="frame" x="0.0" y="94" width="83" height="93.5"/>
-                                                <state key="normal" title="A"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="A">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="jbd-5j-rMc"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rha-5M-1Ux"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="1an-vA-SSa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcP-qC-Ewi">
                                                 <rect key="frame" x="0.0" y="187.5" width="83" height="94"/>
-                                                <state key="normal" title="B"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="B">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="pnt-sD-dHi"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dH0-kq-dTy"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="N00-E4-a4K"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9Y-rO-QfA">
                                                 <rect key="frame" x="0.0" y="281.5" width="83" height="93.5"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="G3u-he-nrY"/>
                                                 </connections>
@@ -123,26 +181,44 @@
                                         <subviews>
                                             <button opaque="NO" tag="68" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksk-e8-E8U">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="94"/>
-                                                <state key="normal" title="G#/Ab"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="G#/Ab">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="3gr-0q-8s5"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6RS-4N-38x"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="C2T-FG-Zu4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09k-Wa-Qd6">
                                                 <rect key="frame" x="0.0" y="94" width="83.5" height="93.5"/>
-                                                <state key="normal" title="A#/Bb"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="A#/Bb">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="uC1-9h-VWZ"/>
+                                                    <action selector="noteTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AAJ-VS-6cG"/>
+                                                    <action selector="noteTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="ZM3-p8-16s"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-O5-Oal">
                                                 <rect key="frame" x="0.0" y="187.5" width="83.5" height="94"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="O13-re-Mo1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-lM-VTG">
                                                 <rect key="frame" x="0.0" y="281.5" width="83.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="noteTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="h3F-RM-i0M"/>
                                                 </connections>
@@ -155,11 +231,14 @@
                                 <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XmM-BR-jsG">
-                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="187.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="125"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rv-Of-csW">
-                                                <rect key="frame" x="0.0" y="0.0" width="111" height="187.5"/>
-                                                <state key="normal" title="Maj"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440666147" blue="0.93785333493016909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Maj">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="diI-1h-uI1"/>
                                                     <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="en8-L6-Q1r"/>
@@ -167,43 +246,109 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cau-VK-f64">
-                                                <rect key="frame" x="111" y="0.0" width="111.5" height="187.5"/>
-                                                <state key="normal" title="Min"/>
+                                                <rect key="frame" x="111" y="0.0" width="111.5" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440666147" blue="0.93785333493016909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Min">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Tpe-EW-D2n"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTx-8W-ht9"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Nda-Jj-7gQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4e-Uf-keB">
-                                                <rect key="frame" x="222.5" y="0.0" width="111" height="187.5"/>
-                                                <state key="normal" title="sus4"/>
+                                                <rect key="frame" x="222.5" y="0.0" width="111" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440666147" blue="0.93785333493016909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="sus4">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="EOM-Ov-TEx"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gro-Mj-WJB"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="unB-vy-YEg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MPi-ae-kbF">
-                                        <rect key="frame" x="0.0" y="187.5" width="333.5" height="187.5"/>
+                                        <rect key="frame" x="0.0" y="125" width="333.5" height="125"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQp-lM-hF8">
-                                                <rect key="frame" x="0.0" y="0.0" width="111" height="187.5"/>
-                                                <state key="normal" title="Add2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440666147" blue="0.93785333493016909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Add2">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="fXm-3b-fIh"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jlf-UL-5y7"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="oFx-7Q-Q0h"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBn-aT-uzl">
-                                                <rect key="frame" x="111" y="0.0" width="111.5" height="187.5"/>
-                                                <state key="normal" title="maj7"/>
+                                                <rect key="frame" x="111" y="0.0" width="111.5" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440666147" blue="0.93785333493016909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="maj7">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="8UR-V2-day"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t5e-q4-WPC"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="uT3-81-2uC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Y8-k0-abg">
-                                                <rect key="frame" x="222.5" y="0.0" width="111" height="187.5"/>
-                                                <state key="normal" title="7th"/>
+                                                <rect key="frame" x="222.5" y="0.0" width="111" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440666147" blue="0.93785333493016909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="7th">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="qCn-Lj-rqa"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="34c-UG-fXq"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="95Z-30-TYo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oKs-pS-6HG">
+                                        <rect key="frame" x="0.0" y="250" width="333.5" height="125"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6G-ts-T60">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="J1Z-wd-2QJ"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Yi-AX-5lX"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="jo7-yu-9oc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-aZ-Xyv">
+                                                <rect key="frame" x="111" y="0.0" width="111.5" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="LT2-Eh-47W"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2C-ac-qk4"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="yxI-TY-fwZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="331-ci-xTi">
+                                                <rect key="frame" x="222.5" y="0.0" width="111" height="125"/>
+                                                <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chordTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="XGT-b6-0iU"/>
+                                                    <action selector="chordTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fbn-7m-Cyc"/>
+                                                    <action selector="chordTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="k5Z-Aj-vuk"/>
                                                 </connections>
                                             </button>
                                         </subviews>

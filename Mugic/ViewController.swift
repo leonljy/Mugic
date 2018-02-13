@@ -24,10 +24,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func noteTouchDown(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.noteHighlightedBackground
         self.noteValue = sender.tag
     }
     
     @IBAction func chordTouchDown(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.chordHighlightedBackground
         guard let note = Note(rawValue: self.noteValue), let chord = Chord(rawValue: sender.tag) else {
             return
         }
@@ -35,9 +37,19 @@ class ViewController: UIViewController {
         self.conductor.piano.play(root: note, chord: chord)
     }
     
-    @IBAction func chordTouchUpOutside(_ sender: Any) {
+    @IBAction func chordTouchUpOutside(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.chordDefaultBackground
+        
     }
-    @IBAction func chordTouchUpInside(_ sender: Any) {
+    @IBAction func chordTouchUpInside(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.chordDefaultBackground
+    }
+    @IBAction func noteTouchUpInside(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.noteDefaultBackground
+    }
+    @IBAction func noteTouchUpOutside(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.noteDefaultBackground
+        
     }
 }
 

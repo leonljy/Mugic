@@ -11,8 +11,6 @@
 		39761A7262BE0B8AB015FA56 /* Pods_MugicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADB4D5316B2837541419E6A /* Pods_MugicTests.framework */; };
 		914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA5582029C0EC00A2CBC3 /* Conductor.swift */; };
 		914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA55A2029D8EF00A2CBC3 /* Piano.swift */; };
-		914BA56A2029E34B00A2CBC3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 914BA5692029E34B00A2CBC3 /* Sounds */; };
-		914BA56B2029E34B00A2CBC3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 914BA5692029E34B00A2CBC3 /* Sounds */; };
 		917ADCCC200B3A940062B79A /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917ADCCB200B3A940062B79A /* Instrument.swift */; };
 		917ADCCE200B3A9D0062B79A /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917ADCCD200B3A9D0062B79A /* Hit.swift */; };
 		91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367D2001E78300124BD3 /* AppDelegate.swift */; };
@@ -23,6 +21,7 @@
 		91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36892001E78300124BD3 /* LaunchScreen.storyboard */; };
 		91CD36962001E78300124BD3 /* MugicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36952001E78300124BD3 /* MugicTests.swift */; };
 		91CD36A12001E78300124BD3 /* MugicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36A02001E78300124BD3 /* MugicUITests.swift */; };
+		91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */; };
 		AE7C24AD6AD6BE959AB11D55 /* Pods_MugicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F718C19E7AE2B82D50BFC8 /* Pods_MugicUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		86F718C19E7AE2B82D50BFC8 /* Pods_MugicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MugicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		914BA5582029C0EC00A2CBC3 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
 		914BA55A2029D8EF00A2CBC3 /* Piano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piano.swift; sourceTree = "<group>"; };
-		914BA5692029E34B00A2CBC3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		917ADCCB200B3A940062B79A /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		917ADCCD200B3A9D0062B79A /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
 		91CD367A2001E78300124BD3 /* Mugic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mugic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +68,7 @@
 		91CD369C2001E78300124BD3 /* MugicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MugicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD36A02001E78300124BD3 /* MugicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MugicUITests.swift; sourceTree = "<group>"; };
 		91CD36A22001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Acoustic Guitars JNv2.4.sf2"; sourceTree = "<group>"; };
 		988CCB03C0C2520F3B96BDBF /* Pods-MugicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MugicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MugicUITests/Pods-MugicUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A905E5A6E2EF9EA8D194D981 /* Pods-Mugic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mugic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mugic/Pods-Mugic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +117,7 @@
 		914BA55C2029DBB700A2CBC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				91CE86EC2033072900812E42 /* Sounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -158,7 +158,6 @@
 		91CD367C2001E78300124BD3 /* Mugic */ = {
 			isa = PBXGroup;
 			children = (
-				914BA5692029E34B00A2CBC3 /* Sounds */,
 				914BA55C2029DBB700A2CBC3 /* Resources */,
 				917ADCCA200B3A6E0062B79A /* Instruments */,
 				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
@@ -188,6 +187,14 @@
 				91CD36A22001E78300124BD3 /* Info.plist */,
 			);
 			path = MugicUITests;
+			sourceTree = "<group>";
+		};
+		91CE86EC2033072900812E42 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		EAF31DA89463A8072EDD521E /* Frameworks */ = {
@@ -321,9 +328,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */,
 				91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */,
 				91CD36882001E78300124BD3 /* Assets.xcassets in Resources */,
-				914BA56A2029E34B00A2CBC3 /* Sounds in Resources */,
 				91CD36832001E78300124BD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +339,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				914BA56B2029E34B00A2CBC3 /* Sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

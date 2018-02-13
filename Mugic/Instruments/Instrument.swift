@@ -71,22 +71,22 @@ class Instrument {
         return octaveAdded
     }
     
-    let samplers: [AKMIDISampler]
+    let samplers: [AKSampler]
     let mixer = AKMixer()
     let midiFileName: String
-    let rootSampler = AKMIDISampler()
-    let thirdSampler = AKMIDISampler()
-    let fifthSampler = AKMIDISampler()
-    let seventhSampler = AKMIDISampler()
+    let rootSampler = AKSampler()
+    let thirdSampler = AKSampler()
+    let fifthSampler = AKSampler()
+    let seventhSampler = AKSampler()
     var noteNumbers: [Int]
     
-    init(midifileName: String = "Sounds/Sampler Instruments/Classical Acoustic Guitar") {
+    init(midifileName: String = "Acoustic Guitars JNv2.4") {
         self.noteNumbers = []
         do {
             self.midiFileName = midifileName
             self.samplers = [self.rootSampler, self.thirdSampler, self.fifthSampler, self.seventhSampler]
             for sampler in self.samplers {
-                try sampler.loadEXS24(midifileName)
+                try sampler.loadMelodicSoundFont(midifileName, preset: 0)
                 self.mixer.connect(input: sampler)
             }
             

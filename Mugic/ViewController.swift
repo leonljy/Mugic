@@ -46,9 +46,11 @@ class ViewController: UIViewController {
     }
     @IBAction func noteTouchUpInside(_ sender: UIButton) {
         sender.backgroundColor = UIColor.noteDefaultBackground
+        self.noteValue = 0
     }
     @IBAction func noteTouchUpOutside(_ sender: UIButton) {
         sender.backgroundColor = UIColor.noteDefaultBackground
+        self.noteValue = 0
         
     }
 }

@@ -53,15 +53,27 @@ enum Chord: Int {
 class Instrument {
     static let OCTAVE = 12
     static let AHz = 440
-    static func frequency(_ note: Note, modifier: Modifier = .Natural, adding: Interval = .NONE, octave: Int = 0 ) -> Double {
-        
-        let n = note.rawValue + modifier.rawValue + adding.rawValue
-        let octaveAdded = n + (OCTAVE * octave)
-        let powValue = Double(octaveAdded - 49) / Double(OCTAVE)
-        
-        let frequency = pow(2, powValue) * Double(AHz)
-        
-        return frequency
+    
+    var samplers: [AKSampler]
+    var midiFileName: String
+    
+    init() {
+        self.samplers = []
+        self.midiFileName = ""
+    }
+}
+
+class ChordInstrument: Instrument {
+    
+    let rootSampler = AKSampler()
+    let thirdSampler = AKSampler()
+    let fifthSampler = AKSampler()
+    let seventhSampler = AKSampler()
+    var noteNumbers: [Int]
+    
+    override init() {
+        self.noteNumbers = []
+        super.init()
     }
     
     static func adding(_ note: Note, modifier: Modifier = .Natural, interval: Interval = .NONE, octave: Int = 0 ) -> Int {
@@ -69,30 +81,6 @@ class Instrument {
         let n = note.rawValue + modifier.rawValue + interval.rawValue
         let octaveAdded = n + (OCTAVE * octave)
         return octaveAdded
-    }
-    
-    let samplers: [AKSampler]
-    let mixer = AKMixer()
-    let midiFileName: String
-    let rootSampler = AKSampler()
-    let thirdSampler = AKSampler()
-    let fifthSampler = AKSampler()
-    let seventhSampler = AKSampler()
-    var noteNumbers: [Int]
-    
-    init(midifileName: String = "Acoustic Guitars JNv2.4") {
-        self.noteNumbers = []
-        do {
-            self.midiFileName = midifileName
-            self.samplers = [self.rootSampler, self.thirdSampler, self.fifthSampler, self.seventhSampler]
-            for sampler in self.samplers {
-                try sampler.loadMelodicSoundFont(midifileName, preset: 0)
-                self.mixer.connect(input: sampler)
-            }
-            
-        } catch  {
-            print("File not found")
-        }
     }
     
     func stop() {

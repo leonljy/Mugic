@@ -1,5 +1,5 @@
 //
-//  Piano.swift
+//  Guitar.swift
 //  Mugic
 //
 //  Created by Jeong-Uk Lee on 2018. 2. 6..
@@ -9,16 +9,16 @@
 import Foundation
 import AudioKit
 
-class Piano: ChordInstrument {
+class Guitar: ChordInstrument {
     
-    init(midifileName: String = "Sounds/Sampler Instruments/sawPiano1") {
+    init(midifileName: String = "Acoustic Guitars JNv2.4") {
         super.init()
         super.noteNumbers = []
         do {
             self.midiFileName = midifileName
             self.samplers = [self.rootSampler, self.thirdSampler, self.fifthSampler, self.seventhSampler]
             for sampler in super.samplers {
-                try sampler.loadEXS24(self.midiFileName)
+                try sampler.loadMelodicSoundFont(self.midiFileName, preset: 0)
             }
             
         } catch  {

@@ -11,15 +11,26 @@ import AudioKit
 
 
 struct Conductor {
+    let mixer = AKMixer()
     let piano: Piano
+    let guitar: Guitar
     
     init() {
         self.piano = Piano()
-        AudioKit.output = self.piano.mixer
+        self.guitar = Guitar()
+        self.piano.samplers.forEach {
+          self.mixer.connect(input: $0)
+        }
+        self.guitar.samplers.forEach {
+          self.mixer.connect(input: $0)
+        }
+        
+        AudioKit.output = self.mixer
         AudioKit.start()
     }
     
-    func play() {
-        
+    func play(root: Note, chord: Chord) {
+        self.piano.play(root: root, chord: chord)
+//        self.guitar.play(root: root, chord: chord)
     }
 }

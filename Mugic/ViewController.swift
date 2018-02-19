@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             return
         }
         
-        self.conductor.piano.play(root: note, chord: chord)
+        self.conductor.play(root: note, chord: chord)
     }
     
     @IBAction func chordTouchUpOutside(_ sender: UIButton) {

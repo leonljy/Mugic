@@ -13,10 +13,15 @@ class Guitar: ChordInstrument {
     
     init(midifileName: String = "Acoustic Guitars JNv2.4") {
         super.init()
-        super.noteNumbers = []
+        self.noteNumbers = []
         do {
             self.midiFileName = midifileName
-            self.samplers = [self.rootSampler, self.thirdSampler, self.fifthSampler, self.seventhSampler]
+            self.numberOfPolyphonic = 10
+            for _ in 0 ... self.numberOfPolyphonic {
+                let sampler = AKSampler()
+                self.samplers.append(sampler)
+            }
+            
             for sampler in super.samplers {
                 try sampler.loadMelodicSoundFont(self.midiFileName, preset: 0)
             }
@@ -59,10 +64,6 @@ class Guitar: ChordInstrument {
             self.noteNumbers = [bass, third, fifth]
         }
         
-        
-        let midiChannel = MIDIChannel()
-        for (index, noteNumber) in self.noteNumbers.enumerated() {
-            self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
-        }
+        self.play()
     }
 }

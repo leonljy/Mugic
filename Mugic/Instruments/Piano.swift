@@ -13,10 +13,15 @@ class Piano: ChordInstrument {
     
     init(midifileName: String = "Sounds/Sampler Instruments/sawPiano1") {
         super.init()
-        super.noteNumbers = []
+        self.noteNumbers = []
         do {
             self.midiFileName = midifileName
-            self.samplers = [self.rootSampler, self.thirdSampler, self.fifthSampler, self.seventhSampler]
+            self.numberOfPolyphonic = 10
+            for _ in 0 ..< self.numberOfPolyphonic {
+                let sampler = AKSampler()
+                self.samplers.append(sampler)
+            }
+            
             for sampler in super.samplers {
                 try sampler.loadEXS24(self.midiFileName)
             }
@@ -30,39 +35,46 @@ class Piano: ChordInstrument {
         self.stop()
         
         let bass = ChordInstrument.adding(root)
+        let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
+        let third: Int
+        let seventh: Int
+        
+        let leftHandRoot = bass - ChordInstrument.OCTAVE
+        let leftHandFifth = fifth - ChordInstrument.OCTAVE
+        self.noteNumbers = [leftHandRoot, leftHandFifth, bass, fifth]
+//        self.noteNumbers = [leftHandRoot, leftHandFifth]
         switch chord {
         case .maj:
-            let third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            self.noteNumbers.insert(third)
         case .min:
-            let third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            self.noteNumbers.insert(third)
         case .sus4:
-            let third = ChordInstrument.adding(root, interval: Interval.PERFECT_FORTH)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
+            third = ChordInstrument.adding(root, interval: Interval.PERFECT_FORTH)
+            self.noteNumbers.insert(third)
         case .seventh:
-            let third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            let seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
-            self.noteNumbers = [bass, third, fifth, seventh]
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            self.noteNumbers.insert(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
+            self.noteNumbers.insert(seventh)
         case .maj7:
-            let third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            let seventh = ChordInstrument.adding(root, interval: Interval.MAJ_SEVENTH)
-            self.noteNumbers = [bass, third, fifth, seventh]
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            self.noteNumbers.insert(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.MAJ_SEVENTH)
+            self.noteNumbers.insert(seventh)
         case .add2:
-            let third = ChordInstrument.adding(root, interval: Interval.SECOND)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
+            third = ChordInstrument.adding(root, interval: Interval.SECOND)
+            self.noteNumbers.insert(third)
         }
         
-        
-        let midiChannel = MIDIChannel()
-        for (index, noteNumber) in self.noteNumbers.enumerated() {
-            self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
+        for noteNumber in self.noteNumbers {
+            if noteNumber > Note.G.rawValue {
+                self.noteNumbers.remove(noteNumber)
+                self.noteNumbers.insert(noteNumber - ChordInstrument.OCTAVE)
+            }
         }
+        self.play()
+        
     }
 }

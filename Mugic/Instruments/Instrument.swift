@@ -65,14 +65,12 @@ class Instrument {
 
 class ChordInstrument: Instrument {
     
-    let rootSampler = AKSampler()
-    let thirdSampler = AKSampler()
-    let fifthSampler = AKSampler()
-    let seventhSampler = AKSampler()
-    var noteNumbers: [Int]
+    var numberOfPolyphonic: Int
+    var noteNumbers: Set<Int>
     
     override init() {
         self.noteNumbers = []
+        self.numberOfPolyphonic = 0
         super.init()
     }
     
@@ -87,6 +85,17 @@ class ChordInstrument: Instrument {
         let midiChannel = MIDIChannel()
         for (index, noteNumber) in self.noteNumbers.enumerated() {
             self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
+        }
+        self.noteNumbers = []
+    }
+    
+    func play() {
+        let midiChannel = MIDIChannel()
+        for (index, noteNumber) in self.noteNumbers.enumerated() {
+            guard index < self.numberOfPolyphonic else {
+                return
+            }
+            self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
         }
     }
 }

@@ -33,6 +33,8 @@ enum Interval: Int {
     case PERFECT_FIFTH = 7
     case DOMINENT_SEVENTH = 10
     case MAJ_SEVENTH = 11
+    case SIXTH = 9
+    case FLAT_FIVE = 6    
 }
 
 enum Modifier: Int {
@@ -48,6 +50,9 @@ enum Chord: Int {
     case sus4
     case maj7
     case seventh
+    case min7
+    case add6
+    case dim7
 }
 
 class Instrument {

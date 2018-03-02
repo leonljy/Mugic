@@ -35,33 +35,55 @@ class Guitar: ChordInstrument {
         self.stop()
         
         let bass = ChordInstrument.adding(root)
+        let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
+        let third: Int
+        let seventh: Int
+        
+        let leftHandRoot = bass - ChordInstrument.OCTAVE
+        let leftHandFifth = fifth - ChordInstrument.OCTAVE
+        self.noteNumbers = [leftHandRoot, leftHandFifth, bass, fifth]
+        
         switch chord {
         case .maj:
-            let third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            self.noteNumbers.insert(third)
         case .min:
-            let third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
-        case .sus4:
-            let third = ChordInstrument.adding(root, interval: Interval.PERFECT_FORTH)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
-        case .seventh:
-            let third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            let seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
-            self.noteNumbers = [bass, third, fifth, seventh]
-        case .maj7:
-            let third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            let seventh = ChordInstrument.adding(root, interval: Interval.MAJ_SEVENTH)
-            self.noteNumbers = [bass, third, fifth, seventh]
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            self.noteNumbers.insert(third)
         case .add2:
-            let third = ChordInstrument.adding(root, interval: Interval.SECOND)
-            let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
-            self.noteNumbers = [bass, third, fifth]
+            third = ChordInstrument.adding(root, interval: Interval.SECOND)
+            self.noteNumbers.insert(third)
+        case .sus4:
+            third = ChordInstrument.adding(root, interval: Interval.PERFECT_FORTH)
+            self.noteNumbers.insert(third)
+        case .seventh:
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            self.noteNumbers.insert(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
+            self.noteNumbers.insert(seventh)
+        case .maj7:
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            self.noteNumbers.insert(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.MAJ_SEVENTH)
+            self.noteNumbers.insert(seventh)
+        case .min7:
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            self.noteNumbers.insert(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
+            self.noteNumbers.insert(seventh)
+        case .add6:
+            third = ChordInstrument.adding(root, interval: Interval.SIXTH)
+            self.noteNumbers.insert(third)
+        case .dim7:
+            self.noteNumbers.removeAll()
+            self.noteNumbers.insert(bass)
+            //            self.noteNumbers.insert(bass - Piano.OCTAVE)
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            self.noteNumbers.insert(third)
+            let flatFive = ChordInstrument.adding(root, interval: Interval.FLAT_FIVE)
+            self.noteNumbers.insert(flatFive)
+            seventh = ChordInstrument.adding(root, interval: Interval.SIXTH)
+            self.noteNumbers.insert(seventh)
         }
         
         self.play()

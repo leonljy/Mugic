@@ -11,13 +11,17 @@ import AudioKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var recordStatusLabel: UILabel!
     var noteValue: Int = 0
     var conductor = Conductor()
+    var recorder = Recorder()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,6 +39,7 @@ class ViewController: UIViewController {
         }
         
         self.conductor.play(root: note, chord: chord)
+        self.recorder.save(root: note, chord: chord)
     }
     
     @IBAction func chordTouchUpOutside(_ sender: UIButton) {
@@ -53,5 +58,19 @@ class ViewController: UIViewController {
         self.noteValue = 0
         
     }
+    
+    @IBAction func handleRecord(_ sender: Any) {
+        if self.recorder.isRecording {
+            recorder.stopRecord()
+        } else {
+            recorder.showCount(countBlock: { (timeInterval) in
+                //TODO: Calculate Remain Count
+                self.recordStatusLabel.text = "\(5-Int(timeInterval))"
+            }) { (timeInterval) in
+                self.recordStatusLabel.text = "\(timeInterval.timeString())"
+            }
+        }
+    }
+    
 }
 

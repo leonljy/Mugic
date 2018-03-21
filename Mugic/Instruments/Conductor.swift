@@ -33,4 +33,20 @@ struct Conductor {
         self.piano.play(root: root, chord: chord)
 //        self.guitar.play(root: root, chord: chord)
     }
+    
+    func replay(events: [Event]) {
+        self.replay(events: events, currentTime: 0)
+    }
+    
+    private func replay(events: [Event], currentTime: TimeInterval) {
+        guard events.count > 0 else {
+            return
+        }
+        var events = events
+        let event = events.removeFirst()
+        Timer.scheduledTimer(withTimeInterval: event.time - currentTime, repeats: false) { (timer) in
+            self.piano.play(root: event.root, chord: event.chord)
+            self.replay(events: events, currentTime: event.time)
+        }
+    }
 }

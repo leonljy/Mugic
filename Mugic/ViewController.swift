@@ -61,15 +61,18 @@ class ViewController: UIViewController {
     
     @IBAction func handleRecord(_ sender: Any) {
         if self.recorder.isRecording {
-            recorder.stopRecord()
+            self.recorder.stopRecord()
         } else {
-            recorder.showCount(countBlock: { (timeInterval) in
+            self.recorder.showCount(countBlock: { (timeInterval) in
                 //TODO: Calculate Remain Count
                 self.recordStatusLabel.text = "\(5-Int(timeInterval))"
             }) { (timeInterval) in
                 self.recordStatusLabel.text = "\(timeInterval.timeString())"
             }
         }
+    }
+    @IBAction func handlePlay(_ sender: Any) {
+        self.conductor.replay(events: self.recorder.events)
     }
     
 }

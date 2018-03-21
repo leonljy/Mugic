@@ -6,7 +6,7 @@ target 'Mugic' do
   use_frameworks!
 	pod 'AudioKit'
 	pod 'Realm'
-	pod 'RealmSwift'
+			pod 'RealmSwift'
   # Pods for Mugic
 
   target 'MugicTests' do

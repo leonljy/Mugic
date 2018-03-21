@@ -13,6 +13,7 @@ class Recorder {
     var timer: Timer = Timer()
     var song: Song
     var startTime = Date()
+    var events = [Event]()
     var isRecording: Bool {
         get {
             return self.recording
@@ -49,6 +50,7 @@ class Recorder {
     func startRecored(timerBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
         self.isRecording = true
         self.startTime = Date()
+        self.events = [Event]()
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
             let now = Date()
             timerBlock(now.timeIntervalSince(self.startTime))
@@ -71,5 +73,7 @@ class Recorder {
         let now = Date()
         let timeInterval = now.timeIntervalSince(self.startTime)
         print("\(timeInterval) => \(root.rawValue) \(chord.rawValue) Pressed")
+        let event = Event(time: timeInterval, root: root, chord: chord)
+        self.events.append(event)
     }
 }

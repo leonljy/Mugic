@@ -18,7 +18,7 @@ class Piano: ChordInstrument {
             self.midiFileName = midifileName
             self.numberOfPolyphonic = 10
             for _ in 0 ..< self.numberOfPolyphonic {
-                let sampler = AKSampler()
+                let sampler = AKAppleSampler()
                 self.samplers.append(sampler)
             }
             
@@ -29,6 +29,13 @@ class Piano: ChordInstrument {
         } catch  {
             print("File not found")
         }
+    }
+    
+    
+    func play(note: Int, amplitude: Double = 1.0) {
+        self.stop()
+        self.noteNumbers.insert(note)
+        self.play()
     }
     
     func play(root: Note, chord: Chord, amplitude: Double = 1.0) {

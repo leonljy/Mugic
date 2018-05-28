@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PianoPanelView" customModule="Mugic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="380"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="1IZ-ye-Gl0">
+                    <rect key="frame" x="0.0" y="0.0" width="487" height="380"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-sK-odw" customClass="PianoPanelOneOctaveView" customModule="Mugic" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="487" height="126"/>
+                            <subviews>
+                                <button tag="48" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPx-gv-ymX" userLabel="C">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" button="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="3G4-bN-oAq"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="xwn-35-Tnt"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="nBo-xX-icZ"/>
+                                    </connections>
+                                </button>
+                                <button tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjs-jp-BVl" userLabel="D">
+                                    <rect key="frame" x="69.5" y="0.0" width="69.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="gqO-OP-83a"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="lox-gq-S1z"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="rh0-Nn-ETn"/>
+                                    </connections>
+                                </button>
+                                <button tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCt-NA-Q2o" userLabel="E">
+                                    <rect key="frame" x="140" y="0.0" width="69" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="WNx-aR-lfB"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="h4t-HE-mHj"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="nOc-gm-t61"/>
+                                    </connections>
+                                </button>
+                                <button tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-Ve-0d0" userLabel="F">
+                                    <rect key="frame" x="210" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="3zH-K3-Eea"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="A1I-YU-SnI"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="5oN-UU-a9r"/>
+                                    </connections>
+                                </button>
+                                <button tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx1-Iw-ROI" userLabel="G">
+                                    <rect key="frame" x="279.5" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="PPr-Jw-Zif"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="a7z-L3-kh7"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="T6g-Xk-aiz"/>
+                                    </connections>
+                                </button>
+                                <button tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biU-eM-oPL" userLabel="A">
+                                    <rect key="frame" x="349" y="0.0" width="69" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="bln-zI-bOc"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="Os8-xz-n0l"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="4Bd-3e-5Uk"/>
+                                    </connections>
+                                </button>
+                                <button tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhz-cF-BJx" userLabel="B">
+                                    <rect key="frame" x="419" y="0.0" width="68" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="eTy-vy-Xvb"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="4vS-Cl-fQY"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="YAi-AW-Uu5"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTe-XH-UHT">
+                                    <rect key="frame" x="0.0" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="sUd-8D-XbY"/>
+                                    </constraints>
+                                </view>
+                                <button tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-Va-Oea" userLabel="C#">
+                                    <rect key="frame" x="46.5" y="0.0" width="46.5" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="JMD-O2-Brr"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="10W-qO-gnz"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="mzT-uD-CPP"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLx-Po-T00">
+                                    <rect key="frame" x="93" y="0.0" width="23" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="EmN-wa-g0Q"/>
+                                    </constraints>
+                                </view>
+                                <button tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-pW-GgG" userLabel="D#">
+                                    <rect key="frame" x="116" y="0.0" width="46.5" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="rCi-W1-hXC"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="BK5-Bx-J1f"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="SyS-x4-yZt"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oP0-np-WeN">
+                                    <rect key="frame" x="162.5" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="4rI-AQ-nq3"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceA-HK-Koc">
+                                    <rect key="frame" x="210" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="Tuh-zl-YmJ"/>
+                                    </constraints>
+                                </view>
+                                <button tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-d9-G2m" userLabel="F#">
+                                    <rect key="frame" x="256.5" y="0.0" width="46" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Ffm-pz-ymN"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="fPt-3y-M8f"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="cvt-ji-WNv"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWI-Tk-9Zs">
+                                    <rect key="frame" x="302.5" y="0.0" width="23" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="uWe-3k-6Fq"/>
+                                    </constraints>
+                                </view>
+                                <button tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-Uj-sJL" userLabel="G#">
+                                    <rect key="frame" x="325.5" y="0.0" width="46.5" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Hi5-nt-WbK"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="6eE-yg-ayc"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="BL6-nD-xy8"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0b-zE-jYe">
+                                    <rect key="frame" x="372" y="0.0" width="22.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="RX1-Gn-1Li"/>
+                                    </constraints>
+                                </view>
+                                <button tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysy-Wc-gbM" userLabel="A#">
+                                    <rect key="frame" x="394.5" y="0.0" width="46" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="rWt-uC-OQ8"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="EMa-f4-hB3"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="K5o-CE-tNM"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eh-zt-LgL">
+                                    <rect key="frame" x="440.5" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="De3-p6-iii"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="3Om-pW-GgG" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="0qO-uC-OUV"/>
+                                <constraint firstItem="2XE-Va-Oea" firstAttribute="trailing" secondItem="zLx-Po-T00" secondAttribute="leading" id="2ME-W4-FO5"/>
+                                <constraint firstItem="ysy-Wc-gbM" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="2fF-uq-nox"/>
+                                <constraint firstAttribute="bottom" secondItem="jCt-NA-Q2o" secondAttribute="bottom" id="2zI-lE-CXK"/>
+                                <constraint firstItem="biU-eM-oPL" firstAttribute="width" secondItem="nPx-gv-ymX" secondAttribute="width" id="31N-5V-YiZ"/>
+                                <constraint firstItem="E0b-zE-jYe" firstAttribute="leading" secondItem="sKw-Uj-sJL" secondAttribute="trailing" id="367-TZ-uRl"/>
+                                <constraint firstItem="jCt-NA-Q2o" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="3CX-2b-s7X"/>
+                                <constraint firstItem="sKw-Uj-sJL" firstAttribute="height" secondItem="2XE-Va-Oea" secondAttribute="height" id="3En-RA-iUx"/>
+                                <constraint firstItem="4eh-zt-LgL" firstAttribute="width" secondItem="oTe-XH-UHT" secondAttribute="width" id="3cH-7V-Kbg"/>
+                                <constraint firstItem="gbH-Ve-0d0" firstAttribute="width" secondItem="nPx-gv-ymX" secondAttribute="width" id="4Y2-vP-bWT"/>
+                                <constraint firstItem="Dx1-Iw-ROI" firstAttribute="width" secondItem="nPx-gv-ymX" secondAttribute="width" id="7Tj-tg-wa2"/>
+                                <constraint firstItem="sKw-Uj-sJL" firstAttribute="width" secondItem="2XE-Va-Oea" secondAttribute="width" id="9SN-jK-dn5"/>
+                                <constraint firstAttribute="bottom" secondItem="nPx-gv-ymX" secondAttribute="bottom" id="AzU-z3-19Y"/>
+                                <constraint firstItem="gPe-d9-G2m" firstAttribute="height" secondItem="2XE-Va-Oea" secondAttribute="height" id="BIc-H1-GgT"/>
+                                <constraint firstItem="2XE-Va-Oea" firstAttribute="height" secondItem="nPx-gv-ymX" secondAttribute="height" multiplier="0.65" id="C2j-m3-5fY"/>
+                                <constraint firstItem="ceA-HK-Koc" firstAttribute="width" secondItem="oP0-np-WeN" secondAttribute="width" id="D0N-ba-kBj"/>
+                                <constraint firstItem="4eh-zt-LgL" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="DPV-xB-OJq"/>
+                                <constraint firstItem="gPe-d9-G2m" firstAttribute="width" secondItem="2XE-Va-Oea" secondAttribute="width" id="F77-cP-8d7"/>
+                                <constraint firstAttribute="bottom" secondItem="Nhz-cF-BJx" secondAttribute="bottom" id="FY5-dP-iAa"/>
+                                <constraint firstItem="Dx1-Iw-ROI" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="Fqd-0l-rhX"/>
+                                <constraint firstItem="jCt-NA-Q2o" firstAttribute="width" secondItem="nPx-gv-ymX" secondAttribute="width" id="GOC-Ig-KZH"/>
+                                <constraint firstItem="oP0-np-WeN" firstAttribute="width" secondItem="oTe-XH-UHT" secondAttribute="width" id="Gcf-B6-Hq9"/>
+                                <constraint firstItem="oTe-XH-UHT" firstAttribute="trailing" secondItem="2XE-Va-Oea" secondAttribute="leading" id="H9y-KR-uVR"/>
+                                <constraint firstAttribute="bottom" secondItem="Dx1-Iw-ROI" secondAttribute="bottom" id="HL3-sK-C0V"/>
+                                <constraint firstItem="2XE-Va-Oea" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="HXZ-2u-wQs"/>
+                                <constraint firstItem="Wjs-jp-BVl" firstAttribute="leading" secondItem="nPx-gv-ymX" secondAttribute="trailing" constant="1" id="LeM-hY-mrK"/>
+                                <constraint firstItem="E0b-zE-jYe" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="ME4-Zq-U6M"/>
+                                <constraint firstItem="sKw-Uj-sJL" firstAttribute="leading" secondItem="fWI-Tk-9Zs" secondAttribute="trailing" id="MhO-uo-CqE"/>
+                                <constraint firstItem="4eh-zt-LgL" firstAttribute="leading" secondItem="ysy-Wc-gbM" secondAttribute="trailing" id="NZw-ne-SvM"/>
+                                <constraint firstAttribute="bottom" secondItem="gbH-Ve-0d0" secondAttribute="bottom" id="OKl-Dg-MvA"/>
+                                <constraint firstItem="biU-eM-oPL" firstAttribute="leading" secondItem="Dx1-Iw-ROI" secondAttribute="trailing" constant="1" id="T3A-zI-4I2"/>
+                                <constraint firstItem="2XE-Va-Oea" firstAttribute="width" secondItem="oTe-XH-UHT" secondAttribute="width" id="TLu-9q-UrN"/>
+                                <constraint firstItem="ysy-Wc-gbM" firstAttribute="height" secondItem="2XE-Va-Oea" secondAttribute="height" id="Xly-cG-ZrL"/>
+                                <constraint firstItem="zLx-Po-T00" firstAttribute="trailing" secondItem="3Om-pW-GgG" secondAttribute="leading" id="Xnc-De-mp3"/>
+                                <constraint firstItem="gbH-Ve-0d0" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="Xsb-d9-HW2"/>
+                                <constraint firstItem="E0b-zE-jYe" firstAttribute="width" secondItem="zLx-Po-T00" secondAttribute="width" id="aL4-sn-L2Q"/>
+                                <constraint firstItem="sKw-Uj-sJL" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="b6Z-kc-eEK"/>
+                                <constraint firstItem="ysy-Wc-gbM" firstAttribute="leading" secondItem="E0b-zE-jYe" secondAttribute="trailing" id="cEy-Q2-POY"/>
+                                <constraint firstItem="gPe-d9-G2m" firstAttribute="trailing" secondItem="fWI-Tk-9Zs" secondAttribute="leading" id="clf-oJ-LYm"/>
+                                <constraint firstItem="gbH-Ve-0d0" firstAttribute="leading" secondItem="jCt-NA-Q2o" secondAttribute="trailing" constant="1" id="dLS-cT-fZb"/>
+                                <constraint firstItem="oP0-np-WeN" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="dt0-cH-MVz"/>
+                                <constraint firstItem="ceA-HK-Koc" firstAttribute="trailing" secondItem="gPe-d9-G2m" secondAttribute="leading" id="fjA-3u-y13"/>
+                                <constraint firstItem="oTe-XH-UHT" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="gTB-8v-u3f"/>
+                                <constraint firstItem="fWI-Tk-9Zs" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="iF6-Rd-YoK"/>
+                                <constraint firstItem="ceA-HK-Koc" firstAttribute="width" secondItem="oTe-XH-UHT" secondAttribute="width" id="ikt-Rh-RYA"/>
+                                <constraint firstItem="ysy-Wc-gbM" firstAttribute="width" secondItem="2XE-Va-Oea" secondAttribute="width" id="jXf-Pw-0Ji"/>
+                                <constraint firstItem="gbH-Ve-0d0" firstAttribute="leading" secondItem="ceA-HK-Koc" secondAttribute="leading" id="k6z-np-u5D"/>
+                                <constraint firstItem="Nhz-cF-BJx" firstAttribute="leading" secondItem="biU-eM-oPL" secondAttribute="trailing" constant="1" id="lh3-OI-ujj"/>
+                                <constraint firstItem="Wjs-jp-BVl" firstAttribute="width" secondItem="nPx-gv-ymX" secondAttribute="width" id="nJw-lq-6I1"/>
+                                <constraint firstItem="fWI-Tk-9Zs" firstAttribute="width" secondItem="zLx-Po-T00" secondAttribute="width" id="oFk-69-4FK"/>
+                                <constraint firstItem="oP0-np-WeN" firstAttribute="trailing" secondItem="jCt-NA-Q2o" secondAttribute="trailing" id="ozx-8g-x3A"/>
+                                <constraint firstAttribute="bottom" secondItem="Wjs-jp-BVl" secondAttribute="bottom" id="qCq-KF-5QD"/>
+                                <constraint firstAttribute="trailing" secondItem="4eh-zt-LgL" secondAttribute="trailing" id="qET-ZD-zhj"/>
+                                <constraint firstItem="jCt-NA-Q2o" firstAttribute="leading" secondItem="Wjs-jp-BVl" secondAttribute="trailing" constant="1" id="rxJ-MU-V8v"/>
+                                <constraint firstItem="3Om-pW-GgG" firstAttribute="height" secondItem="2XE-Va-Oea" secondAttribute="height" id="sEI-I2-dxR"/>
+                                <constraint firstItem="Nhz-cF-BJx" firstAttribute="width" secondItem="nPx-gv-ymX" secondAttribute="width" id="sPg-7p-5Ic"/>
+                                <constraint firstItem="nPx-gv-ymX" firstAttribute="leading" secondItem="AYG-sK-odw" secondAttribute="leading" id="tAC-St-pu8"/>
+                                <constraint firstAttribute="bottom" secondItem="biU-eM-oPL" secondAttribute="bottom" id="tTF-BI-t7o"/>
+                                <constraint firstAttribute="trailing" secondItem="Nhz-cF-BJx" secondAttribute="trailing" id="ttH-MY-F8e"/>
+                                <constraint firstItem="biU-eM-oPL" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="vip-TB-znF"/>
+                                <constraint firstItem="oP0-np-WeN" firstAttribute="leading" secondItem="3Om-pW-GgG" secondAttribute="trailing" id="vjf-5O-eux"/>
+                                <constraint firstItem="ceA-HK-Koc" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="wvZ-cY-YPn"/>
+                                <constraint firstItem="zLx-Po-T00" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="x1N-dh-gef"/>
+                                <constraint firstItem="3Om-pW-GgG" firstAttribute="width" secondItem="2XE-Va-Oea" secondAttribute="width" id="xp1-uQ-kV3"/>
+                                <constraint firstItem="Dx1-Iw-ROI" firstAttribute="leading" secondItem="gbH-Ve-0d0" secondAttribute="trailing" constant="1" id="xp9-wO-M19"/>
+                                <constraint firstItem="gPe-d9-G2m" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="xwy-fU-1sD"/>
+                                <constraint firstItem="nPx-gv-ymX" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="xyc-wI-c3B"/>
+                                <constraint firstItem="Wjs-jp-BVl" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="yI5-Sx-2Ld"/>
+                                <constraint firstItem="Nhz-cF-BJx" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="zDB-WA-NYV"/>
+                                <constraint firstItem="oTe-XH-UHT" firstAttribute="leading" secondItem="AYG-sK-odw" secondAttribute="leading" id="zcp-5o-Lpf"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l75-zt-O6Y" customClass="PianoPanelOneOctaveView" customModule="Mugic" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="127" width="487" height="126"/>
+                            <subviews>
+                                <button tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sd-wv-XUm" userLabel="C">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" button="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="aXs-hY-fSh"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="p0c-9p-HlX"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="Gbh-gQ-3gK"/>
+                                    </connections>
+                                </button>
+                                <button tag="62" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m78-VR-a2c" userLabel="D">
+                                    <rect key="frame" x="69.5" y="0.0" width="69.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="lWh-mw-fXd"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="54H-Ey-ZMw"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="wPG-v0-mSW"/>
+                                    </connections>
+                                </button>
+                                <button tag="64" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-1c-eia" userLabel="E">
+                                    <rect key="frame" x="140" y="0.0" width="69" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Jue-0F-dp9"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="rVR-aj-yYZ"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="iTj-h6-qZR"/>
+                                    </connections>
+                                </button>
+                                <button tag="65" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KA-Kw-hJt" userLabel="F">
+                                    <rect key="frame" x="210" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="F4N-BW-uz3"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="CPq-eA-gQd"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="nd1-gE-aM0"/>
+                                    </connections>
+                                </button>
+                                <button tag="67" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cty-wh-ErS" userLabel="G">
+                                    <rect key="frame" x="279.5" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="eiS-Ly-5ga"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Ir-9P-7kb"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="pkF-oa-FON"/>
+                                    </connections>
+                                </button>
+                                <button tag="69" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pur-Yx-jOY" userLabel="A">
+                                    <rect key="frame" x="349" y="0.0" width="69" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="TKA-w0-rTl"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="jrr-qX-oMs"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="dTC-kt-Mho"/>
+                                    </connections>
+                                </button>
+                                <button tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84c-md-4iu" userLabel="B">
+                                    <rect key="frame" x="419" y="0.0" width="68" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="atJ-sS-HbG"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ljm-v5-SaR"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="h39-SN-nci"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwY-BP-2RH">
+                                    <rect key="frame" x="0.0" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="hYx-zh-4VI"/>
+                                    </constraints>
+                                </view>
+                                <button tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rl-Qj-4jF" userLabel="C#">
+                                    <rect key="frame" x="46.5" y="0.0" width="46.5" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Oib-dB-LNr"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="k5b-pl-vMa"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="DvQ-pV-vj5"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-Wq-rbA">
+                                    <rect key="frame" x="93" y="0.0" width="23" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="7ZT-4t-yDm"/>
+                                    </constraints>
+                                </view>
+                                <button tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-vM-Gjm" userLabel="D#">
+                                    <rect key="frame" x="116" y="0.0" width="46.5" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="N3k-ut-wff"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ebh-yt-18S"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="1cb-Bc-Ge1"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIi-Qi-Mj0">
+                                    <rect key="frame" x="162.5" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="K4g-dZ-Jpk"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-Hw-9Es">
+                                    <rect key="frame" x="210" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="BsN-j4-fbg"/>
+                                    </constraints>
+                                </view>
+                                <button tag="66" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-n1-0dB" userLabel="F#">
+                                    <rect key="frame" x="256.5" y="0.0" width="46" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="9T1-oZ-bXF"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="hER-on-F1A"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="HLe-MM-HAJ"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="An6-ny-JwW">
+                                    <rect key="frame" x="302.5" y="0.0" width="23" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="Twc-tf-7E8"/>
+                                    </constraints>
+                                </view>
+                                <button tag="68" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-hE-Scr" userLabel="G#">
+                                    <rect key="frame" x="325.5" y="0.0" width="46.5" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="XEr-Ku-Wzj"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="JPU-qA-lEV"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="G2W-BG-xxT"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzL-6J-Xui">
+                                    <rect key="frame" x="372" y="0.0" width="22.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="UTC-EN-FeA"/>
+                                    </constraints>
+                                </view>
+                                <button tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-Nu-lFQ" userLabel="A#">
+                                    <rect key="frame" x="394.5" y="0.0" width="46" height="81.5"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="uoY-B3-9iZ"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="AQe-6E-zoO"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="h9e-1S-PJB"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MY-FY-Pnd">
+                                    <rect key="frame" x="440.5" y="0.0" width="46.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="J5c-mF-POR"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="0fE-Nu-lFQ" firstAttribute="height" secondItem="7Rl-Qj-4jF" secondAttribute="height" id="0qs-M4-tWP"/>
+                                <constraint firstItem="0fE-Nu-lFQ" firstAttribute="leading" secondItem="zzL-6J-Xui" secondAttribute="trailing" id="37K-io-SLc"/>
+                                <constraint firstItem="9sd-wv-XUm" firstAttribute="leading" secondItem="l75-zt-O6Y" secondAttribute="leading" id="3zJ-iB-eyM"/>
+                                <constraint firstItem="5KA-Kw-hJt" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="4dT-Of-jUp"/>
+                                <constraint firstItem="gPh-n1-0dB" firstAttribute="trailing" secondItem="An6-ny-JwW" secondAttribute="leading" id="63H-gy-I0b"/>
+                                <constraint firstItem="9sd-wv-XUm" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="6nR-yr-dkA"/>
+                                <constraint firstItem="pur-Yx-jOY" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="6sL-C4-QIK"/>
+                                <constraint firstAttribute="bottom" secondItem="Cty-wh-ErS" secondAttribute="bottom" id="72u-nz-ztR"/>
+                                <constraint firstItem="pur-Yx-jOY" firstAttribute="leading" secondItem="Cty-wh-ErS" secondAttribute="trailing" constant="1" id="77y-nH-iTx"/>
+                                <constraint firstItem="ucO-1c-eia" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="7gu-KQ-5Af"/>
+                                <constraint firstAttribute="bottom" secondItem="5KA-Kw-hJt" secondAttribute="bottom" id="7ib-5c-iG7"/>
+                                <constraint firstItem="zzL-6J-Xui" firstAttribute="leading" secondItem="yfk-hE-Scr" secondAttribute="trailing" id="8Ns-fQ-iTW"/>
+                                <constraint firstItem="yfk-hE-Scr" firstAttribute="width" secondItem="7Rl-Qj-4jF" secondAttribute="width" id="8QQ-3S-I0Y"/>
+                                <constraint firstItem="gPh-n1-0dB" firstAttribute="width" secondItem="7Rl-Qj-4jF" secondAttribute="width" id="9Nn-jL-UAr"/>
+                                <constraint firstItem="Ei5-vM-Gjm" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="9hc-tH-19n"/>
+                                <constraint firstItem="84c-md-4iu" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="AiZ-tJ-9Re"/>
+                                <constraint firstItem="mwY-BP-2RH" firstAttribute="leading" secondItem="l75-zt-O6Y" secondAttribute="leading" id="D2S-Hv-DDB"/>
+                                <constraint firstItem="Cty-wh-ErS" firstAttribute="leading" secondItem="5KA-Kw-hJt" secondAttribute="trailing" constant="1" id="DXR-zh-VhS"/>
+                                <constraint firstItem="m78-VR-a2c" firstAttribute="width" secondItem="9sd-wv-XUm" secondAttribute="width" id="Dtt-M2-mbi"/>
+                                <constraint firstItem="ucO-1c-eia" firstAttribute="width" secondItem="9sd-wv-XUm" secondAttribute="width" id="ESJ-N0-zEf"/>
+                                <constraint firstAttribute="bottom" secondItem="pur-Yx-jOY" secondAttribute="bottom" id="EcF-fc-Iay"/>
+                                <constraint firstItem="84c-md-4iu" firstAttribute="leading" secondItem="pur-Yx-jOY" secondAttribute="trailing" constant="1" id="FHS-Ve-dcE"/>
+                                <constraint firstItem="mwY-BP-2RH" firstAttribute="trailing" secondItem="7Rl-Qj-4jF" secondAttribute="leading" id="FIS-uC-qhA"/>
+                                <constraint firstItem="84c-md-4iu" firstAttribute="width" secondItem="9sd-wv-XUm" secondAttribute="width" id="G4o-Qn-7HS"/>
+                                <constraint firstItem="7Rl-Qj-4jF" firstAttribute="height" secondItem="9sd-wv-XUm" secondAttribute="height" multiplier="0.65" id="HKd-jq-ksm"/>
+                                <constraint firstItem="5MY-FY-Pnd" firstAttribute="leading" secondItem="0fE-Nu-lFQ" secondAttribute="trailing" id="IX6-DQ-tDM"/>
+                                <constraint firstItem="5MY-FY-Pnd" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="Iwp-P6-5eJ"/>
+                                <constraint firstItem="pur-Yx-jOY" firstAttribute="width" secondItem="9sd-wv-XUm" secondAttribute="width" id="JGj-U3-EO8"/>
+                                <constraint firstItem="gPh-n1-0dB" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="LV3-Fl-VbL"/>
+                                <constraint firstItem="dUU-Hw-9Es" firstAttribute="width" secondItem="wIi-Qi-Mj0" secondAttribute="width" id="LnM-KG-IPZ"/>
+                                <constraint firstItem="5KA-Kw-hJt" firstAttribute="width" secondItem="9sd-wv-XUm" secondAttribute="width" id="Nv7-B0-uye"/>
+                                <constraint firstAttribute="bottom" secondItem="9sd-wv-XUm" secondAttribute="bottom" id="QEx-RJ-m4e"/>
+                                <constraint firstItem="xJ5-Wq-rbA" firstAttribute="trailing" secondItem="Ei5-vM-Gjm" secondAttribute="leading" id="TXe-Ub-5IH"/>
+                                <constraint firstItem="An6-ny-JwW" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="UAd-pE-2QV"/>
+                                <constraint firstItem="7Rl-Qj-4jF" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="WMY-YF-CCe"/>
+                                <constraint firstItem="ucO-1c-eia" firstAttribute="leading" secondItem="m78-VR-a2c" secondAttribute="trailing" constant="1" id="XPj-ic-47O"/>
+                                <constraint firstItem="wIi-Qi-Mj0" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="XS0-yH-Zhz"/>
+                                <constraint firstItem="Cty-wh-ErS" firstAttribute="width" secondItem="9sd-wv-XUm" secondAttribute="width" id="Yva-uN-elK"/>
+                                <constraint firstItem="An6-ny-JwW" firstAttribute="width" secondItem="xJ5-Wq-rbA" secondAttribute="width" id="aaH-df-hkf"/>
+                                <constraint firstItem="Cty-wh-ErS" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="aty-qU-lU1"/>
+                                <constraint firstItem="Ei5-vM-Gjm" firstAttribute="width" secondItem="7Rl-Qj-4jF" secondAttribute="width" id="b6h-aL-HRt"/>
+                                <constraint firstItem="gPh-n1-0dB" firstAttribute="height" secondItem="7Rl-Qj-4jF" secondAttribute="height" id="d70-Es-WCn"/>
+                                <constraint firstAttribute="bottom" secondItem="84c-md-4iu" secondAttribute="bottom" id="fDP-mX-2Je"/>
+                                <constraint firstItem="m78-VR-a2c" firstAttribute="leading" secondItem="9sd-wv-XUm" secondAttribute="trailing" constant="1" id="fhv-O7-bPH"/>
+                                <constraint firstItem="zzL-6J-Xui" firstAttribute="width" secondItem="xJ5-Wq-rbA" secondAttribute="width" id="fpN-k0-CBY"/>
+                                <constraint firstAttribute="bottom" secondItem="ucO-1c-eia" secondAttribute="bottom" id="gHs-Mf-WrI"/>
+                                <constraint firstItem="yfk-hE-Scr" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="gVu-ma-2KR"/>
+                                <constraint firstItem="zzL-6J-Xui" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="igW-dH-ZAS"/>
+                                <constraint firstItem="0fE-Nu-lFQ" firstAttribute="width" secondItem="7Rl-Qj-4jF" secondAttribute="width" id="j73-yX-XMg"/>
+                                <constraint firstAttribute="trailing" secondItem="5MY-FY-Pnd" secondAttribute="trailing" id="kRY-Q8-p48"/>
+                                <constraint firstItem="5MY-FY-Pnd" firstAttribute="width" secondItem="mwY-BP-2RH" secondAttribute="width" id="kn2-4U-Xf5"/>
+                                <constraint firstAttribute="trailing" secondItem="84c-md-4iu" secondAttribute="trailing" id="lDf-wx-FAA"/>
+                                <constraint firstItem="0fE-Nu-lFQ" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="meJ-Ln-u1g"/>
+                                <constraint firstItem="5KA-Kw-hJt" firstAttribute="leading" secondItem="ucO-1c-eia" secondAttribute="trailing" constant="1" id="nbb-Ad-1cl"/>
+                                <constraint firstItem="7Rl-Qj-4jF" firstAttribute="trailing" secondItem="xJ5-Wq-rbA" secondAttribute="leading" id="oGs-XA-h5V"/>
+                                <constraint firstItem="mwY-BP-2RH" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="ohU-Kq-pjC"/>
+                                <constraint firstItem="m78-VR-a2c" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="pne-tH-wkd"/>
+                                <constraint firstItem="dUU-Hw-9Es" firstAttribute="width" secondItem="mwY-BP-2RH" secondAttribute="width" id="qJq-pQ-QyY"/>
+                                <constraint firstItem="yfk-hE-Scr" firstAttribute="leading" secondItem="An6-ny-JwW" secondAttribute="trailing" id="qfK-Gk-ReQ"/>
+                                <constraint firstItem="Ei5-vM-Gjm" firstAttribute="height" secondItem="7Rl-Qj-4jF" secondAttribute="height" id="qvT-kT-L6c"/>
+                                <constraint firstItem="5KA-Kw-hJt" firstAttribute="leading" secondItem="dUU-Hw-9Es" secondAttribute="leading" id="rcw-BI-eNW"/>
+                                <constraint firstItem="xJ5-Wq-rbA" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="tl6-z6-DiP"/>
+                                <constraint firstItem="dUU-Hw-9Es" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="upj-7U-Fli"/>
+                                <constraint firstItem="wIi-Qi-Mj0" firstAttribute="trailing" secondItem="ucO-1c-eia" secondAttribute="trailing" id="w4J-0F-EXW"/>
+                                <constraint firstItem="yfk-hE-Scr" firstAttribute="height" secondItem="7Rl-Qj-4jF" secondAttribute="height" id="wND-KG-JOX"/>
+                                <constraint firstItem="dUU-Hw-9Es" firstAttribute="trailing" secondItem="gPh-n1-0dB" secondAttribute="leading" id="wZe-Hc-0Lg"/>
+                                <constraint firstItem="wIi-Qi-Mj0" firstAttribute="width" secondItem="mwY-BP-2RH" secondAttribute="width" id="wzd-LE-by9"/>
+                                <constraint firstAttribute="bottom" secondItem="m78-VR-a2c" secondAttribute="bottom" id="xIV-Y8-QCO"/>
+                                <constraint firstItem="7Rl-Qj-4jF" firstAttribute="width" secondItem="mwY-BP-2RH" secondAttribute="width" id="xKL-t0-l6S"/>
+                                <constraint firstItem="wIi-Qi-Mj0" firstAttribute="leading" secondItem="Ei5-vM-Gjm" secondAttribute="trailing" id="zLk-LA-WEc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUa-bD-M25" customClass="PianoPanelOneOctaveView" customModule="Mugic" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="254" width="487" height="126"/>
+                            <subviews>
+                                <button tag="72" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ii6-dG-CDe" userLabel="C">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" button="YES"/>
+                                        <bool key="isElement" value="YES"/>
+                                    </accessibility>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="JsB-fE-bXT"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="HGj-8A-ElT"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="04C-aA-OLU"/>
+                                    </connections>
+                                </button>
+                                <button tag="74" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShO-LY-9IV" userLabel="D">
+                                    <rect key="frame" x="69.5" y="0.0" width="69" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="2Lg-qW-dby"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="5rS-xz-QEM"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="AlH-lX-kml"/>
+                                    </connections>
+                                </button>
+                                <button tag="76" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVk-ut-Gxb" userLabel="E">
+                                    <rect key="frame" x="139.5" y="0.0" width="69" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="KwW-aR-q2l"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="goS-FL-zqw"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="gHa-UL-2KG"/>
+                                    </connections>
+                                </button>
+                                <button tag="77" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPn-zY-XKL" userLabel="F">
+                                    <rect key="frame" x="209.5" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="7Tx-5z-cEX"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="7ED-eA-P4m"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="YaA-sb-zuN"/>
+                                    </connections>
+                                </button>
+                                <button tag="79" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QF2-G0-IV6" userLabel="G">
+                                    <rect key="frame" x="279" y="0.0" width="68.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="ERB-xs-oKs"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="qVz-tC-Blu"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="heF-Nu-V8A"/>
+                                    </connections>
+                                </button>
+                                <button tag="81" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfW-U9-Pjf" userLabel="A">
+                                    <rect key="frame" x="348.5" y="0.0" width="69.5" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="nju-Qi-i8T"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="uC8-3c-Ej9"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="Ktv-pQ-nH2"/>
+                                    </connections>
+                                </button>
+                                <button tag="83" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-dx-adZ" userLabel="B">
+                                    <rect key="frame" x="419" y="0.0" width="68" height="126"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="ZUu-vQ-56R"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="Oxx-og-88P"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="RMk-Ex-P82"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-cH-FZ7">
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="OPC-zp-Ace"/>
+                                    </constraints>
+                                </view>
+                                <button tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxQ-yH-F84" userLabel="C#">
+                                    <rect key="frame" x="46" y="0.0" width="46" height="82"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="bzb-FT-Y8G"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="2N2-OX-BWD"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="5xE-SH-cNy"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-pq-bZP">
+                                    <rect key="frame" x="92" y="0.0" width="24.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="1mY-a9-g14"/>
+                                    </constraints>
+                                </view>
+                                <button tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twz-CY-irN" userLabel="D#">
+                                    <rect key="frame" x="116.5" y="0.0" width="46" height="82"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="uLq-81-Nc7"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="UfL-NY-bqc"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="UJm-9w-aHj"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbT-qV-NK1">
+                                    <rect key="frame" x="162.5" y="0.0" width="46" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="KxO-Qa-xCk"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDN-dB-noX">
+                                    <rect key="frame" x="209.5" y="0.0" width="46" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="zi6-7q-QQV"/>
+                                    </constraints>
+                                </view>
+                                <button tag="78" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbJ-ap-zL6" userLabel="F#">
+                                    <rect key="frame" x="255.5" y="0.0" width="45.5" height="82"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="fb3-Zu-QcJ"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="d5j-Qb-m6y"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="hrA-Bq-ZH3"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zx6-0g-6CN">
+                                    <rect key="frame" x="301" y="0.0" width="24.5" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="EjY-DD-bLR"/>
+                                    </constraints>
+                                </view>
+                                <button tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-dI-A3G" userLabel="G#">
+                                    <rect key="frame" x="325.5" y="0.0" width="46" height="82"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="vyi-i3-lkz"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Et-72-Rdr"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="luN-F0-yal"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAj-9s-M6h">
+                                    <rect key="frame" x="371.5" y="0.0" width="24" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="5yN-CK-Of4"/>
+                                    </constraints>
+                                </view>
+                                <button tag="82" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-9K-Dby" userLabel="A#">
+                                    <rect key="frame" x="395.5" y="0.0" width="45.5" height="82"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <connections>
+                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="GYb-KM-lRs"/>
+                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="l2A-hG-ChQ"/>
+                                        <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="gtu-Gf-5h3"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7M-J8-Hlj">
+                                    <rect key="frame" x="441" y="0.0" width="46" height="0.0"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="q4z-J2-Fu7"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="OJZ-cH-FZ7" firstAttribute="trailing" secondItem="sxQ-yH-F84" secondAttribute="leading" id="0wz-A0-iXz"/>
+                                <constraint firstItem="twz-CY-irN" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="1LG-eK-KHM"/>
+                                <constraint firstItem="9Aq-dI-A3G" firstAttribute="height" secondItem="sxQ-yH-F84" secondAttribute="height" id="3RA-JW-zNt"/>
+                                <constraint firstItem="CVk-ut-Gxb" firstAttribute="leading" secondItem="ShO-LY-9IV" secondAttribute="trailing" constant="1" id="4zW-rg-kBK"/>
+                                <constraint firstItem="sxQ-yH-F84" firstAttribute="trailing" secondItem="iMi-pq-bZP" secondAttribute="leading" id="5Ql-aM-BiD"/>
+                                <constraint firstAttribute="bottom" secondItem="sfW-U9-Pjf" secondAttribute="bottom" id="5n6-yv-mwS"/>
+                                <constraint firstItem="iMi-pq-bZP" firstAttribute="trailing" secondItem="twz-CY-irN" secondAttribute="leading" id="6K4-hQ-UBI"/>
+                                <constraint firstItem="Zx6-0g-6CN" firstAttribute="width" secondItem="iMi-pq-bZP" secondAttribute="width" id="81F-H5-COR"/>
+                                <constraint firstItem="qbT-qV-NK1" firstAttribute="width" secondItem="OJZ-cH-FZ7" secondAttribute="width" id="81H-jE-3rX"/>
+                                <constraint firstItem="zbJ-ap-zL6" firstAttribute="trailing" secondItem="Zx6-0g-6CN" secondAttribute="leading" id="8U4-Hj-IxI"/>
+                                <constraint firstItem="twz-CY-irN" firstAttribute="width" secondItem="sxQ-yH-F84" secondAttribute="width" id="9QN-uK-Xfn"/>
+                                <constraint firstItem="sxQ-yH-F84" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="ASU-Xw-bv2"/>
+                                <constraint firstItem="zbJ-ap-zL6" firstAttribute="width" secondItem="sxQ-yH-F84" secondAttribute="width" id="BAu-u2-mfP"/>
+                                <constraint firstItem="WDN-dB-noX" firstAttribute="width" secondItem="qbT-qV-NK1" secondAttribute="width" id="CG6-I6-A8G"/>
+                                <constraint firstItem="ShO-LY-9IV" firstAttribute="width" secondItem="Ii6-dG-CDe" secondAttribute="width" id="DQL-XX-MgF"/>
+                                <constraint firstItem="Eg9-dx-adZ" firstAttribute="width" secondItem="Ii6-dG-CDe" secondAttribute="width" id="EWV-Tf-MAP"/>
+                                <constraint firstItem="CVk-ut-Gxb" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="G0R-0p-Sou"/>
+                                <constraint firstItem="HPn-zY-XKL" firstAttribute="width" secondItem="Ii6-dG-CDe" secondAttribute="width" id="Gcc-qy-yVI"/>
+                                <constraint firstItem="sAj-9s-M6h" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="HG5-6z-fE8"/>
+                                <constraint firstItem="Eg9-dx-adZ" firstAttribute="leading" secondItem="sfW-U9-Pjf" secondAttribute="trailing" constant="1" id="Hjf-Yf-HZs"/>
+                                <constraint firstItem="QF2-G0-IV6" firstAttribute="width" secondItem="Ii6-dG-CDe" secondAttribute="width" id="IEK-6f-fu9"/>
+                                <constraint firstItem="K2I-9K-Dby" firstAttribute="width" secondItem="sxQ-yH-F84" secondAttribute="width" id="ItV-b0-Zuy"/>
+                                <constraint firstItem="K2I-9K-Dby" firstAttribute="leading" secondItem="sAj-9s-M6h" secondAttribute="trailing" id="KAV-1i-NOr"/>
+                                <constraint firstItem="qbT-qV-NK1" firstAttribute="leading" secondItem="twz-CY-irN" secondAttribute="trailing" id="Muh-GW-J0V"/>
+                                <constraint firstAttribute="bottom" secondItem="ShO-LY-9IV" secondAttribute="bottom" id="NPv-8c-pkr"/>
+                                <constraint firstAttribute="bottom" secondItem="Eg9-dx-adZ" secondAttribute="bottom" id="Nu6-7W-YY4"/>
+                                <constraint firstAttribute="trailing" secondItem="Eg9-dx-adZ" secondAttribute="trailing" id="OYR-Z1-4LQ"/>
+                                <constraint firstItem="ShO-LY-9IV" firstAttribute="leading" secondItem="Ii6-dG-CDe" secondAttribute="trailing" constant="1" id="PIK-QQ-TtW"/>
+                                <constraint firstItem="HPn-zY-XKL" firstAttribute="leading" secondItem="WDN-dB-noX" secondAttribute="leading" id="QQ7-Yp-wDh"/>
+                                <constraint firstItem="Ii6-dG-CDe" firstAttribute="leading" secondItem="uUa-bD-M25" secondAttribute="leading" id="RHj-Ol-v7T"/>
+                                <constraint firstItem="sfW-U9-Pjf" firstAttribute="leading" secondItem="QF2-G0-IV6" secondAttribute="trailing" constant="1" id="SCA-p4-tQG"/>
+                                <constraint firstItem="QF2-G0-IV6" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="T8x-vC-6cr"/>
+                                <constraint firstItem="zbJ-ap-zL6" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="Uit-18-0a3"/>
+                                <constraint firstItem="j7M-J8-Hlj" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="XnG-ba-oMG"/>
+                                <constraint firstItem="iMi-pq-bZP" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="Xwh-K0-M6P"/>
+                                <constraint firstItem="sxQ-yH-F84" firstAttribute="width" secondItem="OJZ-cH-FZ7" secondAttribute="width" id="aJE-bd-WHl"/>
+                                <constraint firstAttribute="bottom" secondItem="QF2-G0-IV6" secondAttribute="bottom" id="b25-2D-dxL"/>
+                                <constraint firstAttribute="bottom" secondItem="CVk-ut-Gxb" secondAttribute="bottom" id="cNR-1d-xz3"/>
+                                <constraint firstItem="9Aq-dI-A3G" firstAttribute="width" secondItem="sxQ-yH-F84" secondAttribute="width" id="cla-vk-aah"/>
+                                <constraint firstItem="WDN-dB-noX" firstAttribute="width" secondItem="OJZ-cH-FZ7" secondAttribute="width" id="cv1-RN-j9S"/>
+                                <constraint firstItem="qbT-qV-NK1" firstAttribute="trailing" secondItem="CVk-ut-Gxb" secondAttribute="trailing" id="dV8-ed-X5Q"/>
+                                <constraint firstItem="j7M-J8-Hlj" firstAttribute="width" secondItem="OJZ-cH-FZ7" secondAttribute="width" id="dcF-re-wh4"/>
+                                <constraint firstItem="QF2-G0-IV6" firstAttribute="leading" secondItem="HPn-zY-XKL" secondAttribute="trailing" constant="1" id="djp-VC-Vl0"/>
+                                <constraint firstAttribute="trailing" secondItem="j7M-J8-Hlj" secondAttribute="trailing" id="fDg-te-Beq"/>
+                                <constraint firstItem="ShO-LY-9IV" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="fvf-Kv-huP"/>
+                                <constraint firstItem="zbJ-ap-zL6" firstAttribute="height" secondItem="sxQ-yH-F84" secondAttribute="height" id="gAy-Ii-x4G"/>
+                                <constraint firstItem="sAj-9s-M6h" firstAttribute="width" secondItem="iMi-pq-bZP" secondAttribute="width" id="gNr-oP-CHx"/>
+                                <constraint firstItem="WDN-dB-noX" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="hQX-Xj-tui"/>
+                                <constraint firstItem="sfW-U9-Pjf" firstAttribute="width" secondItem="Ii6-dG-CDe" secondAttribute="width" id="i8G-GK-Kie"/>
+                                <constraint firstItem="sAj-9s-M6h" firstAttribute="leading" secondItem="9Aq-dI-A3G" secondAttribute="trailing" id="j4V-wU-unG"/>
+                                <constraint firstItem="j7M-J8-Hlj" firstAttribute="leading" secondItem="K2I-9K-Dby" secondAttribute="trailing" id="jUF-i8-ACO"/>
+                                <constraint firstItem="Eg9-dx-adZ" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="jXP-3X-cKu"/>
+                                <constraint firstItem="qbT-qV-NK1" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="mJT-O4-WpX"/>
+                                <constraint firstItem="OJZ-cH-FZ7" firstAttribute="leading" secondItem="uUa-bD-M25" secondAttribute="leading" id="mXf-TI-opg"/>
+                                <constraint firstItem="HPn-zY-XKL" firstAttribute="leading" secondItem="CVk-ut-Gxb" secondAttribute="trailing" constant="1" id="maK-MV-uve"/>
+                                <constraint firstItem="K2I-9K-Dby" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="niA-lG-Go8"/>
+                                <constraint firstItem="9Aq-dI-A3G" firstAttribute="leading" secondItem="Zx6-0g-6CN" secondAttribute="trailing" id="nlR-QE-a2d"/>
+                                <constraint firstItem="twz-CY-irN" firstAttribute="height" secondItem="sxQ-yH-F84" secondAttribute="height" id="pdB-Ts-nJA"/>
+                                <constraint firstItem="HPn-zY-XKL" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="poV-Bc-PFC"/>
+                                <constraint firstItem="K2I-9K-Dby" firstAttribute="height" secondItem="sxQ-yH-F84" secondAttribute="height" id="qMu-mm-Juf"/>
+                                <constraint firstItem="Zx6-0g-6CN" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="qxz-ns-Ty8"/>
+                                <constraint firstItem="Ii6-dG-CDe" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="r55-M4-zHH"/>
+                                <constraint firstItem="CVk-ut-Gxb" firstAttribute="width" secondItem="Ii6-dG-CDe" secondAttribute="width" id="u1H-jy-9JX"/>
+                                <constraint firstItem="sfW-U9-Pjf" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="u24-mg-U8g"/>
+                                <constraint firstAttribute="bottom" secondItem="Ii6-dG-CDe" secondAttribute="bottom" id="v6f-FO-t9K"/>
+                                <constraint firstItem="sxQ-yH-F84" firstAttribute="height" secondItem="Ii6-dG-CDe" secondAttribute="height" multiplier="0.65" id="vBL-ri-WeP"/>
+                                <constraint firstItem="9Aq-dI-A3G" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="wNP-6E-G31"/>
+                                <constraint firstItem="WDN-dB-noX" firstAttribute="trailing" secondItem="zbJ-ap-zL6" secondAttribute="leading" id="wrG-fX-BSM"/>
+                                <constraint firstAttribute="bottom" secondItem="HPn-zY-XKL" secondAttribute="bottom" id="yWA-q7-uvU"/>
+                                <constraint firstItem="OJZ-cH-FZ7" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="zGJ-Zs-jj2"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1IZ-ye-Gl0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6zi-nK-2U8"/>
+                <constraint firstItem="1IZ-ye-Gl0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BB1-Lh-7sD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1IZ-ye-Gl0" secondAttribute="trailing" id="CSQ-eg-MoX"/>
+                <constraint firstItem="1IZ-ye-Gl0" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="cSV-9T-Psv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="highOctave" destination="uUa-bD-M25" id="f4F-ol-Uh7"/>
+                <outlet property="lowOctave" destination="AYG-sK-odw" id="La9-Zd-iOB"/>
+                <outlet property="midOctave" destination="l75-zt-O6Y" id="2SE-nr-ns0"/>
+            </connections>
+            <point key="canvasLocation" x="89.5" y="-90"/>
+        </view>
+    </objects>
+</document>

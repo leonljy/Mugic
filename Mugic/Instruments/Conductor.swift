@@ -9,29 +9,53 @@
 import Foundation
 import AudioKit
 
+enum Instruments: Int {
+    case Guitar = 0
+    case Piano
+    case Drumkit
+}
 
 struct Conductor {
     let mixer = AKMixer()
     let piano: Piano
     let guitar: Guitar
+    let drum: Drum
     
     init() {
         self.piano = Piano()
         self.guitar = Guitar()
+        self.drum = Drum()
+        
         self.piano.samplers.forEach {
-          self.mixer.connect(input: $0)
+            self.mixer.connect(input: $0)
         }
         self.guitar.samplers.forEach {
-          self.mixer.connect(input: $0)
+            self.mixer.connect(input: $0)
+        }
+        
+        self.drum.drumkit.forEach {
+            self.mixer.connect(input: $0)
         }
         
         AudioKit.output = self.mixer
-        AudioKit.start()
+        try? AudioKit.start()
     }
     
     func play(root: Note, chord: Chord) {
         self.piano.play(root: root, chord: chord)
-//        self.guitar.play(root: root, chord: chord)
+    }
+    
+    func play(note: Int) {
+        self.piano.play(note: note)
+    }
+    
+    func playDrum(note: Int) {
+        guard let drumkit = DrumKit(rawValue: note) else {
+            return
+        }
+        
+        self.drum.play(drumkit)
+        
     }
     
     func replay(events: [Event]) {

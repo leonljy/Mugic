@@ -18,7 +18,7 @@ class Guitar: ChordInstrument {
             self.midiFileName = midifileName
             self.numberOfPolyphonic = 10
             for _ in 0 ... self.numberOfPolyphonic {
-                let sampler = AKSampler()
+                let sampler = AKAppleSampler()
                 self.samplers.append(sampler)
             }
             

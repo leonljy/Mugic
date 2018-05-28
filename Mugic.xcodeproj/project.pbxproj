@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0C15BF4882134798076F2280 /* Pods_Mugic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B01E53441C931467DBE411D /* Pods_Mugic.framework */; };
 		39761A7262BE0B8AB015FA56 /* Pods_MugicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ADB4D5316B2837541419E6A /* Pods_MugicTests.framework */; };
+		91188F9220A6C04100D2C678 /* PianokeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91188F9120A6C04100D2C678 /* PianokeyView.xib */; };
+		91188F9420A6C5E100D2C678 /* PanelViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91188F9320A6C5E100D2C678 /* PanelViews.swift */; };
+		9124E14420BA726B002906CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9124E14320BA726B002906CF /* GoogleService-Info.plist */; };
 		914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA5582029C0EC00A2CBC3 /* Conductor.swift */; };
 		914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA55A2029D8EF00A2CBC3 /* Piano.swift */; };
 		917ADCCC200B3A940062B79A /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917ADCCB200B3A940062B79A /* Instrument.swift */; };
@@ -16,6 +19,9 @@
 		91813C43205509AC004E600C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C42205509AC004E600C /* Song.swift */; };
 		91813C4520551B59004E600C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C4420551B59004E600C /* Event.swift */; };
 		91813C4720552328004E600C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C4620552328004E600C /* Utils.swift */; };
+		918E3791206262CF004C08CB /* Drum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E3790206262CF004C08CB /* Drum.swift */; };
+		91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5638E20AC2DF00029089B /* ChordPanelView.xib */; };
+		91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5639020AC2DF90029089B /* DrumKitPanelView.xib */; };
 		91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367D2001E78300124BD3 /* AppDelegate.swift */; };
 		91CD36802001E78300124BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367F2001E78300124BD3 /* ViewController.swift */; };
 		91CD36832001E78300124BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36812001E78300124BD3 /* Main.storyboard */; };
@@ -56,6 +62,9 @@
 		57CE453124E78AC438DC25C2 /* Pods-MugicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MugicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MugicTests/Pods-MugicTests.release.xcconfig"; sourceTree = "<group>"; };
 		7CE2495C5205A355F144E942 /* Pods-Mugic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mugic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mugic/Pods-Mugic.debug.xcconfig"; sourceTree = "<group>"; };
 		86F718C19E7AE2B82D50BFC8 /* Pods_MugicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MugicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91188F9120A6C04100D2C678 /* PianokeyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PianokeyView.xib; sourceTree = "<group>"; };
+		91188F9320A6C5E100D2C678 /* PanelViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViews.swift; sourceTree = "<group>"; };
+		9124E14320BA726B002906CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		914BA5582029C0EC00A2CBC3 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
 		914BA55A2029D8EF00A2CBC3 /* Piano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piano.swift; sourceTree = "<group>"; };
 		917ADCCB200B3A940062B79A /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
@@ -63,6 +72,9 @@
 		91813C42205509AC004E600C /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		91813C4420551B59004E600C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		91813C4620552328004E600C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		918E3790206262CF004C08CB /* Drum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drum.swift; sourceTree = "<group>"; };
+		91C5638E20AC2DF00029089B /* ChordPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChordPanelView.xib; sourceTree = "<group>"; };
+		91C5639020AC2DF90029089B /* DrumKitPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrumKitPanelView.xib; sourceTree = "<group>"; };
 		91CD367A2001E78300124BD3 /* Mugic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mugic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD367D2001E78300124BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91CD367F2001E78300124BD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +138,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		91188F9020A6C01700D2C678 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				91188F9320A6C5E100D2C678 /* PanelViews.swift */,
+				91188F9120A6C04100D2C678 /* PianokeyView.xib */,
+				91C5638E20AC2DF00029089B /* ChordPanelView.xib */,
+				91C5639020AC2DF90029089B /* DrumKitPanelView.xib */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
 		914BA55C2029DBB700A2CBC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +163,8 @@
 				917ADCCB200B3A940062B79A /* Instrument.swift */,
 				914BA55A2029D8EF00A2CBC3 /* Piano.swift */,
 				91FF504F20394484008460C3 /* Guitar.swift */,
+				918E3790206262CF004C08CB /* Drum.swift */,
 				914BA5582029C0EC00A2CBC3 /* Conductor.swift */,
-				91813C42205509AC004E600C /* Song.swift */,
-				91813C4420551B59004E600C /* Event.swift */,
 			);
 			path = Instruments;
 			sourceTree = "<group>";
@@ -182,8 +204,10 @@
 			children = (
 				91FF504D203943F1008460C3 /* Sounds */,
 				914BA55C2029DBB700A2CBC3 /* Resources */,
+				91F079F4208B2747007D6385 /* Model */,
 				917ADCCA200B3A6E0062B79A /* Instruments */,
 				91813C3F20513ADB004E600C /* Recorder */,
+				91188F9020A6C01700D2C678 /* Panel */,
 				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
 				91CD367F2001E78300124BD3 /* ViewController.swift */,
 				91CE86EF20330FFC00812E42 /* Color.swift */,
@@ -192,6 +216,7 @@
 				91CD36872001E78300124BD3 /* Assets.xcassets */,
 				91CD36892001E78300124BD3 /* LaunchScreen.storyboard */,
 				91CD368C2001E78300124BD3 /* Info.plist */,
+				9124E14320BA726B002906CF /* GoogleService-Info.plist */,
 				91CD36842001E78300124BD3 /* Mugic.xcdatamodeld */,
 			);
 			path = Mugic;
@@ -223,6 +248,15 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		91F079F4208B2747007D6385 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91813C42205509AC004E600C /* Song.swift */,
+				91813C4420551B59004E600C /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EAF31DA89463A8072EDD521E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +278,8 @@
 				91CD36762001E78300124BD3 /* Sources */,
 				91CD36772001E78300124BD3 /* Frameworks */,
 				91CD36782001E78300124BD3 /* Resources */,
-				BA47A7952D82F97944C5F80D /* [CP] Embed Pods Frameworks */,
-				BF31B3D7CF22A22585623A3E /* [CP] Copy Pods Resources */,
+				9124E14220BA6E7E002906CF /* ShellScript */,
+				CDFD51B277EBEC32CB7EE642 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,8 +298,6 @@
 				91CD368D2001E78300124BD3 /* Sources */,
 				91CD368E2001E78300124BD3 /* Frameworks */,
 				91CD368F2001E78300124BD3 /* Resources */,
-				1D63F01A3ABD58124AC9FA45 /* [CP] Embed Pods Frameworks */,
-				5246AE2552EE52E09C7F12B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,8 +317,6 @@
 				91CD36982001E78300124BD3 /* Sources */,
 				91CD36992001E78300124BD3 /* Frameworks */,
 				91CD369A2001E78300124BD3 /* Resources */,
-				BF60051D84718F3CACC3A457 /* [CP] Embed Pods Frameworks */,
-				F89DB4AC058BA197A5441414 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,8 +386,12 @@
 			files = (
 				91FF504E203943F1008460C3 /* Sounds in Resources */,
 				91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */,
+				9124E14420BA726B002906CF /* GoogleService-Info.plist in Resources */,
+				91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */,
 				91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */,
 				91CD36882001E78300124BD3 /* Assets.xcassets in Resources */,
+				91188F9220A6C04100D2C678 /* PianokeyView.xib in Resources */,
+				91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */,
 				91CD36832001E78300124BD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,36 +431,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1D63F01A3ABD58124AC9FA45 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MugicTests/Pods-MugicTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5246AE2552EE52E09C7F12B8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MugicTests/Pods-MugicTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		67B4C203C026F106F73B1282 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -463,73 +467,37 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BA47A7952D82F97944C5F80D /* [CP] Embed Pods Frameworks */ = {
+		9124E14220BA6E7E002906CF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d812e1ac172e8b4f4af506c10bb7b90698beb10d bffd223cae4989fe0970db6fd73a8a817226434b19c893ee2805d6e22a23c0ff";
+		};
+		CDFD51B277EBEC32CB7EE642 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mugic/Pods-Mugic-frameworks.sh",
-				"${PODS_ROOT}/AudioKit/iOS/AudioKit.framework",
-				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mugic/Pods-Mugic-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF31B3D7CF22A22585623A3E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mugic/Pods-Mugic-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF60051D84718F3CACC3A457 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MugicUITests/Pods-MugicUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F89DB4AC058BA197A5441414 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MugicUITests/Pods-MugicUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -543,7 +511,9 @@
 				91813C4520551B59004E600C /* Event.swift in Sources */,
 				917ADCCC200B3A940062B79A /* Instrument.swift in Sources */,
 				914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */,
+				918E3791206262CF004C08CB /* Drum.swift in Sources */,
 				914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */,
+				91188F9420A6C5E100D2C678 /* PanelViews.swift in Sources */,
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
 				91813C43205509AC004E600C /* Song.swift in Sources */,
 				91CE86F020330FFC00812E42 /* Color.swift in Sources */,

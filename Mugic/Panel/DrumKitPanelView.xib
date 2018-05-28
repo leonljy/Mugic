@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="M1Q-Un-qND" customClass="DrumKitPanelView" customModule="Mugic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="282"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lkF-mT-0QG">
+                    <rect key="frame" x="0.0" y="0.0" width="125" height="282"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-Ns-XKW">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
+                            <state key="normal" title="Crash"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="jtc-ou-YuK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mny-PX-3Iy">
+                            <rect key="frame" x="0.0" y="94" width="125" height="94"/>
+                            <state key="normal" title="Ride"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="Nt3-Bn-w9u"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-IU-qJh">
+                            <rect key="frame" x="0.0" y="188" width="125" height="94"/>
+                            <state key="normal" title="Kick"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="0ba-XU-ubq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="83r-8a-ukl">
+                    <rect key="frame" x="125" y="0.0" width="125" height="282"/>
+                    <subviews>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-vV-yIS">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="70.5"/>
+                            <state key="normal" title="RimShot"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="tTI-ro-uyz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-0V-7LO">
+                            <rect key="frame" x="0.0" y="70.5" width="125" height="70.5"/>
+                            <state key="normal" title="TomHi"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="KFa-Yp-Cgg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al5-zC-SHE">
+                            <rect key="frame" x="0.0" y="141" width="125" height="70.5"/>
+                            <state key="normal" title="TomMid"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="i8T-HS-qeC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-xV-Dba">
+                            <rect key="frame" x="0.0" y="211.5" width="125" height="70.5"/>
+                            <state key="normal" title="TomLow"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="bBR-tf-rog"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-Ab-grR">
+                    <rect key="frame" x="250" y="0.0" width="125" height="282"/>
+                    <subviews>
+                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqT-GB-O3e">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
+                            <state key="normal" title="H/H Opened"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="WuF-T0-NSX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-tn-DYu">
+                            <rect key="frame" x="0.0" y="94" width="125" height="94"/>
+                            <state key="normal" title="Snare"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="kvq-dw-OpF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-bZ-16s">
+                            <rect key="frame" x="0.0" y="188" width="125" height="94"/>
+                            <state key="normal" title="H/H Closed"/>
+                            <connections>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="NkV-FP-LDQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oVP-Ab-grR" firstAttribute="width" secondItem="lkF-mT-0QG" secondAttribute="width" id="1ib-97-4RE"/>
+                <constraint firstItem="lkF-mT-0QG" firstAttribute="leading" secondItem="M1Q-Un-qND" secondAttribute="leading" id="34H-KK-LGF"/>
+                <constraint firstItem="83r-8a-ukl" firstAttribute="top" secondItem="M1Q-Un-qND" secondAttribute="top" id="4bc-fG-xBJ"/>
+                <constraint firstItem="lkF-mT-0QG" firstAttribute="top" secondItem="M1Q-Un-qND" secondAttribute="top" id="EUm-ow-L8M"/>
+                <constraint firstItem="oVP-Ab-grR" firstAttribute="leading" secondItem="83r-8a-ukl" secondAttribute="trailing" id="SzX-FO-GB8"/>
+                <constraint firstAttribute="trailing" secondItem="oVP-Ab-grR" secondAttribute="trailing" id="XvF-cZ-9RD"/>
+                <constraint firstAttribute="bottom" secondItem="oVP-Ab-grR" secondAttribute="bottom" id="XvN-tx-tzi"/>
+                <constraint firstItem="oVP-Ab-grR" firstAttribute="top" secondItem="M1Q-Un-qND" secondAttribute="top" id="bAq-Tc-oSE"/>
+                <constraint firstAttribute="bottom" secondItem="lkF-mT-0QG" secondAttribute="bottom" id="cyj-zp-ZeX"/>
+                <constraint firstAttribute="bottom" secondItem="83r-8a-ukl" secondAttribute="bottom" id="ehh-9e-vHf"/>
+                <constraint firstItem="83r-8a-ukl" firstAttribute="leading" secondItem="lkF-mT-0QG" secondAttribute="trailing" id="ouD-Ue-ehv"/>
+                <constraint firstItem="83r-8a-ukl" firstAttribute="width" secondItem="lkF-mT-0QG" secondAttribute="width" id="t5Z-xa-c6w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="bo3-U5-YUx"/>
+            <point key="canvasLocation" x="35.5" y="-139"/>
+        </view>
+    </objects>
+</document>

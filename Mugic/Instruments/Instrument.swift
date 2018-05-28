@@ -59,7 +59,7 @@ class Instrument {
     static let OCTAVE = 12
     static let AHz = 440
     
-    var samplers: [AKSampler]
+    var samplers: [AKAppleSampler]
     var midiFileName: String
     
     init() {
@@ -89,7 +89,7 @@ class ChordInstrument: Instrument {
     func stop() {
         let midiChannel = MIDIChannel()
         for (index, noteNumber) in self.noteNumbers.enumerated() {
-            self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
+            try? self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
         }
         self.noteNumbers = []
     }
@@ -100,7 +100,39 @@ class ChordInstrument: Instrument {
             guard index < self.numberOfPolyphonic else {
                 return
             }
-            self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
+            try? self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
+        }
+    }
+}
+
+
+class BeatInstrument: Instrument {
+    var beats: Set<Int>
+    var numberOfPolyphonic: Int
+
+    override init() {
+        self.beats = []
+        self.numberOfPolyphonic = 0
+
+        super.init()
+    }
+    
+    
+    func stop() {
+        let midiChannel = MIDIChannel()
+        for (index, noteNumber) in self.beats.enumerated() {
+            try? self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
+        }
+        self.beats = []
+    }
+    
+    func play() {
+        let midiChannel = MIDIChannel()
+        for (index, noteNumber) in self.beats.enumerated() {
+            guard index < self.numberOfPolyphonic else {
+                return
+            }
+            try? self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
         }
     }
 }

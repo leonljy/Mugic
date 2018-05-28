@@ -8,17 +8,43 @@
 
 import UIKit
 import AudioKit
+import Firebase
+
+enum PanelType: Int {
+    case Chord = 0
+    case Melody
+    case DrumKit
+}
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var recordStatusLabel: UILabel!
+    @IBOutlet weak var eventLabel: UILabel!
+    
     var noteValue: Int = 0
+    var noteString: String?
+    var chordString: String?
     var conductor = Conductor()
     var recorder = Recorder()
+    
+    @IBOutlet weak var panelBackgroundView: UIView!
+    
+    var chrodPanelView: ChordPanelView?
+    var pianoPanelView: PianoPanelView?
+    var drumKitPanelView: DrumKitPanelView?
+    
+    @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.initializePanels()
+        
+        self.bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"//"ca-app-pub-9448669804883523/3134031708"
+        self.bannerView.rootViewController = self
+        self.bannerView.load(GADRequest())
+        self.bannerView.alpha = 0.0
+        bannerView.delegate = self
+        
     }
 
     
@@ -26,54 +52,177 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func noteTouchDown(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.noteHighlightedBackground
-        self.noteValue = sender.tag
-    }
     
-    @IBAction func chordTouchDown(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.chordHighlightedBackground
-        guard let note = Note(rawValue: self.noteValue), let chord = Chord(rawValue: sender.tag) else {
-            return
+    func initializePanels() {
+        self.chrodPanelView = ChordPanelView.instanceFromNib()
+        if self.chrodPanelView != nil {
+            self.chrodPanelView?.frame = self.panelBackgroundView.bounds
+            self.panelBackgroundView.addSubview(self.chrodPanelView!)
+            self.chrodPanelView?.delegate = self
         }
         
-        self.conductor.play(root: note, chord: chord)
-        self.recorder.save(root: note, chord: chord)
-    }
-    
-    @IBAction func chordTouchUpOutside(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.chordDefaultBackground
+        self.pianoPanelView = PianoPanelView.instanceFromNib()
+        if self.pianoPanelView != nil {
+            self.pianoPanelView?.frame = self.panelBackgroundView.bounds
+            self.panelBackgroundView.addSubview(self.pianoPanelView!)
+            self.pianoPanelView?.delegate = self
+            self.pianoPanelView?.isHidden = true
+        }
+        
+        self.drumKitPanelView = DrumKitPanelView.instanceFromNib()
+        if self.drumKitPanelView != nil {
+            self.drumKitPanelView?.frame = self.panelBackgroundView.bounds
+            self.panelBackgroundView.addSubview(self.drumKitPanelView!)
+            self.drumKitPanelView?.delegate = self
+            self.drumKitPanelView?.isHidden = true
+        }
         
     }
-    @IBAction func chordTouchUpInside(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.chordDefaultBackground
+
+    @IBAction func changeMode(_ sender: UISegmentedControl) {
+        let panelType = PanelType(rawValue: sender.selectedSegmentIndex)
+        switch panelType {
+        case .Chord?:
+            self.chrodPanelView?.isHidden = false
+            self.pianoPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = true
+        case .Melody?:
+            self.chrodPanelView?.isHidden = true
+            self.pianoPanelView?.isHidden = false
+            self.drumKitPanelView?.isHidden = true
+        case .DrumKit?:
+            self.chrodPanelView?.isHidden = true
+            self.pianoPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = false
+        case .none:
+            self.chrodPanelView?.isHidden = false
+            self.pianoPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = true
+        }
     }
-    @IBAction func noteTouchUpInside(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.noteDefaultBackground
-        self.noteValue = 0
-    }
-    @IBAction func noteTouchUpOutside(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.noteDefaultBackground
-        self.noteValue = 0
-        
-    }
-    
+}
+
+//Record Extension
+extension ViewController {
     @IBAction func handleRecord(_ sender: Any) {
         if self.recorder.isRecording {
             self.recorder.stopRecord()
         } else {
             self.recorder.showCount(countBlock: { (timeInterval) in
                 //TODO: Calculate Remain Count
-                self.recordStatusLabel.text = "\(5-Int(timeInterval))"
+//                self.recordStatusLabel.text = "\(5-Int(timeInterval))"
             }) { (timeInterval) in
-                self.recordStatusLabel.text = "\(timeInterval.timeString())"
+//                self.recordStatusLabel.text = "\(timeInterval.timeString())"
             }
         }
     }
     @IBAction func handlePlay(_ sender: Any) {
         self.conductor.replay(events: self.recorder.events)
     }
-    
 }
+
+
+//Chord Mode Extension {
+extension ViewController: ChordPanelDelegate {
+    
+    func noteTouchDown(sender: UIButton) {
+        self.noteValue = sender.tag
+        self.noteString = sender.titleLabel?.text
+    }
+    
+    func chordTouchDown(sender: UIButton) {
+        guard let note = Note(rawValue: self.noteValue), let chord = Chord(rawValue: sender.tag) else {
+            return
+        }
+        self.chordString = sender.titleLabel?.text
+        if let noteString = self.noteString, let chordString = self.chordString {
+            self.eventLabel.text = chordString == "Maj" ? noteString : noteString + chordString
+        }
+        self.conductor.play(root: note, chord: chord)
+        self.recorder.save(root: note, chord: chord)
+    }
+    
+    func chordTouchUpOutside(sender: UIButton) {
+        self.chordString = nil
+        self.eventLabel.text = ""
+    }
+    
+    func chordTouchUpInside(sender: UIButton) {
+        self.chordString = nil
+        self.eventLabel.text = ""
+    }
+    
+    func noteTouchUpInside(sender: UIButton) {
+        self.noteValue = 0
+        self.noteString = nil
+    }
+    
+    func noteTouchUpOutside(sender: UIButton) {
+        self.noteValue = 0
+        self.noteString = nil
+        
+    }
+}
+
+//Melody Mode Extension
+extension ViewController: PianoPanelDelegate {
+    func melodyTouchDown(sender: UIButton) {
+        self.conductor.play(note: sender.tag)
+        
+    }
+    func melodyTouchUpInside(sender: UIButton) {
+//        sender.backgroundColor = UIColor.chordDefaultBackground
+    }
+    func melodyTouchUpOutside(sender: UIButton) {
+        
+    }
+}
+
+//Drum Mode Extension
+extension ViewController: DrumKitPanelDelegate {
+    func playDrum(sender: UIButton) {
+        self.conductor.playDrum(note: sender.tag)
+    }    
+}
+
+extension ViewController: GADBannerViewDelegate {
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("adViewDidReceiveAd")
+        self.bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            self.bannerView.alpha = 1
+        })
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
+    }
+}
+
+
 

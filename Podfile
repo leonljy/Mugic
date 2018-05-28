@@ -5,8 +5,14 @@ target 'Mugic' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 	pod 'AudioKit'
-	pod 'Realm'
-			pod 'RealmSwift'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+    
+
+#    pod 'Realm'
+#    pod 'RealmSwift'
   # Pods for Mugic
 
   target 'MugicTests' do

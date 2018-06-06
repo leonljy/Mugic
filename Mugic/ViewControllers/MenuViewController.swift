@@ -16,13 +16,25 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let mugicURL = "https://itunes.apple.com/us/app/id1390991641"
     let atURL = "itms://itunes.apple.com/us/app/id976019182"
-        
+    var products = [SKProduct]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        
+    }
+    
+    func reloadProducts() {
+        IAPHelper.store.requestProducts { (success, products) in
+            guard success, let products = products else {
+                return
+            }
+            self.products = products
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func handleDone(_ sender: Any) {
@@ -33,28 +45,33 @@ class MenuViewController: UIViewController {
 
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return self.products.count
+        } else {
+            return 5
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MENU_CELL") as? MenuCell {
-            if indexPath.row == 0  {
-                cell.titleLabel.text = "리뷰 남기기"
-            } else if indexPath.row == 1 {
-                cell.titleLabel.text = "광고 제거하기"
-            } else if indexPath.row == 2 {
-                cell.titleLabel.text = "개발자에게 의견 보내기"
-            } else if indexPath.row == 3 {
-                cell.titleLabel.text = "앱 공유하기"
+            if indexPath.section == 0 {
+                let product = self.products[indexPath.row]
+                cell.titleLabel.text = product.localizedTitle
             } else {
-                cell.titleLabel.text = "AT 광고"
+                if indexPath.row == 0  {
+                    cell.titleLabel.text = "Write review for Mugic"
+                } else if indexPath.row == 1 {
+                    cell.titleLabel.text = "Restore Purchase"
+                } else if indexPath.row == 2 {
+                    cell.titleLabel.text = "Mail to developer"
+                } else if indexPath.row == 3 {
+                    cell.titleLabel.text = "Share Mugic to friends"
+                } else {
+                    cell.titleLabel.text = "AT"
+                }
             }
-            
             return cell
         } else {
             return UITableViewCell()
@@ -65,20 +82,24 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.isSelected = false
         }
-        
-        if indexPath.row == 0  {
-                SKStoreReviewController.requestReview()
-        } else if indexPath.row == 1 {
-            
-        } else if indexPath.row == 2 {
-            if MFMailComposeViewController.canSendMail() {
-                self.presentMailComposeViewController()
-            }
-        } else if indexPath.row == 3 {
-            let activityViewController = UIActivityViewController(activityItems: [URL(string: self.mugicURL)!], applicationActivities: nil)
-            present(activityViewController, animated: true, completion: nil)
+        if indexPath.section == 0 {
+            let product = self.products[indexPath.row]
+            IAPHelper.store.buyProduct(product)
         } else {
-            UIApplication.shared.open(URL(string: self.atURL)!, options: [:], completionHandler: nil)
+            if indexPath.row == 0  {
+                SKStoreReviewController.requestReview()
+            } else if indexPath.row == 1 {
+                IAPHelper.store.restorePurchases()
+            } else if indexPath.row == 2 {
+                if MFMailComposeViewController.canSendMail() {
+                    self.presentMailComposeViewController()
+                }
+            } else if indexPath.row == 3 {
+                let activityViewController = UIActivityViewController(activityItems: [URL(string: self.mugicURL)!], applicationActivities: nil)
+                present(activityViewController, animated: true, completion: nil)
+            } else {
+                UIApplication.shared.open(URL(string: self.atURL)!, options: [:], completionHandler: nil)
+            }
         }
     }
     

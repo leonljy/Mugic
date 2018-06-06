@@ -21,6 +21,7 @@
 		91813C4520551B59004E600C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C4420551B59004E600C /* Event.swift */; };
 		91813C4720552328004E600C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C4620552328004E600C /* Utils.swift */; };
 		918E3791206262CF004C08CB /* Drum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E3790206262CF004C08CB /* Drum.swift */; };
+		9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */; };
 		91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5638E20AC2DF00029089B /* ChordPanelView.xib */; };
 		91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5639020AC2DF90029089B /* DrumKitPanelView.xib */; };
 		91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367D2001E78300124BD3 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		91813C4420551B59004E600C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		91813C4620552328004E600C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		918E3790206262CF004C08CB /* Drum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drum.swift; sourceTree = "<group>"; };
+		9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		91C5638E20AC2DF00029089B /* ChordPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChordPanelView.xib; sourceTree = "<group>"; };
 		91C5639020AC2DF90029089B /* DrumKitPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrumKitPanelView.xib; sourceTree = "<group>"; };
 		91CD367A2001E78300124BD3 /* Mugic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mugic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 			children = (
 				91CE86EF20330FFC00812E42 /* Color.swift */,
 				91813C4620552328004E600C /* Utils.swift */,
+				9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */,
 				918E3791206262CF004C08CB /* Drum.swift in Sources */,
 				914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */,
+				9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */,
 				91188F9420A6C5E100D2C678 /* PanelViews.swift in Sources */,
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
 				91813C43205509AC004E600C /* Song.swift in Sources */,

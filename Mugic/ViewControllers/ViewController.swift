@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.initializePanels()
         
-        self.bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"//"ca-app-pub-9448669804883523/3134031708"
+        self.bannerView.adUnitID = "ca-app-pub-9448669804883523/3134031708"
         self.bannerView.rootViewController = self
         self.bannerView.load(GADRequest())
         self.bannerView.alpha = 0.0

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PianoPanelOneOctaveView: UIView {
+class PianoPanelOneOctaveView: UIStackView {
     
 }
 

@@ -44,9 +44,22 @@ class ViewController: UIViewController {
         self.bannerView.load(GADRequest())
         self.bannerView.alpha = 0.0
         bannerView.delegate = self
+
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.removeLeftAndBottomEdgeTouchDelay()
+    }
+    
+    func removeLeftAndBottomEdgeTouchDelay() {
+        if let window = self.view.window, let gestures = window.gestureRecognizers {
+            for gesture in gestures {
+                gesture.delaysTouchesBegan = false
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -181,6 +194,7 @@ extension ViewController: PianoPanelDelegate {
 //Drum Mode Extension
 extension ViewController: DrumKitPanelDelegate {
     func playDrum(sender: UIButton) {
+        self.eventLabel.text = sender.titleLabel?.text
         self.conductor.playDrum(note: sender.tag)
     }    
 }

@@ -39,7 +39,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QhM-E7-bQP">
-                                                <rect key="frame" x="15" y="89.5" width="345" height="29"/>
+                                                <rect key="frame" x="93.5" y="89.5" width="188" height="29"/>
                                                 <segments>
                                                     <segment title="Chord"/>
                                                     <segment title="Melody"/>
@@ -52,9 +52,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="QhM-E7-bQP" firstAttribute="leading" secondItem="q39-r8-nsd" secondAttribute="leading" constant="15" id="7lN-01-cYa"/>
+                                            <constraint firstItem="QhM-E7-bQP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="q39-r8-nsd" secondAttribute="leading" id="7lN-01-cYa"/>
                                             <constraint firstItem="QhM-E7-bQP" firstAttribute="top" secondItem="Apx-wE-vdn" secondAttribute="bottom" constant="20" id="C8w-b8-q74"/>
-                                            <constraint firstAttribute="trailing" secondItem="QhM-E7-bQP" secondAttribute="trailing" constant="15" id="CXR-X8-HNc"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QhM-E7-bQP" secondAttribute="trailing" id="CXR-X8-HNc"/>
                                             <constraint firstItem="Apx-wE-vdn" firstAttribute="top" secondItem="q39-r8-nsd" secondAttribute="top" id="VQ9-hb-Qb4"/>
                                             <constraint firstAttribute="bottom" secondItem="QhM-E7-bQP" secondAttribute="bottom" constant="15" id="dls-ix-Bie"/>
                                             <constraint firstItem="Apx-wE-vdn" firstAttribute="leading" secondItem="q39-r8-nsd" secondAttribute="leading" id="mSF-h9-eVG"/>
@@ -65,7 +65,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ID6-Tj-9dm">
                                         <rect key="frame" x="0.0" y="132.5" width="375" height="132"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mugic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybo-cG-GID">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mugic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ybo-cG-GID">
                                                 <rect key="frame" x="20" y="20" width="335" height="92"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <nil key="textColor"/>

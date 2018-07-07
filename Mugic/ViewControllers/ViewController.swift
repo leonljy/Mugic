@@ -20,6 +20,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var eventLabel: UILabel!
     
+    let melody = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B" ]
     var noteValue: Int = 0
     var noteString: String?
     var chordString: String?
@@ -180,23 +181,35 @@ extension ViewController: ChordPanelDelegate {
 //Melody Mode Extension
 extension ViewController: PianoPanelDelegate {
     func melodyTouchDown(sender: UIButton) {
-        self.conductor.play(note: sender.tag)
+        let tag = sender.tag
+        self.conductor.play(note: tag)
+        let index = ((tag % 60) % 12)
         
+        let melodyString = self.melody[index]
+        self.eventLabel.text = melodyString
     }
     func melodyTouchUpInside(sender: UIButton) {
-//        sender.backgroundColor = UIColor.chordDefaultBackground
+        self.eventLabel.text = ""
     }
     func melodyTouchUpOutside(sender: UIButton) {
-        
+        self.eventLabel.text = ""
     }
 }
 
 //Drum Mode Extension
 extension ViewController: DrumKitPanelDelegate {
-    func playDrum(sender: UIButton) {
+    func playDrum(sender: UIButton) { 
         self.eventLabel.text = sender.titleLabel?.text
         self.conductor.playDrum(note: sender.tag)
-    }    
+    }
+    
+    func touchUpInside() {
+        self.eventLabel.text = ""
+    }
+    
+    func touchUpOutside() {
+        self.eventLabel.text = ""
+    }
 }
 
 extension ViewController: GADBannerViewDelegate {

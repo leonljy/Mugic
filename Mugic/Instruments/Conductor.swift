@@ -69,8 +69,8 @@ struct Conductor {
         var events = events
         let event = events.removeFirst()
         Timer.scheduledTimer(withTimeInterval: event.time - currentTime, repeats: false) { (timer) in
-            self.piano.play(root: event.root, chord: event.chord)
-            self.replay(events: events, currentTime: event.time)
+//            self.piano.play(root: event.root, chord: event.chord)
+//            self.replay(events: events, currentTime: event.time)
         }
     }
 }

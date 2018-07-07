@@ -27,6 +27,11 @@ class MenuViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.reloadProducts()
+    }
+    
     func reloadProducts() {
         IAPHelper.store.requestProducts { (success, products) in
             guard success, let products = products else {
@@ -40,6 +45,10 @@ class MenuViewController: UIViewController {
     @IBAction func handleDone(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 }
 

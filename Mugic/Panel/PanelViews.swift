@@ -102,6 +102,8 @@ class ChordPanelView: UIView {
 
 protocol DrumKitPanelDelegate {
     func playDrum(sender: UIButton)
+    func touchUpInside()
+    func touchUpOutside()
 }
 
 class DrumKitPanelView: UIView {
@@ -117,5 +119,13 @@ class DrumKitPanelView: UIView {
     @IBAction func playDrum(_ sender: UIButton) {
         self.delegate?.playDrum(sender: sender)
     }
+    @IBAction func touchUpInSide(_ sender: Any) {
+        self.delegate?.touchUpInside()
+    }
+    
+    @IBAction func touchUpOutSide(_ sender: Any) {
+        self.delegate?.touchUpOutside()
+    }
+    
 }
 

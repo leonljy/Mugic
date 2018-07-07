@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,18 +19,22 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lkF-mT-0QG">
                     <rect key="frame" x="0.0" y="0.0" width="125" height="282"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-Ns-XKW">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-vV-yIS">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
-                            <state key="normal" title="Crash"/>
+                            <state key="normal" title="RimShot"/>
                             <connections>
-                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="jtc-ou-YuK"/>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="tTI-ro-uyz"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="vIi-XM-e7V"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="nFd-Dj-kb8"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mny-PX-3Iy">
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-tn-DYu">
                             <rect key="frame" x="0.0" y="94" width="125" height="94"/>
-                            <state key="normal" title="Ride"/>
+                            <state key="normal" title="Snare"/>
                             <connections>
-                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="Nt3-Bn-w9u"/>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="kvq-dw-OpF"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="Yby-YZ-WET"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="eyb-Oi-LKP"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-IU-qJh">
@@ -38,6 +42,8 @@
                             <state key="normal" title="Kick"/>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="0ba-XU-ubq"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="mJA-xh-6Wn"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="pqz-na-thK"/>
                             </connections>
                         </button>
                     </subviews>
@@ -45,11 +51,13 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="83r-8a-ukl">
                     <rect key="frame" x="125" y="0.0" width="125" height="282"/>
                     <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-vV-yIS">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-Ns-XKW">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="70.5"/>
-                            <state key="normal" title="RimShot"/>
+                            <state key="normal" title="Crash"/>
                             <connections>
-                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="tTI-ro-uyz"/>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="jtc-ou-YuK"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="0q5-Pv-jOu"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="Sqq-zW-N7R"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-0V-7LO">
@@ -57,6 +65,8 @@
                             <state key="normal" title="TomHi"/>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="KFa-Yp-Cgg"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="Sk4-nH-gcP"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="3F2-fS-UfC"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al5-zC-SHE">
@@ -64,6 +74,8 @@
                             <state key="normal" title="TomMid"/>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="i8T-HS-qeC"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="KtL-vs-acW"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="IqA-Ke-y8h"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-xV-Dba">
@@ -71,6 +83,8 @@
                             <state key="normal" title="TomLow"/>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="bBR-tf-rog"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="wef-Nj-5OW"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="Lbl-Je-W0e"/>
                             </connections>
                         </button>
                     </subviews>
@@ -83,13 +97,17 @@
                             <state key="normal" title="H/H Opened"/>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="WuF-T0-NSX"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="bPE-YN-Dlf"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="3uU-Rr-j4T"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-tn-DYu">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mny-PX-3Iy">
                             <rect key="frame" x="0.0" y="94" width="125" height="94"/>
-                            <state key="normal" title="Snare"/>
+                            <state key="normal" title="Ride"/>
                             <connections>
-                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="kvq-dw-OpF"/>
+                                <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="Nt3-Bn-w9u"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="hRN-ZA-kJW"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="ONf-y0-hbl"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-bZ-16s">
@@ -97,6 +115,8 @@
                             <state key="normal" title="H/H Closed"/>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="NkV-FP-LDQ"/>
+                                <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="CBO-cZ-hGZ"/>
+                                <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="W2t-W5-cm8"/>
                             </connections>
                         </button>
                     </subviews>

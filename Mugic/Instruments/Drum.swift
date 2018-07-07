@@ -51,7 +51,7 @@ class Drum: BeatInstrument {
         
         self.drumkit = [self.kick, self.snare, self.rimShot, self.ride, self.hihatClosed, self.hihatOpened, self.crash, self.tomLow, self.tomMid, self.tomHi]
         super.init()
-        self.numberOfPolyphonic = 10
+//        self.numberOfPolyphonic = 10
     }
     
     func play(_ drumkit: DrumKit) {

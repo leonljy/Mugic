@@ -108,11 +108,9 @@ class ChordInstrument: Instrument {
 
 class BeatInstrument: Instrument {
     var beats: Set<Int>
-    var numberOfPolyphonic: Int
 
     override init() {
         self.beats = []
-        self.numberOfPolyphonic = 0
 
         super.init()
     }
@@ -129,9 +127,6 @@ class BeatInstrument: Instrument {
     func play() {
         let midiChannel = MIDIChannel()
         for (index, noteNumber) in self.beats.enumerated() {
-            guard index < self.numberOfPolyphonic else {
-                return
-            }
             try? self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
         }
     }

@@ -83,7 +83,6 @@ class Piano: ChordInstrument {
         case .dim7:
             self.noteNumbers.removeAll()
             self.noteNumbers.insert(bass)
-//            self.noteNumbers.insert(bass - Piano.OCTAVE)
             third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
             self.noteNumbers.insert(third)
             let flatFive = ChordInstrument.adding(root, interval: Interval.FLAT_FIVE)

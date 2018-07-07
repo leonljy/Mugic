@@ -73,7 +73,7 @@ class Recorder {
         let now = Date()
         let timeInterval = now.timeIntervalSince(self.startTime)
         print("\(timeInterval) => \(root.rawValue) \(chord.rawValue) Pressed")
-        let event = Event(time: timeInterval, root: root, chord: chord)
-        self.events.append(event)
+//        let event = Event(time: timeInterval, root: root, chord: chord)
+//        self.events.append(event)
     }
 }

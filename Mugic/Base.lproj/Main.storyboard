@@ -35,6 +35,15 @@
                                                             <segue destination="pey-o7-32y" kind="presentation" id="Po0-aK-6wH"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L55-gD-KdK">
+                                                        <rect key="frame" x="337" y="13" width="30" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="🎼"/>
+                                                        <connections>
+                                                            <action selector="handleSongs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Df4-kL-m0G"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>

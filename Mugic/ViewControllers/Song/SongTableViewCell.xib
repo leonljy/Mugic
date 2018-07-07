@@ -68,6 +68,13 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="editButton" destination="pyq-EW-Hve" id="84r-gN-PdU"/>
+                <outlet property="nameLabel" destination="9mo-hl-gW1" id="eAb-15-3yj"/>
+                <outlet property="tempoLabel" destination="rpw-cH-foM" id="fjW-ed-FKX"/>
+                <outlet property="timeSignatureLabel" destination="drV-jB-2dJ" id="q6B-Id-c49"/>
+                <outlet property="trackCountLabel" destination="I7s-zK-8IX" id="Qr4-Da-tW5"/>
+            </connections>
             <point key="canvasLocation" x="16.5" y="-271"/>
         </view>
     </objects>

@@ -27,14 +27,16 @@
 		9194038E20F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038220F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift */; };
 		9194038F20F09CF500A96206 /* Track+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038320F09CF500A96206 /* Track+CoreDataClass.swift */; };
 		9194039020F09CF500A96206 /* Track+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038420F09CF500A96206 /* Track+CoreDataProperties.swift */; };
-		9194039120F09CF500A96206 /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038520F09CF500A96206 /* Song+CoreDataClass.swift */; };
-		9194039220F09CF500A96206 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038620F09CF500A96206 /* Song+CoreDataProperties.swift */; };
 		9194039320F09CF500A96206 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038720F09CF500A96206 /* Event+CoreDataClass.swift */; };
 		9194039420F09CF500A96206 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194038820F09CF500A96206 /* Event+CoreDataProperties.swift */; };
 		9194039620F09DE500A96206 /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9194039520F09DE500A96206 /* Song.storyboard */; };
 		9194039920F09E4500A96206 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194039820F09E4500A96206 /* SongListViewController.swift */; };
 		9194039B20F09E6B00A96206 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9194039A20F09E6B00A96206 /* SongTableViewCell.xib */; };
 		9194039D20F09E9600A96206 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194039C20F09E9600A96206 /* SongTableViewCell.swift */; };
+		919403A320F0AAB000A96206 /* SongEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A220F0AAB000A96206 /* SongEditViewController.swift */; };
+		919403A620F0AC3800A96206 /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A420F0AC3800A96206 /* Song+CoreDataClass.swift */; };
+		919403A720F0AC3800A96206 /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A520F0AC3800A96206 /* Song+CoreDataProperties.swift */; };
+		919403A920F0AD1D00A96206 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A820F0AD1D00A96206 /* Song.swift */; };
 		9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */; };
 		91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5638E20AC2DF00029089B /* ChordPanelView.xib */; };
 		91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5639020AC2DF90029089B /* DrumKitPanelView.xib */; };
@@ -96,14 +98,16 @@
 		9194038220F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MelodicEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9194038320F09CF500A96206 /* Track+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Track+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9194038420F09CF500A96206 /* Track+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Track+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9194038520F09CF500A96206 /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9194038620F09CF500A96206 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9194038720F09CF500A96206 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9194038820F09CF500A96206 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9194039520F09DE500A96206 /* Song.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
 		9194039820F09E4500A96206 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		9194039A20F09E6B00A96206 /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		9194039C20F09E9600A96206 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		919403A220F0AAB000A96206 /* SongEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongEditViewController.swift; sourceTree = "<group>"; };
+		919403A420F0AC3800A96206 /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
+		919403A520F0AC3800A96206 /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		919403A820F0AD1D00A96206 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		91C5638E20AC2DF00029089B /* ChordPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChordPanelView.xib; sourceTree = "<group>"; };
 		91C5639020AC2DF90029089B /* DrumKitPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrumKitPanelView.xib; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				9194039820F09E4500A96206 /* SongListViewController.swift */,
+				919403A220F0AAB000A96206 /* SongEditViewController.swift */,
 				9194039C20F09E9600A96206 /* SongTableViewCell.swift */,
 				9194039520F09DE500A96206 /* Song.storyboard */,
 				9194039A20F09E6B00A96206 /* SongTableViewCell.xib */,
@@ -313,6 +318,9 @@
 		91F079F4208B2747007D6385 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				919403A820F0AD1D00A96206 /* Song.swift */,
+				919403A420F0AC3800A96206 /* Song+CoreDataClass.swift */,
+				919403A520F0AC3800A96206 /* Song+CoreDataProperties.swift */,
 				9194038720F09CF500A96206 /* Event+CoreDataClass.swift */,
 				9194038820F09CF500A96206 /* Event+CoreDataProperties.swift */,
 				9194037D20F09CF500A96206 /* ChordEvent+CoreDataClass.swift */,
@@ -323,8 +331,6 @@
 				9194038220F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift */,
 				9194038320F09CF500A96206 /* Track+CoreDataClass.swift */,
 				9194038420F09CF500A96206 /* Track+CoreDataProperties.swift */,
-				9194038520F09CF500A96206 /* Song+CoreDataClass.swift */,
-				9194038620F09CF500A96206 /* Song+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,7 +587,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9194039120F09CF500A96206 /* Song+CoreDataClass.swift in Sources */,
 				91813C4120513AEE004E600C /* Recorder.swift in Sources */,
 				91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */,
 				9194038E20F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift in Sources */,
@@ -596,19 +601,22 @@
 				918E3791206262CF004C08CB /* Drum.swift in Sources */,
 				9194039020F09CF500A96206 /* Track+CoreDataProperties.swift in Sources */,
 				914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */,
+				919403A620F0AC3800A96206 /* Song+CoreDataClass.swift in Sources */,
 				9194038B20F09CF500A96206 /* RhythmEvent+CoreDataClass.swift in Sources */,
 				9194038920F09CF500A96206 /* ChordEvent+CoreDataClass.swift in Sources */,
 				9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */,
 				91188F9420A6C5E100D2C678 /* PanelViews.swift in Sources */,
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
+				919403A320F0AAB000A96206 /* SongEditViewController.swift in Sources */,
 				91CE86F020330FFC00812E42 /* Color.swift in Sources */,
-				9194039220F09CF500A96206 /* Song+CoreDataProperties.swift in Sources */,
 				91FF505020394484008460C3 /* Guitar.swift in Sources */,
 				91CD36802001E78300124BD3 /* ViewController.swift in Sources */,
+				919403A920F0AD1D00A96206 /* Song.swift in Sources */,
 				9194039D20F09E9600A96206 /* SongTableViewCell.swift in Sources */,
 				91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */,
 				91813C4720552328004E600C /* Utils.swift in Sources */,
 				9194038F20F09CF500A96206 /* Track+CoreDataClass.swift in Sources */,
+				919403A720F0AC3800A96206 /* Song+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

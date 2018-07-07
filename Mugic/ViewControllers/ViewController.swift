@@ -114,6 +114,13 @@ class ViewController: UIViewController {
             self.drumKitPanelView?.isHidden = true
         }
     }
+    
+    @IBAction func handleSongs(_ sender: Any) {
+        let songNavigationController = UIStoryboard.init(name: "Song", bundle: nil).instantiateViewController(withIdentifier: "SongNavigationController")
+        
+        self.present(songNavigationController, animated: true, completion: nil)
+        
+    }
 }
 
 //Record Extension

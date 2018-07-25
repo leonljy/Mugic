@@ -9,6 +9,29 @@
 import Foundation
 import UIKit
 
+// MARK: UIAlertController Utils
+extension UIViewController {
+    
+    func showAlert(error: Error) {
+        if let error = error as NSError? {
+            print(error)
+        }
+        showAlert(message: error.localizedDescription)
+    }
+    
+    func showAlert(title: String = NSLocalizedString("Message.Error.General.Title", comment: ""), message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlert() {
+        showAlert(message: "Unkown Error")
+    }
+}
+
+
 extension TimeInterval {
     
     func timeString() -> String {

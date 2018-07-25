@@ -17,13 +17,7 @@ class SongEditViewController: UIViewController {
     @IBOutlet weak var tempoTextField: UITextField!
     @IBOutlet weak var timeSignatureButton: UIButton!
     
-    var song: Song? {
-        didSet {
-            self.nameTextField.text = song?.name
-            self.tempoTextField.text = "\(song?.tempo ?? 0) bpm "
-            self.timeSignatureButton.setTitle("\(song?.timeSignatureString ?? "")", for: .normal)
-        }
-    }
+    var song: Song?
     
     var managedContext: NSManagedObjectContext? {
         get {
@@ -37,30 +31,25 @@ class SongEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        if self.song == nil {
-            guard let managedContext = self.managedContext else {
-                return
-            }
-            let entity = NSEntityDescription.entity(forEntityName: "Song", in: managedContext)!
-            let song = NSManagedObject(entity: entity, insertInto: managedContext) as? Song
-            song?.name = "My song - \(Date())"
-            self.song = song
-            
-        }
+        self.nameTextField.text = song?.name
+        self.tempoTextField.text = "\(song?.tempo ?? 0)"
+        self.timeSignatureButton.setTitle("\(song?.timeSignatureString ?? "")", for: .normal)
     }
     
-    @IBAction func handleSave(_ sender: Any) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         guard let managedContext = self.managedContext else {
             return
         }
         
         do {
             try managedContext.save()
+            self.navigationController?.popViewController(animated: true)
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            self.showAlert(error: error)
         }
     }
+    
+    
     
 }

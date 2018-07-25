@@ -2,7 +2,7 @@
 //  Song+CoreDataProperties.swift
 //  Mugic
 //
-//  Created by Jeong-Uk Lee on 2018. 7. 7..
+//  Created by Jeong-Uk Lee on 2018. 7. 24..
 //  Copyright © 2018년 Jeong-Uk Lee. All rights reserved.
 //
 //
@@ -18,9 +18,10 @@ extension Song {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var volume: Double
     @NSManaged public var tempo: Int16
     @NSManaged public var timeSignature: Int16
+    @NSManaged public var volume: Double
+    @NSManaged public var updatedAt: NSDate?
     @NSManaged public var tracks: NSOrderedSet?
 
 }

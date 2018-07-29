@@ -30,7 +30,9 @@ class SongListViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
+        
     }
     
     
@@ -80,7 +82,6 @@ class SongListViewController: UIViewController {
         
         do {
             try managedContext.save()
-            self.navigationController?.popViewController(animated: true)
         } catch let error as NSError {
             self.showAlert(error: error)
         }
@@ -109,6 +110,18 @@ extension SongListViewController: UITableViewDataSource {
         }
         return songs.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard let song = self.songs?[indexPath.row], editingStyle == .delete else {
+            return
+        }
+        self.managedContext?.delete(song)
+        
+        self.save()
+        self.songs?.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+    }
 }
 
 
@@ -124,4 +137,5 @@ extension SongListViewController: UITableViewDelegate {
         viewController.song = song
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
 }

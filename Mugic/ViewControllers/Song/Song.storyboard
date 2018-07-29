@@ -102,19 +102,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="handleNameChanged:" destination="ndh-qZ-Iaf" eventType="editingChanged" id="b64-cx-zFY"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZjH-LN-xoa">
                                 <rect key="frame" x="16" y="234" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="handleTempoChanged:" destination="ndh-qZ-Iaf" eventType="editingChanged" id="jDh-fO-wGz"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-Gz-Vf0">
                                 <rect key="frame" x="16" y="352" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="handleTimeSignature:" destination="ndh-qZ-Iaf" eventType="touchUpInside" id="7J4-KD-oO5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEl-gE-vGV">
                                 <rect key="frame" x="77" y="239" width="36" height="21"/>
@@ -123,14 +132,72 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PS-S2-4gk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feV-Eb-Qcx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zB3-fi-Kej">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="handleDismissPickerView:" destination="ndh-qZ-Iaf" eventType="touchUpInside" id="DQB-5j-uwa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zB3-fi-Kej" firstAttribute="top" secondItem="feV-Eb-Qcx" secondAttribute="top" id="FFS-BV-OLq"/>
+                                            <constraint firstAttribute="trailing" secondItem="zB3-fi-Kej" secondAttribute="trailing" id="FcO-0Y-t9J"/>
+                                            <constraint firstAttribute="bottom" secondItem="zB3-fi-Kej" secondAttribute="bottom" id="f09-M4-lQT"/>
+                                            <constraint firstItem="zB3-fi-Kej" firstAttribute="leading" secondItem="feV-Eb-Qcx" secondAttribute="leading" id="u6q-Dn-cax"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSi-by-1WO">
+                                        <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw2-ep-Ivs">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Pw2-ep-Ivs" firstAttribute="top" secondItem="kSi-by-1WO" secondAttribute="top" id="1gg-7G-vMP"/>
+                                            <constraint firstItem="Pw2-ep-Ivs" firstAttribute="leading" secondItem="kSi-by-1WO" secondAttribute="leading" id="Cap-0C-xsw"/>
+                                            <constraint firstAttribute="height" constant="162" id="P1k-jN-l1g"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pw2-ep-Ivs" secondAttribute="bottom" id="YHL-VK-Pvf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pw2-ep-Ivs" secondAttribute="trailing" id="nub-4l-Sb3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="feV-Eb-Qcx" secondAttribute="bottom" id="8OT-DG-vhW"/>
+                                    <constraint firstAttribute="bottom" secondItem="kSi-by-1WO" secondAttribute="bottom" id="AYQ-6R-W7a"/>
+                                    <constraint firstAttribute="trailing" secondItem="feV-Eb-Qcx" secondAttribute="trailing" id="Ij4-we-GDO"/>
+                                    <constraint firstItem="feV-Eb-Qcx" firstAttribute="leading" secondItem="1PS-S2-4gk" secondAttribute="leading" id="TV6-ja-6za"/>
+                                    <constraint firstItem="kSi-by-1WO" firstAttribute="leading" secondItem="1PS-S2-4gk" secondAttribute="leading" id="jsz-Bk-EN9"/>
+                                    <constraint firstItem="feV-Eb-Qcx" firstAttribute="top" secondItem="1PS-S2-4gk" secondAttribute="top" id="rB6-bR-Af3"/>
+                                    <constraint firstAttribute="trailing" secondItem="kSi-by-1WO" secondAttribute="trailing" id="vFj-Ek-lc9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1PS-S2-4gk" firstAttribute="bottom" secondItem="vKg-3b-qEl" secondAttribute="bottom" id="9yb-5u-VUT"/>
+                            <constraint firstItem="1PS-S2-4gk" firstAttribute="trailing" secondItem="vKg-3b-qEl" secondAttribute="trailing" id="MTh-ty-Cqx"/>
+                            <constraint firstItem="1PS-S2-4gk" firstAttribute="top" secondItem="dEg-NV-iMy" secondAttribute="top" id="gC4-2a-lpH"/>
+                            <constraint firstItem="1PS-S2-4gk" firstAttribute="leading" secondItem="vKg-3b-qEl" secondAttribute="leading" id="ihV-9E-OmN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vKg-3b-qEl"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nvc-Xe-aST"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="nameTextField" destination="4w7-Tr-anB" id="Vof-gk-rJe"/>
+                        <outlet property="pickerView" destination="Pw2-ep-Ivs" id="69k-fS-kLQ"/>
+                        <outlet property="pickerViewBackground" destination="1PS-S2-4gk" id="FKe-R8-JHw"/>
                         <outlet property="tempoTextField" destination="ZjH-LN-xoa" id="JPf-hT-JiN"/>
                         <outlet property="timeSignatureButton" destination="dAq-Gz-Vf0" id="Iwn-Tc-Pux"/>
                     </connections>

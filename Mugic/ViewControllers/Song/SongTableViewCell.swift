@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class SongTableViewCell: UITableViewCell {
-    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var trackCountLabel: UILabel!
     @IBOutlet weak var timeSignatureLabel: UILabel!
     @IBOutlet weak var tempoLabel: UILabel!

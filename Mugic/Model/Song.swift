@@ -25,21 +25,24 @@ extension Song {
             guard let type = TimeSignature(rawValue: Int(self.timeSignature)) else {
                 return ""
             }
-            
-            switch type {
-            case .FourFour:
-                return "4/4"
-            case .ThreeFour:
-                return "3/4"
-            case .TwoFour:
-                return "2/4"
-            case .SixEight:
-                return "6/8"
-            case .EightTwelve:
-                return "8/12"
-            case .TwoTwo:
-                return "2/2"
-            }
+            return Song.timeSignatureString(type: type)
+        }
+    }
+    
+    static func timeSignatureString(type: TimeSignature) -> String {
+        switch type {
+        case .FourFour:
+            return "4 / 4"
+        case .ThreeFour:
+            return "3 / 4"
+        case .TwoFour:
+            return "2 / 4"
+        case .SixEight:
+            return "6 / 8"
+        case .EightTwelve:
+            return "8 / 12"
+        case .TwoTwo:
+            return "2 / 2"
         }
     }
 }

@@ -96,7 +96,9 @@ extension SongListViewController: UITableViewDataSource {
             return cell
         }
         cell.nameLabel.text = song.name
-        
+        cell.tempoLabel.text = "\(song.tempo) BPM"
+        cell.timeSignatureLabel.text = song.timeSignatureString
+        cell.trackCountLabel.text = "\(song.tracks?.count ?? 0) track(s)"
         return cell
     }
     

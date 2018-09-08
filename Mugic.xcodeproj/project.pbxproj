@@ -16,6 +16,11 @@
 		914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA5582029C0EC00A2CBC3 /* Conductor.swift */; };
 		914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA55A2029D8EF00A2CBC3 /* Piano.swift */; };
 		917ADCCC200B3A940062B79A /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917ADCCB200B3A940062B79A /* Instrument.swift */; };
+		917F6CC52119E2E600B953FE /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F6CC42119E2E600B953FE /* TrackTableViewCell.swift */; };
+		917F6CC72119E2F900B953FE /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917F6CC62119E2F900B953FE /* TrackTableViewCell.xib */; };
+		917F6CCA2119E5DE00B953FE /* SongInfoPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917F6CC92119E5DE00B953FE /* SongInfoPanel.xib */; };
+		917F6CCC2119E5E900B953FE /* PlayControllerPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917F6CCB2119E5E900B953FE /* PlayControllerPanel.xib */; };
+		917F6CCE2119E5F000B953FE /* MainPanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F6CCD2119E5F000B953FE /* MainPanels.swift */; };
 		91813C4120513AEE004E600C /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C4020513AEE004E600C /* Recorder.swift */; };
 		91813C4720552328004E600C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91813C4620552328004E600C /* Utils.swift */; };
 		918E3791206262CF004C08CB /* Drum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E3790206262CF004C08CB /* Drum.swift */; };
@@ -50,6 +55,7 @@
 		91CD36A12001E78300124BD3 /* MugicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36A02001E78300124BD3 /* MugicUITests.swift */; };
 		91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */; };
 		91CE86F020330FFC00812E42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE86EF20330FFC00812E42 /* Color.swift */; };
+		91F502402123E7B3002284B5 /* AddTrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F5023F2123E7B3002284B5 /* AddTrackTableViewCell.xib */; };
 		91FF504E203943F1008460C3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 91FF504D203943F1008460C3 /* Sounds */; };
 		91FF505020394484008460C3 /* Guitar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FF504F20394484008460C3 /* Guitar.swift */; };
 		AE7C24AD6AD6BE959AB11D55 /* Pods_MugicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F718C19E7AE2B82D50BFC8 /* Pods_MugicUITests.framework */; };
@@ -87,6 +93,11 @@
 		914BA5582029C0EC00A2CBC3 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
 		914BA55A2029D8EF00A2CBC3 /* Piano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piano.swift; sourceTree = "<group>"; };
 		917ADCCB200B3A940062B79A /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		917F6CC42119E2E600B953FE /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		917F6CC62119E2F900B953FE /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		917F6CC92119E5DE00B953FE /* SongInfoPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoPanel.xib; sourceTree = "<group>"; };
+		917F6CCB2119E5E900B953FE /* PlayControllerPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayControllerPanel.xib; sourceTree = "<group>"; };
+		917F6CCD2119E5F000B953FE /* MainPanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPanels.swift; sourceTree = "<group>"; };
 		91813C4020513AEE004E600C /* Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		91813C4620552328004E600C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		918E3790206262CF004C08CB /* Drum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drum.swift; sourceTree = "<group>"; };
@@ -127,6 +138,7 @@
 		91CD36A22001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Acoustic Guitars JNv2.4.sf2"; sourceTree = "<group>"; };
 		91CE86EF20330FFC00812E42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		91F5023F2123E7B3002284B5 /* AddTrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTrackTableViewCell.xib; sourceTree = "<group>"; };
 		91FF504D203943F1008460C3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		91FF504F20394484008460C3 /* Guitar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guitar.swift; sourceTree = "<group>"; };
 		988CCB03C0C2520F3B96BDBF /* Pods-MugicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MugicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MugicUITests/Pods-MugicUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +200,8 @@
 		91278F8A20C5492C008DAAB0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				917F6CC82119E5B500B953FE /* MainPanels */,
+				917F6CC32119E26100B953FE /* Track */,
 				9194039720F09E3300A96206 /* Song */,
 				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
 				91CD367F2001E78300124BD3 /* ViewController.swift */,
@@ -224,6 +238,26 @@
 				914BA5582029C0EC00A2CBC3 /* Conductor.swift */,
 			);
 			path = Instruments;
+			sourceTree = "<group>";
+		};
+		917F6CC32119E26100B953FE /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				917F6CC42119E2E600B953FE /* TrackTableViewCell.swift */,
+				917F6CC62119E2F900B953FE /* TrackTableViewCell.xib */,
+				91F5023F2123E7B3002284B5 /* AddTrackTableViewCell.xib */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		917F6CC82119E5B500B953FE /* MainPanels */ = {
+			isa = PBXGroup;
+			children = (
+				917F6CC92119E5DE00B953FE /* SongInfoPanel.xib */,
+				917F6CCB2119E5E900B953FE /* PlayControllerPanel.xib */,
+				917F6CCD2119E5F000B953FE /* MainPanels.swift */,
+			);
+			path = MainPanels;
 			sourceTree = "<group>";
 		};
 		91813C3F20513ADB004E600C /* Recorder */ = {
@@ -464,14 +498,18 @@
 			files = (
 				91FF504E203943F1008460C3 /* Sounds in Resources */,
 				91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */,
+				91F502402123E7B3002284B5 /* AddTrackTableViewCell.xib in Resources */,
 				9124E14420BA726B002906CF /* GoogleService-Info.plist in Resources */,
+				917F6CC72119E2F900B953FE /* TrackTableViewCell.xib in Resources */,
 				9194039B20F09E6B00A96206 /* SongTableViewCell.xib in Resources */,
 				9194039620F09DE500A96206 /* Song.storyboard in Resources */,
 				91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */,
 				91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */,
 				91CD36882001E78300124BD3 /* Assets.xcassets in Resources */,
+				917F6CCA2119E5DE00B953FE /* SongInfoPanel.xib in Resources */,
 				91188F9220A6C04100D2C678 /* PianokeyView.xib in Resources */,
 				91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */,
+				917F6CCC2119E5E900B953FE /* PlayControllerPanel.xib in Resources */,
 				91CD36832001E78300124BD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +634,7 @@
 				917ADCCC200B3A940062B79A /* Instrument.swift in Sources */,
 				9194039320F09CF500A96206 /* Event+CoreDataClass.swift in Sources */,
 				9194038A20F09CF500A96206 /* ChordEvent+CoreDataProperties.swift in Sources */,
+				917F6CC52119E2E600B953FE /* TrackTableViewCell.swift in Sources */,
 				914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */,
 				9194039920F09E4500A96206 /* SongListViewController.swift in Sources */,
 				91BB7C722106320F00E737FF /* Song+CoreDataClass.swift in Sources */,
@@ -605,6 +644,7 @@
 				9194038B20F09CF500A96206 /* RhythmEvent+CoreDataClass.swift in Sources */,
 				9194038920F09CF500A96206 /* ChordEvent+CoreDataClass.swift in Sources */,
 				9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */,
+				917F6CCE2119E5F000B953FE /* MainPanels.swift in Sources */,
 				91188F9420A6C5E100D2C678 /* PanelViews.swift in Sources */,
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
 				919403A320F0AAB000A96206 /* SongEditViewController.swift in Sources */,

@@ -9,7 +9,6 @@ target 'Mugic' do
     pod 'Crashlytics'
     pod 'Firebase/Core'
     pod 'Firebase/AdMob'
-    
 
 #    pod 'Realm'
 #    pod 'RealmSwift'

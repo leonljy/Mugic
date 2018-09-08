@@ -13,6 +13,7 @@ enum Instruments: Int {
     case Guitar = 0
     case Piano
     case Drumkit
+    case Voice
 }
 
 struct Conductor {

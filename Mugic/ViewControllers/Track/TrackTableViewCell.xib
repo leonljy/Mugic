@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TrackTableViewCell" customModule="Mugic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BUc-di-IMs">
+                    <rect key="frame" x="10" y="10" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="d5B-ZK-4OA"/>
+                        <constraint firstAttribute="height" constant="70" id="zB8-pG-0mI"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-dL-h4C">
+                    <rect key="frame" x="195" y="0.0" width="180" height="90"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wjk-vP-DIN">
+                            <rect key="frame" x="8" y="50" width="164" height="31"/>
+                        </slider>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-MB-T2X">
+                            <rect key="frame" x="10" y="10" width="160" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-Qt-63Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
+                                    <state key="normal" title="M"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JE-pP-XPv">
+                                    <rect key="frame" x="53.5" y="0.0" width="53" height="30"/>
+                                    <state key="normal" title="S"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-Ri-XyS">
+                                    <rect key="frame" x="106.5" y="0.0" width="53.5" height="30"/>
+                                    <state key="normal" title="🗑"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Wjk-vP-DIN" firstAttribute="leading" secondItem="fe9-dL-h4C" secondAttribute="leading" constant="10" id="1YO-o4-Rs9"/>
+                        <constraint firstAttribute="bottom" secondItem="Wjk-vP-DIN" secondAttribute="bottom" constant="10" id="7zz-Nv-D1q"/>
+                        <constraint firstAttribute="trailing" secondItem="Oct-MB-T2X" secondAttribute="trailing" constant="10" id="L1k-wD-fcv"/>
+                        <constraint firstItem="Wjk-vP-DIN" firstAttribute="top" secondItem="Oct-MB-T2X" secondAttribute="bottom" constant="10" id="R7P-c4-HRT"/>
+                        <constraint firstItem="Oct-MB-T2X" firstAttribute="top" secondItem="fe9-dL-h4C" secondAttribute="top" constant="10" id="XLA-EB-8X1"/>
+                        <constraint firstItem="Oct-MB-T2X" firstAttribute="leading" secondItem="fe9-dL-h4C" secondAttribute="leading" constant="10" id="Zti-rG-aWW"/>
+                        <constraint firstAttribute="width" constant="180" id="hJC-2D-yWu"/>
+                        <constraint firstAttribute="trailing" secondItem="Wjk-vP-DIN" secondAttribute="trailing" constant="10" id="q31-PL-Fw6"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acoustic Guitar 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vWr-dI-3YX">
+                    <rect key="frame" x="90" y="10" width="95" height="70"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vWr-dI-3YX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="08O-gx-b6P"/>
+                <constraint firstItem="BUc-di-IMs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3FB-1i-43l"/>
+                <constraint firstItem="fe9-dL-h4C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9qB-TY-S9b"/>
+                <constraint firstItem="fe9-dL-h4C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="A0N-8Z-xGv"/>
+                <constraint firstItem="fe9-dL-h4C" firstAttribute="leading" secondItem="vWr-dI-3YX" secondAttribute="trailing" constant="10" id="HPl-dc-aQm"/>
+                <constraint firstItem="BUc-di-IMs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="IFl-I0-oVV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vWr-dI-3YX" secondAttribute="bottom" constant="10" id="RFr-7n-gvY"/>
+                <constraint firstItem="vWr-dI-3YX" firstAttribute="leading" secondItem="BUc-di-IMs" secondAttribute="trailing" constant="10" id="SZd-wo-mhC"/>
+                <constraint firstItem="fe9-dL-h4C" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dWr-DX-LC0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="deleteButton" destination="zSp-Ri-XyS" id="iOz-rr-7KA"/>
+                <outlet property="muteButton" destination="W9W-Qt-63Y" id="yPI-Pv-ep7"/>
+                <outlet property="soloButton" destination="0JE-pP-XPv" id="axe-KB-bs4"/>
+                <outlet property="trackImage" destination="BUc-di-IMs" id="wXo-6A-mKH"/>
+                <outlet property="trackNameLabel" destination="vWr-dI-3YX" id="7nN-I1-NxV"/>
+                <outlet property="volumeProgressBar" destination="Wjk-vP-DIN" id="nSS-fu-Eyd"/>
+            </connections>
+            <point key="canvasLocation" x="73.5" y="-229"/>
+        </view>
+    </objects>
+</document>

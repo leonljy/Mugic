@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNc-zE-KdY" customClass="SongInfoPanel" customModule="Mugic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rna-wt-Cph">
+                    <rect key="frame" x="168" y="0.0" width="207" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="207" id="Tjx-h5-en6"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Chord"/>
+                        <segment title="Melody"/>
+                        <segment title="Drum"/>
+                        <segment title="Voice"/>
+                    </segments>
+                </segmentedControl>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8yJ-9W-Axv">
+                    <rect key="frame" x="0.0" y="0.0" width="168" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 / 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctw-bc-LMl">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="333 BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOT-PQ-lCj">
+                            <rect key="frame" x="84" y="0.0" width="84" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Rna-wt-Cph" firstAttribute="top" secondItem="dNc-zE-KdY" secondAttribute="top" id="E35-FA-OFb"/>
+                <constraint firstAttribute="height" constant="40" id="TKK-wd-4v6"/>
+                <constraint firstItem="8yJ-9W-Axv" firstAttribute="leading" secondItem="dNc-zE-KdY" secondAttribute="leading" id="Ypy-DI-Mxq"/>
+                <constraint firstItem="8yJ-9W-Axv" firstAttribute="top" secondItem="dNc-zE-KdY" secondAttribute="top" id="agq-e0-D8O"/>
+                <constraint firstItem="Rna-wt-Cph" firstAttribute="leading" secondItem="8yJ-9W-Axv" secondAttribute="trailing" id="bRT-pq-1IG"/>
+                <constraint firstAttribute="trailing" secondItem="Rna-wt-Cph" secondAttribute="trailing" id="hDq-0u-zNX"/>
+                <constraint firstAttribute="bottom" secondItem="8yJ-9W-Axv" secondAttribute="bottom" id="jMh-g2-Ove"/>
+                <constraint firstAttribute="bottom" secondItem="Rna-wt-Cph" secondAttribute="bottom" id="ue8-bd-ki8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="7bi-LX-7lK"/>
+            <connections>
+                <outlet property="beatLabel" destination="XOT-PQ-lCj" id="PdN-sA-mdM"/>
+                <outlet property="instrumentSegmentControl" destination="Rna-wt-Cph" id="xtK-pe-OZP"/>
+                <outlet property="timeSingnatureLabel" destination="ctw-bc-LMl" id="Np3-NJ-9de"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="44" id="kQu-7g-tmM"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-bu-dMw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-bu-dMw">
                                 <rect key="frame" x="0.0" y="108" width="375" height="265"/>
                             </scrollView>
                         </subviews>

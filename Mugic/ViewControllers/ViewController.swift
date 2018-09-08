@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 
     var songs: [Song] = []
     var tableViews: [UITableView] = []
-    var index = 0
+//    var index = 0
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -55,13 +55,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadSongs()
         self.initializeViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.loadSongs()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -114,47 +113,53 @@ class ViewController: UIViewController {
     
     func initializeViews() {
         self.initializeInstrumentPanels()
-        self.initializeTableViews()
         self.initializeSongPanel()
         self.initializePlayControllerPanel()
     }
     
     func initializeTableViews() {
-//        let numberOfTableViews = self.songs.count
+        let numberOfTableViews = self.songs.count
+        let screenWidth = UIScreen.main.bounds.width
+        let height = self.scrollView.bounds.height
         
-        let tableView = UITableView(frame: self.scrollView.bounds)
-        tableView.register(UINib(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "TrackTableViewCell")
-        tableView.register(UINib(nibName: "AddTrackTableViewCell", bundle: nil), forCellReuseIdentifier: "AddTrackTableViewCell")
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self as UITableViewDelegate
-        tableView.dataSource = self as UITableViewDataSource
-        tableView.tag = 0
-        self.scrollView.addSubview(tableView)
-        self.tableViews.append(tableView)
+        self.scrollView.contentSize = CGSize(width: screenWidth * CGFloat(numberOfTableViews), height: height)
+        for (index, _) in self.songs.enumerated() {
+            let frame = CGRect(x: screenWidth * CGFloat(index), y: 0, width: screenWidth, height: height)
+            let tableView = UITableView(frame: frame)
+            tableView.register(UINib(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "TrackTableViewCell")
+            tableView.register(UINib(nibName: "AddTrackTableViewCell", bundle: nil), forCellReuseIdentifier: "AddTrackTableViewCell")
+            tableView.tableFooterView = UIView()
+            tableView.delegate = self as UITableViewDelegate
+            tableView.dataSource = self as UITableViewDataSource
+            tableView.tag = index
+            self.scrollView.addSubview(tableView)
+            self.tableViews.append(tableView)
+        }
+        
     }
     
     func initializeSongPanel() {
-        if let songInfoPanel = UINib(nibName: "SongInfoPanel", bundle: nil).instantiate(withOwner: nil, options: nil).first as? SongInfoPanel {
-            self.songInfoPanel = songInfoPanel
-            self.songInfoPanelBackgroundView.addSubview(songInfoPanel)
-            self.songInfoPanel?.topAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.topAnchor, constant: 0).isActive = true
-            self.songInfoPanel?.bottomAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.bottomAnchor, constant: 0).isActive = true
-            self.songInfoPanel?.trailingAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.trailingAnchor, constant: 0).isActive = true
-            self.songInfoPanel?.leadingAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.leadingAnchor, constant: 0).isActive = true
+        guard let songInfoPanel = UINib(nibName: "SongInfoPanel", bundle: nil).instantiate(withOwner: nil, options: nil).first as? SongInfoPanel else {
+            return
         }
-        
-        
+        self.songInfoPanel = songInfoPanel
+        self.songInfoPanelBackgroundView.addSubview(songInfoPanel)
+        self.songInfoPanel?.topAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.topAnchor, constant: 0).isActive = true
+        self.songInfoPanel?.bottomAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.bottomAnchor, constant: 0).isActive = true
+        self.songInfoPanel?.trailingAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.trailingAnchor, constant: 0).isActive = true
+        self.songInfoPanel?.leadingAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.leadingAnchor, constant: 0).isActive = true
     }
     
     func initializePlayControllerPanel() {
-        if let playControllerPanel = UINib(nibName: "PlayControllerPanel", bundle: nil).instantiate(withOwner: nil, options: nil).first as? PlayControllerPanel {
-            self.playControllerPanel = playControllerPanel
-            self.playControllerBackgroundView.addSubview(playControllerPanel)
-            self.playControllerPanel?.topAnchor.constraint(equalTo: self.playControllerBackgroundView.topAnchor, constant: 0).isActive = true
-            self.playControllerPanel?.bottomAnchor.constraint(equalTo: self.playControllerBackgroundView.bottomAnchor, constant: 0).isActive = true
-            self.playControllerPanel?.trailingAnchor.constraint(equalTo: self.playControllerBackgroundView.trailingAnchor, constant: 0).isActive = true
-            self.playControllerPanel?.leadingAnchor.constraint(equalTo: self.playControllerBackgroundView.leadingAnchor, constant: 0).isActive = true
+        guard let playControllerPanel = UINib(nibName: "PlayControllerPanel", bundle: nil).instantiate(withOwner: nil, options: nil).first as? PlayControllerPanel else {
+            return
         }
+        self.playControllerPanel = playControllerPanel
+        self.playControllerBackgroundView.addSubview(playControllerPanel)
+        self.playControllerPanel?.topAnchor.constraint(equalTo: self.playControllerBackgroundView.topAnchor, constant: 0).isActive = true
+        self.playControllerPanel?.bottomAnchor.constraint(equalTo: self.playControllerBackgroundView.bottomAnchor, constant: 0).isActive = true
+        self.playControllerPanel?.trailingAnchor.constraint(equalTo: self.playControllerBackgroundView.trailingAnchor, constant: 0).isActive = true
+        self.playControllerPanel?.leadingAnchor.constraint(equalTo: self.playControllerBackgroundView.leadingAnchor, constant: 0).isActive = true
     }
     
     func initializeInstrumentPanels() {
@@ -243,6 +248,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.addButton.addTarget(self, action: #selector(ViewController.handleAddTarck), for: .touchUpInside)
+            cell.addButton.tag = tableView.tag
             return cell
         }
         
@@ -253,7 +259,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    @IBAction func handleAddTarck() {
+    @IBAction func handleAddTarck(sender: UIButton) {
         guard let managedContext = self.managedContext else {
             return
         }
@@ -263,9 +269,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             if let selected = self.songInfoPanel?.instrumentSegmentControl.selectedSegmentIndex {
                 track.instrument = Int16(selected)
             }
-            self.songs[self.index].addToTracks(track)
+            self.songs[sender.tag].addToTracks(track)
             self.save()
-            self.tableViews.first?.reloadData()
+            self.tableViews[sender.tag].reloadData()
         }
     }
 }

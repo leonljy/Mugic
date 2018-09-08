@@ -43,7 +43,6 @@ class ViewController: UIViewController {
 
     var songs: [Song] = []
     var tableViews: [UITableView] = []
-//    var index = 0
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -143,6 +142,7 @@ class ViewController: UIViewController {
             return
         }
         self.songInfoPanel = songInfoPanel
+        self.songInfoPanel?.delegate = self
         self.songInfoPanelBackgroundView.addSubview(songInfoPanel)
         self.songInfoPanel?.topAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.topAnchor, constant: 0).isActive = true
         self.songInfoPanel?.bottomAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.bottomAnchor, constant: 0).isActive = true
@@ -195,6 +195,13 @@ class ViewController: UIViewController {
         self.present(songNavigationController, animated: true, completion: nil)
         
     }
+    
+    func songIndexByScrollViewContentOffset() -> Int {
+        let x = self.scrollView.contentOffset.x
+        let width = UIScreen.main.bounds.width
+        let index = Int(x / width)
+        return index
+    }
 }
 
 
@@ -242,6 +249,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return 90
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddTrackTableViewCell") as? AddTrackTableViewCell else {
@@ -255,7 +263,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell else {
             return UITableViewCell()
         }
+        cell.deleteButton.tag = indexPath.row
+        cell.muteButton.tag = indexPath.row
+        cell.soloButton.tag = indexPath.row
         
+        cell.deleteButton.addTarget(self, action: #selector(ViewController.handleDeleteTrack), for: .touchUpInside)
         return cell
     }
     
@@ -273,6 +285,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self.save()
             self.tableViews[sender.tag].reloadData()
         }
+    }
+    
+    @IBAction func handleDeleteTrack(sender: UIButton) {
+        let songIndex = self.songIndexByScrollViewContentOffset()
+        let song = self.songs[songIndex]
+        guard let track = song.tracks?[sender.tag] as? Track else {
+            return
+        }
+        song.removeFromTracks(track)
+        self.managedContext?.delete(track)
+        self.save()
+        self.tableViews[songIndex].reloadData()
+    }
+    
+   @IBAction  func handleMuteTrack(sender: UIButton) {
+        
+    }
+    
+    @IBAction func handleSoloTrack(sender: UIButton) {
+        
     }
 }
 
@@ -360,45 +392,3 @@ extension ViewController: DrumKitPanelDelegate {
         
     }
 }
-
-//extension ViewController: GADBannerViewDelegate {
-//    /// Tells the delegate an ad request loaded an ad.
-//    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-//        print("adViewDidReceiveAd")
-//        self.bannerView.alpha = 0
-//        UIView.animate(withDuration: 1, animations: {
-//            self.bannerView.alpha = 1
-//        })
-//    }
-//    
-//    /// Tells the delegate an ad request failed.
-//    func adView(_ bannerView: GADBannerView,
-//                didFailToReceiveAdWithError error: GADRequestError) {
-//        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-//    }
-//
-//    /// Tells the delegate that a full-screen view will be presented in response
-//    /// to the user clicking on an ad.
-//    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-//        print("adViewWillPresentScreen")
-//    }
-//
-//    /// Tells the delegate that the full-screen view will be dismissed.
-//    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-//        print("adViewWillDismissScreen")
-//    }
-//
-//    /// Tells the delegate that the full-screen view has been dismissed.
-//    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-//        print("adViewDidDismissScreen")
-//    }
-//
-//    /// Tells the delegate that a user click will open another app (such as
-//    /// the App Store), backgrounding the current app.
-//    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-//        print("adViewWillLeaveApplication")
-//    }
-//}
-
-
-

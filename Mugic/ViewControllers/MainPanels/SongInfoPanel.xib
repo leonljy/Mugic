@@ -26,6 +26,9 @@
                         <segment title="Drum"/>
                         <segment title="Voice"/>
                     </segments>
+                    <connections>
+                        <action selector="selectPanel:" destination="dNc-zE-KdY" eventType="valueChanged" id="7Sn-hD-RKX"/>
+                    </connections>
                 </segmentedControl>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8yJ-9W-Axv">
                     <rect key="frame" x="0.0" y="0.0" width="168" height="40"/>

@@ -41,6 +41,10 @@
 		919403A320F0AAB000A96206 /* SongEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A220F0AAB000A96206 /* SongEditViewController.swift */; };
 		919403A920F0AD1D00A96206 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A820F0AD1D00A96206 /* Song.swift */; };
 		9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */; };
+		91A10822215B54CC0070825B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10821215B54CC0070825B /* Event.swift */; };
+		91A10824215B592E0070825B /* ViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10823215B592E0070825B /* ViewController+Record.swift */; };
+		91A10826215B593D0070825B /* ViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10825215B593D0070825B /* ViewController+Delegates.swift */; };
+		91A10828215B59550070825B /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10827215B59550070825B /* ViewController+TableView.swift */; };
 		91BB7C722106320F00E737FF /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB7C702106320F00E737FF /* Song+CoreDataClass.swift */; };
 		91BB7C732106320F00E737FF /* Song+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB7C712106320F00E737FF /* Song+CoreDataProperties.swift */; };
 		91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5638E20AC2DF00029089B /* ChordPanelView.xib */; };
@@ -118,6 +122,10 @@
 		919403A220F0AAB000A96206 /* SongEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongEditViewController.swift; sourceTree = "<group>"; };
 		919403A820F0AD1D00A96206 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		91A10821215B54CC0070825B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		91A10823215B592E0070825B /* ViewController+Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Record.swift"; sourceTree = "<group>"; };
+		91A10825215B593D0070825B /* ViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Delegates.swift"; sourceTree = "<group>"; };
+		91A10827215B59550070825B /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
 		91BB7C702106320F00E737FF /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91BB7C712106320F00E737FF /* Song+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91C5638E20AC2DF00029089B /* ChordPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChordPanelView.xib; sourceTree = "<group>"; };
@@ -206,6 +214,9 @@
 				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
 				91CD367F2001E78300124BD3 /* ViewController.swift */,
 				91278F8C20C54974008DAAB0 /* MenuViewController.swift */,
+				91A10823215B592E0070825B /* ViewController+Record.swift */,
+				91A10825215B593D0070825B /* ViewController+Delegates.swift */,
+				91A10827215B59550070825B /* ViewController+TableView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -355,6 +366,7 @@
 				919403A820F0AD1D00A96206 /* Song.swift */,
 				91BB7C702106320F00E737FF /* Song+CoreDataClass.swift */,
 				91BB7C712106320F00E737FF /* Song+CoreDataProperties.swift */,
+				91A10821215B54CC0070825B /* Event.swift */,
 				9194038720F09CF500A96206 /* Event+CoreDataClass.swift */,
 				9194038820F09CF500A96206 /* Event+CoreDataProperties.swift */,
 				9194037D20F09CF500A96206 /* ChordEvent+CoreDataClass.swift */,
@@ -626,7 +638,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91813C4120513AEE004E600C /* Recorder.swift in Sources */,
+				91A10822215B54CC0070825B /* Event.swift in Sources */,
 				91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */,
+				91A10826215B593D0070825B /* ViewController+Delegates.swift in Sources */,
 				9194038E20F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift in Sources */,
 				9194038C20F09CF500A96206 /* RhythmEvent+CoreDataProperties.swift in Sources */,
 				9194038D20F09CF500A96206 /* MelodicEvent+CoreDataClass.swift in Sources */,
@@ -649,6 +663,8 @@
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
 				919403A320F0AAB000A96206 /* SongEditViewController.swift in Sources */,
 				91CE86F020330FFC00812E42 /* Color.swift in Sources */,
+				91A10828215B59550070825B /* ViewController+TableView.swift in Sources */,
+				91A10824215B592E0070825B /* ViewController+Record.swift in Sources */,
 				91FF505020394484008460C3 /* Guitar.swift in Sources */,
 				91CD36802001E78300124BD3 /* ViewController.swift in Sources */,
 				91BB7C732106320F00E737FF /* Song+CoreDataProperties.swift in Sources */,

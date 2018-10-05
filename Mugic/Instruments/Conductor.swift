@@ -22,6 +22,7 @@ struct Conductor {
     let guitar: Guitar
     let drum: Drum
     
+    
     init() {
         self.piano = Piano()
         self.guitar = Guitar()
@@ -43,7 +44,7 @@ struct Conductor {
     }
     
     func play(root: Note, chord: Chord) {
-        self.piano.play(root: root, chord: chord)
+        self.guitar.play(root: root, chord: chord)
     }
     
     func play(note: Int) {
@@ -70,8 +71,23 @@ struct Conductor {
         var events = events
         let event = events.removeFirst()
         Timer.scheduledTimer(withTimeInterval: event.time - currentTime, repeats: false) { (timer) in
-//            self.piano.play(root: event.root, chord: event.chord)
-//            self.replay(events: events, currentTime: event.time)
+            if event is ChordEvent {
+                let chordEvent = event as! ChordEvent
+                guard let note = Note(rawValue: Int(chordEvent.baseNote)), let chord = Chord(rawValue: Int(chordEvent.chord)) else {
+                    return
+                }
+                self.play(root: note, chord: chord)
+            } else if event is MelodicEvent {
+                let melodicEvent = event as! MelodicEvent
+                self.play(note: Int(melodicEvent.note))
+            } else if event is RhythmEvent {
+                let rhythmEvent = event as! RhythmEvent
+                self.playDrum(note: Int(rhythmEvent.beat))
+            }
+
+            self.replay(events: events, currentTime: event.time)
         }
     }
+    
+    
 }

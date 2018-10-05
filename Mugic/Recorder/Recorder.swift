@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class Recorder {
     var recording = false
     var timer: Timer = Timer()
-    var song: Song
+    var track: Track
     var startTime = Date()
     var events = [Event]()
     var isRecording: Bool {
@@ -25,10 +27,20 @@ class Recorder {
     }
     
     init () {
-        self.song = Song()
+        self.track = Track()
     }
-    init (song: Song) {
-        self.song = song
+    
+    init (track: Track) {
+        self.track = track
+    }
+    
+    var managedContext: NSManagedObjectContext? {
+        get {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return nil
+            }
+            return appDelegate.persistentContainer.viewContext
+        }
     }
     
     func showCount(countBlock: @escaping (_ timeInterval: TimeInterval) -> Void, recordingBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
@@ -40,14 +52,14 @@ class Recorder {
             //TODO: Change Magic number 4 by song time signature
             if timeInterval > 5 {
                 timer.invalidate()
-                self.startRecored(timerBlock: recordingBlock)
+                self.startRecord(timerBlock: recordingBlock)
             } else {
                 countBlock(timeInterval)
             }
         })
     }
     
-    func startRecored(timerBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
+    func startRecord(timerBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
         self.isRecording = true
         self.startTime = Date()
         self.events = [Event]()
@@ -61,7 +73,8 @@ class Recorder {
         guard self.isRecording else {
             return
         }
-        
+        self.track.events = NSSet(array: self.events)
+        self.save()
         self.isRecording = false
         self.timer.invalidate()
     }
@@ -72,8 +85,70 @@ class Recorder {
         }
         let now = Date()
         let timeInterval = now.timeIntervalSince(self.startTime)
-        print("\(timeInterval) => \(root.rawValue) \(chord.rawValue) Pressed")
-//        let event = Event(time: timeInterval, root: root, chord: chord)
-//        self.events.append(event)
+        
+        guard let managedContext = self.managedContext else {
+            return
+        }
+        let entity = NSEntityDescription.entity(forEntityName: "ChordEvent", in: managedContext)!
+        if let event = NSManagedObject(entity: entity, insertInto: managedContext) as? ChordEvent {
+            event.baseNote = Int16(root.rawValue)
+            event.chord = Int16(chord.rawValue)
+            event.time = Double(timeInterval)
+            self.events.append(event)
+            
+            self.save()
+        }
     }
+    
+    func save(note: Int) {
+        guard self.isRecording else {
+            return
+        }
+        let now = Date()
+        let timeInterval = now.timeIntervalSince(self.startTime)
+        
+        guard let managedContext = self.managedContext else {
+            return
+        }
+        let entity = NSEntityDescription.entity(forEntityName: "MelodicEvent", in: managedContext)!
+        if let event = NSManagedObject(entity: entity, insertInto: managedContext) as? MelodicEvent {
+            event.note = Int16(note)
+            event.time = Double(timeInterval)
+            self.events.append(event)
+            self.save()
+        }
+    }
+    
+    func save(rhythmNote: Int) {
+        guard self.isRecording else {
+            return
+        }
+        let now = Date()
+        let timeInterval = now.timeIntervalSince(self.startTime)
+        
+        guard let managedContext = self.managedContext else {
+            return
+        }
+        let entity = NSEntityDescription.entity(forEntityName: "RhythmEvent", in: managedContext)!
+        if let event = NSManagedObject(entity: entity, insertInto: managedContext) as? RhythmEvent {
+            event.beat = Int16(rhythmNote)
+            event.time = Double(timeInterval)
+            self.events.append(event)
+            self.save()
+        }
+    }
+    
+    func save() {
+        guard let managedContext = self.managedContext else {
+            return
+        }
+        
+        do {
+            try managedContext.save()
+        } catch {
+            
+        }
+    }
+    
+
 }

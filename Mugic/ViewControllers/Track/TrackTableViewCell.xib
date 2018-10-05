@@ -65,15 +65,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTx-ag-Ypz">
+                    <rect key="frame" x="90" y="10" width="95" height="70"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vWr-dI-3YX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="08O-gx-b6P"/>
                 <constraint firstItem="BUc-di-IMs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3FB-1i-43l"/>
+                <constraint firstItem="fe9-dL-h4C" firstAttribute="leading" secondItem="xTx-ag-Ypz" secondAttribute="trailing" constant="10" id="3kx-OD-HCh"/>
+                <constraint firstItem="xTx-ag-Ypz" firstAttribute="leading" secondItem="BUc-di-IMs" secondAttribute="trailing" constant="10" id="5kU-i9-Tar"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9qB-TY-S9b"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="A0N-8Z-xGv"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="leading" secondItem="vWr-dI-3YX" secondAttribute="trailing" constant="10" id="HPl-dc-aQm"/>
                 <constraint firstItem="BUc-di-IMs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="IFl-I0-oVV"/>
+                <constraint firstItem="xTx-ag-Ypz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="LAW-6l-bNG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xTx-ag-Ypz" secondAttribute="bottom" constant="10" id="Od9-au-U7v"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vWr-dI-3YX" secondAttribute="bottom" constant="10" id="RFr-7n-gvY"/>
                 <constraint firstItem="vWr-dI-3YX" firstAttribute="leading" secondItem="BUc-di-IMs" secondAttribute="trailing" constant="10" id="SZd-wo-mhC"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dWr-DX-LC0"/>
@@ -81,6 +88,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="changeNameButton" destination="xTx-ag-Ypz" id="fuf-4V-i5N"/>
                 <outlet property="deleteButton" destination="zSp-Ri-XyS" id="iOz-rr-7KA"/>
                 <outlet property="muteButton" destination="W9W-Qt-63Y" id="yPI-Pv-ep7"/>
                 <outlet property="soloButton" destination="0JE-pP-XPv" id="axe-KB-bs4"/>

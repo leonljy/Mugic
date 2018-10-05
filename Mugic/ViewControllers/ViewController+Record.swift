@@ -27,12 +27,6 @@ extension ViewController {
             self.recorder.startRecord { (passedTime) in
                 
             }
-//            self.recorder.showCount(countBlock: { (timeInterval) in
-//                //TODO: Calculate Remain Count
-//                //                self.recordStatusLabel.text = "\(5-Int(timeInterval))"
-//            }) { (timeInterval) in
-//                //                self.recordStatusLabel.text = "\(timeInterval.timeString())"
-//            }
         }
     }
     

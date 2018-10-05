@@ -43,13 +43,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell else {
+        let songIndex = self.songIndexByScrollViewContentOffset()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let track = self.songs[songIndex].tracks?.object(at: indexPath.row) as? Track else {
             return UITableViewCell()
         }
+        cell.trackNameLabel.text = track.name
         cell.deleteButton.tag = indexPath.row
         cell.muteButton.tag = indexPath.row
         cell.soloButton.tag = indexPath.row
-        
+        cell.changeNameButton.tag = indexPath.row
+        cell.changeNameButton.addTarget(self, action: #selector(ViewController.handleChangeTrackName(sender:)), for: .touchUpInside)
         cell.deleteButton.addTarget(self, action: #selector(ViewController.handleDeleteTrack), for: .touchUpInside)
         return cell
     }
@@ -79,6 +82,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         song.removeFromTracks(track)
         self.managedContext?.delete(track)
         self.save()
+
+        if let selectedTrackIndex = self.selectedTrackIndex, selectedTrackIndex >= sender.tag {
+            self.selectedTrackIndex = nil
+        }
         self.tableViews[songIndex].reloadData()
     }
     
@@ -88,6 +95,38 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func handleSoloTrack(sender: UIButton) {
         
+    }
+    
+    @IBAction func handleChangeTrackName(sender: UIButton) {
+        let title = "Edit Track Title"
+        let message = "Insert New Track Title"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addTextField()
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
+            //Save New Title
+            let songIndex = self.songIndexByScrollViewContentOffset()
+            let song = self.songs[songIndex]
+            guard let track = song.tracks?[sender.tag] as? Track else {
+                return
+            }
+            
+            guard let textField = alert.textFields?.first, let title = textField.text else {
+                return
+            }
+            
+            track.name = title
+            self.save()
+            if let cell = self.tableViews[songIndex].cellForRow(at: IndexPath(row: sender.tag, section: 1)) as? TrackTableViewCell {
+                cell.trackNameLabel.text = title
+            }
+        }))
+        
+        
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

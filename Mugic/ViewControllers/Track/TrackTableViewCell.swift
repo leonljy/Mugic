@@ -17,6 +17,7 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak var soloButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var volumeProgressBar: UISlider!
+    @IBOutlet weak var changeNameButton: UIButton!
     
     
 }

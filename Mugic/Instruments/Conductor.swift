@@ -21,7 +21,16 @@ struct Conductor {
     let piano: Piano
     let guitar: Guitar
     let drum: Drum
-    
+    var playing = false
+    var isPlaying: Bool {
+        get {
+            return self.playing
+        }
+        
+        set {
+            self.playing = newValue
+        }
+    }
     
     init() {
         self.piano = Piano()
@@ -57,37 +66,42 @@ struct Conductor {
         }
         
         self.drum.play(drumkit)
-        
     }
     
-    func replay(events: [Event]) {
-        self.replay(events: events, currentTime: 0)
+    func stop() {
+        try? AudioKit.stop()
     }
     
-    private func replay(events: [Event], currentTime: TimeInterval) {
+    func eventTimers(events: [Event]) -> [Timer] {
         guard events.count > 0 else {
-            return
+            return []
         }
-        var events = events
-        let event = events.removeFirst()
-        Timer.scheduledTimer(withTimeInterval: event.time - currentTime, repeats: false) { (timer) in
-            if event is ChordEvent {
-                let chordEvent = event as! ChordEvent
-                guard let note = Note(rawValue: Int(chordEvent.baseNote)), let chord = Chord(rawValue: Int(chordEvent.chord)) else {
-                    return
+        
+        let now = Date()
+        var timers: [Timer] = []
+        for event in events {
+            let fireDate = now.addingTimeInterval(TimeInterval(event.time) + TimeInterval(1))
+            let timer = Timer(fire: fireDate, interval: 0, repeats: false) { (timer) in
+                print(Date())
+                if event is ChordEvent {
+                    let chordEvent = event as! ChordEvent
+                    guard let note = Note(rawValue: Int(chordEvent.baseNote)), let chord = Chord(rawValue: Int(chordEvent.chord)) else {
+                        return
+                    }
+                    self.play(root: note, chord: chord)
+                } else if event is MelodicEvent {
+                    let melodicEvent = event as! MelodicEvent
+                    self.play(note: Int(melodicEvent.note))
+                } else if event is RhythmEvent {
+                    let rhythmEvent = event as! RhythmEvent
+                    self.playDrum(note: Int(rhythmEvent.beat))
                 }
-                self.play(root: note, chord: chord)
-            } else if event is MelodicEvent {
-                let melodicEvent = event as! MelodicEvent
-                self.play(note: Int(melodicEvent.note))
-            } else if event is RhythmEvent {
-                let rhythmEvent = event as! RhythmEvent
-                self.playDrum(note: Int(rhythmEvent.beat))
             }
-
-            self.replay(events: events, currentTime: event.time)
+            
+            timers.append(timer)
         }
+        
+        return timers
     }
-    
     
 }

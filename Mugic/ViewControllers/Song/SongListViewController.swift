@@ -39,6 +39,10 @@ class SongListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        self.loadSongs()
+    }
+    
+    func loadSongs() {
         if let managedContext = self.managedContext {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Song")
             let sort = NSSortDescriptor(key: "updatedAt", ascending: false)
@@ -68,10 +72,8 @@ class SongListViewController: UIViewController {
         if let song = NSManagedObject(entity: entity, insertInto: managedContext) as? Song {
             song.name = "My song - \(Date())"
             song.updatedAt = Date() as NSDate
-            self.songs?.append(song)
-            self.songs?.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
             self.save()
-            self.tableView.reloadData()
+            self.loadSongs()
         }
     }
     
@@ -111,7 +113,7 @@ extension SongListViewController: UITableViewDataSource {
         return songs.count
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let song = self.songs?[indexPath.row], editingStyle == .delete else {
             return
         }

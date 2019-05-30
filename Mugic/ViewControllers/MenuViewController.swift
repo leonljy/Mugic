@@ -107,7 +107,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 let activityViewController = UIActivityViewController(activityItems: [URL(string: self.mugicURL)!], applicationActivities: nil)
                 present(activityViewController, animated: true, completion: nil)
             } else {
-                UIApplication.shared.open(URL(string: self.atURL)!, options: [:], completionHandler: nil)
+                UIApplication.shared.open(URL(string: self.atURL)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             }
         }
     }
@@ -136,4 +136,9 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
 class MenuCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

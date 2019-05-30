@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,23 +19,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36D-MP-LDu">
-                            <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="40"/>
                             <state key="normal" title="Play"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q19-LU-tLe">
-                            <rect key="frame" x="75" y="0.0" width="75" height="40"/>
-                            <state key="normal" title="Stop"/>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpA-V9-Ij7">
-                            <rect key="frame" x="150" y="0.0" width="75" height="40"/>
+                            <rect key="frame" x="94" y="0.0" width="93.5" height="40"/>
                             <state key="normal" title="Record"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-mR-h8c">
-                            <rect key="frame" x="225" y="0.0" width="75" height="40"/>
+                            <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
                             <state key="normal" title="&lt;&lt;"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzD-x8-Bq1">
-                            <rect key="frame" x="300" y="0.0" width="75" height="40"/>
+                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
                             <state key="normal" title="&gt;&gt;"/>
                         </button>
                     </subviews>
@@ -55,7 +51,6 @@
                 <outlet property="fastforwardButton" destination="mzD-x8-Bq1" id="QOb-Wb-TDC"/>
                 <outlet property="playButton" destination="36D-MP-LDu" id="NHH-QR-2bt"/>
                 <outlet property="recordButton" destination="hpA-V9-Ij7" id="RkG-g1-o9z"/>
-                <outlet property="stopButton" destination="Q19-LU-tLe" id="mkq-Gq-w9J"/>
             </connections>
             <point key="canvasLocation" x="22.5" y="-223"/>
         </view>

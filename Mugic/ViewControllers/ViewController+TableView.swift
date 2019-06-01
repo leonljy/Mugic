@@ -42,9 +42,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.addButton.tag = tableView.tag
             return cell
         }
-        
-        let songIndex = self.songIndexByScrollViewContentOffset()
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let track = self.songs[songIndex].tracks?.object(at: indexPath.row) as? Track else {
+        let song = self.songs[tableView.tag]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let tracks = song.tracks, let track = tracks[indexPath.row] as? Track else {
             return UITableViewCell()
         }
         cell.trackNameLabel.text = track.name
@@ -61,16 +60,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let managedContext = self.managedContext else {
             return
         }
-        let entity = NSEntityDescription.entity(forEntityName: "Track", in: managedContext)!
-        if let track = NSManagedObject(entity: entity, insertInto: managedContext) as? Track {
-            track.name = "Track - \(Date())"
-            if let selected = self.songInfoPanel?.instrumentSegmentControl.selectedSegmentIndex {
-                track.instrument = Int16(selected)
-            }
-            self.songs[sender.tag].addToTracks(track)
-            self.save()
-            self.tableViews[sender.tag].reloadData()
+        let track = Track(context: managedContext)
+        track.name = "Track - \(Date())"
+        if let selected = self.songInfoPanel?.instrumentSegmentControl.selectedSegmentIndex {
+            track.instrument = Int16(selected)
         }
+        self.songs[sender.tag].addToTracks(track)
+        self.save()
+        self.tableViews[sender.tag].reloadData()
     }
     
     @IBAction func handleDeleteTrack(sender: UIButton) {

@@ -16,15 +16,6 @@ class SongListViewController: UIViewController {
     
     var songs: [Song]?
     
-    var managedContext: NSManagedObjectContext? {
-        get {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return nil
-            }
-            return appDelegate.persistentContainer.viewContext
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +26,6 @@ class SongListViewController: UIViewController {
         
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -43,19 +33,18 @@ class SongListViewController: UIViewController {
     }
     
     func loadSongs() {
-        if let managedContext = self.managedContext {
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Song")
-            let sort = NSSortDescriptor(key: "updatedAt", ascending: false)
-            fetchRequest.sortDescriptors = [sort]
-            do {
-                if let songs = try managedContext.fetch(fetchRequest) as? [Song] {
-                    self.songs = songs
-                    self.songs?.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
-                    self.tableView.reloadData()
-                }
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
+        guard let managedContext = self.managedContext else {
+            return
+        }
+        let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
+        let sort = NSSortDescriptor(key: "updatedAt", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
+        do {
+            self.songs = try managedContext.fetch(fetchRequest)
+            self.songs?.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
+            self.tableView.reloadData()
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
@@ -68,25 +57,19 @@ class SongListViewController: UIViewController {
         guard let managedContext = self.managedContext else {
             return
         }
-        let entity = NSEntityDescription.entity(forEntityName: "Song", in: managedContext)!
-        if let song = NSManagedObject(entity: entity, insertInto: managedContext) as? Song {
-            song.name = "My song - \(Date())"
-            song.updatedAt = Date() as NSDate
-            self.save()
-            self.loadSongs()
-        }
+        let song = Song(context: managedContext)
+        song.name = "My song - \(Date())"
+        song.updatedAt = Date() as NSDate
+        self.songs?.append(song)
+        self.save()
+        self.loadSongs()
     }
     
     func save() {
-        guard let managedContext = self.managedContext else {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            self.showAlert(error: error)
-        }
+        appDelegate.coreDataStack.saveContext()
     }
 }
 

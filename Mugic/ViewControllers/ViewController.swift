@@ -8,7 +8,6 @@
 
 import UIKit
 import AudioKit
-import Firebase
 import CoreData
 
 enum PanelType: Int {
@@ -32,14 +31,7 @@ class ViewController: UIViewController {
     var pianoPanelView: PianoPanelView?
     var drumKitPanelView: DrumKitPanelView?
     
-    var managedContext: NSManagedObjectContext? {
-        get {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return nil
-            }
-            return appDelegate.persistentContainer.viewContext
-        }
-    }
+    
 
     var songs: [Song] = []
     var tableViews: [UITableView] = []
@@ -63,6 +55,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         self.loadSongs()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.removeLeftAndBottomEdgeTouchDelay()
@@ -70,23 +63,21 @@ class ViewController: UIViewController {
     
     func loadSongs() {
         if let managedContext = self.managedContext {
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Song")
-            let sort = NSSortDescriptor(key: "updatedAt", ascending: false)
-            fetchRequest.sortDescriptors = [sort]
+            let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
+            
             do {
-                if let songs = try managedContext.fetch(fetchRequest) as? [Song] {
-                    self.songs = songs
-                    self.songs.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
-                    for tableView in self.tableViews {
-                        tableView.removeFromSuperview()
-                    }
-                    self.initializeTableViews()
+                self.songs = try managedContext.fetch(fetchRequest)
+                self.songs.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
+                for tableView in self.tableViews {
+                    tableView.removeFromSuperview()
                 }
+                self.initializeTableViews()
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
         }
     }
+    
     func removeLeftAndBottomEdgeTouchDelay() {
         if let window = self.view.window, let gestures = window.gestureRecognizers {
             for gesture in gestures {
@@ -96,15 +87,10 @@ class ViewController: UIViewController {
     }
     
     func save() {
-        guard let managedContext = self.managedContext else {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            self.showAlert(error: error)
-        }
+        appDelegate.coreDataStack.saveContext()
     }
     
     override func didReceiveMemoryWarning() {

@@ -39,7 +39,7 @@ class Recorder {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return nil
             }
-            return appDelegate.persistentContainer.viewContext
+            return appDelegate.coreDataStack.managedContext
         }
     }
     

@@ -21,15 +21,6 @@ class SongEditViewController: UIViewController {
     var song: Song?
     @IBOutlet weak var pickerView: UIPickerView!
     
-    var managedContext: NSManagedObjectContext? {
-        get {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return nil
-            }
-            return appDelegate.persistentContainer.viewContext
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

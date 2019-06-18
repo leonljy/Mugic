@@ -16,7 +16,8 @@ enum Instruments: Int {
     case Voice
 }
 
-struct Conductor {
+class Conductor {
+    static let shared: Conductor = Conductor()
     let mixer = AKMixer()
     let piano: Piano
     let guitar: Guitar
@@ -26,11 +27,12 @@ struct Conductor {
         get {
             return self.playing
         }
-        
         set {
             self.playing = newValue
         }
     }
+    
+    var timers: [Timer] = []
     
     init() {
         self.piano = Piano()
@@ -49,7 +51,12 @@ struct Conductor {
         }
         
         AudioKit.output = self.mixer
-        try? AudioKit.start()
+        
+        do {
+            try AudioKit.start()
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     func play(root: Note, chord: Chord) {
@@ -69,20 +76,47 @@ struct Conductor {
     }
     
     func stop() {
-        try? AudioKit.stop()
+        for timer in self.timers {
+            timer.invalidate()
+        }
+        self.timers.removeAll()
+        self.isPlaying = false
     }
     
-    func eventTimers(events: [Event]) -> [Timer] {
-        guard events.count > 0 else {
-            return []
+    func replay(song: Song, completionBlock: @escaping () -> Void) {
+        self.isPlaying = true
+        guard let tracks = song.tracks?.array as? [Track] else {
+            return
+        }
+        var mergedEvents: [Event] = []
+        for track in tracks {
+            if let events = track.events?.allObjects as? [Event] {
+                mergedEvents.append(contentsOf: events)
+            }
         }
         
-        let now = Date()
-        var timers: [Timer] = []
+        mergedEvents.sort { (a, b) -> Bool in
+            return a.time < b.time
+        }
+        
+        self.createEventTimers(events: mergedEvents, completionBlock: completionBlock)
+        
+        let loop = RunLoop.current
+        for timer in self.timers {
+            loop.add(timer, forMode: RunLoop.Mode.default)
+        }
+
+        loop.run()
+    }
+    
+    func createEventTimers(events: [Event], completionBlock: @escaping () -> Void) {
+        guard events.count > 0 else {
+            return
+        }
+        
+        self.timers = []
         for event in events {
-            let fireDate = now.addingTimeInterval(TimeInterval(event.time) + TimeInterval(1))
-            let timer = Timer(fire: fireDate, interval: 0, repeats: false) { (timer) in
-                print(Date())
+            let timer = Timer(timeInterval: TimeInterval(event.time) + TimeInterval(1), repeats: false) { _ in
                 if event is ChordEvent {
                     let chordEvent = event as! ChordEvent
                     guard let note = Note(rawValue: Int(chordEvent.baseNote)), let chord = Chord(rawValue: Int(chordEvent.chord)) else {
@@ -98,10 +132,16 @@ struct Conductor {
                 }
             }
             
-            timers.append(timer)
+            self.timers.append(timer)
         }
         
-        return timers
+        guard let lastEvent = events.last else {
+            return
+        }
+        let lastTimer = Timer(timeInterval: TimeInterval(2) + TimeInterval(lastEvent.time), repeats: false) { _ in
+            completionBlock()
+        }
+        self.timers.append(lastTimer)
     }
     
 }

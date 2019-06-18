@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     var noteValue: Int = 0
     var noteString: String?
     var chordString: String?
-    var conductor = Conductor()
     var recorder = Recorder()
     
     @IBOutlet weak var panelBackgroundView: UIView!
@@ -53,11 +52,12 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.loadSongs()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.loadSongs()
         self.removeLeftAndBottomEdgeTouchDelay()
     }
     
@@ -149,8 +149,7 @@ class ViewController: UIViewController {
         self.playControllerPanel?.trailingAnchor.constraint(equalTo: self.playControllerBackgroundView.trailingAnchor, constant: 0).isActive = true
         self.playControllerPanel?.leadingAnchor.constraint(equalTo: self.playControllerBackgroundView.leadingAnchor, constant: 0).isActive = true
         
-        self.playControllerPanel?.recordButton.addTarget(self, action: #selector(handleRecord(_:)), for: .touchUpInside)
-//        self.playControllerPanel?.stopButton.addTarget(self, action: #selector(handle), for: <#T##UIControlEvents#>)
+        self.playControllerPanel?.recordButton.addTarget(self, action: #selector(handleRecordOrStop(_:)), for: .touchUpInside)
         self.playControllerPanel?.playButton.addTarget(self, action: #selector(handlePlay(_:)), for: .touchUpInside)
     }
     

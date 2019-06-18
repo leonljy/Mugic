@@ -46,7 +46,7 @@ extension ViewController: ChordPanelDelegate {
             return
         }
         self.chordString = sender.titleLabel?.text
-        self.conductor.play(root: note, chord: chord)
+        Conductor.shared.play(root: note, chord: chord)
         self.recorder.save(root: note, chord: chord)
     }
     
@@ -74,7 +74,7 @@ extension ViewController: ChordPanelDelegate {
 extension ViewController: PianoPanelDelegate {
     func melodyTouchDown(sender: UIButton) {
         let tag = sender.tag
-        self.conductor.play(note: tag)
+        Conductor.shared.play(note: tag)
         self.recorder.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
@@ -86,7 +86,7 @@ extension ViewController: PianoPanelDelegate {
 //Drum Mode Extension
 extension ViewController: DrumKitPanelDelegate {
     func playDrum(sender: UIButton) {
-        self.conductor.playDrum(note: sender.tag)
+        Conductor.shared.playDrum(note: sender.tag)
         self.recorder.save(rhythmNote: sender.tag)
     }
     

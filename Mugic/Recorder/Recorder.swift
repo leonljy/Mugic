@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class Recorder {
+    static let shared = Recorder()
     var recording = false
     var timer: Timer = Timer()
     var track: Track
@@ -43,30 +44,16 @@ class Recorder {
         }
     }
     
-    func showCount(countBlock: @escaping (_ timeInterval: TimeInterval) -> Void, recordingBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
-        
-        let startTime = Date()
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-            let now = Date()
-            let timeInterval = now.timeIntervalSince(startTime)
-            //TODO: Change Magic number 4 by song time signature
-            if timeInterval > 5 {
-                timer.invalidate()
-                self.startRecord(timerBlock: recordingBlock)
-            } else {
-                countBlock(timeInterval)
-            }
-        })
-    }
-    
-    func startRecord(timerBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
+    func startRecord(countInTime: TimeInterval ,timerBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
         self.isRecording = true
-        self.startTime = Date()
+        print("Now: \(Date())")
+        self.startTime = Date(timeIntervalSinceNow: countInTime)
+        print("StartTime: \(self.startTime)")
         self.events = [Event]()
-        self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
-            let now = Date()
-            timerBlock(now.timeIntervalSince(self.startTime))
-        })
+//        self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
+//            let now = Date()
+//            timerBlock(now.timeIntervalSince(self.startTime))
+//        })
     }
     
     func stopRecord() {
@@ -85,6 +72,7 @@ class Recorder {
         }
         let now = Date()
         let timeInterval = now.timeIntervalSince(self.startTime)
+        print(timeInterval)
         
         guard let managedContext = self.managedContext else {
             return
@@ -101,10 +89,11 @@ class Recorder {
     }
     
     func save(note: Int) {
-        guard self.isRecording else {
+        let now = Date()
+        guard self.isRecording, now < self.startTime else {
             return
         }
-        let now = Date()
+        
         let timeInterval = now.timeIntervalSince(self.startTime)
         
         guard let managedContext = self.managedContext else {

@@ -17,12 +17,11 @@ enum PanelType: Int {
     case Voice
 }
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     let melody = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B" ]
     var noteValue: Int = 0
     var noteString: String?
     var chordString: String?
-    var recorder = Recorder()
     
     @IBOutlet weak var panelBackgroundView: UIView!
     
@@ -30,12 +29,9 @@ class ViewController: UIViewController {
     var pianoPanelView: PianoPanelView?
     var drumKitPanelView: DrumKitPanelView?
     
+    var song: Song?
     
-
-    var songs: [Song] = []
-    var tableViews: [UITableView] = []
-    
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var songInfoPanelBackgroundView: UIView!
     @IBOutlet weak var playControllerBackgroundView: UIView!
@@ -47,35 +43,34 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.tableFooterView = UIView()
         self.initializeViews()
+        self.initializeTableView()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard let song = self.song else {
+            return
+        }
+        self.title = self.song?.name
+        self.songInfoPanel?.timeSingnatureLabel.text = song.timeSignatureString
+        self.songInfoPanel?.beatLabel.text = "\(song.tempo) BPM"
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.loadSongs()
         self.removeLeftAndBottomEdgeTouchDelay()
     }
     
-    func loadSongs() {
-        if let managedContext = self.managedContext {
-            let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
-            
-            do {
-                self.songs = try managedContext.fetch(fetchRequest)
-                self.songs.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
-                for tableView in self.tableViews {
-                    tableView.removeFromSuperview()
-                }
-                self.initializeTableViews()
-            } catch let error as NSError {
-                print("Could not fetch. \(error), \(error.userInfo)")
-            }
-        }
+    func initializeTableView() {
+        self.tableView.register(UINib(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "TrackTableViewCell")
+        self.tableView.register(UINib(nibName: "AddTrackTableViewCell", bundle: nil), forCellReuseIdentifier: "AddTrackTableViewCell")
+        self.tableView.delegate = self as UITableViewDelegate
+        self.tableView.dataSource = self as UITableViewDataSource
     }
     
     func removeLeftAndBottomEdgeTouchDelay() {
@@ -102,27 +97,6 @@ class ViewController: UIViewController {
         self.initializeInstrumentPanels()
         self.initializeSongPanel()
         self.initializePlayControllerPanel()
-    }
-    
-    func initializeTableViews() {
-        let numberOfTableViews = self.songs.count
-        let screenWidth = UIScreen.main.bounds.width
-        let height = self.scrollView.bounds.height
-        
-        self.scrollView.contentSize = CGSize(width: screenWidth * CGFloat(numberOfTableViews), height: height)
-        for (index, _) in self.songs.enumerated() {
-            let frame = CGRect(x: screenWidth * CGFloat(index), y: 0, width: screenWidth, height: height)
-            let tableView = UITableView(frame: frame)
-            tableView.register(UINib(nibName: "TrackTableViewCell", bundle: nil), forCellReuseIdentifier: "TrackTableViewCell")
-            tableView.register(UINib(nibName: "AddTrackTableViewCell", bundle: nil), forCellReuseIdentifier: "AddTrackTableViewCell")
-            tableView.tableFooterView = UIView()
-            tableView.delegate = self as UITableViewDelegate
-            tableView.dataSource = self as UITableViewDataSource
-            tableView.tag = index
-            self.scrollView.addSubview(tableView)
-            self.tableViews.append(tableView)
-        }
-        
     }
     
     func initializeSongPanel() {
@@ -181,17 +155,15 @@ class ViewController: UIViewController {
 
     
     @IBAction func handleSongs(_ sender: Any) {
-        let songNavigationController = UIStoryboard.init(name: "Song", bundle: nil).instantiateViewController(withIdentifier: "SongNavigationController")
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SongEditViewController") as? SongEditViewController else {
+            return
+        }
         
-        self.present(songNavigationController, animated: true, completion: nil)
-        
-    }
-    
-    func songIndexByScrollViewContentOffset() -> Int {
-        let x = self.scrollView.contentOffset.x
-        let width = UIScreen.main.bounds.width
-        let index = Int(x / width)
-        return index
+        guard let song = self.song else {
+            return
+        }
+        viewController.song = song
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

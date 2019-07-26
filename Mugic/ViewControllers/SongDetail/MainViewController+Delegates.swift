@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ViewController: InstrumentSelectionDelegate {
+extension MainViewController: InstrumentSelectionDelegate {
     func selectPanel(_ selected: PanelType) {
         switch selected {
         case .Chord:
@@ -34,7 +34,7 @@ extension ViewController: InstrumentSelectionDelegate {
 
 
 //Chord Mode Extension {
-extension ViewController: ChordPanelDelegate {
+extension MainViewController: ChordPanelDelegate {
     
     func noteTouchDown(sender: UIButton) {
         self.noteValue = sender.tag
@@ -47,7 +47,7 @@ extension ViewController: ChordPanelDelegate {
         }
         self.chordString = sender.titleLabel?.text
         Conductor.shared.play(root: note, chord: chord)
-        self.recorder.save(root: note, chord: chord)
+        Recorder.shared.save(root: note, chord: chord)
     }
     
     func chordTouchUpOutside(sender: UIButton) {
@@ -71,11 +71,11 @@ extension ViewController: ChordPanelDelegate {
 }
 
 //Melody Mode Extension
-extension ViewController: PianoPanelDelegate {
+extension MainViewController: PianoPanelDelegate {
     func melodyTouchDown(sender: UIButton) {
         let tag = sender.tag
         Conductor.shared.play(note: tag)
-        self.recorder.save(note: tag)
+        Recorder.shared.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
     }
@@ -84,10 +84,10 @@ extension ViewController: PianoPanelDelegate {
 }
 
 //Drum Mode Extension
-extension ViewController: DrumKitPanelDelegate {
+extension MainViewController: DrumKitPanelDelegate {
     func playDrum(sender: UIButton) {
         Conductor.shared.playDrum(note: sender.tag)
-        self.recorder.save(rhythmNote: sender.tag)
+        Recorder.shared.save(rhythmNote: sender.tag)
     }
     
     func touchUpInside() {

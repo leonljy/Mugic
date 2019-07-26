@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Mugic
+
+  Created by Jeong-Uk Lee on 19/06/2019.
+  Copyright © 2019 Jeong-Uk Lee. All rights reserved.
+*/
+
+"Message.Error.General.Title" = "Oops! An error occurred";

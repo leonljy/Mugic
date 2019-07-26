@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -19,7 +19,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        guard self.songs.count > 0, let trackCount = self.songs[tableView.tag].tracks?.count else {
+        guard let song = self.song, let trackCount = song.tracks?.count else {
             return 0
         }
         return trackCount
@@ -38,12 +38,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddTrackTableViewCell") as? AddTrackTableViewCell else {
                 return UITableViewCell()
             }
-            cell.addButton.addTarget(self, action: #selector(ViewController.handleAddTarck), for: .touchUpInside)
-            cell.addButton.tag = tableView.tag
+            cell.addButton.addTarget(self, action: #selector(MainViewController.handleAddTarck), for: .touchUpInside)
             return cell
         }
-        let song = self.songs[tableView.tag]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let tracks = song.tracks, let track = tracks[indexPath.row] as? Track else {
+        
+        guard let song = self.song, let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let tracks = song.tracks, let track = tracks[indexPath.row] as? Track else {
             return UITableViewCell()
         }
         cell.trackNameLabel.text = track.name
@@ -51,8 +50,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.muteButton.tag = indexPath.row
         cell.soloButton.tag = indexPath.row
         cell.changeNameButton.tag = indexPath.row
-        cell.changeNameButton.addTarget(self, action: #selector(ViewController.handleChangeTrackName(sender:)), for: .touchUpInside)
-        cell.deleteButton.addTarget(self, action: #selector(ViewController.handleDeleteTrack), for: .touchUpInside)
+        cell.changeNameButton.addTarget(self, action: #selector(MainViewController.handleChangeTrackName(sender:)), for: .touchUpInside)
+        cell.deleteButton.addTarget(self, action: #selector(MainViewController.handleDeleteTrack), for: .touchUpInside)
         return cell
     }
     
@@ -61,19 +60,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         let track = Track(context: managedContext)
-        track.name = "Track - \(Date())"
+        track.name = "New Track"
         if let selected = self.songInfoPanel?.instrumentSegmentControl.selectedSegmentIndex {
             track.instrument = Int16(selected)
         }
-        self.songs[sender.tag].addToTracks(track)
+        guard let song = self.song else {
+            return
+        }
+        song.addToTracks(track)
         self.save()
-        self.tableViews[sender.tag].reloadData()
+        self.tableView.reloadData()
     }
     
     @IBAction func handleDeleteTrack(sender: UIButton) {
-        let songIndex = self.songIndexByScrollViewContentOffset()
-        let song = self.songs[songIndex]
-        guard let track = song.tracks?[sender.tag] as? Track else {
+        guard let song = self.song, let track = song.tracks?[sender.tag] as? Track else {
             return
         }
         song.removeFromTracks(track)
@@ -83,7 +83,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let selectedTrackIndex = self.selectedTrackIndex, selectedTrackIndex >= sender.tag {
             self.selectedTrackIndex = nil
         }
-        self.tableViews[songIndex].reloadData()
+        self.tableView.reloadData()
     }
     
     @IBAction  func handleMuteTrack(sender: UIButton) {
@@ -103,10 +103,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
-            //Save New Title
-            let songIndex = self.songIndexByScrollViewContentOffset()
-            let song = self.songs[songIndex]
-            guard let track = song.tracks?[sender.tag] as? Track else {
+            guard let song = self.song, let track = song.tracks?[sender.tag] as? Track else {
                 return
             }
             
@@ -116,7 +113,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             track.name = title
             self.save()
-            if let cell = self.tableViews[songIndex].cellForRow(at: IndexPath(row: sender.tag, section: 1)) as? TrackTableViewCell {
+            if let cell = self.tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as? TrackTableViewCell {
                 cell.trackNameLabel.text = title
             }
         }))

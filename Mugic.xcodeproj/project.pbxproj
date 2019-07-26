@@ -41,9 +41,10 @@
 		919403A920F0AD1D00A96206 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A820F0AD1D00A96206 /* Song.swift */; };
 		9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */; };
 		91A10822215B54CC0070825B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10821215B54CC0070825B /* Event.swift */; };
-		91A10824215B592E0070825B /* ViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10823215B592E0070825B /* ViewController+Record.swift */; };
-		91A10826215B593D0070825B /* ViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10825215B593D0070825B /* ViewController+Delegates.swift */; };
-		91A10828215B59550070825B /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10827215B59550070825B /* ViewController+TableView.swift */; };
+		91A10824215B592E0070825B /* MainViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10823215B592E0070825B /* MainViewController+Record.swift */; };
+		91A10826215B593D0070825B /* MainViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10825215B593D0070825B /* MainViewController+Delegates.swift */; };
+		91A10828215B59550070825B /* MainViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A10827215B59550070825B /* MainViewController+TableView.swift */; };
+		91AC947822B934180074E9A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91AC947722B934180074E9A7 /* Localizable.strings */; };
 		91B5C3C322A01B7E00745A93 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5C3C222A01B7E00745A93 /* CoreDataStack.swift */; };
 		91B5C3C522A0254D00745A93 /* UIViewController+ManagedContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5C3C422A0254D00745A93 /* UIViewController+ManagedContext.swift */; };
 		91BB7C722106320F00E737FF /* Song+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB7C702106320F00E737FF /* Song+CoreDataClass.swift */; };
@@ -51,7 +52,7 @@
 		91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5638E20AC2DF00029089B /* ChordPanelView.xib */; };
 		91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5639020AC2DF90029089B /* DrumKitPanelView.xib */; };
 		91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367D2001E78300124BD3 /* AppDelegate.swift */; };
-		91CD36802001E78300124BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367F2001E78300124BD3 /* ViewController.swift */; };
+		91CD36802001E78300124BD3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD367F2001E78300124BD3 /* MainViewController.swift */; };
 		91CD36832001E78300124BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36812001E78300124BD3 /* Main.storyboard */; };
 		91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36842001E78300124BD3 /* Mugic.xcdatamodeld */; };
 		91CD36882001E78300124BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36872001E78300124BD3 /* Assets.xcassets */; };
@@ -123,9 +124,10 @@
 		919403A820F0AD1D00A96206 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		91A10821215B54CC0070825B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		91A10823215B592E0070825B /* ViewController+Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Record.swift"; sourceTree = "<group>"; };
-		91A10825215B593D0070825B /* ViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Delegates.swift"; sourceTree = "<group>"; };
-		91A10827215B59550070825B /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
+		91A10823215B592E0070825B /* MainViewController+Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Record.swift"; sourceTree = "<group>"; };
+		91A10825215B593D0070825B /* MainViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Delegates.swift"; sourceTree = "<group>"; };
+		91A10827215B59550070825B /* MainViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+TableView.swift"; sourceTree = "<group>"; };
+		91AC947722B934180074E9A7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		91B5C3C222A01B7E00745A93 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		91B5C3C422A0254D00745A93 /* UIViewController+ManagedContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ManagedContext.swift"; sourceTree = "<group>"; };
 		91BB7C702106320F00E737FF /* Song+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -134,7 +136,7 @@
 		91C5639020AC2DF90029089B /* DrumKitPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrumKitPanelView.xib; sourceTree = "<group>"; };
 		91CD367A2001E78300124BD3 /* Mugic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mugic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD367D2001E78300124BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91CD367F2001E78300124BD3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91CD367F2001E78300124BD3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		91CD36822001E78300124BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91CD36852001E78300124BD3 /* Mugic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mugic.xcdatamodel; sourceTree = "<group>"; };
 		91CD36872001E78300124BD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,16 +201,13 @@
 		91278F8A20C5492C008DAAB0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9185282D22EAF2DD004B7568 /* SongDetail */,
 				917F6CC82119E5B500B953FE /* MainPanels */,
 				917F6CC32119E26100B953FE /* Track */,
 				9194039720F09E3300A96206 /* Song */,
 				91CD367D2001E78300124BD3 /* AppDelegate.swift */,
 				91B5C3C422A0254D00745A93 /* UIViewController+ManagedContext.swift */,
 				91278F8C20C54974008DAAB0 /* MenuViewController.swift */,
-				91CD367F2001E78300124BD3 /* ViewController.swift */,
-				91A10823215B592E0070825B /* ViewController+Record.swift */,
-				91A10825215B593D0070825B /* ViewController+Delegates.swift */,
-				91A10827215B59550070825B /* ViewController+TableView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -227,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				91CE86EC2033072900812E42 /* Sounds */,
+				91AC947722B934180074E9A7 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -269,6 +269,18 @@
 				91813C4020513AEE004E600C /* Recorder.swift */,
 			);
 			path = Recorder;
+			sourceTree = "<group>";
+		};
+		9185282D22EAF2DD004B7568 /* SongDetail */ = {
+			isa = PBXGroup;
+			children = (
+				91CD36812001E78300124BD3 /* Main.storyboard */,
+				91CD367F2001E78300124BD3 /* MainViewController.swift */,
+				91A10823215B592E0070825B /* MainViewController+Record.swift */,
+				91A10825215B593D0070825B /* MainViewController+Delegates.swift */,
+				91A10827215B59550070825B /* MainViewController+TableView.swift */,
+			);
+			path = SongDetail;
 			sourceTree = "<group>";
 		};
 		9194039720F09E3300A96206 /* Song */ = {
@@ -316,7 +328,6 @@
 				917ADCCA200B3A6E0062B79A /* Instruments */,
 				91813C3F20513ADB004E600C /* Recorder */,
 				91188F9020A6C01700D2C678 /* Panel */,
-				91CD36812001E78300124BD3 /* Main.storyboard */,
 				91CD36872001E78300124BD3 /* Assets.xcassets */,
 				91CD36892001E78300124BD3 /* LaunchScreen.storyboard */,
 				91CD368C2001E78300124BD3 /* Info.plist */,
@@ -529,6 +540,7 @@
 				917F6CCA2119E5DE00B953FE /* SongInfoPanel.xib in Resources */,
 				91188F9220A6C04100D2C678 /* PianokeyView.xib in Resources */,
 				91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */,
+				91AC947822B934180074E9A7 /* Localizable.strings in Resources */,
 				917F6CCC2119E5E900B953FE /* PlayControllerPanel.xib in Resources */,
 				91CD36832001E78300124BD3 /* Main.storyboard in Resources */,
 			);
@@ -641,7 +653,7 @@
 				91813C4120513AEE004E600C /* Recorder.swift in Sources */,
 				91A10822215B54CC0070825B /* Event.swift in Sources */,
 				91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */,
-				91A10826215B593D0070825B /* ViewController+Delegates.swift in Sources */,
+				91A10826215B593D0070825B /* MainViewController+Delegates.swift in Sources */,
 				9194038E20F09CF500A96206 /* MelodicEvent+CoreDataProperties.swift in Sources */,
 				9194038C20F09CF500A96206 /* RhythmEvent+CoreDataProperties.swift in Sources */,
 				9194038D20F09CF500A96206 /* MelodicEvent+CoreDataClass.swift in Sources */,
@@ -666,10 +678,10 @@
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
 				919403A320F0AAB000A96206 /* SongEditViewController.swift in Sources */,
 				91CE86F020330FFC00812E42 /* Color.swift in Sources */,
-				91A10828215B59550070825B /* ViewController+TableView.swift in Sources */,
-				91A10824215B592E0070825B /* ViewController+Record.swift in Sources */,
+				91A10828215B59550070825B /* MainViewController+TableView.swift in Sources */,
+				91A10824215B592E0070825B /* MainViewController+Record.swift in Sources */,
 				91FF505020394484008460C3 /* Guitar.swift in Sources */,
-				91CD36802001E78300124BD3 /* ViewController.swift in Sources */,
+				91CD36802001E78300124BD3 /* MainViewController.swift in Sources */,
 				91BB7C732106320F00E737FF /* Song+CoreDataProperties.swift in Sources */,
 				919403A920F0AD1D00A96206 /* Song.swift in Sources */,
 				9194039D20F09E9600A96206 /* SongTableViewCell.swift in Sources */,

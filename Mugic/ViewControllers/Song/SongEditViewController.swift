@@ -32,6 +32,8 @@ class SongEditViewController: UIViewController {
         self.timeSignatureButton.setTitle("\(song?.timeSignatureString ?? "")", for: .normal)
         self.pickerView.delegate = self as UIPickerViewDelegate
         self.pickerView.dataSource = self as UIPickerViewDataSource
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,15 +54,20 @@ class SongEditViewController: UIViewController {
     }
     
     
-    
-}
-
-extension SongEditViewController: UITextFieldDelegate {
+    @IBAction func handleBackgroundTouch(_ sender: Any) {
+        self.nameTextField.resignFirstResponder()
+        self.tempoTextField.resignFirstResponder()
+    }
     
     @IBAction func handleNameChanged(_ sender: Any) {
         self.song?.name = self.nameTextField.text
         self.save()
     }
+}
+
+extension SongEditViewController: UITextFieldDelegate {
+    
+    
     
     @IBAction func handleTempoChanged(_ sender: Any) {
         guard let tempoString = self.tempoTextField.text, let tempo = Int16(tempoString), tempo > 0, tempo < 500 else {

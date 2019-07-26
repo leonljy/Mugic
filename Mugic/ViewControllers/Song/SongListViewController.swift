@@ -58,7 +58,7 @@ class SongListViewController: UIViewController {
             return
         }
         let song = Song(context: managedContext)
-        song.name = "My song - \(Date())"
+        song.name = "New song"
         song.updatedAt = Date() as NSDate
         self.songs?.append(song)
         self.save()
@@ -112,15 +112,11 @@ extension SongListViewController: UITableViewDataSource {
 
 extension SongListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SongEditViewController") as? SongEditViewController else {
+        guard let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController, let song = self.songs?[indexPath.row] else {
             return
         }
-        
-        guard let song = self.songs?[indexPath.row] else {
-            return
-        }
-        viewController.song = song
-        self.navigationController?.pushViewController(viewController, animated: true)
+        mainViewController.song = song
+        self.navigationController?.pushViewController(mainViewController, animated: true)
     }
     
 }

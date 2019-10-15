@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,6 @@
                         <segment title="Chord"/>
                         <segment title="Melody"/>
                         <segment title="Drum"/>
-                        <segment title="Voice"/>
                     </segments>
                     <connections>
                         <action selector="selectPanel:" destination="dNc-zE-KdY" eventType="valueChanged" id="7Sn-hD-RKX"/>
@@ -51,7 +50,6 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Rna-wt-Cph" firstAttribute="top" secondItem="dNc-zE-KdY" secondAttribute="top" id="E35-FA-OFb"/>
-                <constraint firstAttribute="height" constant="40" id="TKK-wd-4v6"/>
                 <constraint firstItem="8yJ-9W-Axv" firstAttribute="leading" secondItem="dNc-zE-KdY" secondAttribute="leading" id="Ypy-DI-Mxq"/>
                 <constraint firstItem="8yJ-9W-Axv" firstAttribute="top" secondItem="dNc-zE-KdY" secondAttribute="top" id="agq-e0-D8O"/>
                 <constraint firstItem="Rna-wt-Cph" firstAttribute="leading" secondItem="8yJ-9W-Axv" secondAttribute="trailing" id="bRT-pq-1IG"/>

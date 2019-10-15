@@ -18,7 +18,7 @@ extension MainViewController {
             Recorder.shared.stopRecord()
             Conductor.shared.stop()
         } else {
-            guard let song = self.song, let trackIndex = self.selectedTrackIndex, let track = song.tracks?.object(at: trackIndex) as? Track else {
+            guard let song = self.song, let trackIndex = self.selectedTrackIndex, let tracks = song.tracks?.reversed, let track = tracks.object(at: trackIndex) as? Track else {
                 self.showAlert(message: "Please select a track first")
                 return
             }
@@ -29,7 +29,7 @@ extension MainViewController {
             Recorder.shared.startRecord(countInTime: song.countInTime) { (passedTime) in
 
             }
-            Conductor.shared.replay(song: song) {
+            Conductor.shared.replay(withMetronome: true, song: song) {
                 Conductor.shared.stop()
             }
         }

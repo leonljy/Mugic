@@ -42,7 +42,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         
-        guard let song = self.song, let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let tracks = song.tracks, let track = tracks[indexPath.row] as? Track else {
+        guard let song = self.song, let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let tracks = song.tracks?.reversed, let track = tracks[indexPath.row] as? Track else {
             return UITableViewCell()
         }
         cell.trackNameLabel.text = track.name
@@ -73,7 +73,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func handleDeleteTrack(sender: UIButton) {
-        guard let song = self.song, let track = song.tracks?[sender.tag] as? Track else {
+        guard let song = self.song, let tracks = song.tracks?.reversed, let track = tracks[sender.tag] as? Track else {
             return
         }
         song.removeFromTracks(track)
@@ -103,7 +103,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
-            guard let song = self.song, let track = song.tracks?[sender.tag] as? Track else {
+            guard let song = self.song, let tracks = song.tracks?.reversed, let track = tracks[sender.tag] as? Track else {
                 return
             }
             

@@ -63,7 +63,16 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.removeLeftAndBottomEdgeTouchDelay()
+        self.view.layoutIfNeeded()
+         self.removeLeftAndBottomEdgeTouchDelay()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        Recorder.shared.stopRecord()
+        Conductor.shared.stop()
     }
     
     func initializeTableView() {
@@ -74,6 +83,7 @@ class MainViewController: UIViewController {
     }
     
     func removeLeftAndBottomEdgeTouchDelay() {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         if let window = self.view.window, let gestures = window.gestureRecognizers {
             for gesture in gestures {
                 gesture.delaysTouchesBegan = false

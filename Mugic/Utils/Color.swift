@@ -31,6 +31,18 @@ extension UIColor {
     
     static var chordHighlightedBackground: UIColor {
         get {
+            return UIColor.darkGray
+        }
+    }
+    
+    static var pianoWhiteKey: UIColor {
+        get {
+            return UIColor.white
+        }
+    }
+    
+    static var pianoBlackKey: UIColor {
+        get {
             return UIColor.black
         }
     }

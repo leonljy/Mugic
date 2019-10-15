@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +23,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="511" height="123"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="A4a-j1-emX">
-                                    <rect key="frame" x="0.0" y="-0.5" width="511" height="123.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="511" height="123"/>
                                     <subviews>
                                         <button tag="48" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPx-gv-ymX" userLabel="C">
-                                            <rect key="frame" x="0.0" y="0.0" width="72" height="123.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="72" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" button="YES"/>
@@ -40,7 +39,7 @@
                                             </connections>
                                         </button>
                                         <button tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjs-jp-BVl" userLabel="D">
-                                            <rect key="frame" x="73" y="0.0" width="72.5" height="123.5"/>
+                                            <rect key="frame" x="73" y="0.0" width="72.5" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="gqO-OP-83a"/>
@@ -49,7 +48,7 @@
                                             </connections>
                                         </button>
                                         <button tag="52" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCt-NA-Q2o" userLabel="E">
-                                            <rect key="frame" x="146.5" y="0.0" width="72" height="123.5"/>
+                                            <rect key="frame" x="146.5" y="0.0" width="72" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="WNx-aR-lfB"/>
@@ -58,7 +57,7 @@
                                             </connections>
                                         </button>
                                         <button tag="53" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-Ve-0d0" userLabel="F">
-                                            <rect key="frame" x="219.5" y="0.0" width="72" height="123.5"/>
+                                            <rect key="frame" x="219.5" y="0.0" width="72" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="3zH-K3-Eea"/>
@@ -67,16 +66,16 @@
                                             </connections>
                                         </button>
                                         <button tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx1-Iw-ROI" userLabel="G">
-                                            <rect key="frame" x="292.5" y="0.0" width="72" height="123.5"/>
+                                            <rect key="frame" x="292.5" y="0.0" width="72" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="PPr-Jw-Zif"/>
-                                                <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="a7z-L3-kh7"/>
+                                                <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bkm-f8-GHL"/>
                                                 <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="T6g-Xk-aiz"/>
                                             </connections>
                                         </button>
                                         <button tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biU-eM-oPL" userLabel="A">
-                                            <rect key="frame" x="365.5" y="0.0" width="72.5" height="123.5"/>
+                                            <rect key="frame" x="365.5" y="0.0" width="72.5" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="bln-zI-bOc"/>
@@ -85,11 +84,13 @@
                                             </connections>
                                         </button>
                                         <button tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhz-cF-BJx" userLabel="B">
-                                            <rect key="frame" x="439" y="0.0" width="72" height="123.5"/>
+                                            <rect key="frame" x="439" y="0.0" width="72" height="123"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
+                                                <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="3Si-h7-UFw"/>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="eTy-vy-Xvb"/>
                                                 <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="4vS-Cl-fQY"/>
+                                                <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="5wr-A8-GNx"/>
                                                 <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="YAi-AW-Uu5"/>
                                             </connections>
                                         </button>
@@ -102,11 +103,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-Va-Oea" userLabel="C#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="48.5" height="80"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="12" y="0.0" width="48.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
+                                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="3V1-fj-hdl"/>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="JMD-O2-Brr"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="10W-qO-gnz"/>
+                                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="ZfC-wm-BJ1"/>
                                                         <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="mzT-uD-CPP"/>
                                                     </connections>
                                                 </button>
@@ -123,8 +126,8 @@
                                             <rect key="frame" x="73" y="0.0" width="73.5" height="80"/>
                                             <subviews>
                                                 <button tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-pW-GgG" userLabel="D#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="80"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="rCi-W1-hXC"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="BK5-Bx-J1f"/>
@@ -148,8 +151,8 @@
                                             <rect key="frame" x="219.5" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-d9-G2m" userLabel="F#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="80"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Ffm-pz-ymN"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="fPt-3y-M8f"/>
@@ -170,7 +173,7 @@
                                             <subviews>
                                                 <button tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-Uj-sJL" userLabel="G#">
                                                     <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Hi5-nt-WbK"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="6eE-yg-ayc"/>
@@ -190,11 +193,13 @@
                                             <rect key="frame" x="366" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysy-Wc-gbM" userLabel="A#">
-                                                    <rect key="frame" x="12" y="0.0" width="47.5" height="80"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
+                                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="oJ5-IS-47d"/>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="rWt-uC-OQ8"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="EMa-f4-hB3"/>
+                                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="hw5-8H-DhA"/>
                                                         <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="K5o-CE-tNM"/>
                                                     </connections>
                                                 </button>
@@ -291,6 +296,8 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="atJ-sS-HbG"/>
+                                                <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="tIk-ga-Zex"/>
+                                                <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="DAw-BF-4OJ"/>
                                                 <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ljm-v5-SaR"/>
                                                 <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="h39-SN-nci"/>
                                             </connections>
@@ -298,14 +305,14 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1ke-sM-ClA">
-                                    <rect key="frame" x="36" y="0.0" width="439" height="79.5"/>
+                                    <rect key="frame" x="36" y="0.0" width="439" height="80"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csB-TF-iKH">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rl-Qj-4jF" userLabel="C#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Oib-dB-LNr"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="k5b-pl-vMa"/>
@@ -322,11 +329,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ol-ua-Vxb">
-                                            <rect key="frame" x="73" y="0.0" width="73.5" height="79.5"/>
+                                            <rect key="frame" x="73" y="0.0" width="73.5" height="80"/>
                                             <subviews>
                                                 <button tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-vM-Gjm" userLabel="D#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="N3k-ut-wff"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ebh-yt-18S"/>
@@ -343,15 +350,15 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-y5-73j">
-                                            <rect key="frame" x="146.5" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="146.5" y="0.0" width="73" height="80"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5D-I4-xJi">
-                                            <rect key="frame" x="219.5" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="219.5" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="66" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-n1-0dB" userLabel="F#">
-                                                    <rect key="frame" x="13.5" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="9T1-oZ-bXF"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="hER-on-F1A"/>
@@ -368,11 +375,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-ZY-ulx">
-                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="79.5"/>
+                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="80"/>
                                             <subviews>
                                                 <button tag="68" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-hE-Scr" userLabel="G#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="XEr-Ku-Wzj"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="JPU-qA-lEV"/>
@@ -389,14 +396,16 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZp-fb-Jl3">
-                                            <rect key="frame" x="366" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="366" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-Nu-lFQ" userLabel="A#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
+                                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="9xk-wy-UC4"/>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="uoY-B3-9iZ"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="AQe-6E-zoO"/>
+                                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="vUl-eD-pnZ"/>
                                                         <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="h9e-1S-PJB"/>
                                                     </connections>
                                                 </button>
@@ -493,6 +502,8 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="ZUu-vQ-56R"/>
+                                                <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="r0H-eM-V30"/>
+                                                <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="Nlo-AB-29W"/>
                                                 <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="Oxx-og-88P"/>
                                                 <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="RMk-Ex-P82"/>
                                             </connections>
@@ -500,14 +511,14 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-FK-0W7">
-                                    <rect key="frame" x="35.5" y="0.0" width="439" height="79.5"/>
+                                    <rect key="frame" x="36" y="0.0" width="439" height="80"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDD-vN-hUP">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxQ-yH-F84" userLabel="C#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="bzb-FT-Y8G"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="2N2-OX-BWD"/>
@@ -524,11 +535,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-Fy-jp7">
-                                            <rect key="frame" x="73" y="0.0" width="73.5" height="79.5"/>
+                                            <rect key="frame" x="73" y="0.0" width="73.5" height="80"/>
                                             <subviews>
                                                 <button tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twz-CY-irN" userLabel="D#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="uLq-81-Nc7"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="UfL-NY-bqc"/>
@@ -545,15 +556,15 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-Yy-Uha">
-                                            <rect key="frame" x="146.5" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="146.5" y="0.0" width="73" height="80"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-kW-OXN">
-                                            <rect key="frame" x="219.5" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="219.5" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="78" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbJ-ap-zL6" userLabel="F#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="fb3-Zu-QcJ"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="d5j-Qb-m6y"/>
@@ -570,11 +581,11 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-zR-B7e">
-                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="79.5"/>
+                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="80"/>
                                             <subviews>
                                                 <button tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-dI-A3G" userLabel="G#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="48" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="vyi-i3-lkz"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Et-72-Rdr"/>
@@ -591,14 +602,16 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-xq-J7Y">
-                                            <rect key="frame" x="366" y="0.0" width="73" height="79.5"/>
+                                            <rect key="frame" x="366" y="0.0" width="73" height="80"/>
                                             <subviews>
                                                 <button tag="82" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-9K-Dby" userLabel="A#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="79.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="GYb-KM-lRs"/>
+                                                        <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="P6s-FO-bTd"/>
                                                         <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="l2A-hG-ChQ"/>
+                                                        <action selector="melodyTouchUpInside:" destination="iN0-l3-epB" eventType="touchDragExit" id="zgZ-4h-El1"/>
                                                         <action selector="melodyTouchUpOutside:" destination="iN0-l3-epB" eventType="touchUpOutside" id="gtu-Gf-5h3"/>
                                                     </connections>
                                                 </button>

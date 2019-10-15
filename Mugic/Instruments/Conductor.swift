@@ -88,11 +88,14 @@ class Conductor {
 
 
 extension Conductor {
-    func replay(song: Song, completionBlock: @escaping () -> Void) {
+    func replay(withMetronome: Bool = false, song: Song, completionBlock: @escaping () -> Void) {
         self.isPlaying = true
         
         self.addCountIn(song: song)
-        self.addMetronomeBeats(song: song)
+        if withMetronome {
+            self.addMetronomeBeats(song: song)
+        }
+        
         self.addEventTimers(song: song, completionBlock: completionBlock)
         let loop = RunLoop.current
         for timer in self.timers {

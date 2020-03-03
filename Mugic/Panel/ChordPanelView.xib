@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,10 +22,10 @@
                             <subviews>
                                 <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUl-CL-xLi">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="C">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="bfG-iD-HKI"/>
@@ -38,10 +35,10 @@
                                 </button>
                                 <button opaque="NO" tag="62" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrK-dx-YDM">
                                     <rect key="frame" x="0.0" y="61.5" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="D">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="7v7-jl-6MC"/>
@@ -51,10 +48,10 @@
                                 </button>
                                 <button opaque="NO" tag="64" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m6-5T-1Dt">
                                     <rect key="frame" x="0.0" y="123" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="E">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="9Pp-xN-knj"/>
@@ -64,10 +61,10 @@
                                 </button>
                                 <button opaque="NO" tag="65" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntm-SE-PY7">
                                     <rect key="frame" x="0.0" y="184.5" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="F">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="RwA-6M-goE"/>
@@ -82,10 +79,10 @@
                             <subviews>
                                 <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQk-7K-VNG">
                                     <rect key="frame" x="0.0" y="0.0" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="C#/Db">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="nWZ-7z-ePX"/>
@@ -95,10 +92,10 @@
                                 </button>
                                 <button opaque="NO" tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCf-gt-6zW">
                                     <rect key="frame" x="0.0" y="61.5" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="D#/Eb">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="Xg1-4q-FjZ"/>
@@ -108,18 +105,18 @@
                                 </button>
                                 <button opaque="NO" tag="44" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIe-IW-Wii">
                                     <rect key="frame" x="0.0" y="123" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="66" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqr-6V-hSE">
                                     <rect key="frame" x="0.0" y="184.5" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="F#/Gb">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="2sj-gA-tP7"/>
@@ -134,10 +131,10 @@
                             <subviews>
                                 <button opaque="NO" tag="67" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfo-bL-UqK">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="G">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="hMY-r1-g4C"/>
@@ -147,10 +144,10 @@
                                 </button>
                                 <button opaque="NO" tag="69" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-Cv-I9a">
                                     <rect key="frame" x="0.0" y="61.5" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="A">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="Qzf-vq-uEr"/>
@@ -160,10 +157,10 @@
                                 </button>
                                 <button opaque="NO" tag="71" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8r-Vc-PNR">
                                     <rect key="frame" x="0.0" y="123" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="B">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="MUf-SN-Q98"/>
@@ -173,10 +170,10 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1T-5w-XpV">
                                     <rect key="frame" x="0.0" y="184.5" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -186,10 +183,10 @@
                             <subviews>
                                 <button opaque="NO" tag="68" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QA6-M0-aaR">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="G#/Ab">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="y5h-iw-fpU"/>
@@ -199,10 +196,10 @@
                                 </button>
                                 <button opaque="NO" tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNp-DJ-VTa">
                                     <rect key="frame" x="0.0" y="61.5" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="A#/Bb">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="dFq-MV-1EH"/>
@@ -212,23 +209,24 @@
                                 </button>
                                 <button opaque="NO" tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBI-tK-Fg7">
                                     <rect key="frame" x="0.0" y="123" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fz3-E8-i0h">
                                     <rect key="frame" x="0.0" y="184.5" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                             </subviews>
                         </stackView>
                     </subviews>
+                    <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mGb-LS-nXK">
                     <rect key="frame" x="218.5" y="0.0" width="156.5" height="246"/>
@@ -238,10 +236,10 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpt-Zk-BDW">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="Maj">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="aI8-Pd-vov"/>
@@ -251,10 +249,10 @@
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc6-iY-iql">
                                     <rect key="frame" x="52" y="0.0" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="min">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="HSa-XR-Msn"/>
@@ -264,10 +262,10 @@
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bv-JX-7Bf">
                                     <rect key="frame" x="104.5" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="sus4">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="0Cm-om-ueL"/>
@@ -282,10 +280,10 @@
                             <subviews>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alE-x2-94X">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="7">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="gG4-LL-ZGU"/>
@@ -295,10 +293,10 @@
                                 </button>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCN-9K-2yz">
                                     <rect key="frame" x="52" y="0.0" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="min7">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="u52-wB-IYh"/>
@@ -308,10 +306,10 @@
                                 </button>
                                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzp-mQ-rsW">
                                     <rect key="frame" x="104.5" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="maj7">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="D42-RE-4i3"/>
@@ -326,10 +324,10 @@
                             <subviews>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx9-mL-9EY">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="add2">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="HWK-P3-Law"/>
@@ -339,10 +337,10 @@
                                 </button>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr1-wh-8C2">
                                     <rect key="frame" x="52" y="0.0" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="add6">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="oQd-Fy-L5O"/>
@@ -352,10 +350,10 @@
                                 </button>
                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOG-Wa-Bde">
                                     <rect key="frame" x="104.5" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="dim7">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="9aw-1d-mD6"/>
@@ -370,23 +368,23 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4h-Tv-zXh">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdp-Tw-D1L">
                                     <rect key="frame" x="52" y="0.0" width="52.5" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bn-5s-wph">
                                     <rect key="frame" x="104.5" y="0.0" width="52" height="61.5"/>
-                                    <color key="backgroundColor" red="1" green="0.98176195440000003" blue="0.9378533349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="mugicDarkGray"/>
                                     <state key="normal">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleColor" name="mugicMain"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -394,7 +392,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="mugicBlack"/>
             <constraints>
                 <constraint firstItem="mGb-LS-nXK" firstAttribute="leading" secondItem="dk4-e6-csz" secondAttribute="trailing" constant="10" id="8f4-yx-Or3"/>
                 <constraint firstItem="dk4-e6-csz" firstAttribute="leading" secondItem="O44-4H-16P" secondAttribute="leading" id="KLl-w2-RxN"/>
@@ -410,4 +408,15 @@
             <point key="canvasLocation" x="35.5" y="-157"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="mugicBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mugicDarkGray">
+            <color red="0.11800000071525574" green="0.11800000071525574" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

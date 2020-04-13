@@ -95,7 +95,7 @@ class MainViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        appDelegate.coreDataStack.saveContext()
+        appDelegate.saveContext()
     }
     
     override func didReceiveMemoryWarning() {

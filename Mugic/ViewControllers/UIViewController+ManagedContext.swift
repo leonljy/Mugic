@@ -16,7 +16,7 @@ extension UIViewController {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return nil
             }
-            return appDelegate.coreDataStack.managedContext
+            return appDelegate.persistentContainer.viewContext
         }
     }
 }

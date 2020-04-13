@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ChordEvent" representedClassName="ChordEvent" parentEntity="Event" syncable="YES">
-        <attribute name="baseNote" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="chord" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ChordEvent" representedClassName="ChordEvent" parentEntity="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="baseNote" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="chord" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Event" representedClassName="Event" isAbstract="YES" syncable="YES">
-        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="Event" representedClassName="Event" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Track" inverseName="events" inverseEntity="Track"/>
     </entity>
-    <entity name="MelodicEvent" representedClassName="MelodicEvent" parentEntity="Event" syncable="YES">
-        <attribute name="note" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="MelodicEvent" representedClassName="MelodicEvent" parentEntity="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="note" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="RhythmEvent" representedClassName="RhythmEvent" parentEntity="Event" syncable="YES">
-        <attribute name="beat" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="RhythmEvent" representedClassName="RhythmEvent" parentEntity="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="beat" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Song" representedClassName="Song" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="tempo" attributeType="Integer 16" defaultValueString="90" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="timeSignature" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="volume" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Track" syncable="YES"/>
+    <entity name="Song" representedClassName="Song" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="tempo" attributeType="Integer 16" defaultValueString="90" usesScalarValueType="YES"/>
+        <attribute name="timeSignature" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="volume" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Track" inverseName="song" inverseEntity="Track"/>
     </entity>
-    <entity name="Track" representedClassName="Track" syncable="YES">
-        <attribute name="instrument" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="isLoop" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="volume" optional="YES" attributeType="Double" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" syncable="YES"/>
+    <entity name="Track" representedClassName="Track" syncable="YES" codeGenerationType="class">
+        <attribute name="instrument" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isLoop" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="volume" optional="YES" attributeType="Double" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="track" inverseEntity="Event"/>
+        <relationship name="song" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="tracks" inverseEntity="Song"/>
     </entity>
     <elements>
         <element name="ChordEvent" positionX="-182" positionY="18" width="128" height="73"/>
-        <element name="Event" positionX="-29" positionY="-135" width="128" height="58"/>
+        <element name="Event" positionX="-29" positionY="-135" width="128" height="73"/>
         <element name="MelodicEvent" positionX="-11" positionY="27" width="128" height="58"/>
         <element name="RhythmEvent" positionX="169" positionY="30" width="128" height="58"/>
         <element name="Song" positionX="-27" positionY="-522" width="128" height="133"/>
-        <element name="Track" positionX="-36" positionY="-315" width="128" height="120"/>
+        <element name="Track" positionX="-36" positionY="-315" width="128" height="133"/>
     </elements>
 </model>

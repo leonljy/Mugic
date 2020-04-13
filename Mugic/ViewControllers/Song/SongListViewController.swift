@@ -59,7 +59,7 @@ class SongListViewController: UIViewController {
         }
         let song = Song(context: managedContext)
         song.name = "New song"
-        song.updatedAt = Date() as NSDate
+        song.updatedAt = Date()
         self.songs?.append(song)
         self.save()
         self.loadSongs()
@@ -69,7 +69,7 @@ class SongListViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        appDelegate.coreDataStack.saveContext()
+        appDelegate.saveContext()
     }
 }
 

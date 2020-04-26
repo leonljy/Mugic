@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,38 +14,30 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BUc-di-IMs">
-                    <rect key="frame" x="10" y="10" width="70" height="70"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="70" id="d5B-ZK-4OA"/>
-                        <constraint firstAttribute="height" constant="70" id="zB8-pG-0mI"/>
-                    </constraints>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-dL-h4C">
                     <rect key="frame" x="195" y="0.0" width="180" height="90"/>
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wjk-vP-DIN">
                             <rect key="frame" x="8" y="50" width="164" height="31"/>
+                            <color key="tintColor" name="MugicMain"/>
                         </slider>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-MB-T2X">
                             <rect key="frame" x="10" y="10" width="160" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-Qt-63Y">
                                     <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
-                                    <state key="normal" title="M"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JE-pP-XPv">
                                     <rect key="frame" x="53.5" y="0.0" width="53" height="30"/>
-                                    <state key="normal" title="S"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-Ri-XyS">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-Ri-XyS">
                                     <rect key="frame" x="106.5" y="0.0" width="53.5" height="30"/>
-                                    <state key="normal" title="🗑"/>
+                                    <color key="tintColor" name="MugicMain"/>
+                                    <state key="normal" image="trash.fill" catalog="system"/>
                                 </button>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Wjk-vP-DIN" firstAttribute="leading" secondItem="fe9-dL-h4C" secondAttribute="leading" constant="10" id="1YO-o4-Rs9"/>
                         <constraint firstAttribute="bottom" secondItem="Wjk-vP-DIN" secondAttribute="bottom" constant="10" id="7zz-Nv-D1q"/>
@@ -59,31 +49,22 @@
                         <constraint firstAttribute="trailing" secondItem="Wjk-vP-DIN" secondAttribute="trailing" constant="10" id="q31-PL-Fw6"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acoustic Guitar 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vWr-dI-3YX">
-                    <rect key="frame" x="90" y="10" width="95" height="70"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTx-ag-Ypz">
-                    <rect key="frame" x="90" y="10" width="95" height="70"/>
+                    <rect key="frame" x="20" y="10" width="43" height="70"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Chord">
+                        <color key="titleColor" name="MugicWhite"/>
+                    </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="MugicBlack"/>
             <constraints>
-                <constraint firstItem="vWr-dI-3YX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="08O-gx-b6P"/>
-                <constraint firstItem="BUc-di-IMs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3FB-1i-43l"/>
-                <constraint firstItem="fe9-dL-h4C" firstAttribute="leading" secondItem="xTx-ag-Ypz" secondAttribute="trailing" constant="10" id="3kx-OD-HCh"/>
-                <constraint firstItem="xTx-ag-Ypz" firstAttribute="leading" secondItem="BUc-di-IMs" secondAttribute="trailing" constant="10" id="5kU-i9-Tar"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9qB-TY-S9b"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="A0N-8Z-xGv"/>
-                <constraint firstItem="fe9-dL-h4C" firstAttribute="leading" secondItem="vWr-dI-3YX" secondAttribute="trailing" constant="10" id="HPl-dc-aQm"/>
-                <constraint firstItem="BUc-di-IMs" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="IFl-I0-oVV"/>
                 <constraint firstItem="xTx-ag-Ypz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="LAW-6l-bNG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xTx-ag-Ypz" secondAttribute="bottom" constant="10" id="Od9-au-U7v"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vWr-dI-3YX" secondAttribute="bottom" constant="10" id="RFr-7n-gvY"/>
-                <constraint firstItem="vWr-dI-3YX" firstAttribute="leading" secondItem="BUc-di-IMs" secondAttribute="trailing" constant="10" id="SZd-wo-mhC"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dWr-DX-LC0"/>
+                <constraint firstItem="xTx-ag-Ypz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="uXN-vN-1iZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -92,11 +73,21 @@
                 <outlet property="deleteButton" destination="zSp-Ri-XyS" id="iOz-rr-7KA"/>
                 <outlet property="muteButton" destination="W9W-Qt-63Y" id="yPI-Pv-ep7"/>
                 <outlet property="soloButton" destination="0JE-pP-XPv" id="axe-KB-bs4"/>
-                <outlet property="trackImage" destination="BUc-di-IMs" id="wXo-6A-mKH"/>
-                <outlet property="trackNameLabel" destination="vWr-dI-3YX" id="7nN-I1-NxV"/>
                 <outlet property="volumeProgressBar" destination="Wjk-vP-DIN" id="nSS-fu-Eyd"/>
             </connections>
-            <point key="canvasLocation" x="73.5" y="-229"/>
+            <point key="canvasLocation" x="72.799999999999997" y="-229.38530734632684"/>
         </view>
     </objects>
+    <resources>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <namedColor name="MugicBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

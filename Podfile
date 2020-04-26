@@ -4,7 +4,7 @@ platform :ios, '13.0'
 target 'Mugic' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-	pod 'AudioKit'
+  pod 'AudioKit'
 #    pod 'Fabric'
 #    pod 'Crashlytics'
 #    pod 'Firebase/Core'

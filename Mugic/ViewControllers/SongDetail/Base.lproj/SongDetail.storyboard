@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Song Detail View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="SongDetailViewController" customModule="Mugic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggn-MH-YJU">
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="sSm-8H-Al4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aba-Y9-dRs">
+                                <rect key="frame" x="0.0" y="319" width="375" height="44"/>
+                                <color key="backgroundColor" name="MugicBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="W4y-eF-ahw"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJq-Oz-Z2p">
+                                <rect key="frame" x="0.0" y="44" width="375" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-LX-53b">
+                                <rect key="frame" x="0.0" y="363" width="375" height="44"/>
+                                <color key="backgroundColor" name="MugicBlack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TXF-Gs-paO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="MugicBlack"/>
+                        <constraints>
+                            <constraint firstItem="ggn-MH-YJU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="CKm-rx-phM"/>
+                            <constraint firstItem="ggn-MH-YJU" firstAttribute="top" secondItem="7hN-LX-53b" secondAttribute="bottom" constant="10" id="Itu-R8-HpM"/>
+                            <constraint firstItem="aba-Y9-dRs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QuD-vg-1Sh"/>
+                            <constraint firstItem="KJq-Oz-Z2p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VMd-DX-A1v"/>
+                            <constraint firstItem="ggn-MH-YJU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W8g-l0-la7"/>
+                            <constraint firstItem="7hN-LX-53b" firstAttribute="top" secondItem="aba-Y9-dRs" secondAttribute="bottom" id="Wtt-Qn-WjC"/>
+                            <constraint firstItem="ggn-MH-YJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ayp-ag-CqZ"/>
+                            <constraint firstItem="7hN-LX-53b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c21-m5-NNE"/>
+                            <constraint firstItem="7hN-LX-53b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fm9-yL-vDV"/>
+                            <constraint firstItem="aba-Y9-dRs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hHZ-br-8dV"/>
+                            <constraint firstItem="KJq-Oz-Z2p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j5O-kc-dH0"/>
+                            <constraint firstItem="KJq-Oz-Z2p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oo3-My-2nN"/>
+                            <constraint firstItem="aba-Y9-dRs" firstAttribute="top" secondItem="KJq-Oz-Z2p" secondAttribute="bottom" id="ySL-hZ-7ce"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mVa-3I-ub7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Tnl-Bb-YeC">
+                            <connections>
+                                <action selector="handleSongs:" destination="BYZ-38-t0r" id="Z0L-0P-3hG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="panelBackgroundView" destination="ggn-MH-YJU" id="1NS-0n-OMR"/>
+                        <outlet property="playControllerBackgroundView" destination="aba-Y9-dRs" id="82T-c0-VDR"/>
+                        <outlet property="songInfoPanelBackgroundView" destination="7hN-LX-53b" id="XYa-8n-uzR"/>
+                        <outlet property="tableView" destination="KJq-Oz-Z2p" id="OUN-sX-Qnc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="131.78410794602701"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="MugicBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

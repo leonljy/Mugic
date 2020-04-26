@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 class TrackTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var trackImage: UIImageView!
-    @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var muteButton: UIButton!
     @IBOutlet weak var soloButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!

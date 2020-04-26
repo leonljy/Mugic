@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 
-class SongEditViewController: UIViewController {
+class EditSongViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var tempoTextField: UITextField!
@@ -65,10 +65,7 @@ class SongEditViewController: UIViewController {
     }
 }
 
-extension SongEditViewController: UITextFieldDelegate {
-    
-    
-    
+extension EditSongViewController: UITextFieldDelegate {
     @IBAction func handleTempoChanged(_ sender: Any) {
         guard let tempoString = self.tempoTextField.text, let tempo = Int16(tempoString), tempo > 0, tempo < 500 else {
             return
@@ -84,7 +81,7 @@ extension SongEditViewController: UITextFieldDelegate {
     
 }
 
-extension SongEditViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension EditSongViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

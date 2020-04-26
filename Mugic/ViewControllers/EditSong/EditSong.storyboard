@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fuc-jK-JGz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Song View Controller-->
+        <scene sceneID="hCK-2l-jZf">
+            <objects>
+                <viewController storyboardIdentifier="SongEditViewController" id="fuc-jK-JGz" customClass="EditSongViewController" customModule="Mugic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WZJ-xe-MlD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TLo-H9-8Sh">
+                                <rect key="frame" x="20" y="108" width="374" height="259.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXi-vg-43u">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="MugicMain"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zsp-aV-CGi">
+                                        <rect key="frame" x="0.0" y="40.5" width="374" height="34"/>
+                                        <color key="backgroundColor" name="MugicDarkGray"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="handleNameChanged:" destination="fuc-jK-JGz" eventType="editingChanged" id="xAI-aY-jzX"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-4I-2bc">
+                                        <rect key="frame" x="0.0" y="94.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="MugicMain"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="72T-T4-ucI">
+                                        <rect key="frame" x="0.0" y="135" width="374" height="34"/>
+                                        <color key="backgroundColor" name="MugicDarkGray"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="handleTempoChanged:" destination="fuc-jK-JGz" eventType="editingChanged" id="cGu-C9-oDw"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Signature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLY-go-XTi">
+                                        <rect key="frame" x="0.0" y="189" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="MugicMain"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yez-Oh-Ysj">
+                                        <rect key="frame" x="0.0" y="229.5" width="374" height="30"/>
+                                        <color key="tintColor" name="MugicMain"/>
+                                        <state key="normal" title="4 / 4"/>
+                                        <connections>
+                                            <action selector="handleTimeSignature:" destination="fuc-jK-JGz" eventType="touchUpInside" id="bFm-yS-kqZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpG-1P-eVq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <connections>
+                                    <action selector="handleBackgroundTouch:" destination="fuc-jK-JGz" eventType="touchUpInside" id="Xlj-ip-ASK"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfm-00-sFv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-H4-tpT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNZ-I0-bAG">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="handleDismissPickerView:" destination="fuc-jK-JGz" eventType="touchUpInside" id="XjQ-o0-XKV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ZNZ-I0-bAG" firstAttribute="leading" secondItem="PKg-H4-tpT" secondAttribute="leading" id="7Xi-qb-ZCb"/>
+                                            <constraint firstItem="ZNZ-I0-bAG" firstAttribute="top" secondItem="PKg-H4-tpT" secondAttribute="top" id="d6V-jR-Shd"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZNZ-I0-bAG" secondAttribute="trailing" id="dnt-PY-4qD"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZNZ-I0-bAG" secondAttribute="bottom" id="rfX-QN-eM7"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79I-dL-OFP">
+                                        <rect key="frame" x="0.0" y="700" width="414" height="162"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2X-7L-5L2">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="MugicDarkGray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="6Og-3Q-4L5"/>
+                                            <constraint firstItem="Y2X-7L-5L2" firstAttribute="top" secondItem="79I-dL-OFP" secondAttribute="top" id="D6x-Xh-mlA"/>
+                                            <constraint firstItem="Y2X-7L-5L2" firstAttribute="leading" secondItem="79I-dL-OFP" secondAttribute="leading" id="Q61-XH-66a"/>
+                                            <constraint firstAttribute="bottom" secondItem="Y2X-7L-5L2" secondAttribute="bottom" id="l0D-QC-Pnd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y2X-7L-5L2" secondAttribute="trailing" id="yt6-mh-uNG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PKg-H4-tpT" secondAttribute="bottom" id="5QC-WK-pM3"/>
+                                    <constraint firstItem="79I-dL-OFP" firstAttribute="leading" secondItem="nfm-00-sFv" secondAttribute="leading" id="BNH-W8-Jov"/>
+                                    <constraint firstItem="PKg-H4-tpT" firstAttribute="leading" secondItem="nfm-00-sFv" secondAttribute="leading" id="EqW-gy-wfZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="79I-dL-OFP" secondAttribute="trailing" id="TEx-mA-xqB"/>
+                                    <constraint firstAttribute="trailing" secondItem="PKg-H4-tpT" secondAttribute="trailing" id="mty-xl-waX"/>
+                                    <constraint firstAttribute="bottom" secondItem="79I-dL-OFP" secondAttribute="bottom" id="tMp-h6-gjt"/>
+                                    <constraint firstItem="PKg-H4-tpT" firstAttribute="top" secondItem="nfm-00-sFv" secondAttribute="top" id="xn9-Bv-3EA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="MugicBlack"/>
+                        <constraints>
+                            <constraint firstItem="hop-nE-h7A" firstAttribute="trailing" secondItem="WpG-1P-eVq" secondAttribute="trailing" id="228-O0-qOC"/>
+                            <constraint firstItem="TLo-H9-8Sh" firstAttribute="leading" secondItem="hop-nE-h7A" secondAttribute="leading" constant="20" id="3mP-1o-bp8"/>
+                            <constraint firstItem="nfm-00-sFv" firstAttribute="leading" secondItem="hop-nE-h7A" secondAttribute="leading" id="Bua-Jk-5R4"/>
+                            <constraint firstItem="nfm-00-sFv" firstAttribute="top" secondItem="WZJ-xe-MlD" secondAttribute="top" id="JxR-tV-vMW"/>
+                            <constraint firstItem="nfm-00-sFv" firstAttribute="bottom" secondItem="hop-nE-h7A" secondAttribute="bottom" id="Lo9-i6-BqG"/>
+                            <constraint firstItem="hop-nE-h7A" firstAttribute="bottom" secondItem="WpG-1P-eVq" secondAttribute="bottom" id="Wmg-oU-i4w"/>
+                            <constraint firstItem="WpG-1P-eVq" firstAttribute="leading" secondItem="hop-nE-h7A" secondAttribute="leading" id="X2S-eA-aAb"/>
+                            <constraint firstItem="hop-nE-h7A" firstAttribute="trailing" secondItem="TLo-H9-8Sh" secondAttribute="trailing" constant="20" id="XYb-aa-LYM"/>
+                            <constraint firstItem="TLo-H9-8Sh" firstAttribute="top" secondItem="hop-nE-h7A" secondAttribute="top" constant="20" id="hoI-sM-kMp"/>
+                            <constraint firstItem="hop-nE-h7A" firstAttribute="top" secondItem="WpG-1P-eVq" secondAttribute="top" id="lLl-ZB-hYN"/>
+                            <constraint firstItem="nfm-00-sFv" firstAttribute="trailing" secondItem="hop-nE-h7A" secondAttribute="trailing" id="nrh-om-LPh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hop-nE-h7A"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pyb-Zi-QsB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="Zsp-aV-CGi" id="VQd-IC-3sF"/>
+                        <outlet property="pickerView" destination="Y2X-7L-5L2" id="Vb9-53-C1Z"/>
+                        <outlet property="pickerViewBackground" destination="nfm-00-sFv" id="OEo-Wt-eXG"/>
+                        <outlet property="tempoTextField" destination="72T-T4-ucI" id="5BX-Ry-gI2"/>
+                        <outlet property="timeSignatureButton" destination="yez-Oh-Ysj" id="y9d-CQ-bCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qq-ql-fI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="MugicBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicDarkGray">
+            <color red="0.11800000071525574" green="0.11800000071525574" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

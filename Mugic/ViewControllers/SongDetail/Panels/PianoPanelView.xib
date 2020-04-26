@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,13 +94,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-wa-e60">
-                                    <rect key="frame" x="36" y="0.0" width="439" height="80"/>
+                                    <rect key="frame" x="36" y="0.0" width="439" height="67.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ID7-ev-iMK">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="49" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XE-Va-Oea" userLabel="C#">
-                                                    <rect key="frame" x="12" y="0.0" width="48.5" height="80"/>
+                                                    <rect key="frame" x="12" y="0.0" width="48.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="3V1-fj-hdl"/>
@@ -120,10 +120,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UR4-DE-cdU">
-                                            <rect key="frame" x="73" y="0.0" width="73.5" height="80"/>
+                                            <rect key="frame" x="73" y="0.0" width="73.5" height="67.5"/>
                                             <subviews>
                                                 <button tag="51" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-pW-GgG" userLabel="D#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="rCi-W1-hXC"/>
@@ -141,14 +141,14 @@
                                             </constraints>
                                         </view>
                                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofo-KC-hp5">
-                                            <rect key="frame" x="146.5" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="146.5" y="0.0" width="73" height="67.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-uz-JUC">
-                                            <rect key="frame" x="219.5" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="219.5" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="54" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-d9-G2m" userLabel="F#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Ffm-pz-ymN"/>
@@ -166,10 +166,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nU7-GX-YxW">
-                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="80"/>
+                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="67.5"/>
                                             <subviews>
                                                 <button tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-Uj-sJL" userLabel="G#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Hi5-nt-WbK"/>
@@ -187,10 +187,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBc-1n-HvR">
-                                            <rect key="frame" x="366" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="366" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysy-Wc-gbM" userLabel="A#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="oJ5-IS-47d"/>
@@ -218,7 +218,7 @@
                                 <constraint firstAttribute="trailing" secondItem="A4a-j1-emX" secondAttribute="trailing" id="5a8-3v-Aqn"/>
                                 <constraint firstItem="A4a-j1-emX" firstAttribute="leading" secondItem="AYG-sK-odw" secondAttribute="leading" id="INd-5k-ZWk"/>
                                 <constraint firstItem="fkR-wa-e60" firstAttribute="top" secondItem="AYG-sK-odw" secondAttribute="top" id="K6N-vo-GdM"/>
-                                <constraint firstItem="fkR-wa-e60" firstAttribute="height" secondItem="A4a-j1-emX" secondAttribute="height" multiplier="0.65" id="Qte-oj-7EO"/>
+                                <constraint firstItem="fkR-wa-e60" firstAttribute="height" secondItem="A4a-j1-emX" secondAttribute="height" multiplier="0.55" id="Qte-oj-7EO"/>
                                 <constraint firstAttribute="bottom" secondItem="A4a-j1-emX" secondAttribute="bottom" id="X0g-7q-b64"/>
                                 <constraint firstItem="fkR-wa-e60" firstAttribute="centerX" secondItem="A4a-j1-emX" secondAttribute="centerX" id="YyA-NN-IHA"/>
                                 <constraint firstItem="fkR-wa-e60" firstAttribute="width" secondItem="A4a-j1-emX" secondAttribute="width" multiplier="0.86" id="f1Y-eI-1hB"/>
@@ -302,13 +302,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1ke-sM-ClA">
-                                    <rect key="frame" x="36" y="0.0" width="439" height="80"/>
+                                    <rect key="frame" x="36" y="0.0" width="439" height="67.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csB-TF-iKH">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rl-Qj-4jF" userLabel="C#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="Oib-dB-LNr"/>
@@ -326,10 +326,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ol-ua-Vxb">
-                                            <rect key="frame" x="73" y="0.0" width="73.5" height="80"/>
+                                            <rect key="frame" x="73" y="0.0" width="73.5" height="67.5"/>
                                             <subviews>
                                                 <button tag="63" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei5-vM-Gjm" userLabel="D#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="N3k-ut-wff"/>
@@ -347,14 +347,14 @@
                                             </constraints>
                                         </view>
                                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xj-y5-73j">
-                                            <rect key="frame" x="146.5" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="146.5" y="0.0" width="73" height="67.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5D-I4-xJi">
-                                            <rect key="frame" x="219.5" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="219.5" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="66" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-n1-0dB" userLabel="F#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="9T1-oZ-bXF"/>
@@ -372,10 +372,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-ZY-ulx">
-                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="80"/>
+                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="67.5"/>
                                             <subviews>
                                                 <button tag="68" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-hE-Scr" userLabel="G#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="XEr-Ku-Wzj"/>
@@ -393,10 +393,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZp-fb-Jl3">
-                                            <rect key="frame" x="366" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="366" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="70" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-Nu-lFQ" userLabel="A#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDragEnter" id="9xk-wy-UC4"/>
@@ -422,7 +422,7 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="dPr-S8-4z3" secondAttribute="bottom" id="65I-8K-uHi"/>
                                 <constraint firstItem="1ke-sM-ClA" firstAttribute="centerX" secondItem="dPr-S8-4z3" secondAttribute="centerX" id="Q8G-ef-7Qy"/>
-                                <constraint firstItem="1ke-sM-ClA" firstAttribute="height" secondItem="dPr-S8-4z3" secondAttribute="height" multiplier="0.65" id="Q9q-XX-ITn"/>
+                                <constraint firstItem="1ke-sM-ClA" firstAttribute="height" secondItem="dPr-S8-4z3" secondAttribute="height" multiplier="0.55" id="Q9q-XX-ITn"/>
                                 <constraint firstItem="1ke-sM-ClA" firstAttribute="width" secondItem="dPr-S8-4z3" secondAttribute="width" multiplier="0.86" id="Tp8-Ll-ZgK"/>
                                 <constraint firstItem="dPr-S8-4z3" firstAttribute="leading" secondItem="l75-zt-O6Y" secondAttribute="leading" id="fMa-ct-Je3"/>
                                 <constraint firstItem="1ke-sM-ClA" firstAttribute="top" secondItem="l75-zt-O6Y" secondAttribute="top" id="nfY-cc-WXC"/>
@@ -508,13 +508,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-FK-0W7">
-                                    <rect key="frame" x="36" y="0.0" width="439" height="80"/>
+                                    <rect key="frame" x="36" y="0.0" width="439" height="67.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDD-vN-hUP">
-                                            <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="73" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxQ-yH-F84" userLabel="C#">
-                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="12.5" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="bzb-FT-Y8G"/>
@@ -532,10 +532,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txl-Fy-jp7">
-                                            <rect key="frame" x="73" y="0.0" width="73.5" height="80"/>
+                                            <rect key="frame" x="73" y="0.0" width="73.5" height="67.5"/>
                                             <subviews>
                                                 <button tag="75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twz-CY-irN" userLabel="D#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="uLq-81-Nc7"/>
@@ -553,14 +553,14 @@
                                             </constraints>
                                         </view>
                                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-Yy-Uha">
-                                            <rect key="frame" x="146.5" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="146.5" y="0.0" width="73" height="67.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-kW-OXN">
-                                            <rect key="frame" x="219.5" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="219.5" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="78" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbJ-ap-zL6" userLabel="F#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="fb3-Zu-QcJ"/>
@@ -578,10 +578,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxd-zR-B7e">
-                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="80"/>
+                                            <rect key="frame" x="292.5" y="0.0" width="73.5" height="67.5"/>
                                             <subviews>
                                                 <button tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-dI-A3G" userLabel="G#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="vyi-i3-lkz"/>
@@ -599,10 +599,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvH-xq-J7Y">
-                                            <rect key="frame" x="366" y="0.0" width="73" height="80"/>
+                                            <rect key="frame" x="366" y="0.0" width="73" height="67.5"/>
                                             <subviews>
                                                 <button tag="82" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2I-9K-Dby" userLabel="A#">
-                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="80"/>
+                                                    <rect key="frame" x="13" y="0.0" width="47.5" height="67.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <connections>
                                                         <action selector="melodyTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="GYb-KM-lRs"/>
@@ -631,7 +631,7 @@
                                 <constraint firstItem="VFF-a0-DOn" firstAttribute="leading" secondItem="uUa-bD-M25" secondAttribute="leading" id="Qap-Ng-Zln"/>
                                 <constraint firstAttribute="bottom" secondItem="VFF-a0-DOn" secondAttribute="bottom" id="YfC-e5-0QC"/>
                                 <constraint firstItem="Idg-FK-0W7" firstAttribute="top" secondItem="uUa-bD-M25" secondAttribute="top" id="dFX-fY-xcv"/>
-                                <constraint firstItem="Idg-FK-0W7" firstAttribute="height" secondItem="VFF-a0-DOn" secondAttribute="height" multiplier="0.65" id="hM6-Zn-fkY"/>
+                                <constraint firstItem="Idg-FK-0W7" firstAttribute="height" secondItem="VFF-a0-DOn" secondAttribute="height" multiplier="0.55" id="hM6-Zn-fkY"/>
                                 <constraint firstItem="Idg-FK-0W7" firstAttribute="centerX" secondItem="VFF-a0-DOn" secondAttribute="centerX" id="kpL-Rd-p8V"/>
                                 <constraint firstItem="Idg-FK-0W7" firstAttribute="width" secondItem="VFF-a0-DOn" secondAttribute="width" multiplier="0.86" id="u0u-jb-mF0"/>
                             </constraints>

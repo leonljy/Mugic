@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +19,9 @@
                     <subviews>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-vV-yIS">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
-                            <state key="normal" title="RimShot"/>
+                            <state key="normal" title="RimShot">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="tTI-ro-uyz"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="vIi-XM-e7V"/>
@@ -30,7 +30,9 @@
                         </button>
                         <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-tn-DYu">
                             <rect key="frame" x="0.0" y="94" width="125" height="94"/>
-                            <state key="normal" title="Snare"/>
+                            <state key="normal" title="Snare">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="kvq-dw-OpF"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="Yby-YZ-WET"/>
@@ -39,7 +41,9 @@
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-IU-qJh">
                             <rect key="frame" x="0.0" y="188" width="125" height="94"/>
-                            <state key="normal" title="Kick"/>
+                            <state key="normal" title="Kick">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="0ba-XU-ubq"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="mJA-xh-6Wn"/>
@@ -53,7 +57,9 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-Ns-XKW">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="70.5"/>
-                            <state key="normal" title="Crash"/>
+                            <state key="normal" title="Crash">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="jtc-ou-YuK"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="0q5-Pv-jOu"/>
@@ -62,7 +68,9 @@
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-0V-7LO">
                             <rect key="frame" x="0.0" y="70.5" width="125" height="70.5"/>
-                            <state key="normal" title="TomHi"/>
+                            <state key="normal" title="TomHi">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="KFa-Yp-Cgg"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="Sk4-nH-gcP"/>
@@ -71,7 +79,9 @@
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al5-zC-SHE">
                             <rect key="frame" x="0.0" y="141" width="125" height="70.5"/>
-                            <state key="normal" title="TomMid"/>
+                            <state key="normal" title="TomMid">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="i8T-HS-qeC"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="KtL-vs-acW"/>
@@ -80,7 +90,9 @@
                         </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-xV-Dba">
                             <rect key="frame" x="0.0" y="211.5" width="125" height="70.5"/>
-                            <state key="normal" title="TomLow"/>
+                            <state key="normal" title="TomLow">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="bBR-tf-rog"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="wef-Nj-5OW"/>
@@ -94,7 +106,9 @@
                     <subviews>
                         <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqT-GB-O3e">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
-                            <state key="normal" title="H/H Opened"/>
+                            <state key="normal" title="H/H Opened">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="WuF-T0-NSX"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="bPE-YN-Dlf"/>
@@ -103,7 +117,9 @@
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mny-PX-3Iy">
                             <rect key="frame" x="0.0" y="94" width="125" height="94"/>
-                            <state key="normal" title="Ride"/>
+                            <state key="normal" title="Ride">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="Nt3-Bn-w9u"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="hRN-ZA-kJW"/>
@@ -112,7 +128,9 @@
                         </button>
                         <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-bZ-16s">
                             <rect key="frame" x="0.0" y="188" width="125" height="94"/>
-                            <state key="normal" title="H/H Closed"/>
+                            <state key="normal" title="H/H Closed">
+                                <color key="titleColor" name="MugicMain"/>
+                            </state>
                             <connections>
                                 <action selector="playDrum:" destination="M1Q-Un-qND" eventType="touchDown" id="NkV-FP-LDQ"/>
                                 <action selector="touchUpInSide:" destination="M1Q-Un-qND" eventType="touchUpInside" id="CBO-cZ-hGZ"/>
@@ -122,7 +140,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="MugicBlack"/>
             <constraints>
                 <constraint firstItem="oVP-Ab-grR" firstAttribute="width" secondItem="lkF-mT-0QG" secondAttribute="width" id="1ib-97-4RE"/>
                 <constraint firstItem="lkF-mT-0QG" firstAttribute="leading" secondItem="M1Q-Un-qND" secondAttribute="leading" id="34H-KK-LGF"/>
@@ -142,4 +160,12 @@
             <point key="canvasLocation" x="35.5" y="-139"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="MugicBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dmh-5w-89D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dmh-5w-89D">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-631" y="-146"/>
         </scene>
-        <!--🎼-->
+        <!--Mugic-->
         <scene sceneID="r9g-ha-aXL">
             <objects>
                 <viewController storyboardIdentifier="SongListViewController" id="vJQ-YR-ycu" customClass="SongListViewController" customModule="Mugic" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,9 +35,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xHB-xV-4UL">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" name="mugicBlack"/>
+                                <color key="separatorColor" name="MugicLightGray"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lVv-HF-cbJ" firstAttribute="bottom" secondItem="xHB-xV-4UL" secondAttribute="bottom" id="RdO-IN-Dy3"/>
                             <constraint firstItem="xHB-xV-4UL" firstAttribute="top" secondItem="lVv-HF-cbJ" secondAttribute="top" id="eAN-fi-JJc"/>
@@ -46,7 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lVv-HF-cbJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="🎼" id="e4g-5T-Sld">
+                    <navigationItem key="navigationItem" title="Mugic" id="e4g-5T-Sld">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="r7P-0Y-oUR"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xWE-FJ-Ogu">
                             <connections>
@@ -64,6 +65,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="MugicLightGray">
+            <color red="0.47099998593330383" green="0.47099998593330383" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mugicBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

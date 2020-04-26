@@ -14,10 +14,34 @@ class SongListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var songs: [Song]?
+    lazy var fetchedResultsController: NSFetchedResultsController<Song> = {
+        let fetchRequest: NSFetchRequest = Song.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Song.updatedAt, ascending: true),
+        ]
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            preconditionFailure()
+        }
+
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: delegate.persistentContainer.viewContext,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: nil)
+        fetchedResultsController.delegate = self
+
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError()
+        }
+
+        return fetchedResultsController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.customizeNavigationBarAppearance()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -26,26 +50,22 @@ class SongListViewController: UIViewController {
         
     }
     
+    func customizeNavigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        guard let titleFont = UIFont(name: "Montserrat-Italic", size: 20) else { return }
+        appearance.titleTextAttributes = [
+            NSAttributedString.Key.font: titleFont,
+            NSAttributedString.Key.foregroundColor: UIColor.mugicMain
+        ]
+        appearance.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.tintColor = UIColor.mugicMain
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        self.loadSongs()
-    }
-    
-    func loadSongs() {
-        guard let managedContext = self.managedContext else {
-            return
-        }
-        let fetchRequest: NSFetchRequest<Song> = Song.fetchRequest()
-        let sort = NSSortDescriptor(key: "updatedAt", ascending: false)
-        fetchRequest.sortDescriptors = [sort]
-        do {
-            self.songs = try managedContext.fetch(fetchRequest)
-            self.songs?.sort { return $0.updatedAt?.compare($1.updatedAt! as Date) == .orderedDescending }
-            self.tableView.reloadData()
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
     }
     
     @IBAction func handleCancel(_ sender: Any) {
@@ -60,9 +80,8 @@ class SongListViewController: UIViewController {
         let song = Song(context: managedContext)
         song.name = "New song"
         song.updatedAt = Date()
-        self.songs?.append(song)
         self.save()
-        self.loadSongs()
+        
     }
     
     func save() {
@@ -78,45 +97,40 @@ extension SongListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as? SongTableViewCell else {
             return UITableViewCell()
         }
-        guard let song = self.songs?[indexPath.row] else {
-            return cell
-        }
-        cell.nameLabel.text = song.name
-        cell.tempoLabel.text = "\(song.tempo) BPM"
-        cell.timeSignatureLabel.text = song.timeSignatureString
-        cell.trackCountLabel.text = "\(song.tracks?.count ?? 0) track(s)"
+        guard let song = self.fetchedResultsController.fetchedObjects?[indexPath.row] else { return cell }
+        cell.song = song
+        
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let songs = self.songs else {
+        guard let songs = self.fetchedResultsController.fetchedObjects else {
             return 0
         }
         return songs.count
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard let song = self.songs?[indexPath.row], editingStyle == .delete else {
-            return
-        }
+        guard let song = self.fetchedResultsController.fetchedObjects?[indexPath.row] else { return }
         self.managedContext?.delete(song)
-        
         self.save()
-        self.songs?.remove(at: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .automatic)
-        
     }
 }
 
 
 extension SongListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as? MainViewController, let song = self.songs?[indexPath.row] else {
-            return
-        }
+        guard let mainViewController = UIStoryboard(name: "SongDetail", bundle: nil).instantiateInitialViewController() as? SongDetailViewController else { return }
+        guard let song = self.fetchedResultsController.fetchedObjects?[indexPath.row] else { return }
         mainViewController.song = song
         self.navigationController?.pushViewController(mainViewController, animated: true)
     }
     
+}
+
+extension SongListViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.reloadData()
+    }
 }

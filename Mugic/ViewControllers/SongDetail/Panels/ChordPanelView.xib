@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="C">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="bfG-iD-HKI"/>
@@ -38,7 +38,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="D">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="7v7-jl-6MC"/>
@@ -51,7 +51,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="E">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="9Pp-xN-knj"/>
@@ -64,7 +64,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="F">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="RwA-6M-goE"/>
@@ -82,7 +82,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="C#/Db">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="nWZ-7z-ePX"/>
@@ -95,7 +95,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="D#/Eb">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="Xg1-4q-FjZ"/>
@@ -108,7 +108,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" tag="66" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqr-6V-hSE">
@@ -116,7 +116,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="F#/Gb">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="2sj-gA-tP7"/>
@@ -134,7 +134,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="G">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="hMY-r1-g4C"/>
@@ -147,7 +147,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="A">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="Qzf-vq-uEr"/>
@@ -160,7 +160,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="B">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="MUf-SN-Q98"/>
@@ -173,7 +173,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -186,7 +186,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="G#/Ab">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="y5h-iw-fpU"/>
@@ -199,7 +199,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="A#/Bb">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="noteTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="dFq-MV-1EH"/>
@@ -212,7 +212,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fz3-E8-i0h">
@@ -220,7 +220,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -228,6 +228,10 @@
                     </subviews>
                     <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgV-mo-5Nf">
+                    <rect key="frame" x="212.5" y="0.0" width="1" height="246"/>
+                    <color key="backgroundColor" name="MugicLightGray"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mGb-LS-nXK">
                     <rect key="frame" x="218.5" y="0.0" width="156.5" height="246"/>
                     <subviews>
@@ -239,7 +243,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="Maj">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="aI8-Pd-vov"/>
@@ -252,7 +256,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="min">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="HSa-XR-Msn"/>
@@ -265,7 +269,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="sus4">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="0Cm-om-ueL"/>
@@ -283,7 +287,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="7">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="gG4-LL-ZGU"/>
@@ -296,7 +300,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="min7">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="u52-wB-IYh"/>
@@ -309,7 +313,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="maj7">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="D42-RE-4i3"/>
@@ -327,7 +331,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="add2">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="HWK-P3-Law"/>
@@ -340,7 +344,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="add6">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="oQd-Fy-L5O"/>
@@ -353,7 +357,7 @@
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="dim7">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                     <connections>
                                         <action selector="chordTouchDown:" destination="O44-4H-16P" eventType="touchDown" id="9aw-1d-mD6"/>
@@ -370,21 +374,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="61.5"/>
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdp-Tw-D1L">
                                     <rect key="frame" x="52" y="0.0" width="52.5" height="61.5"/>
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bn-5s-wph">
                                     <rect key="frame" x="104.5" y="0.0" width="52" height="61.5"/>
                                     <color key="backgroundColor" name="mugicDarkGray"/>
                                     <state key="normal">
-                                        <color key="titleColor" name="mugicMain"/>
+                                        <color key="titleColor" name="MugicMain"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -392,15 +396,19 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" name="mugicBlack"/>
+            <color key="backgroundColor" name="MugicDarkGray"/>
             <constraints>
+                <constraint firstItem="NrS-tA-FHj" firstAttribute="bottom" secondItem="NgV-mo-5Nf" secondAttribute="bottom" id="3iM-Kd-Sek"/>
                 <constraint firstItem="mGb-LS-nXK" firstAttribute="leading" secondItem="dk4-e6-csz" secondAttribute="trailing" constant="10" id="8f4-yx-Or3"/>
                 <constraint firstItem="dk4-e6-csz" firstAttribute="leading" secondItem="O44-4H-16P" secondAttribute="leading" id="KLl-w2-RxN"/>
                 <constraint firstItem="mGb-LS-nXK" firstAttribute="width" secondItem="dk4-e6-csz" secondAttribute="width" multiplier="0.75" id="Mqn-Kt-feY"/>
                 <constraint firstAttribute="trailing" secondItem="mGb-LS-nXK" secondAttribute="trailing" id="QkJ-BT-alw"/>
+                <constraint firstItem="NgV-mo-5Nf" firstAttribute="leading" secondItem="dk4-e6-csz" secondAttribute="trailing" constant="4" id="Usi-MW-stD"/>
                 <constraint firstAttribute="bottom" secondItem="dk4-e6-csz" secondAttribute="bottom" id="UvN-Gx-m1Y"/>
                 <constraint firstItem="mGb-LS-nXK" firstAttribute="top" secondItem="O44-4H-16P" secondAttribute="top" id="aet-Tq-jeL"/>
+                <constraint firstItem="mGb-LS-nXK" firstAttribute="leading" secondItem="NgV-mo-5Nf" secondAttribute="trailing" constant="5" id="fKe-8X-ocD"/>
                 <constraint firstAttribute="bottom" secondItem="mGb-LS-nXK" secondAttribute="bottom" id="qaB-oB-QnG"/>
+                <constraint firstItem="NgV-mo-5Nf" firstAttribute="top" secondItem="NrS-tA-FHj" secondAttribute="top" id="sv4-6Q-IuQ"/>
                 <constraint firstItem="dk4-e6-csz" firstAttribute="top" secondItem="O44-4H-16P" secondAttribute="top" id="ye1-hC-ao4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -409,14 +417,17 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="mugicBlack">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="MugicDarkGray">
+            <color red="0.11800000071525574" green="0.11800000071525574" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicLightGray">
+            <color red="0.47099998593330383" green="0.47099998593330383" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mugicDarkGray">
             <color red="0.11800000071525574" green="0.11800000071525574" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="mugicMain">
-            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

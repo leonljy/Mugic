@@ -22,11 +22,7 @@ class SongInfoPanel: UIView {
     var delegate: InstrumentSelectionDelegate?
     
     @IBAction func selectPanel(_ sender: UISegmentedControl) {
-        let selected = PanelType(rawValue: sender.selectedSegmentIndex)
+        let selected = PanelType(rawValue: Int16(sender.selectedSegmentIndex))
         self.delegate?.selectPanel(selected!)
     }
-    
-    
-    
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 import AudioKit
 import CoreData
 
-enum PanelType: Int {
+enum PanelType: Int16 {
     case Chord = 0
     case Melody
     case DrumKit
@@ -32,7 +32,6 @@ class SongDetailViewController: UIViewController {
     var song: Song?
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var songInfoPanelBackgroundView: UIView!
     @IBOutlet weak var playControllerBackgroundView: UIView!
     
@@ -40,6 +39,8 @@ class SongDetailViewController: UIViewController {
     var playControllerPanel: PlayControllerPanel?
     
     var selectedTrackIndex: Int? = nil
+    
+    var recorder: Recorder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,6 @@ class SongDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let song = self.song else {
-            return
-        }
-        self.title = self.song?.name
-//        self.songInfoPanel?.timeSingnatureLabel.text = song.timeSignatureString
-//        self.songInfoPanel?.beatLabel.text = "\(song.tempo) BPM"
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,8 +64,8 @@ class SongDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        Recorder.shared.stopRecord()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.recorder?.stopRecord()
         Conductor.shared.stop()
     }
     
@@ -162,7 +156,7 @@ class SongDetailViewController: UIViewController {
     }
 
     
-    @IBAction func handleSongs(_ sender: Any) {
+    @IBAction func editButtonTouched(_ sender: Any) {
         let storyboard = UIStoryboard(name: "EditSong", bundle: nil)
         guard let viewController = storyboard.instantiateInitialViewController() as? EditSongViewController else { return }
         
@@ -175,9 +169,10 @@ class SongDetailViewController: UIViewController {
 
 extension SongDetailViewController: PlayControllerPanelDelegate {
     func panel(_ panel: PlayControllerPanel, didRecordButtonTouched sender: UIButton) {
-        if Recorder.shared.isRecording {
+        guard let isRecording = self.recorder?.isRecording else { return }
+        if isRecording {
             sender.setTitle("Record", for: .normal)
-            Recorder.shared.stopRecord()
+            self.recorder?.stopRecord()
             Conductor.shared.stop()
         } else {
             guard let song = self.song, let trackIndex = self.selectedTrackIndex, let tracks = song.tracks?.reversed, let track = tracks.object(at: trackIndex) as? Track else {
@@ -186,9 +181,9 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
             }
             sender.setTitle("On Air", for: .normal)
             track.events = NSSet()
-            Recorder.shared.track = track
+            self.recorder?.track = track
             print("Start Recording")
-            Recorder.shared.startRecord(countInTime: song.countInTime) { (passedTime) in
+            self.recorder?.startRecord(countInTime: song.countInTime) { (passedTime) in
 
             }
             Conductor.shared.replay(withMetronome: true, song: song) {
@@ -254,7 +249,7 @@ extension SongDetailViewController: ChordPanelDelegate {
         }
         self.chordString = sender.titleLabel?.text
         Conductor.shared.play(root: note, chord: chord)
-        Recorder.shared.save(root: note, chord: chord)
+        self.recorder?.save(root: note, chord: chord)
     }
     
     func chordTouchUpOutside(sender: UIButton) {
@@ -282,7 +277,7 @@ extension SongDetailViewController: PianoPanelDelegate {
     func melodyTouchDown(sender: UIButton) {
         let tag = sender.tag
         Conductor.shared.play(note: tag)
-        Recorder.shared.save(note: tag)
+        self.recorder?.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
     }
@@ -315,9 +310,8 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        guard let song = self.song, let trackCount = song.tracks?.count else {
-            return 0
-        }
+        guard let song = self.song else { return 0 }
+        guard let trackCount = song.tracks?.count else { return 0 }
         return trackCount
     }
     
@@ -337,10 +331,9 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.addButton.addTarget(self, action: #selector(SongDetailViewController.handleAddTarck), for: .touchUpInside)
             return cell
         }
-        
-        guard let song = self.song, let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell, let tracks = song.tracks?.reversed, let track = tracks[indexPath.row] as? Track else {
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell else { return UITableViewCell() }
+        guard let song = self.song else { return cell }
+        guard let track = song.tracks?.reversed[indexPath.row] as? Track else { return cell }
         cell.deleteButton.tag = indexPath.row
         cell.muteButton.tag = indexPath.row
         cell.soloButton.tag = indexPath.row
@@ -352,10 +345,8 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func handleAddTarck(sender: UIButton) {
-        guard let managedContext = self.managedContext else {
-            return
-        }
-        let track = Track(context: managedContext)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let track = Track(context: appDelegate.persistentContainer.viewContext)
         track.name = "New Track"
         if let selected = self.songInfoPanel?.instrumentSegmentControl.selectedSegmentIndex {
             track.instrument = Int16(selected)
@@ -373,7 +364,8 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         song.removeFromTracks(track)
-        self.managedContext?.delete(track)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.persistentContainer.viewContext.delete(track)
         self.save()
 
         if let selectedTrackIndex = self.selectedTrackIndex, selectedTrackIndex >= sender.tag {

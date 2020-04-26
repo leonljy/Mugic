@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" id="mVa-3I-ub7">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Tnl-Bb-YeC">
                             <connections>
-                                <action selector="handleSongs:" destination="BYZ-38-t0r" id="Z0L-0P-3hG"/>
+                                <action selector="editButtonTouched:" destination="BYZ-38-t0r" id="Kcj-Gr-f2M"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -11,7 +11,6 @@ import CoreData
 import UIKit
 
 class Recorder {
-    static let shared = Recorder()
     var recording = false
     var timer: Timer = Timer()
     var track: Track
@@ -25,10 +24,6 @@ class Recorder {
         set {
             self.recording = newValue
         }
-    }
-    
-    init () {
-        self.track = Track()
     }
     
     init (track: Track) {

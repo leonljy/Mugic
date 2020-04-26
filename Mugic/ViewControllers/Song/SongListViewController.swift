@@ -40,14 +40,12 @@ class SongListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.customizeNavigationBarAppearance()
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
         
+        self.customizeNavigationBarAppearance()
     }
     
     func customizeNavigationBarAppearance() {
@@ -63,25 +61,12 @@ class SongListViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-    }
-    
-    @IBAction func handleCancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
     @IBAction func handleAdd(_ sender: Any) {
-        guard let managedContext = self.managedContext else {
-            return
-        }
-        let song = Song(context: managedContext)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let song = Song(context: appDelegate.persistentContainer.viewContext)
         song.name = "New song"
         song.updatedAt = Date()
         self.save()
-        
     }
     
     func save() {
@@ -113,7 +98,8 @@ extension SongListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let song = self.fetchedResultsController.fetchedObjects?[indexPath.row] else { return }
-        self.managedContext?.delete(song)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        appDelegate.persistentContainer.viewContext.delete(song)
         self.save()
     }
 }

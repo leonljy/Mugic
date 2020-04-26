@@ -42,12 +42,9 @@ class EditSongViewController: UIViewController {
     }
     
     func save() {
-        guard let managedContext = self.managedContext else {
-            return
-        }
-        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         do {
-            try managedContext.save()
+            try appDelegate.persistentContainer.viewContext.save()
         } catch let error as NSError {
             self.showAlert(error: error)
         }

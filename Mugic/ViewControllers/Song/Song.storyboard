@@ -48,8 +48,11 @@
                         <viewLayoutGuide key="safeArea" id="lVv-HF-cbJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mugic" id="e4g-5T-Sld">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="r7P-0Y-oUR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="r7P-0Y-oUR">
+                            <color key="tintColor" name="mugicMain"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xWE-FJ-Ogu">
+                            <color key="tintColor" name="mugicMain"/>
                             <connections>
                                 <action selector="handleAdd:" destination="vJQ-YR-ycu" id="Dur-lB-P2y"/>
                             </connections>
@@ -70,6 +73,9 @@
         </namedColor>
         <namedColor name="mugicBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

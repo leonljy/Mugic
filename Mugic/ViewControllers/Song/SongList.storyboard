@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dmh-5w-89D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FsH-dh-C85">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -9,20 +9,23 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="Z79-gT-e7h">
+        <scene sceneID="fqm-tm-Z8A">
             <objects>
-                <navigationController storyboardIdentifier="SongNavigationController" id="Dmh-5w-89D" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8cq-sD-hzl">
+                <navigationController id="FsH-dh-C85" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qs1-We-4tC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="mugicMain"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="vJQ-YR-ycu" kind="relationship" relationship="rootViewController" id="ugo-oi-NUy"/>
+                        <segue destination="vJQ-YR-ycu" kind="relationship" relationship="rootViewController" id="tZM-Pm-Nsg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nhJ-kq-uUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGG-w5-FLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-631" y="-146"/>
+            <point key="canvasLocation" x="-639" y="-146"/>
         </scene>
         <!--Mugic-->
         <scene sceneID="r9g-ha-aXL">

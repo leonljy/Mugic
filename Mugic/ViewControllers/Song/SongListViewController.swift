@@ -44,9 +44,9 @@ class SongListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
-        
-        self.customizeNavigationBarAppearance()
+        self.customizeNavigationBarAppearance()    
     }
+    
     
     func customizeNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
@@ -58,6 +58,10 @@ class SongListViewController: UIViewController {
         appearance.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.tintColor = UIColor.mugicMain
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: titleFont,
+            NSAttributedString.Key.foregroundColor: UIColor.mugicMain
+        ]
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     

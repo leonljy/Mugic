@@ -43,6 +43,7 @@ class Conductor {
         self.piano.samplers.forEach {
             self.mixer.connect(input: $0)
         }
+        
         self.guitar.samplers.forEach {
             self.mixer.connect(input: $0)
         }

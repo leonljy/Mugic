@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -20,15 +20,30 @@
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wjk-vP-DIN">
                             <rect key="frame" x="8" y="50" width="164" height="31"/>
                             <color key="tintColor" name="MugicMain"/>
+                            <connections>
+                                <action selector="didChangedTrackVolumeWithSender:" destination="iN0-l3-epB" eventType="valueChanged" id="QPa-ei-JD0"/>
+                            </connections>
                         </slider>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-MB-T2X">
                             <rect key="frame" x="10" y="10" width="160" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-Qt-63Y">
                                     <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
+                                    <state key="normal" title="Mute">
+                                        <color key="titleColor" name="MugicMain"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didMutedChangedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="mhZ-fG-roG"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JE-pP-XPv">
                                     <rect key="frame" x="53.5" y="0.0" width="53" height="30"/>
+                                    <state key="normal" title="Solo">
+                                        <color key="titleColor" name="MugicMain"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didSoloChangedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="GZT-mi-fCc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-Ri-XyS">
                                     <rect key="frame" x="106.5" y="0.0" width="53.5" height="30"/>

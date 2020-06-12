@@ -413,3 +413,17 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         self.selectedTrackIndex = indexPath.row
     }
 }
+
+extension SongDetailViewController: TrackCellDelegate {
+    func didTrackVolumeChanged(volume: Double) {
+        
+    }
+    
+    func didTrackMuteChanged(isOn: Bool) {
+        
+    }
+    
+    func didTrackSoloChanged(isOn: Bool) {
+        
+    }
+}

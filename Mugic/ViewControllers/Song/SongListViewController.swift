@@ -47,7 +47,6 @@ class SongListViewController: UIViewController {
         self.customizeNavigationBarAppearance()    
     }
     
-    
     func customizeNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
         guard let titleFont = UIFont(name: "Montserrat-Italic", size: 20) else { return }

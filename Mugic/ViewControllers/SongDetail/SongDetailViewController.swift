@@ -334,13 +334,8 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell else { return UITableViewCell() }
         guard let song = self.song else { return cell }
         guard let track = song.tracks?.reversed[indexPath.row] as? Track else { return cell }
-        cell.deleteButton.tag = indexPath.row
-        cell.muteButton.tag = indexPath.row
-        cell.soloButton.tag = indexPath.row
-        cell.changeNameButton.setTitle(track.name, for: .normal)
-        cell.changeNameButton.tag = indexPath.row
-        cell.changeNameButton.addTarget(self, action: #selector(SongDetailViewController.handleChangeTrackName(sender:)), for: .touchUpInside)
-        cell.deleteButton.addTarget(self, action: #selector(SongDetailViewController.handleDeleteTrack), for: .touchUpInside)
+        cell.track = track
+        cell.delegate = self
         return cell
     }
     
@@ -359,30 +354,37 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableView.reloadData()
     }
     
-    @IBAction func handleDeleteTrack(sender: UIButton) {
-        guard let song = self.song, let tracks = song.tracks?.reversed, let track = tracks[sender.tag] as? Track else {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedTrackIndex = indexPath.row
+    }
+}
+
+extension SongDetailViewController: TrackCellDelegate {
+    func didTrackCell(_ cell: TrackTableViewCell, volumeChanged volume: Double) {
+        
+    }
+    
+    func didTrackCell(_ cell: TrackTableViewCell, muteChanged isMuted: Bool) {
+        
+    }
+    
+    func didTrackCell(_ cell: TrackTableViewCell, soloChanged isSolo: Bool) {
+        
+    }
+    
+    func didTrackCell(_ cell: TrackTableViewCell, deleteTouched track: Track) {
+        guard let song = self.song else {
             return
         }
         song.removeFromTracks(track)
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.persistentContainer.viewContext.delete(track)
         self.save()
-
-        if let selectedTrackIndex = self.selectedTrackIndex, selectedTrackIndex >= sender.tag {
-            self.selectedTrackIndex = nil
-        }
+        self.selectedTrackIndex = nil
         self.tableView.reloadData()
     }
     
-    @IBAction  func handleMuteTrack(sender: UIButton) {
-        
-    }
-    
-    @IBAction func handleSoloTrack(sender: UIButton) {
-        
-    }
-    
-    @IBAction func handleChangeTrackName(sender: UIButton) {
+    func didTrackCell(_ cell: TrackTableViewCell, editNameTouched track: Track) {
         let title = "Edit Track Title"
         let message = "Insert New Track Title"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -391,39 +393,16 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
-            guard let song = self.song, let tracks = song.tracks?.reversed, let track = tracks[sender.tag] as? Track else {
-                return
-            }
-            
             guard let textField = alert.textFields?.first, let title = textField.text else {
                 return
             }
             
             track.name = title
             self.save()
-            if let cell = self.tableView.cellForRow(at: IndexPath(row: sender.tag, section: 1)) as? TrackTableViewCell {
-                cell.changeNameButton.setTitle(title, for: .normal)
-            }
+            
+            cell.changeNameButton.setTitle(title, for: .normal)
         }))
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedTrackIndex = indexPath.row
-    }
-}
-
-extension SongDetailViewController: TrackCellDelegate {
-    func didTrackVolumeChanged(volume: Double) {
-        
-    }
-    
-    func didTrackMuteChanged(isOn: Bool) {
-        
-    }
-    
-    func didTrackSoloChanged(isOn: Bool) {
-        
     }
 }

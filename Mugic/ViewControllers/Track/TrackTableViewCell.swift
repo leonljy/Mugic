@@ -17,6 +17,9 @@ class TrackTableViewCell: UITableViewCell {
                 return
             }
             self.volumeProgressBar.value = Float(track.volume)
+            self.changeNameButton.setTitle(track.name, for: .normal)
+            self.muteButton.isSelected = self.track?.isMuted ?? false
+            self.soloButton.isSelected = self.track?.isSolo ?? false
         }
     }
     weak var delegate: TrackCellDelegate?
@@ -29,7 +32,7 @@ class TrackTableViewCell: UITableViewCell {
     
     @IBAction func didChangedTrackVolume(sender: UISlider) {
         let volume = Double(sender.value)
-        self.delegate?.didTrackVolumeChanged(volume: volume)
+        self.delegate?.didTrackCell(self, volumeChanged: volume)
         self.track?.volume = volume
         self.save()
     }
@@ -40,6 +43,7 @@ class TrackTableViewCell: UITableViewCell {
         }
         self.track?.isMuted = !isMuted
         self.save()
+        self.muteButton.isSelected = self.track?.isMuted ?? false
     }
     
     @IBAction func didSoloChanged(sender: UIButton) {
@@ -48,15 +52,34 @@ class TrackTableViewCell: UITableViewCell {
         }
         self.track?.isSolo = !isSolo
         self.save()
+        self.soloButton.isSelected = self.track?.isSolo ?? false
+        
+        guard let newValue = self.track?.isSolo else {
+            return
+        }
+        if newValue {
+            self.track?.isMuted = false
+            self.muteButton.isSelected = false
+        }
+    }
+    
+    @IBAction func handleChangeTrackName(sender: UIButton) {
+        guard let track = self.track else {
+            return
+        }
+        self.delegate?.didTrackCell(self, editNameTouched: track)
+    }
+    
+    @IBAction func deleteButtonTouched(sender: UIButton) {
+        guard let track = self.track else {
+            return
+        }
+        self.delegate?.didTrackCell(self, deleteTouched: track)
     }
     
     func save() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        do {
-            try appDelegate.persistentContainer.viewContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+        appDelegate.saveContext()
     }
 }
 

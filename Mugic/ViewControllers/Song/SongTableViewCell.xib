@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -51,6 +51,7 @@
                     <color key="backgroundColor" name="MugicDarkGray"/>
                     <constraints>
                         <constraint firstItem="a18-K1-cZf" firstAttribute="top" secondItem="tPe-Hb-jtL" secondAttribute="top" constant="20" id="37A-cr-mst"/>
+                        <constraint firstItem="a18-K1-cZf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9mo-hl-gW1" secondAttribute="trailing" constant="10" id="3cv-ym-ctC"/>
                         <constraint firstItem="drV-jB-2dJ" firstAttribute="leading" secondItem="rpw-cH-foM" secondAttribute="trailing" constant="20" id="513-AJ-1uL"/>
                         <constraint firstItem="9mo-hl-gW1" firstAttribute="top" secondItem="tPe-Hb-jtL" secondAttribute="top" constant="20" id="CYi-MC-eOi"/>
                         <constraint firstItem="rpw-cH-foM" firstAttribute="leading" secondItem="tPe-Hb-jtL" secondAttribute="leading" constant="20" id="DgY-gn-Pr4"/>

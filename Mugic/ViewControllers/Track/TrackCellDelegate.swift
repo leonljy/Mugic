@@ -9,9 +9,13 @@
 import Foundation
 
 protocol TrackCellDelegate: AnyObject {
-    func didTrackVolumeChanged(volume: Double)
+    func didTrackCell(_ cell: TrackTableViewCell, volumeChanged volume: Double)
     
-    func didTrackMuteChanged(isOn: Bool)
+    func didTrackCell(_ cell:TrackTableViewCell, muteChanged isMuted: Bool)
     
-    func didTrackSoloChanged(isOn: Bool)
+    func didTrackCell(_ cell: TrackTableViewCell, soloChanged isSolo: Bool)
+    
+    func didTrackCell(_ cell: TrackTableViewCell, editNameTouched track: Track)
+    
+    func didTrackCell(_ cell: TrackTableViewCell, deleteTouched track: Track)
 }

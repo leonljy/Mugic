@@ -31,7 +31,7 @@ class Guitar: ChordInstrument {
         }
     }
     
-    func play(root: Note, chord: Chord, amplitude: Double = 1.0) {
+    func play(root: Note, chord: Chord) {
         self.stop()
         
         let bass = ChordInstrument.adding(root)

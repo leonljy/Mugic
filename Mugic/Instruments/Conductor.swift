@@ -61,7 +61,10 @@ class Conductor {
         }
     }
     
-    func play(root: Note, chord: Chord) {
+    func play(root: Note, chord: Chord, amplitude: Double = 1.0) {
+        self.guitar.samplers.forEach { (sampler) in
+            sampler.volume = amplitude
+        }
         self.guitar.play(root: root, chord: chord)
     }
     

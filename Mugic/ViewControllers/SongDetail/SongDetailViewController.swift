@@ -248,7 +248,17 @@ extension SongDetailViewController: ChordPanelDelegate {
             return
         }
         self.chordString = sender.titleLabel?.text
-        Conductor.shared.play(root: note, chord: chord)
+        var amplitude = 1.0
+        if self.selectedTrackIndex != nil {
+            guard let tracks = self.song?.tracks else {
+                return
+            }
+            guard let track = tracks[selectedTrackIndex!] as? Track else {
+                return
+            }
+            amplitude = track.volume
+        }
+        Conductor.shared.play(root: note, chord: chord, amplitude: amplitude)
         self.recorder?.save(root: note, chord: chord)
     }
     
@@ -361,7 +371,17 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SongDetailViewController: TrackCellDelegate {
     func didTrackCell(_ cell: TrackTableViewCell, volumeChanged volume: Double) {
-        
+        guard let indexPath = self.tableView.indexPath(for: cell) else {
+            return
+        }
+        guard let tracks = self.song?.tracks else {
+            return
+        }
+        guard let track = tracks[indexPath.row] as? Track else {
+            return
+        }
+        track.volume = volume
+        self.save()
     }
     
     func didTrackCell(_ cell: TrackTableViewCell, muteChanged isMuted: Bool) {

@@ -51,6 +51,8 @@
 		FD6E7B762455664700E56593 /* ChordPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B752455664700E56593 /* ChordPanelView.swift */; };
 		FD6E7B782455665000E56593 /* DrumKitPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B772455665000E56593 /* DrumKitPanelView.swift */; };
 		FDB804032493C8AA00D35F9E /* TrackCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB804022493C8AA00D35F9E /* TrackCellDelegate.swift */; };
+		FDB80405249DB14100D35F9E /* ChordInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB80404249DB14100D35F9E /* ChordInstrument.swift */; };
+		FDB80407249DB14F00D35F9E /* BeatInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB80406249DB14F00D35F9E /* BeatInstrument.swift */; };
 		FDCB9C52245413BC00C42623 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4C245413BC00C42623 /* Montserrat-Regular.ttf */; };
 		FDCB9C53245413BC00C42623 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4D245413BC00C42623 /* Montserrat-MediumItalic.ttf */; };
 		FDCB9C54245413BC00C42623 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4E245413BC00C42623 /* Montserrat-Light.ttf */; };
@@ -135,6 +137,8 @@
 		FD6E7B752455664700E56593 /* ChordPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPanelView.swift; sourceTree = "<group>"; };
 		FD6E7B772455665000E56593 /* DrumKitPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumKitPanelView.swift; sourceTree = "<group>"; };
 		FDB804022493C8AA00D35F9E /* TrackCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellDelegate.swift; sourceTree = "<group>"; };
+		FDB80404249DB14100D35F9E /* ChordInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordInstrument.swift; sourceTree = "<group>"; };
+		FDB80406249DB14F00D35F9E /* BeatInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatInstrument.swift; sourceTree = "<group>"; };
 		FDCB9C4C245413BC00C42623 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FDCB9C4D245413BC00C42623 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FDCB9C4E245413BC00C42623 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				91FF504F20394484008460C3 /* Guitar.swift */,
 				918E3790206262CF004C08CB /* Drum.swift */,
 				914BA5582029C0EC00A2CBC3 /* Conductor.swift */,
+				FDB80404249DB14100D35F9E /* ChordInstrument.swift */,
+				FDB80406249DB14F00D35F9E /* BeatInstrument.swift */,
 			);
 			path = Instruments;
 			sourceTree = "<group>";
@@ -674,7 +680,9 @@
 				919403A920F0AD1D00A96206 /* Song.swift in Sources */,
 				FD6E7B782455665000E56593 /* DrumKitPanelView.swift in Sources */,
 				9194039D20F09E9600A96206 /* SongTableViewCell.swift in Sources */,
+				FDB80407249DB14F00D35F9E /* BeatInstrument.swift in Sources */,
 				91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */,
+				FDB80405249DB14100D35F9E /* ChordInstrument.swift in Sources */,
 				91813C4720552328004E600C /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

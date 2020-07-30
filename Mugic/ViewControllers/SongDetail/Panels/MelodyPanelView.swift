@@ -1,5 +1,5 @@
 //
-//  PianoPanelView.swift
+//  MelodyPanelView.swift
 //  Mugic
 //
 //  Created by Jeong-Uk Lee on 2020/04/26.
@@ -9,24 +9,24 @@
 import Foundation
 import UIKit
 
-protocol PianoPanelDelegate {
+protocol MelodyPanelDelegate {
     func melodyTouchDown(sender: UIButton)
     func melodyTouchUpInside(sender: UIButton)
     func melodyTouchUpOutside(sender: UIButton)
 }
 
-class PianoPanelOneOctaveView: UIView {}
+class MelodyPanelOneOctaveView: UIView {}
 
-class PianoPanelView: UIView {
-    @IBOutlet weak var lowOctave: PianoPanelOneOctaveView!
-    @IBOutlet weak var midOctave: PianoPanelOneOctaveView!
-    @IBOutlet weak var highOctave: PianoPanelOneOctaveView!
-    var delegate: PianoPanelDelegate?
+class MelodyPanelView: UIView {
+    @IBOutlet weak var lowOctave: MelodyPanelOneOctaveView!
+    @IBOutlet weak var midOctave: MelodyPanelOneOctaveView!
+    @IBOutlet weak var highOctave: MelodyPanelOneOctaveView!
+    var delegate: MelodyPanelDelegate?
     
     
     
-    class func instanceFromNib() -> PianoPanelView? {
-        guard let instance = UINib(nibName: "PianoPanelView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PianoPanelView else {
+    class func instanceFromNib() -> MelodyPanelView? {
+        guard let instance = UINib(nibName: "MelodyPanelView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? MelodyPanelView else {
             return nil
         }
         return instance

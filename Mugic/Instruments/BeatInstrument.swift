@@ -21,16 +21,16 @@ class BeatInstrument: Instrument {
     
     func stop() {
         let midiChannel = MIDIChannel()
-        for (index, noteNumber) in self.beats.enumerated() {
-            try? self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
+        self.beats.forEach {
+            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
         }
         self.beats = []
     }
     
     func play() {
         let midiChannel = MIDIChannel()
-        for (index, noteNumber) in self.beats.enumerated() {
-            try? self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
+        self.beats.forEach {
+            try? self.sampler.play(noteNumber: MIDINoteNumber($0), velocity: 80, channel: midiChannel)
         }
     }
 }

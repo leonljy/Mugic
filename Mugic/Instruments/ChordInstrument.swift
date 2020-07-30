@@ -29,19 +29,16 @@ class ChordInstrument: Instrument {
     
     func stop() {
         let midiChannel = MIDIChannel()
-        for (index, noteNumber) in self.noteNumbers.enumerated() {
-            try? self.samplers[index].stop(noteNumber: MIDINoteNumber(noteNumber), channel: midiChannel)
+        self.noteNumbers.forEach {
+            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
         }
         self.noteNumbers = []
     }
     
     func play() {
         let midiChannel = MIDIChannel()
-        for (index, noteNumber) in self.noteNumbers.enumerated() {
-            guard index < self.numberOfPolyphonic else {
-                return
-            }
-            try? self.samplers[index].play(noteNumber: MIDINoteNumber(noteNumber), velocity: 80, channel: midiChannel)
+        self.noteNumbers.forEach {
+            try? self.sampler.play(noteNumber: MIDINoteNumber($0), velocity: 80, channel: midiChannel)
         }
     }
 }

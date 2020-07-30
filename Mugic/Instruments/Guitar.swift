@@ -14,21 +14,18 @@ class Guitar: ChordInstrument {
     init(midifileName: String = "Acoustic Guitars JNv2.4") {
         super.init()
         self.noteNumbers = []
+        self.sampler = AKAppleSampler()
         do {
-            self.midiFileName = midifileName
-            self.numberOfPolyphonic = 10
-            for _ in 0 ... self.numberOfPolyphonic {
-                let sampler = AKAppleSampler()
-                self.samplers.append(sampler)
-            }
-            
-            for sampler in super.samplers {
-                try sampler.loadMelodicSoundFont(self.midiFileName, preset: 0)
-            }
-            
-        } catch  {
+            try self.sampler.loadMelodicSoundFont(self.midiFileName, preset: 0)
+        } catch {
             print("File not found")
         }
+    }
+    
+    func play(note: Int) {
+        self.stop()
+        self.noteNumbers.insert(note)
+        self.play()
     }
     
     func play(root: Note, chord: Chord) {

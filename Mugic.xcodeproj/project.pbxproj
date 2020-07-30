@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7855CA798E7D105A650A2F01 /* Pods_MugicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923EF0BE7416BA5CF7A81730 /* Pods_MugicUITests.framework */; };
-		91188F9220A6C04100D2C678 /* PianoPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91188F9120A6C04100D2C678 /* PianoPanelView.xib */; };
+		91188F9220A6C04100D2C678 /* MelodyPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91188F9120A6C04100D2C678 /* MelodyPanelView.xib */; };
 		9124E14420BA726B002906CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9124E14320BA726B002906CF /* GoogleService-Info.plist */; };
 		91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91278F8C20C54974008DAAB0 /* MenuViewController.swift */; };
 		914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA5582029C0EC00A2CBC3 /* Conductor.swift */; };
@@ -47,12 +47,15 @@
 		AC30BCEC8A9CE1B581C1463B /* Pods_MugicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2EFEA2E61A65C195BC8198 /* Pods_MugicTests.framework */; };
 		CA91CF924AC7A41DD0422141 /* Pods_Mugic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D215FEA4F84B2B255276C541 /* Pods_Mugic.framework */; };
 		FD082E0B24542E1800133526 /* EditSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD082E0A24542E1800133526 /* EditSong.storyboard */; };
-		FD6E7B742455663C00E56593 /* PianoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B732455663C00E56593 /* PianoPanelView.swift */; };
+		FD6E7B742455663C00E56593 /* MelodyPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B732455663C00E56593 /* MelodyPanelView.swift */; };
 		FD6E7B762455664700E56593 /* ChordPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B752455664700E56593 /* ChordPanelView.swift */; };
 		FD6E7B782455665000E56593 /* DrumKitPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B772455665000E56593 /* DrumKitPanelView.swift */; };
 		FDB804032493C8AA00D35F9E /* TrackCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB804022493C8AA00D35F9E /* TrackCellDelegate.swift */; };
 		FDB80405249DB14100D35F9E /* ChordInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB80404249DB14100D35F9E /* ChordInstrument.swift */; };
 		FDB80407249DB14F00D35F9E /* BeatInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB80406249DB14F00D35F9E /* BeatInstrument.swift */; };
+		FDB8040B24C5D23700D35F9E /* InstrumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB8040A24C5D23700D35F9E /* InstrumentType.swift */; };
+		FDB82DF224C5DD6E0005C4E5 /* EmptyPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB82DF124C5DD6E0005C4E5 /* EmptyPanelView.swift */; };
+		FDB82DF424C5DD810005C4E5 /* EmptyPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB82DF324C5DD810005C4E5 /* EmptyPanelView.xib */; };
 		FDCB9C52245413BC00C42623 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4C245413BC00C42623 /* Montserrat-Regular.ttf */; };
 		FDCB9C53245413BC00C42623 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4D245413BC00C42623 /* Montserrat-MediumItalic.ttf */; };
 		FDCB9C54245413BC00C42623 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4E245413BC00C42623 /* Montserrat-Light.ttf */; };
@@ -86,7 +89,7 @@
 		487DDC6C97D09E375DA9CF39 /* Pods-Mugic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mugic.debug.xcconfig"; path = "Target Support Files/Pods-Mugic/Pods-Mugic.debug.xcconfig"; sourceTree = "<group>"; };
 		748C2A693D63C91AC7C32A01 /* Pods-MugicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MugicTests.debug.xcconfig"; path = "Target Support Files/Pods-MugicTests/Pods-MugicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C2EFEA2E61A65C195BC8198 /* Pods_MugicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MugicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		91188F9120A6C04100D2C678 /* PianoPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PianoPanelView.xib; sourceTree = "<group>"; };
+		91188F9120A6C04100D2C678 /* MelodyPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MelodyPanelView.xib; sourceTree = "<group>"; };
 		9124E14320BA726B002906CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91278F8C20C54974008DAAB0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		914BA5582029C0EC00A2CBC3 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
@@ -133,12 +136,15 @@
 		B9D297182FD7C3670D4D3183 /* Pods-Mugic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mugic.release.xcconfig"; path = "Target Support Files/Pods-Mugic/Pods-Mugic.release.xcconfig"; sourceTree = "<group>"; };
 		D215FEA4F84B2B255276C541 /* Pods_Mugic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mugic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD082E0A24542E1800133526 /* EditSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditSong.storyboard; sourceTree = "<group>"; };
-		FD6E7B732455663C00E56593 /* PianoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoPanelView.swift; sourceTree = "<group>"; };
+		FD6E7B732455663C00E56593 /* MelodyPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyPanelView.swift; sourceTree = "<group>"; };
 		FD6E7B752455664700E56593 /* ChordPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPanelView.swift; sourceTree = "<group>"; };
 		FD6E7B772455665000E56593 /* DrumKitPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumKitPanelView.swift; sourceTree = "<group>"; };
 		FDB804022493C8AA00D35F9E /* TrackCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellDelegate.swift; sourceTree = "<group>"; };
 		FDB80404249DB14100D35F9E /* ChordInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordInstrument.swift; sourceTree = "<group>"; };
 		FDB80406249DB14F00D35F9E /* BeatInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatInstrument.swift; sourceTree = "<group>"; };
+		FDB8040A24C5D23700D35F9E /* InstrumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentType.swift; sourceTree = "<group>"; };
+		FDB82DF124C5DD6E0005C4E5 /* EmptyPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPanelView.swift; sourceTree = "<group>"; };
+		FDB82DF324C5DD810005C4E5 /* EmptyPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPanelView.xib; sourceTree = "<group>"; };
 		FDCB9C4C245413BC00C42623 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FDCB9C4D245413BC00C42623 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FDCB9C4E245413BC00C42623 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 		917ADCCA200B3A6E0062B79A /* Instruments */ = {
 			isa = PBXGroup;
 			children = (
+				FDB8040A24C5D23700D35F9E /* InstrumentType.swift */,
 				917ADCCB200B3A940062B79A /* Instrument.swift */,
 				914BA55A2029D8EF00A2CBC3 /* Piano.swift */,
 				91FF504F20394484008460C3 /* Guitar.swift */,
@@ -242,10 +249,12 @@
 				FDD96E9424555F7E004BD981 /* PlayControllerPanel.swift */,
 				91C5638E20AC2DF00029089B /* ChordPanelView.xib */,
 				FD6E7B752455664700E56593 /* ChordPanelView.swift */,
-				91188F9120A6C04100D2C678 /* PianoPanelView.xib */,
-				FD6E7B732455663C00E56593 /* PianoPanelView.swift */,
+				91188F9120A6C04100D2C678 /* MelodyPanelView.xib */,
+				FD6E7B732455663C00E56593 /* MelodyPanelView.swift */,
 				91C5639020AC2DF90029089B /* DrumKitPanelView.xib */,
 				FD6E7B772455665000E56593 /* DrumKitPanelView.swift */,
+				FDB82DF124C5DD6E0005C4E5 /* EmptyPanelView.swift */,
+				FDB82DF324C5DD810005C4E5 /* EmptyPanelView.xib */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -541,10 +550,11 @@
 				9194039620F09DE500A96206 /* SongList.storyboard in Resources */,
 				91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */,
 				FDCB9C56245413BC00C42623 /* Montserrat-Medium.ttf in Resources */,
+				FDB82DF424C5DD810005C4E5 /* EmptyPanelView.xib in Resources */,
 				91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */,
 				91CD36882001E78300124BD3 /* Assets.xcassets in Resources */,
 				917F6CCA2119E5DE00B953FE /* SongInfoPanel.xib in Resources */,
-				91188F9220A6C04100D2C678 /* PianoPanelView.xib in Resources */,
+				91188F9220A6C04100D2C678 /* MelodyPanelView.xib in Resources */,
 				91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */,
 				FDCB9C55245413BC00C42623 /* Montserrat-Italic.ttf in Resources */,
 				91AC947822B934180074E9A7 /* Localizable.strings in Resources */,
@@ -660,9 +670,10 @@
 			files = (
 				91813C4120513AEE004E600C /* Recorder.swift in Sources */,
 				91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */,
-				FD6E7B742455663C00E56593 /* PianoPanelView.swift in Sources */,
+				FD6E7B742455663C00E56593 /* MelodyPanelView.swift in Sources */,
 				917ADCCC200B3A940062B79A /* Instrument.swift in Sources */,
 				917F6CC52119E2E600B953FE /* TrackTableViewCell.swift in Sources */,
+				FDB82DF224C5DD6E0005C4E5 /* EmptyPanelView.swift in Sources */,
 				FDD96E9524555F7E004BD981 /* PlayControllerPanel.swift in Sources */,
 				914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */,
 				9194039920F09E4500A96206 /* SongListViewController.swift in Sources */,
@@ -679,6 +690,7 @@
 				FDB804032493C8AA00D35F9E /* TrackCellDelegate.swift in Sources */,
 				919403A920F0AD1D00A96206 /* Song.swift in Sources */,
 				FD6E7B782455665000E56593 /* DrumKitPanelView.swift in Sources */,
+				FDB8040B24C5D23700D35F9E /* InstrumentType.swift in Sources */,
 				9194039D20F09E9600A96206 /* SongTableViewCell.swift in Sources */,
 				FDB80407249DB14F00D35F9E /* BeatInstrument.swift in Sources */,
 				91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */,

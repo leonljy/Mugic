@@ -59,12 +59,12 @@ class Instrument {
     static let OCTAVE = 12
     static let AHz = 440
     
-    var samplers: [AKAppleSampler]
+    var sampler: AKAppleSampler
     var midiFileName: String
     
     init() {
-        self.samplers = []
         self.midiFileName = ""
+        self.sampler = AKAppleSampler()
     }
 }
 

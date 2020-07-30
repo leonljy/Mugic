@@ -14,6 +14,7 @@ enum Instruments: Int {
     case Piano
     case Drumkit
     case Voice
+    case Guitar2
 }
 
 class Conductor {
@@ -22,6 +23,7 @@ class Conductor {
     let piano: Piano
     let guitar: Guitar
     let drum: Drum
+    var tracks: [Track]
     
     var playing = false
     var isPlaying: Bool {
@@ -39,15 +41,10 @@ class Conductor {
         self.piano = Piano()
         self.guitar = Guitar()
         self.drum = Drum()
+        self.tracks = []
         
-        self.piano.samplers.forEach {
-            self.mixer.connect(input: $0)
-        }
-        
-        self.guitar.samplers.forEach {
-            self.mixer.connect(input: $0)
-        }
-        
+        self.mixer.connect(input: self.piano.sampler)
+        self.mixer.connect(input: self.guitar.sampler)
         self.drum.drumkit.forEach {
             self.mixer.connect(input: $0)
         }
@@ -61,15 +58,30 @@ class Conductor {
         }
     }
     
-    func play(root: Note, chord: Chord, amplitude: Double = 1.0) {
-        self.guitar.samplers.forEach { (sampler) in
-            sampler.volume = amplitude
+    func play(instrument: InstrumentType, root: Note, chord: Chord, amplitude: Double = 1.0) {
+        switch instrument {
+        case .PianoChord:
+            self.piano.sampler.volume = amplitude
+            self.piano.play(root: root, chord: chord)
+        case .GuitarChord:
+            self.guitar.sampler.volume = amplitude
+            self.guitar.play(root: root, chord: chord)
+        default:
+            return
         }
-        self.guitar.play(root: root, chord: chord)
     }
     
-    func play(note: Int) {
-        self.piano.play(note: note)
+    func play(instrument: InstrumentType, note: Int, amplitude: Double = 1.0) {
+        switch instrument {
+        case .PianoChord:
+            self.piano.sampler.volume = amplitude
+            self.piano.play(note: note)
+        case .GuitarChord:
+            self.guitar.sampler.volume = amplitude
+            self.guitar.play(note: note)
+        default:
+            return
+        }
     }
     
     func playDrum(note: Int) {
@@ -111,7 +123,6 @@ extension Conductor {
     
     func addCountIn(song: Song) {
         let countInNumber = song.countInNumber()
-        print("BeatInterval: \(song.beatInterval)")
         let startDate = Date()
         let runloop = RunLoop.current
         for index in 0 ..< countInNumber {
@@ -127,12 +138,10 @@ extension Conductor {
     
     func addMetronomeBeats(song: Song) {
         let countInTime = song.countInTime
-        print("Start Metronome")
         let startDate = Date()
         let runloop = RunLoop.current
         let fireTime = Date(timeIntervalSinceNow: countInTime)
         let timer = Timer(fire: fireTime, interval: song.beatInterval, repeats: true) { (timer) in
-            print("Beat: \(Date().timeIntervalSince(startDate))")
             self.playDrum(note: DrumKit.HihatClosed.rawValue)
         }
         runloop.add(timer, forMode: .default)
@@ -188,10 +197,10 @@ extension Conductor {
                 guard let note = Note(rawValue: Int(chordEvent.baseNote)), let chord = Chord(rawValue: Int(chordEvent.chord)) else {
                     return
                 }
-                self.play(root: note, chord: chord)
+//                self.play(root: note, chord: chord)
             } else if event is MelodicEvent {
                 let melodicEvent = event as! MelodicEvent
-                self.play(note: Int(melodicEvent.note))
+//                self.play(note: Int(melodicEvent.note))
             } else if event is RhythmEvent {
                 let rhythmEvent = event as! RhythmEvent
                 self.playDrum(note: Int(rhythmEvent.beat))

@@ -16,29 +16,20 @@ class Piano: ChordInstrument {
         self.noteNumbers = []
         do {
             self.midiFileName = midifileName
-            self.numberOfPolyphonic = 10
-            for _ in 0 ..< self.numberOfPolyphonic {
-                let sampler = AKAppleSampler()
-                self.samplers.append(sampler)
-            }
-            
-            for sampler in super.samplers {
-                try sampler.loadEXS24(self.midiFileName)
-            }
-            
+            try self.sampler.loadEXS24(self.midiFileName)
         } catch  {
             print("File not found")
         }
     }
     
     
-    func play(note: Int, amplitude: Double = 1.0) {
+    func play(note: Int) {
         self.stop()
         self.noteNumbers.insert(note)
         self.play()
     }
     
-    func play(root: Note, chord: Chord, amplitude: Double = 1.0) {
+    func play(root: Note, chord: Chord) {
         self.stop()
         
         let bass = ChordInstrument.adding(root)

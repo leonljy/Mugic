@@ -15,6 +15,7 @@ enum PanelType: Int16 {
     case Melody
     case DrumKit
     case Voice
+    case Empty
 }
 
 class SongDetailViewController: UIViewController {
@@ -26,21 +27,22 @@ class SongDetailViewController: UIViewController {
     @IBOutlet weak var panelBackgroundView: UIView!
     
     var chrodPanelView: ChordPanelView?
-    var pianoPanelView: PianoPanelView?
+    var melodyPanelView: MelodyPanelView?
     var drumKitPanelView: DrumKitPanelView?
+    var emptyPanelView: EmptyPanelView?
     
     var song: Song?
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var songInfoPanelBackgroundView: UIView!
     @IBOutlet weak var playControllerBackgroundView: UIView!
     
-    var songInfoPanel: SongInfoPanel?
     var playControllerPanel: PlayControllerPanel?
     
     var selectedTrackIndex: Int? = nil
     
     var recorder: Recorder?
+    
+    let conductor = Conductor.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +68,7 @@ class SongDetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.recorder?.stopRecord()
-        Conductor.shared.stop()
+        self.conductor.stop()
     }
     
     func initializeTableView() {
@@ -99,21 +101,7 @@ class SongDetailViewController: UIViewController {
     
     func initializeViews() {
         self.initializeInstrumentPanels()
-        self.initializeSongPanel()
         self.initializePlayControllerPanel()
-    }
-    
-    func initializeSongPanel() {
-        guard let songInfoPanel = UINib(nibName: "SongInfoPanel", bundle: nil).instantiate(withOwner: nil, options: nil).first as? SongInfoPanel else {
-            return
-        }
-        self.songInfoPanel = songInfoPanel
-        self.songInfoPanel?.delegate = self
-        self.songInfoPanelBackgroundView.addSubview(songInfoPanel)
-        self.songInfoPanel?.topAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.topAnchor, constant: 0).isActive = true
-        self.songInfoPanel?.bottomAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.bottomAnchor, constant: 0).isActive = true
-        self.songInfoPanel?.trailingAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.trailingAnchor, constant: 0).isActive = true
-        self.songInfoPanel?.leadingAnchor.constraint(equalTo: self.songInfoPanelBackgroundView.leadingAnchor, constant: 0).isActive = true
     }
     
     func initializePlayControllerPanel() {
@@ -137,12 +125,11 @@ class SongDetailViewController: UIViewController {
             self.chrodPanelView?.delegate = self
         }
         
-        self.pianoPanelView = PianoPanelView.instanceFromNib()
-        if self.pianoPanelView != nil {
-            self.pianoPanelView?.frame = self.panelBackgroundView.bounds
-            self.panelBackgroundView.addSubview(self.pianoPanelView!)
-            self.pianoPanelView?.delegate = self
-            self.pianoPanelView?.isHidden = true
+        self.melodyPanelView = MelodyPanelView.instanceFromNib()
+        if self.melodyPanelView != nil {
+            self.melodyPanelView?.frame = self.panelBackgroundView.bounds
+            self.panelBackgroundView.addSubview(self.melodyPanelView!)
+            self.melodyPanelView?.delegate = self
         }
         
         self.drumKitPanelView = DrumKitPanelView.instanceFromNib()
@@ -150,9 +137,16 @@ class SongDetailViewController: UIViewController {
             self.drumKitPanelView?.frame = self.panelBackgroundView.bounds
             self.panelBackgroundView.addSubview(self.drumKitPanelView!)
             self.drumKitPanelView?.delegate = self
-            self.drumKitPanelView?.isHidden = true
         }
         
+        self.emptyPanelView = EmptyPanelView.instanceFromNib()
+        if self.emptyPanelView != nil {
+            self.emptyPanelView?.frame = self.panelBackgroundView.bounds
+            self.panelBackgroundView.addSubview(self.emptyPanelView!)
+            self.emptyPanelView?.addNewTrackButton.addTarget(self, action: #selector(SongDetailViewController.handleAddTarck(sender:)), for: .touchUpInside)
+        }
+        
+        self.selectPanel(.Empty)
     }
 
     
@@ -164,6 +158,36 @@ class SongDetailViewController: UIViewController {
         viewController.song = song
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func selectPanel(_ selected: PanelType) {
+        switch selected {
+        case .Chord:
+            self.chrodPanelView?.isHidden = false
+            self.melodyPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = true
+            self.emptyPanelView?.isHidden = true
+        case .Melody:
+            self.chrodPanelView?.isHidden = true
+            self.melodyPanelView?.isHidden = false
+            self.drumKitPanelView?.isHidden = true
+            self.emptyPanelView?.isHidden = true
+        case .DrumKit:
+            self.chrodPanelView?.isHidden = true
+            self.melodyPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = false
+            self.emptyPanelView?.isHidden = true
+        case .Voice:
+            self.chrodPanelView?.isHidden = true
+            self.melodyPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = true
+            self.emptyPanelView?.isHidden = false
+        case .Empty:
+            self.chrodPanelView?.isHidden = true
+            self.melodyPanelView?.isHidden = true
+            self.drumKitPanelView?.isHidden = true
+            self.emptyPanelView?.isHidden = false
+        }
+    }
 }
 
 
@@ -173,7 +197,7 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
         if isRecording {
             sender.setTitle("Record", for: .normal)
             self.recorder?.stopRecord()
-            Conductor.shared.stop()
+            self.conductor.stop()
         } else {
             guard let song = self.song, let trackIndex = self.selectedTrackIndex, let tracks = song.tracks?.reversed, let track = tracks.object(at: trackIndex) as? Track else {
                 self.showAlert(message: "Please select a track first")
@@ -186,9 +210,9 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
             self.recorder?.startRecord(countInTime: song.countInTime) { (passedTime) in
 
             }
-            Conductor.shared.replay(withMetronome: true, song: song) {
-                Conductor.shared.stop()
-            }
+//            Conductor.shared.replay(withMetronome: true, song: song) {
+//                Conductor.shared.stop()
+//            }
         }
     }
     
@@ -196,43 +220,21 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
         //TODO: Exception There's no song
         print("Start Playing")
         let completionBlock: () -> Void = {
-            Conductor.shared.stop()
+            self.conductor.stop()
             sender.setTitle("Play", for: .normal)
         }
         
-        guard let song = self.song, !Conductor.shared.isPlaying else {
+        guard let song = self.song, !self.conductor.isPlaying else {
             completionBlock()
             return
         }
         
         sender.setTitle("Stop", for: .normal)
         
-        Conductor.shared.replay(song: song, completionBlock: completionBlock)
+        self.conductor.replay(song: song, completionBlock: completionBlock)
     }
 }
 
-extension SongDetailViewController: InstrumentSelectionDelegate {
-    func selectPanel(_ selected: PanelType) {
-        switch selected {
-        case .Chord:
-            self.chrodPanelView?.isHidden = false
-            self.pianoPanelView?.isHidden = true
-            self.drumKitPanelView?.isHidden = true
-        case .Melody:
-            self.chrodPanelView?.isHidden = true
-            self.pianoPanelView?.isHidden = false
-            self.drumKitPanelView?.isHidden = true
-        case .DrumKit:
-            self.chrodPanelView?.isHidden = true
-            self.pianoPanelView?.isHidden = true
-            self.drumKitPanelView?.isHidden = false
-        case .Voice:
-            self.chrodPanelView?.isHidden = false
-            self.pianoPanelView?.isHidden = true
-            self.drumKitPanelView?.isHidden = true
-        }
-    }
-}
 
 
 //Chord Mode Extension {
@@ -248,17 +250,20 @@ extension SongDetailViewController: ChordPanelDelegate {
             return
         }
         self.chordString = sender.titleLabel?.text
-        var amplitude = 1.0
-        if self.selectedTrackIndex != nil {
-            guard let tracks = self.song?.tracks else {
-                return
-            }
-            guard let track = tracks[selectedTrackIndex!] as? Track else {
-                return
-            }
-            amplitude = track.volume
+        
+        guard self.selectedTrackIndex != nil else {
+            return
         }
-        Conductor.shared.play(root: note, chord: chord, amplitude: amplitude)
+        guard let tracks = self.song?.tracks?.reversed else {
+            return
+        }
+        guard let track = tracks[selectedTrackIndex!] as? Track else {
+            return
+        }
+        guard let instrumentType = InstrumentType(rawValue: track.instrument) else {
+            return
+        }
+        self.conductor.play(instrument: instrumentType, root: note, chord: chord, amplitude: track.volume)
         self.recorder?.save(root: note, chord: chord)
     }
     
@@ -283,10 +288,24 @@ extension SongDetailViewController: ChordPanelDelegate {
 }
 
 //Melody Mode Extension
-extension SongDetailViewController: PianoPanelDelegate {
+extension SongDetailViewController: MelodyPanelDelegate {
     func melodyTouchDown(sender: UIButton) {
         let tag = sender.tag
-        Conductor.shared.play(note: tag)
+        
+        guard self.selectedTrackIndex != nil else {
+            return
+        }
+        guard let tracks = self.song?.tracks?.reversed else {
+            return
+        }
+        guard let track = tracks[selectedTrackIndex!] as? Track else {
+            return
+        }
+        guard let instrumentType = InstrumentType(rawValue: track.instrument) else {
+            return
+        }
+        
+        self.conductor.play(instrument: instrumentType, note: tag, amplitude: track.volume)
         self.recorder?.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
@@ -298,7 +317,7 @@ extension SongDetailViewController: PianoPanelDelegate {
 //Drum Mode Extension
 extension SongDetailViewController: DrumKitPanelDelegate {
     func playDrum(sender: UIButton) {
-        Conductor.shared.playDrum(note: sender.tag)
+        self.conductor.playDrum(note: sender.tag)
 //        Recorder.shared.save(rhythmNote: sender.tag)
     }
     
@@ -349,23 +368,58 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+    
     @IBAction func handleAddTarck(sender: UIButton) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let track = Track(context: appDelegate.persistentContainer.viewContext)
-        track.name = "New Track"
-        if let selected = self.songInfoPanel?.instrumentSegmentControl.selectedSegmentIndex {
-            track.instrument = Int16(selected)
+        
+        var instrumentType: InstrumentType?
+        let completionAction = {
+            let track = Track(context: appDelegate.persistentContainer.viewContext)
+            track.name = "New Track"
+            guard let song = self.song else {
+                return
+            }
+            guard let instrumentType = instrumentType else {
+                return
+            }
+            song.addToTracks(track)
+            track.instrument = instrumentType.rawValue
+            track.name = instrumentType.name
+            self.save()
+            self.tableView.reloadData()
         }
-        guard let song = self.song else {
-            return
-        }
-        song.addToTracks(track)
-        self.save()
-        self.tableView.reloadData()
+        let alertController = UIAlertController(title: "Select Instrument", message: "Choose new instrument sound", preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: InstrumentType.PianoMelody.name, style: .default, handler: { (action) in
+            instrumentType = .PianoMelody
+            completionAction()
+        }))
+        alertController.addAction(UIAlertAction(title: InstrumentType.PianoChord.name, style: .default, handler: { (action) in
+            instrumentType = .PianoChord
+            completionAction()
+        }))
+        alertController.addAction(UIAlertAction(title: InstrumentType.GuitarMelody.name, style: .default, handler: { (action) in
+            instrumentType = .GuitarMelody
+            completionAction()
+        }))
+        alertController.addAction(UIAlertAction(title: InstrumentType.GuitarChord.name, style: .default, handler: { (action) in
+            instrumentType = .GuitarChord
+            completionAction()
+        }))
+        alertController.addAction(UIAlertAction(title: InstrumentType.DrumKit.name, style: .default, handler: { (action) in
+            instrumentType = .DrumKit
+            completionAction()
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(alertController, animated: true, completion:nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedTrackIndex = indexPath.row
+        guard let song = self.song else { return }
+        guard let track = song.tracks?.reversed[indexPath.row] as? Track else { return }
+        let instrument = InstrumentType(rawValue: track.instrument)
+        self.selectPanel(instrument?.panelType ?? PanelType.Empty)
     }
 }
 

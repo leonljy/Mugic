@@ -73,10 +73,10 @@ class Conductor {
     
     func play(instrument: InstrumentType, note: Int, amplitude: Double = 1.0) {
         switch instrument {
-        case .PianoChord:
+        case .PianoMelody:
             self.piano.sampler.volume = amplitude
             self.piano.play(note: note)
-        case .GuitarChord:
+        case .GuitarMelody:
             self.guitar.sampler.volume = amplitude
             self.guitar.play(note: note)
         default:

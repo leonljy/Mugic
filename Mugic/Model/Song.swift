@@ -58,7 +58,7 @@ extension Song {
     
     var countInTime: TimeInterval {
         get {
-            let countInNumber = self.countInNumber()
+            let countInNumber = self.subdivision()
             let countInCycle = self.countInCycle()
             let countInTime = self.beatInterval * Double(countInNumber) * Double(countInCycle)
             print(countInTime)
@@ -66,24 +66,24 @@ extension Song {
         }
     }
     
-    func countInNumber() -> UInt {
-        let countInNumber: UInt
+    func subdivision() -> Int {
+        let subdivision: Int
         guard let timeSignature = TimeSignature(rawValue: Int(self.timeSignature)) else {
             return 0
         }
         switch timeSignature {
         case TimeSignature.TwoTwo, TimeSignature.TwoFour:
-            countInNumber = 2
+            subdivision = 2
         case TimeSignature.ThreeFour:
-            countInNumber = 3
+            subdivision = 3
         case TimeSignature.FourFour:
-            countInNumber = 4
+            subdivision = 4
         case TimeSignature.SixEight:
-            countInNumber = 6
+            subdivision = 6
         case TimeSignature.EightTwelve:
-            countInNumber = 12
+            subdivision = 12
         }
-        return countInNumber
+        return subdivision
     }
     
     func countInCycle() -> UInt {

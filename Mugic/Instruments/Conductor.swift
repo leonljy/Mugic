@@ -24,6 +24,7 @@ class Conductor {
     let guitar: Guitar
     let drum: Drum
     var tracks: [Track]
+    let metronome = AKMetronome()
     
     var playing = false
     var isPlaying: Bool {
@@ -50,6 +51,9 @@ class Conductor {
         }
         
         AudioKit.output = self.mixer
+        
+        self.metronome.frequency1 = 2000
+        self.metronome.frequency2 = 1000
         
         do {
             try AudioKit.start()
@@ -107,11 +111,8 @@ extension Conductor {
     func replay(withMetronome: Bool = false, song: Song, completionBlock: @escaping () -> Void) {
         self.isPlaying = true
         
-        self.addCountIn(song: song)
-        if withMetronome {
-            self.addMetronomeBeats(song: song)
-        }
-        
+        self.metronome.start()
+
         self.addEventTimers(song: song, completionBlock: completionBlock)
         let loop = RunLoop.current
         for timer in self.timers {
@@ -121,31 +122,15 @@ extension Conductor {
         loop.run()
     }
     
-    func addCountIn(song: Song) {
-        let countInNumber = song.countInNumber()
-        let startDate = Date()
-        let runloop = RunLoop.current
-        for index in 0 ..< countInNumber {
-            let timeInterval = song.beatInterval * Double(index)
-            let timer = Timer(timeInterval: timeInterval, repeats: false) { (timer) in
-                print("Beat \(index + 1): \(Date().timeIntervalSince(startDate))")
-                self.playDrum(note: DrumKit.RimShot.rawValue)
-            }
-            runloop.add(timer, forMode: .default)
-            self.timers.append(timer)
-        }
+    func playMetronomeBeats(song: Song) {
+        self.metronome.subdivision = song.subdivision()
+        self.metronome.tempo = Double(song.tempo)
+        self.metronome.start()
     }
     
-    func addMetronomeBeats(song: Song) {
-        let countInTime = song.countInTime
-        let startDate = Date()
-        let runloop = RunLoop.current
-        let fireTime = Date(timeIntervalSinceNow: countInTime)
-        let timer = Timer(fire: fireTime, interval: song.beatInterval, repeats: true) { (timer) in
-            self.playDrum(note: DrumKit.HihatClosed.rawValue)
-        }
-        runloop.add(timer, forMode: .default)
-        self.timers.append(timer)
+    func stopMetronomeBeats() {
+        self.metronome.stop()
+        self.metronome.reset()
     }
     
     func sortedEventsIn(song: Song) -> [Event] {

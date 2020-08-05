@@ -19,6 +19,24 @@ enum PanelType: Int16 {
 }
 
 class SongDetailViewController: UIViewController {
+    @IBOutlet
+    weak var textField: UITextField!
+    
+    @IBAction
+    func didTryButtonPressed(sender: UIButton) {
+        self.conductor.drum.stop()
+        guard let numberString = self.textField.text else {
+            return
+        }
+        
+        guard let number = Int(numberString) else {
+            return
+        }
+        
+        self.conductor.drum.play(number: number)
+        self.textField.text = ""
+    }
+    
     let melody = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B" ]
     var noteValue: Int = 0
     var noteString: String?
@@ -101,7 +119,7 @@ class SongDetailViewController: UIViewController {
     
     func initializeViews() {
         self.initializeInstrumentPanels()
-        self.initializePlayControllerPanel()
+//        self.initializePlayControllerPanel()
     }
     
     func initializePlayControllerPanel() {
@@ -304,8 +322,10 @@ extension SongDetailViewController: MelodyPanelDelegate {
         guard let instrumentType = InstrumentType(rawValue: track.instrument) else {
             return
         }
-        
-        self.conductor.play(instrument: instrumentType, note: tag, amplitude: track.volume)
+        guard let note = Note(rawValue: tag) else {
+            return
+        }
+        self.conductor.play(instrument: instrumentType, note: note, amplitude: track.volume)
         self.recorder?.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {

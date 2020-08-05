@@ -51,6 +51,15 @@ class Drum: BeatInstrument {
         
         self.drumkit = [self.kick, self.snare, self.rimShot, self.ride, self.hihatClosed, self.hihatOpened, self.crash, self.tomLow, self.tomMid, self.tomHi]
         super.init()
+        
+        do {
+            try self.sampler.loadAudioFiles([
+                AKAudioFile(readFileName: "Sounds/Test/bass_drum_C1.wav"),
+                AKAudioFile(readFileName: "Sounds/Test/snare_D1.wav")
+            ])
+        } catch {
+            print(error)
+        }
     }
     
     func play(_ drumkit: DrumKit) {

@@ -10,7 +10,7 @@ import Foundation
 import AudioKit
 
 enum Note: Int {
-    case C = 60
+    case C = 0
     case CSharp
     case D
     case DSharp

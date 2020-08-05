@@ -12,10 +12,10 @@ import AudioKit
 class ChordInstrument: Instrument {
     
     var numberOfPolyphonic: Int
-    var noteNumbers: Set<Int>
+//    var noteNumbers: Set<Int>
     
     override init() {
-        self.noteNumbers = []
+//        self.noteNumbers = []
         self.numberOfPolyphonic = 0
         super.init()
     }
@@ -28,17 +28,81 @@ class ChordInstrument: Instrument {
     }
     
     func stop() {
-        let midiChannel = MIDIChannel()
-        self.noteNumbers.forEach {
-            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
-        }
-        self.noteNumbers = []
+        try? self.sampler.stop()
+//        let midiChannel = MIDIChannel()
+//        self.noteNumbers.forEach {
+////            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
+//
+//        }
+//        self.noteNumbers = []
     }
     
-    func play() {
+    func play(note: Note) {
         let midiChannel = MIDIChannel()
-        self.noteNumbers.forEach {
+        try? self.sampler.play(noteNumber: MIDINoteNumber(note.rawValue), velocity: 80, channel: midiChannel)
+    }
+    
+    func play(root: Note, chord: Chord) {
+        let midiChannel = MIDIChannel()
+        
+        self.chordNotes(root: root, chord: chord).forEach {
             try? self.sampler.play(noteNumber: MIDINoteNumber($0), velocity: 80, channel: midiChannel)
         }
+    }
+    
+    func chordNotes(root: Note, chord: Chord) -> [Int] {
+        let bass = ChordInstrument.adding(root)
+        let fifth = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
+        let third: Int
+        let seventh: Int
+        
+        let leftHandRoot = bass - ChordInstrument.OCTAVE
+        let leftHandFifth = fifth - ChordInstrument.OCTAVE
+        var noteNumbers = [leftHandRoot, leftHandFifth, bass, fifth]
+        
+        switch chord {
+        case .maj:
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            noteNumbers.append(third)
+        case .min:
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            noteNumbers.append(third)
+        case .add2:
+            third = ChordInstrument.adding(root, interval: Interval.SECOND)
+            noteNumbers.append(third)
+        case .sus4:
+            third = ChordInstrument.adding(root, interval: Interval.PERFECT_FORTH)
+            noteNumbers.append(third)
+        case .seventh:
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            noteNumbers.append(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
+            noteNumbers.append(seventh)
+        case .maj7:
+            third = ChordInstrument.adding(root, interval: Interval.MAJ_TRIAD)
+            noteNumbers.append(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.MAJ_SEVENTH)
+            noteNumbers.append(seventh)
+        case .min7:
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            noteNumbers.append(third)
+            seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
+            noteNumbers.append(seventh)
+        case .add6:
+            third = ChordInstrument.adding(root, interval: Interval.SIXTH)
+            noteNumbers.append(third)
+        case .dim7:
+            noteNumbers.removeAll()
+            noteNumbers.append(bass)
+            //            self.noteNumbers.insert(bass - Piano.OCTAVE)
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            noteNumbers.append(third)
+            let flatFive = ChordInstrument.adding(root, interval: Interval.FLAT_FIVE)
+            noteNumbers.append(flatFive)
+            seventh = ChordInstrument.adding(root, interval: Interval.SIXTH)
+            noteNumbers.append(seventh)
+        }
+        
+        return noteNumbers
     }
 }

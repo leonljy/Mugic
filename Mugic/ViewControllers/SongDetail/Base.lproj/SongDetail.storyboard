@@ -25,6 +25,22 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aba-Y9-dRs">
                                 <rect key="frame" x="0.0" y="373" width="375" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NpJ-Ho-nMt">
+                                        <rect key="frame" x="8" y="5" width="228" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isW-TI-ItR">
+                                        <rect key="frame" x="329" y="9" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Try"/>
+                                        <connections>
+                                            <action selector="didTryButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRg-uz-fCC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" name="MugicBlack"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="W4y-eF-ahw"/>
@@ -62,6 +78,7 @@
                         <outlet property="panelBackgroundView" destination="ggn-MH-YJU" id="1NS-0n-OMR"/>
                         <outlet property="playControllerBackgroundView" destination="aba-Y9-dRs" id="82T-c0-VDR"/>
                         <outlet property="tableView" destination="KJq-Oz-Z2p" id="OUN-sX-Qnc"/>
+                        <outlet property="textField" destination="NpJ-Ho-nMt" id="GTI-Y4-sMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

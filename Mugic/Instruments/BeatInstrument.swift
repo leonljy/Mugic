@@ -20,11 +20,12 @@ class BeatInstrument: Instrument {
     
     
     func stop() {
-        let midiChannel = MIDIChannel()
-        self.beats.forEach {
-            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
-        }
-        self.beats = []
+        try? self.sampler.stop()
+//        let midiChannel = MIDIChannel()
+//        self.beats.forEach {
+//            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
+//        }
+//        self.beats = []
     }
     
     func play() {
@@ -32,6 +33,11 @@ class BeatInstrument: Instrument {
         self.beats.forEach {
             try? self.sampler.play(noteNumber: MIDINoteNumber($0), velocity: 80, channel: midiChannel)
         }
+    }
+    
+    func play(number: Int) {
+        let midiChannel = MIDIChannel()
+//        try? self.sampler.play(noteNumber: number)
     }
 }
 

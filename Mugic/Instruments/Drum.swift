@@ -9,82 +9,103 @@
 import Foundation
 import AudioKit
 
-enum DrumKit: Int {
-    case Crash = 0
-    case Ride
-    case Kick
-    case RimShot
-    case TomHi
-    case TomMid
-    case TomLow
-    case Snare
-    case HihatOpened
-    case HihatClosed
-}
+
 
 class Drum: BeatInstrument {
-    
-    let kick = AKAppleSampler()
-    let snare = AKAppleSampler()
-    let rimShot = AKAppleSampler()
-    let ride = AKAppleSampler()
-    let hihatOpened = AKAppleSampler()
-    let hihatClosed = AKAppleSampler()
-    let crash = AKAppleSampler()
-    let tomHi = AKAppleSampler()
-    let tomMid = AKAppleSampler()
-    let tomLow = AKAppleSampler()
-    
-    let drumkit: [AKAppleSampler]
+
+    enum DrumKit: Int, CaseIterable {
+        case Kick = 24
+        case RimShot
+        case TomLow
+        case TomMid
+        case TomHi
+        case Snare
+        case Crash
+        case Ride
+        case HihatClosed
+        case HihatOpened
+    }
     
     override init() {
-        try? self.kick.loadWav("Sounds/Drum/Kick")
-        try? self.snare.loadWav("Sounds/Drum/Snare")
-        try? self.rimShot.loadWav("Sounds/Drum/RimShot")
-        try? self.ride.loadWav("Sounds/Drum/Ride")
-        try? self.hihatOpened.loadWav("Sounds/Drum/HatsOpen")
-        try? self.hihatClosed.loadWav("Sounds/Drum/HatsClosed")
-        try? self.crash.loadWav("Sounds/Drum/Crash")
-        try? self.tomHi.loadWav("Sounds/Drum/TomHi")
-        try? self.tomMid.loadWav("Sounds/Drum/TomMid")
-        try? self.tomLow.loadWav("Sounds/Drum/TomLow")
-        
-        self.drumkit = [self.kick, self.snare, self.rimShot, self.ride, self.hihatClosed, self.hihatOpened, self.crash, self.tomLow, self.tomMid, self.tomHi]
         super.init()
-        
+        self.sampler = AKAppleSampler()
+        DrumKit.allCases.forEach {
+            print($0.fileName)
+        }
+        var audioFiles: [AKAudioFile] = []
+
+        Drum.DrumKit.allCases.forEach {
+            do {
+                let audioFile = try AKAudioFile(readFileName: $0.fileName)
+                audioFiles.append(audioFile)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         do {
-            try self.sampler.loadAudioFiles([
-                AKAudioFile(readFileName: "Sounds/Test/bass_drum_C1.wav"),
-                AKAudioFile(readFileName: "Sounds/Test/snare_D1.wav")
-            ])
+            try self.sampler.loadAudioFiles(audioFiles)
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
     
     func play(_ drumkit: DrumKit) {
-        switch drumkit {
+        try? self.sampler.play(noteNumber: MIDINoteNumber(drumkit.rawValue))
+    }
+}
+
+extension Drum.DrumKit {
+    var fileName: String {
+        return "Sounds/Drum/\(self.kitName)_\(self.noteString).wav"
+    }
+    
+    var kitName: String {
+        switch self {
             case .Kick:
-                try? self.kick.play()
-            case .Snare:
-                try? self.snare.play()
+                return "Kick"
             case .RimShot:
-                try? self.rimShot.play()
-            case .Ride:
-                try? self.ride.play()
-            case .HihatClosed:
-                try? self.hihatClosed.play()
-            case .HihatOpened:
-                try? self.hihatOpened.play()
-            case .Crash:
-                try? self.crash.play()
+                return "RimShot"
             case .TomHi:
-                try? self.tomHi.play()
+                return "TomHi"
             case .TomMid:
-                try? self.tomMid.play()
+                return "TomMid"
             case .TomLow:
-                try? self.tomLow.play()
+                return "TomLow"
+            case .Snare:
+                return "Snare"
+            case .Crash:
+                return "Crash"
+            case .Ride:
+                return "Ride"
+            case .HihatClosed:
+                return "HihatClosed"
+            case .HihatOpened:
+                return "HihatOpened"
         }
     }
     
+    var noteString: String {
+        switch self {
+            case .Kick:
+                return "C1"
+            case .RimShot:
+                return "C#1"
+            case .TomLow:
+                return "D1"
+            case .TomMid:
+                return "D#1"
+            case .TomHi:
+                return "E1"
+            case .Snare:
+                return "F1"
+            case .Crash:
+                return "F#1"
+            case .Ride:
+                return "G1"
+            case .HihatClosed:
+                return "G#1"
+            case .HihatOpened:
+                return "A1"
+        }
+    }
 }

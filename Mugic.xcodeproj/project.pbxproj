@@ -56,7 +56,6 @@
 		FDB8040B24C5D23700D35F9E /* InstrumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB8040A24C5D23700D35F9E /* InstrumentType.swift */; };
 		FDB82DF224C5DD6E0005C4E5 /* EmptyPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB82DF124C5DD6E0005C4E5 /* EmptyPanelView.swift */; };
 		FDB82DF424C5DD810005C4E5 /* EmptyPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB82DF324C5DD810005C4E5 /* EmptyPanelView.xib */; };
-		FDB82E0024DB0BA40005C4E5 /* Yamaha_RX7_Drums.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = FDB82DFF24DB0BA40005C4E5 /* Yamaha_RX7_Drums.sf2 */; };
 		FDCB9C52245413BC00C42623 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4C245413BC00C42623 /* Montserrat-Regular.ttf */; };
 		FDCB9C53245413BC00C42623 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4D245413BC00C42623 /* Montserrat-MediumItalic.ttf */; };
 		FDCB9C54245413BC00C42623 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDCB9C4E245413BC00C42623 /* Montserrat-Light.ttf */; };
@@ -146,7 +145,6 @@
 		FDB8040A24C5D23700D35F9E /* InstrumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentType.swift; sourceTree = "<group>"; };
 		FDB82DF124C5DD6E0005C4E5 /* EmptyPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPanelView.swift; sourceTree = "<group>"; };
 		FDB82DF324C5DD810005C4E5 /* EmptyPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyPanelView.xib; sourceTree = "<group>"; };
-		FDB82DFF24DB0BA40005C4E5 /* Yamaha_RX7_Drums.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Yamaha_RX7_Drums.sf2; sourceTree = "<group>"; };
 		FDCB9C4C245413BC00C42623 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FDCB9C4D245413BC00C42623 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		FDCB9C4E245413BC00C42623 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 		91CE86EC2033072900812E42 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				FDB82DFF24DB0BA40005C4E5 /* Yamaha_RX7_Drums.sf2 */,
 				91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */,
 			);
 			path = Sounds;
@@ -546,7 +543,6 @@
 				FDCB9C52245413BC00C42623 /* Montserrat-Regular.ttf in Resources */,
 				FD082E0B24542E1800133526 /* EditSong.storyboard in Resources */,
 				91F502402123E7B3002284B5 /* AddTrackTableViewCell.xib in Resources */,
-				FDB82E0024DB0BA40005C4E5 /* Yamaha_RX7_Drums.sf2 in Resources */,
 				FDCB9C53245413BC00C42623 /* Montserrat-MediumItalic.ttf in Resources */,
 				9124E14420BA726B002906CF /* GoogleService-Info.plist in Resources */,
 				917F6CC72119E2F900B953FE /* TrackTableViewCell.xib in Resources */,

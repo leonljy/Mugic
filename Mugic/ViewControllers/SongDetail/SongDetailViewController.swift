@@ -119,7 +119,7 @@ class SongDetailViewController: UIViewController {
     
     func initializeViews() {
         self.initializeInstrumentPanels()
-//        self.initializePlayControllerPanel()
+        self.initializePlayControllerPanel()
     }
     
     func initializePlayControllerPanel() {

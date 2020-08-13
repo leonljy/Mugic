@@ -17,7 +17,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lkF-mT-0QG">
                     <rect key="frame" x="0.0" y="0.0" width="125" height="282"/>
                     <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-vV-yIS">
+                        <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7v-vV-yIS">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                             <state key="normal" title="RimShot">
                                 <color key="titleColor" name="MugicMain"/>
@@ -28,7 +28,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="nFd-Dj-kb8"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-tn-DYu">
+                        <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-tn-DYu">
                             <rect key="frame" x="0.0" y="94" width="125" height="94"/>
                             <state key="normal" title="Snare">
                                 <color key="titleColor" name="MugicMain"/>
@@ -39,7 +39,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="eyb-Oi-LKP"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-IU-qJh">
+                        <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-IU-qJh">
                             <rect key="frame" x="0.0" y="188" width="125" height="94"/>
                             <state key="normal" title="Kick">
                                 <color key="titleColor" name="MugicMain"/>
@@ -55,7 +55,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="83r-8a-ukl">
                     <rect key="frame" x="125" y="0.0" width="125" height="282"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-Ns-XKW">
+                        <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-Ns-XKW">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="70.5"/>
                             <state key="normal" title="Crash">
                                 <color key="titleColor" name="MugicMain"/>
@@ -66,7 +66,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="Sqq-zW-N7R"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-0V-7LO">
+                        <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKF-0V-7LO">
                             <rect key="frame" x="0.0" y="70.5" width="125" height="70.5"/>
                             <state key="normal" title="TomHi">
                                 <color key="titleColor" name="MugicMain"/>
@@ -77,7 +77,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="3F2-fS-UfC"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al5-zC-SHE">
+                        <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al5-zC-SHE">
                             <rect key="frame" x="0.0" y="141" width="125" height="70.5"/>
                             <state key="normal" title="TomMid">
                                 <color key="titleColor" name="MugicMain"/>
@@ -88,7 +88,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="IqA-Ke-y8h"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-xV-Dba">
+                        <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgB-xV-Dba">
                             <rect key="frame" x="0.0" y="211.5" width="125" height="70.5"/>
                             <state key="normal" title="TomLow">
                                 <color key="titleColor" name="MugicMain"/>
@@ -104,7 +104,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-Ab-grR">
                     <rect key="frame" x="250" y="0.0" width="125" height="282"/>
                     <subviews>
-                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqT-GB-O3e">
+                        <button opaque="NO" tag="33" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqT-GB-O3e">
                             <rect key="frame" x="0.0" y="0.0" width="125" height="94"/>
                             <state key="normal" title="H/H Opened">
                                 <color key="titleColor" name="MugicMain"/>
@@ -115,7 +115,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="3uU-Rr-j4T"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mny-PX-3Iy">
+                        <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mny-PX-3Iy">
                             <rect key="frame" x="0.0" y="94" width="125" height="94"/>
                             <state key="normal" title="Ride">
                                 <color key="titleColor" name="MugicMain"/>
@@ -126,7 +126,7 @@
                                 <action selector="touchUpOutSide:" destination="M1Q-Un-qND" eventType="touchUpOutside" id="ONf-y0-hbl"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-bZ-16s">
+                        <button opaque="NO" tag="32" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-bZ-16s">
                             <rect key="frame" x="0.0" y="188" width="125" height="94"/>
                             <state key="normal" title="H/H Closed">
                                 <color key="titleColor" name="MugicMain"/>

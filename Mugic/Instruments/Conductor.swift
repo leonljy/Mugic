@@ -50,9 +50,6 @@ class Conductor {
         self.mixer.connect(input: self.piano.sampler)
         self.mixer.connect(input: self.guitar.sampler)
         self.mixer.connect(input: self.drum.sampler)
-//        self.drum.drumkit.forEach {
-//            self.mixer.connect(input: $0)
-//        }
         
         AudioKit.output = self.mixer
         
@@ -93,11 +90,10 @@ class Conductor {
     }
     
     func playDrum(note: Int) {
-        guard let drumkit = DrumKit(rawValue: note) else {
+        guard let drumKit = Drum.DrumKit(rawValue: note) else {
             return
         }
-        
-        self.drum.play(drumkit)
+        self.drum.play(drumKit)
     }
     
     func stop() {

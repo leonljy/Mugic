@@ -27,7 +27,7 @@
         <attribute name="isMuted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isSolo" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="volume" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES"/>
+        <attribute name="volume" attributeType="Double" defaultValueString="0.8" usesScalarValueType="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="track" inverseEntity="Event"/>
         <relationship name="song" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="tracks" inverseEntity="Song"/>
     </entity>

@@ -52,6 +52,13 @@ extension UIColor {
         }
     }
     
+    static var mugicYellow: UIColor {
+        get {
+            guard let color = UIColor(named: "MugicYellow") else { return .clear }
+            return color
+        }
+    }
+    
     static var noteDefaultBackground: UIColor {
         get {
             return self.mugicDarkGray

@@ -34,10 +34,5 @@ class BeatInstrument: Instrument {
             try? self.sampler.play(noteNumber: MIDINoteNumber($0), velocity: 80, channel: midiChannel)
         }
     }
-    
-    func play(number: Int) {
-        let midiChannel = MIDIChannel()
-//        try? self.sampler.play(noteNumber: number)
-    }
 }
 

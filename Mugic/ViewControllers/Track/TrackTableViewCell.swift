@@ -29,6 +29,15 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var volumeProgressBar: UISlider!
     @IBOutlet weak var changeNameButton: UIButton!
+    @IBOutlet weak var selectionMarkView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.mugicDarkGray
+        self.selectedBackgroundView = backgroundView
+        self.selectionMarkView.layer.cornerRadius = self.selectionMarkView.bounds.width / 2
+    }
     
     @IBAction func didChangedTrackVolume(sender: UISlider) {
         let volume = Double(sender.value)

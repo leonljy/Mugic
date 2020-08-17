@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -75,8 +75,8 @@
                         <constraint firstAttribute="trailing" secondItem="Wjk-vP-DIN" secondAttribute="trailing" constant="10" id="q31-PL-Fw6"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTx-ag-Ypz">
-                    <rect key="frame" x="20" y="10" width="43" height="70"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTx-ag-Ypz">
+                    <rect key="frame" x="50" y="30" width="130" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Chord">
                         <color key="titleColor" name="MugicWhite"/>
@@ -85,15 +85,25 @@
                         <action selector="handleChangeTrackNameWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="ddJ-vx-Dw2"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WO7-JN-Y5w">
+                    <rect key="frame" x="15" y="35" width="20" height="20"/>
+                    <color key="backgroundColor" name="MugicDarkGray"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="5gM-eP-iSd"/>
+                        <constraint firstAttribute="width" constant="20" id="aHG-XT-v2u"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" name="MugicBlack"/>
             <constraints>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="9qB-TY-S9b"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="A0N-8Z-xGv"/>
-                <constraint firstItem="xTx-ag-Ypz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="LAW-6l-bNG"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xTx-ag-Ypz" secondAttribute="bottom" constant="10" id="Od9-au-U7v"/>
+                <constraint firstItem="xTx-ag-Ypz" firstAttribute="leading" secondItem="WO7-JN-Y5w" secondAttribute="trailing" constant="15" id="Bkd-ke-T88"/>
+                <constraint firstItem="fe9-dL-h4C" firstAttribute="leading" secondItem="xTx-ag-Ypz" secondAttribute="trailing" constant="15" id="EYL-Y9-f8h"/>
+                <constraint firstItem="WO7-JN-Y5w" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="J1K-G3-874"/>
+                <constraint firstItem="xTx-ag-Ypz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ru6-08-n62"/>
                 <constraint firstItem="fe9-dL-h4C" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="dWr-DX-LC0"/>
-                <constraint firstItem="xTx-ag-Ypz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="uXN-vN-1iZ"/>
+                <constraint firstItem="WO7-JN-Y5w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="ejh-PO-gCA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -101,6 +111,7 @@
                 <outlet property="changeNameButton" destination="xTx-ag-Ypz" id="fuf-4V-i5N"/>
                 <outlet property="deleteButton" destination="zSp-Ri-XyS" id="iOz-rr-7KA"/>
                 <outlet property="muteButton" destination="W9W-Qt-63Y" id="yPI-Pv-ep7"/>
+                <outlet property="selectionMarkView" destination="WO7-JN-Y5w" id="E8s-Sq-3ue"/>
                 <outlet property="soloButton" destination="0JE-pP-XPv" id="axe-KB-bs4"/>
                 <outlet property="volumeProgressBar" destination="Wjk-vP-DIN" id="nSS-fu-Eyd"/>
             </connections>
@@ -111,6 +122,9 @@
         <image name="trash.fill" catalog="system" width="121" height="128"/>
         <namedColor name="MugicBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MugicDarkGray">
+            <color red="0.11800000071525574" green="0.11800000071525574" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MugicLightGray">
             <color red="0.47099998593330383" green="0.47099998593330383" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

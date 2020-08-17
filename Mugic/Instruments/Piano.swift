@@ -10,13 +10,11 @@ import Foundation
 import AudioKit
 
 class Piano: ChordInstrument {
-    
-    init(midifileName: String = "Sounds/Sampler Instruments/sawPiano1") {
+    init(midiFileName: String = "Sounds/Piano/Piano") {
         super.init()
-        
+        self.sampler = AKAppleSampler()
         do {
-            self.midiFileName = midifileName
-            try self.sampler.loadEXS24(self.midiFileName)
+            try self.sampler.loadMelodicSoundFont(midiFileName, preset: 0)
         } catch  {
             print("File not found")
         }

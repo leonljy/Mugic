@@ -19,23 +19,6 @@ enum PanelType: Int16 {
 }
 
 class SongDetailViewController: UIViewController {
-    @IBOutlet
-    weak var textField: UITextField!
-    
-    @IBAction
-    func didTryButtonPressed(sender: UIButton) {
-        self.conductor.drum.stop()
-        guard let numberString = self.textField.text else {
-            return
-        }
-        
-        guard let number = Int(numberString) else {
-            return
-        }
-        
-        self.conductor.drum.play(number: number)
-        self.textField.text = ""
-    }
     
     let melody = ["C", "C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B" ]
     var noteValue: Int = 0
@@ -282,7 +265,7 @@ extension SongDetailViewController: ChordPanelDelegate {
             return
         }
         self.conductor.play(instrument: instrumentType, root: note, chord: chord, amplitude: track.volume)
-        self.recorder?.save(root: note, chord: chord)
+//        self.recorder?.save(root: note, chord: chord)
     }
     
     func chordTouchUpOutside(sender: UIButton) {
@@ -322,11 +305,9 @@ extension SongDetailViewController: MelodyPanelDelegate {
         guard let instrumentType = InstrumentType(rawValue: track.instrument) else {
             return
         }
-        guard let note = Note(rawValue: tag) else {
-            return
-        }
-        self.conductor.play(instrument: instrumentType, note: note, amplitude: track.volume)
-        self.recorder?.save(note: tag)
+        
+        self.conductor.play(instrument: instrumentType, note: MIDINoteNumber(tag), amplitude: track.volume)
+//        self.recorder?.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
     }
@@ -440,6 +421,13 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
         guard let track = song.tracks?.reversed[indexPath.row] as? Track else { return }
         let instrument = InstrumentType(rawValue: track.instrument)
         self.selectPanel(instrument?.panelType ?? PanelType.Empty)
+        guard let cell = tableView.cellForRow(at: indexPath) as? TrackTableViewCell else { return }
+        cell.selectionMarkView.backgroundColor = UIColor.mugicMain
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? TrackTableViewCell else { return }
+        cell.selectionMarkView.backgroundColor = UIColor.mugicDarkGray
     }
 }
 

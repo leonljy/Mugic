@@ -10,7 +10,7 @@ import Foundation
 import AudioKit
 
 enum Note: Int {
-    case C = 0
+    case C = 60
     case CSharp
     case D
     case DSharp
@@ -60,10 +60,8 @@ class Instrument {
     static let AHz = 440
     
     var sampler: AKAppleSampler
-    var midiFileName: String
     
     init() {
-        self.midiFileName = ""
         self.sampler = AKAppleSampler()
     }
 }

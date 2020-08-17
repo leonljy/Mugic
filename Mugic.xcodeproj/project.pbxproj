@@ -39,7 +39,6 @@
 		91CD368B2001E78300124BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91CD36892001E78300124BD3 /* LaunchScreen.storyboard */; };
 		91CD36962001E78300124BD3 /* MugicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36952001E78300124BD3 /* MugicTests.swift */; };
 		91CD36A12001E78300124BD3 /* MugicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD36A02001E78300124BD3 /* MugicUITests.swift */; };
-		91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */; };
 		91CE86F020330FFC00812E42 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CE86EF20330FFC00812E42 /* Color.swift */; };
 		91F502402123E7B3002284B5 /* AddTrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F5023F2123E7B3002284B5 /* AddTrackTableViewCell.xib */; };
 		91FF504E203943F1008460C3 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 91FF504D203943F1008460C3 /* Sounds */; };
@@ -126,7 +125,6 @@
 		91CD369C2001E78300124BD3 /* MugicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MugicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91CD36A02001E78300124BD3 /* MugicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MugicUITests.swift; sourceTree = "<group>"; };
 		91CD36A22001E78300124BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Acoustic Guitars JNv2.4.sf2"; sourceTree = "<group>"; };
 		91CE86EF20330FFC00812E42 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		91F5023F2123E7B3002284B5 /* AddTrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTrackTableViewCell.xib; sourceTree = "<group>"; };
 		91FF504D203943F1008460C3 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
@@ -204,14 +202,6 @@
 				9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		914BA55C2029DBB700A2CBC3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				91CE86EC2033072900812E42 /* Sounds */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		917ADCCA200B3A6E0062B79A /* Instruments */ = {
@@ -317,7 +307,6 @@
 				91278F8B20C5493A008DAAB0 /* Utils */,
 				91278F8A20C5492C008DAAB0 /* ViewControllers */,
 				91FF504D203943F1008460C3 /* Sounds */,
-				914BA55C2029DBB700A2CBC3 /* Resources */,
 				91F079F4208B2747007D6385 /* Model */,
 				917ADCCA200B3A6E0062B79A /* Instruments */,
 				91813C3F20513ADB004E600C /* Recorder */,
@@ -347,14 +336,6 @@
 				91CD36A22001E78300124BD3 /* Info.plist */,
 			);
 			path = MugicUITests;
-			sourceTree = "<group>";
-		};
-		91CE86EC2033072900812E42 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				91CE86ED2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 */,
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 		91F079F4208B2747007D6385 /* Model */ = {
@@ -539,7 +520,6 @@
 			files = (
 				FDCB9C57245413BC00C42623 /* Montserrat-LightItalic.ttf in Resources */,
 				91FF504E203943F1008460C3 /* Sounds in Resources */,
-				91CE86EE2033073200812E42 /* Acoustic Guitars JNv2.4.sf2 in Resources */,
 				FDCB9C52245413BC00C42623 /* Montserrat-Regular.ttf in Resources */,
 				FD082E0B24542E1800133526 /* EditSong.storyboard in Resources */,
 				91F502402123E7B3002284B5 /* AddTrackTableViewCell.xib in Resources */,

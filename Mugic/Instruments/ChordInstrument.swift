@@ -12,10 +12,8 @@ import AudioKit
 class ChordInstrument: Instrument {
     
     var numberOfPolyphonic: Int
-//    var noteNumbers: Set<Int>
     
     override init() {
-//        self.noteNumbers = []
         self.numberOfPolyphonic = 0
         super.init()
     }
@@ -28,7 +26,7 @@ class ChordInstrument: Instrument {
     }
     
     func stop() {
-        try? self.sampler.stop()
+//        try? self.sampler.stop()
 //        let midiChannel = MIDIChannel()
 //        self.noteNumbers.forEach {
 ////            try? self.sampler.stop(noteNumber: MIDINoteNumber($0), channel: midiChannel)
@@ -37,9 +35,9 @@ class ChordInstrument: Instrument {
 //        self.noteNumbers = []
     }
     
-    func play(note: Note) {
+    func play(note: MIDINoteNumber) {
         let midiChannel = MIDIChannel()
-        try? self.sampler.play(noteNumber: MIDINoteNumber(note.rawValue), velocity: 80, channel: midiChannel)
+        try? self.sampler.play(noteNumber: note, velocity: 80, channel: midiChannel)
     }
     
     func play(root: Note, chord: Chord) {

@@ -76,7 +76,7 @@ class Conductor {
         }
     }
     
-    func play(instrument: InstrumentType, note: Note, amplitude: Double = 1.0) {
+    func play(instrument: InstrumentType, note: MIDINoteNumber, amplitude: Double = 1.0) {
         switch instrument {
         case .PianoMelody:
             self.piano.sampler.volume = amplitude
@@ -149,7 +149,7 @@ extension Conductor {
                     track.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time, duration: 1)
                 } else if $0 is RhythmEvent {
                     let event = $0 as! RhythmEvent
-                    Int(event.beat)
+                    
                 }
             }
         }

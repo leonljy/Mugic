@@ -58,6 +58,7 @@ extension Song {
     
     var countInTime: TimeInterval {
         get {
+            return 0
             let countInNumber = self.subdivision()
             let countInCycle = self.countInCycle()
             let countInTime = self.beatInterval * Double(countInNumber) * Double(countInCycle)

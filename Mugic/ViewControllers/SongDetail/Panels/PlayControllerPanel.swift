@@ -22,10 +22,12 @@ class PlayControllerPanel: UIView {
     var delegate: PlayControllerPanelDelegate?
     
     @IBAction func handleRecordOrStop(_ sender: UIButton) {
-        self.delegate?.panel(self, didPlayButtonTouched: sender)
+        sender.isSelected = !sender.isSelected
+        self.delegate?.panel(self, didRecordButtonTouched: sender)
     }
     
     @IBAction func handlePlay(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         self.delegate?.panel(self, didPlayButtonTouched: sender)
     }
 }

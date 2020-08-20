@@ -23,11 +23,10 @@ class Conductor {
     let piano: Piano
     let guitar: Guitar
     let drum: Drum
-    var tracks: [Track]
     
     let metronome = AKMetronome()
     
-    let sequencer = AKSequencer()
+    var sequencer: AKSequencer?
     
     var playing = false
     var isPlaying: Bool {
@@ -45,7 +44,6 @@ class Conductor {
         self.piano = Piano()
         self.guitar = Guitar()
         self.drum = Drum()
-        self.tracks = []
         
         self.mixer.connect(input: self.piano.sampler)
         self.mixer.connect(input: self.guitar.sampler)
@@ -102,6 +100,7 @@ class Conductor {
         }
         self.timers.removeAll()
         self.timers = []
+        self.sequencer?.stop()
         self.isPlaying = false
     }
 }
@@ -112,6 +111,9 @@ extension Conductor {
         guard let tracks = song.tracks?.array as? [Track] else {
             return
         }
+        let sequencer = AKSequencer()
+        self.sequencer = sequencer
+        sequencer.tempo = Double(120)
         
         tracks.forEach {
             guard let instrument = InstrumentType(rawValue: $0.instrument) else {
@@ -120,13 +122,13 @@ extension Conductor {
             let track: AKSequencerTrack
             switch instrument {
             case .PianoChord, .PianoMelody:
-                track = self.sequencer.addTrack(for: self.piano.sampler)
+                track = sequencer.addTrack(for: self.piano.sampler)
             case .GuitarMelody, .GuitarChord:
-                track = self.sequencer.addTrack(for: self.guitar.sampler)
+                track = sequencer.addTrack(for: self.guitar.sampler)
             case .DrumKit:
-                track = self.sequencer.addTrack(for: self.drum.sampler)
+                track = sequencer.addTrack(for: self.drum.sampler)
             }
-            
+
             guard let events = $0.events?.allObjects else {
                 return
             }
@@ -134,6 +136,7 @@ extension Conductor {
             events.forEach {
                 if $0 is ChordEvent {
                     let event = $0 as! ChordEvent
+                    print(event.time)
                     guard let note = Note(rawValue: Int(event.baseNote)) else {
                         return
                     }
@@ -149,22 +152,15 @@ extension Conductor {
                     track.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time, duration: 1)
                 } else if $0 is RhythmEvent {
                     let event = $0 as! RhythmEvent
-                    
+                    track.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time, duration: 1)
                 }
             }
+            track.length = 10
+            track.loopEnabled = false
+            track >>> self.mixer
         }
-//        let track = self.sequencer.addTrack(for: self.piano.sampler)
-//        track.add(noteNumber: MIDINoteNumber(Note.C.rawValue), position: 1, duration: 1)
-//        track.add(noteNumber: MIDINoteNumber(Note.E.rawValue), position: 1, duration: 1)
-//        track.add(noteNumber: MIDINoteNumber(Note.G.rawValue), position: 1, duration: 1)
-//        track.add(noteNumber: MIDINoteNumber(Note.D.rawValue), position: 2, duration: 1)
-//        track.add(noteNumber: MIDINoteNumber(Note.F.rawValue), position: 2, duration: 1)
-//        track.add(noteNumber: MIDINoteNumber(Note.A.rawValue), position: 2, duration: 1)
-//        self.sequencer.tempo = 120
-////        track.length = 4.0
-//        track.loopEnabled = false
-//        track >>> self.mixer
-//        self.sequencer.play()
+        self.isPlaying = true
+        sequencer.play()
     }
     
     func playMetronomeBeats(song: Song) {

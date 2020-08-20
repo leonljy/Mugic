@@ -13,7 +13,7 @@ import UIKit
 class Recorder {
     var recording = false
     var timer: Timer = Timer()
-    var track: Track
+    var track: Track?
     var startTime = Date()
     var events = [Event]()
     var isRecording: Bool {
@@ -24,10 +24,6 @@ class Recorder {
         set {
             self.recording = newValue
         }
-    }
-    
-    init (track: Track) {
-        self.track = track
     }
     
     var managedContext: NSManagedObjectContext? {
@@ -43,6 +39,7 @@ class Recorder {
         self.isRecording = true
         print("Now: \(Date())")
         self.startTime = Date(timeIntervalSinceNow: countInTime)
+        self.track?.events = NSSet()
         print("StartTime: \(self.startTime)")
         self.events = [Event]()
 //        self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
@@ -52,19 +49,17 @@ class Recorder {
     }
     
     func stopRecord() {
-        guard self.isRecording else {
-            return
-        }
-        self.track.events = NSSet(array: self.events)
+        guard self.isRecording else { return }
+        guard let track = self.track else { return }
+        
+        track.events = NSSet(array: self.events)
         self.save()
         self.isRecording = false
         self.timer.invalidate()
     }
     
     func save(root: Note, chord: Chord) {
-        guard self.isRecording else {
-            return
-        }
+        guard self.isRecording else { return }
         let now = Date()
         let timeInterval = now.timeIntervalSince(self.startTime)
         print(timeInterval)

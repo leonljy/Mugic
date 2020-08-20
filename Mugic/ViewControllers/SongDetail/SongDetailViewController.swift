@@ -39,11 +39,27 @@ class SongDetailViewController: UIViewController {
     
     var playControllerPanel: PlayControllerPanel?
     
-    var selectedTrackIndex: Int? = nil
+    var selectedTrackIndex: Int? = nil {
+        didSet {
+            guard let index = self.selectedTrackIndex else {
+                return
+            }
+            guard let track = self.tracks?[index] else {
+                return
+            }
+            self.recorder.track = track
+        }
+    }
     
-    var recorder: Recorder?
+    var recorder = Recorder()
     
     let conductor = Conductor.shared
+    
+    var tracks: [Track]? {
+        guard let song = self.song else { return nil }
+        guard let tracks = song.tracks?.reversed.array as? [Track] else { return nil }
+        return tracks
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +84,7 @@ class SongDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        self.recorder?.stopRecord()
+        self.recorder.stopRecord()
         self.conductor.stop()
     }
     
@@ -194,45 +210,42 @@ class SongDetailViewController: UIViewController {
 
 extension SongDetailViewController: PlayControllerPanelDelegate {
     func panel(_ panel: PlayControllerPanel, didRecordButtonTouched sender: UIButton) {
-        guard let isRecording = self.recorder?.isRecording else { return }
-        if isRecording {
-            sender.setTitle("Record", for: .normal)
-            self.recorder?.stopRecord()
+        if self.recorder.isRecording {
+            self.recorder.stopRecord()
             self.conductor.stop()
         } else {
-            guard let song = self.song, let trackIndex = self.selectedTrackIndex, let tracks = song.tracks?.reversed, let track = tracks.object(at: trackIndex) as? Track else {
+            guard let song = self.song else { return }
+            guard let selectedTrackIndex = self.selectedTrackIndex else { return }
+            guard let track = self.tracks?[selectedTrackIndex] else {
                 self.showAlert(message: "Please select a track first")
                 return
             }
-            sender.setTitle("On Air", for: .normal)
-            track.events = NSSet()
-            self.recorder?.track = track
-            print("Start Recording")
-            self.recorder?.startRecord(countInTime: song.countInTime) { (passedTime) in
+            self.recorder.track = track
+            self.recorder.startRecord(countInTime: song.countInTime) { (passedTime) in
 
             }
-//            Conductor.shared.replay(withMetronome: true, song: song) {
-//                Conductor.shared.stop()
-//            }
+            Conductor.shared.replay(withMetronome: true, song: song) {
+                Conductor.shared.stop()
+            }
         }
     }
     
     func panel(_ panel: PlayControllerPanel, didPlayButtonTouched sender: UIButton) {
         //TODO: Exception There's no song
-        print("Start Playing")
         let completionBlock: () -> Void = {
             self.conductor.stop()
-            sender.setTitle("Play", for: .normal)
         }
-        
-        guard let song = self.song, !self.conductor.isPlaying else {
+        if self.conductor.isPlaying {
             completionBlock()
             return
+        } else {
+            guard let song = self.song else {
+                completionBlock()
+                return
+            }
+            self.conductor.replay(song: song, completionBlock: completionBlock)
         }
         
-        sender.setTitle("Stop", for: .normal)
-        
-        self.conductor.replay(song: song, completionBlock: completionBlock)
     }
 }
 
@@ -265,7 +278,7 @@ extension SongDetailViewController: ChordPanelDelegate {
             return
         }
         self.conductor.play(instrument: instrumentType, root: note, chord: chord, amplitude: track.volume)
-//        self.recorder?.save(root: note, chord: chord)
+        self.recorder.save(root: note, chord: chord)
     }
     
     func chordTouchUpOutside(sender: UIButton) {
@@ -307,7 +320,7 @@ extension SongDetailViewController: MelodyPanelDelegate {
         }
         
         self.conductor.play(instrument: instrumentType, note: MIDINoteNumber(tag), amplitude: track.volume)
-//        self.recorder?.save(note: tag)
+        self.recorder.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
     }
@@ -319,7 +332,7 @@ extension SongDetailViewController: MelodyPanelDelegate {
 extension SongDetailViewController: DrumKitPanelDelegate {
     func playDrum(sender: UIButton) {
         self.conductor.playDrum(note: sender.tag)
-//        Recorder.shared.save(rhythmNote: sender.tag)
+        self.recorder.save(rhythmNote: sender.tag)
     }
     
     func touchUpInside() {

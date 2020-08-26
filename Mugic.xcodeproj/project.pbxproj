@@ -13,6 +13,9 @@
 		91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91278F8C20C54974008DAAB0 /* MenuViewController.swift */; };
 		914BA5592029C0EC00A2CBC3 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA5582029C0EC00A2CBC3 /* Conductor.swift */; };
 		914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914BA55A2029D8EF00A2CBC3 /* Piano.swift */; };
+		91552BBB24F681AE003BE405 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91552BBA24F681AE003BE405 /* AccountManager.swift */; };
+		91552BBD24F6838E003BE405 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91552BBC24F6838E003BE405 /* Menu.storyboard */; };
+		91552BC124F68687003BE405 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91552BC024F68687003BE405 /* MenuCell.swift */; };
 		917ADCCC200B3A940062B79A /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917ADCCB200B3A940062B79A /* Instrument.swift */; };
 		917F6CC52119E2E600B953FE /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917F6CC42119E2E600B953FE /* TrackTableViewCell.swift */; };
 		917F6CC72119E2F900B953FE /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917F6CC62119E2F900B953FE /* TrackTableViewCell.xib */; };
@@ -27,7 +30,6 @@
 		9194039D20F09E9600A96206 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194039C20F09E9600A96206 /* SongTableViewCell.swift */; };
 		919403A320F0AAB000A96206 /* EditSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A220F0AAB000A96206 /* EditSongViewController.swift */; };
 		919403A920F0AD1D00A96206 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919403A820F0AD1D00A96206 /* Song.swift */; };
-		9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */; };
 		91AC947822B934180074E9A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91AC947722B934180074E9A7 /* Localizable.strings */; };
 		91C5638F20AC2DF00029089B /* ChordPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5638E20AC2DF00029089B /* ChordPanelView.xib */; };
 		91C5639120AC2DF90029089B /* DrumKitPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C5639020AC2DF90029089B /* DrumKitPanelView.xib */; };
@@ -93,6 +95,9 @@
 		91278F8C20C54974008DAAB0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		914BA5582029C0EC00A2CBC3 /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
 		914BA55A2029D8EF00A2CBC3 /* Piano.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piano.swift; sourceTree = "<group>"; };
+		91552BBA24F681AE003BE405 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		91552BBC24F6838E003BE405 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		91552BC024F68687003BE405 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		917ADCCB200B3A940062B79A /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		917F6CC42119E2E600B953FE /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		917F6CC62119E2F900B953FE /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
@@ -107,7 +112,6 @@
 		9194039C20F09E9600A96206 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		919403A220F0AAB000A96206 /* EditSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSongViewController.swift; sourceTree = "<group>"; };
 		919403A820F0AD1D00A96206 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		91AC947722B934180074E9A7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		91C5638E20AC2DF00029089B /* ChordPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChordPanelView.xib; sourceTree = "<group>"; };
 		91C5639020AC2DF90029089B /* DrumKitPanelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrumKitPanelView.xib; sourceTree = "<group>"; };
@@ -197,9 +201,9 @@
 		91278F8B20C5493A008DAAB0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				91552BBA24F681AE003BE405 /* AccountManager.swift */,
 				91CE86EF20330FFC00812E42 /* Color.swift */,
 				91813C4620552328004E600C /* Utils.swift */,
-				9199C9F720C7C1BD00ACC924 /* IAPHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -369,6 +373,8 @@
 			isa = PBXGroup;
 			children = (
 				91278F8C20C54974008DAAB0 /* MenuViewController.swift */,
+				91552BBC24F6838E003BE405 /* Menu.storyboard */,
+				91552BC024F68687003BE405 /* MenuCell.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				91CD36772001E78300124BD3 /* Frameworks */,
 				91CD36782001E78300124BD3 /* Resources */,
 				9124E14220BA6E7E002906CF /* ShellScript */,
+				F41FD1D2C4BD2F91E6881349 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,6 +528,7 @@
 				FDCB9C57245413BC00C42623 /* Montserrat-LightItalic.ttf in Resources */,
 				91FF504E203943F1008460C3 /* Sounds in Resources */,
 				FDCB9C52245413BC00C42623 /* Montserrat-Regular.ttf in Resources */,
+				91552BBD24F6838E003BE405 /* Menu.storyboard in Resources */,
 				FD082E0B24542E1800133526 /* EditSong.storyboard in Resources */,
 				91F502402123E7B3002284B5 /* AddTrackTableViewCell.xib in Resources */,
 				FDCB9C53245413BC00C42623 /* Montserrat-MediumItalic.ttf in Resources */,
@@ -641,6 +649,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F41FD1D2C4BD2F91E6881349 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mugic/Pods-Mugic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mugic/Pods-Mugic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mugic/Pods-Mugic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -649,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91813C4120513AEE004E600C /* Recorder.swift in Sources */,
+				91552BC124F68687003BE405 /* MenuCell.swift in Sources */,
 				91278F8D20C54974008DAAB0 /* MenuViewController.swift in Sources */,
 				FD6E7B742455663C00E56593 /* MelodyPanelView.swift in Sources */,
 				917ADCCC200B3A940062B79A /* Instrument.swift in Sources */,
@@ -659,7 +685,6 @@
 				9194039920F09E4500A96206 /* SongListViewController.swift in Sources */,
 				918E3791206262CF004C08CB /* Drum.swift in Sources */,
 				914BA55B2029D8EF00A2CBC3 /* Piano.swift in Sources */,
-				9199C9F820C7C1BD00ACC924 /* IAPHelper.swift in Sources */,
 				91CD36862001E78300124BD3 /* Mugic.xcdatamodeld in Sources */,
 				919403A320F0AAB000A96206 /* EditSongViewController.swift in Sources */,
 				91CE86F020330FFC00812E42 /* Color.swift in Sources */,
@@ -675,6 +700,7 @@
 				FDB80407249DB14F00D35F9E /* BeatInstrument.swift in Sources */,
 				91CD367E2001E78300124BD3 /* AppDelegate.swift in Sources */,
 				FDB80405249DB14100D35F9E /* ChordInstrument.swift in Sources */,
+				91552BBB24F681AE003BE405 /* AccountManager.swift in Sources */,
 				91813C4720552328004E600C /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

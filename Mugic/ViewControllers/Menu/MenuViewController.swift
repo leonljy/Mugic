@@ -15,12 +15,10 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let mugicURL = "https://itunes.apple.com/us/app/id1390991641"
-    let atURL = "itms://itunes.apple.com/us/app/id976019182"
-    var products = [SKProduct]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -29,17 +27,6 @@ class MenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.reloadProducts()
-    }
-    
-    func reloadProducts() {
-        IAPHelper.store.requestProducts { (success, products) in
-            guard success, let products = products else {
-                return
-            }
-            self.products = products
-            self.tableView.reloadData()
-        }
     }
     
     @IBAction func handleDone(_ sender: Any) {
@@ -48,37 +35,39 @@ class MenuViewController: UIViewController {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if UserDefaults.standard.bool(forKey: "isProVersion") {
+            return 1
+        } else {
+            return 2
+        }
     }
 }
 
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return self.products.count
+            if UserDefaults.standard.bool(forKey: "isProVersion") {
+                return 0
+            } else {
+                return 1
+            }
         } else {
-            return 5
+            return 3
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MENU_CELL") as? MenuCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as? MenuCell {
             if indexPath.section == 0 {
-                let product = self.products[indexPath.row]
-                cell.titleLabel.text = product.localizedTitle
+                cell.titleLabel.text = "Purchase Pro Version"
             } else {
                 if indexPath.row == 0  {
                     cell.titleLabel.text = "Write review for Mugic"
                 } else if indexPath.row == 1 {
                     cell.titleLabel.text = "Restore Purchase"
-                } else if indexPath.row == 2 {
-                    cell.titleLabel.text = "Mail to developer"
-                } else if indexPath.row == 3 {
-                    cell.titleLabel.text = "Share Mugic to friends"
                 } else {
-                    cell.titleLabel.text = "AT"
+                    cell.titleLabel.text = "Mail to developer"
                 }
             }
             return cell
@@ -92,22 +81,32 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             cell.isSelected = false
         }
         if indexPath.section == 0 {
-            let product = self.products[indexPath.row]
-            IAPHelper.store.buyProduct(product)
+            AccountManager.shared.purchase { (error) in
+                if error != nil {
+                    //TODO: Alert Action
+                    print(error)
+                    return
+                }
+                
+                //TODO: Completion Handler
+            }
         } else {
             if indexPath.row == 0  {
                 SKStoreReviewController.requestReview()
             } else if indexPath.row == 1 {
-                IAPHelper.store.restorePurchases()
-            } else if indexPath.row == 2 {
+                AccountManager.shared.restore { (error) in
+                    if error != nil {
+                        //TODO: Alert Action
+                        print(error)
+                        return
+                    }
+                    
+                    //TODO: Completion Handler
+                }
+            } else {
                 if MFMailComposeViewController.canSendMail() {
                     self.presentMailComposeViewController()
                 }
-            } else if indexPath.row == 3 {
-                let activityViewController = UIActivityViewController(activityItems: [URL(string: self.mugicURL)!], applicationActivities: nil)
-                present(activityViewController, animated: true, completion: nil)
-            } else {
-                UIApplication.shared.open(URL(string: self.atURL)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             }
         }
     }
@@ -132,11 +131,6 @@ extension MenuViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
-
-class MenuCell: UITableViewCell {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-}
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {

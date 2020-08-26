@@ -64,12 +64,58 @@ class SongListViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
+    @IBAction func handleMenu() {
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        guard let viewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @IBAction func handleAdd(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "isProVersion") {
+            //Proversion
+            self.addNewSong()
+        } else {
+            //No proversion
+            let limit = 2
+            guard let count = self.fetchedResultsController.fetchedObjects?.count else {
+                return
+            }
+            
+            if count < limit {
+                self.addNewSong()
+            } else {
+                self.showTooManySongAlert()
+            }
+        }
+    }
+    
+    func addNewSong() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let song = Song(context: appDelegate.persistentContainer.viewContext)
         song.name = "New song"
         song.updatedAt = Date()
         self.save()
+    }
+    
+    func showTooManySongAlert() {
+        let alertController = UIAlertController(title: "Oops!!", message: "To add more songs pro version upgrade now.", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "No thanks", style: .default, handler: { _ in }))
+        alertController.addAction(UIAlertAction(title: "LEARN MORE", style: .default, handler: { _ in
+            guard let navigationController = UIStoryboard(name: "Menu", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
+                return
+            }
+//            guard let viewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() else {
+//                return
+//            }
+//            navigationController.pushViewController(viewController, animated: true)
+            self.present(navigationController, animated: true, completion: nil)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func save() {

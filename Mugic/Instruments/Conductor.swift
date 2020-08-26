@@ -101,20 +101,21 @@ class Conductor {
         self.timers.removeAll()
         self.timers = []
         self.sequencer?.stop()
+        self.sequencer?.rewind()
         self.isPlaying = false
     }
 }
 
 
 extension Conductor {
+    
     func replay(withMetronome: Bool = false, song: Song, completionBlock: @escaping () -> Void) {
         guard let tracks = song.tracks?.array as? [Track] else {
             return
         }
         let sequencer = AKSequencer()
         self.sequencer = sequencer
-        sequencer.tempo = Double(120)
-        
+        var lastTime: Double = 0
         tracks.forEach {
             guard let instrument = InstrumentType(rawValue: $0.instrument) else {
                 return
@@ -132,7 +133,9 @@ extension Conductor {
             guard let events = $0.events?.allObjects else {
                 return
             }
-            
+
+            let beat: Double = Double(song.tempo) / 60
+            var beats: [Double] = []
             events.forEach {
                 if $0 is ChordEvent {
                     let event = $0 as! ChordEvent
@@ -145,22 +148,39 @@ extension Conductor {
                     }
                     let notes = ChordInstrument().chordNotes(root: note, chord: chord)
                     notes.forEach { note in
-                        track.add(noteNumber: MIDINoteNumber(note), position: event.time, duration: 1)
+                        track.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 3)
                     }
+                    beats.append(event.time * beat)
+                    lastTime = event.time > lastTime ? event.time : lastTime
                 } else if $0 is MelodicEvent {
                     let event = $0 as! MelodicEvent
-                    track.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time, duration: 1)
+                    track.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 3)
+                    beats.append(event.time * beat)
+                    lastTime = event.time > lastTime ? event.time : lastTime
                 } else if $0 is RhythmEvent {
                     let event = $0 as! RhythmEvent
-                    track.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time, duration: 1)
+                    track.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 3)
+                    beats.append(event.time * beat)
+                    lastTime = event.time > lastTime ? event.time : lastTime
                 }
             }
-            track.length = 10
+            guard let last = beats.sorted().last else {
+                return
+            }
+            track.length = last + 1
             track.loopEnabled = false
             track >>> self.mixer
         }
         self.isPlaying = true
+        
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + lastTime + 1) {
+            completionBlock()
+        }
+        
         sequencer.play()
+        sequencer.tempo = Double(song.tempo)
+        
     }
     
     func playMetronomeBeats(song: Song) {
@@ -174,47 +194,7 @@ extension Conductor {
         self.metronome.reset()
     }
     
-//    func addEventTimers(song: Song, completionBlock: @escaping () -> Void) {
-//        let events = self.sortedEventsIn(song: song)
-//        let countInTime = song.countInTime
-//        guard events.count > 0 else {
-//            return
-//        }
-//
-//        for event in events {
-//            let timer = self.eventTimer(event: event, countInTime: countInTime)
-//            self.timers.append(timer)
-//        }
-//
-//        guard let lastEvent = events.last else {
-//            return
-//        }
-//        let lastTimer = Timer(timeInterval: TimeInterval(countInTime) + TimeInterval(lastEvent.time), repeats: false) { _ in
-//            completionBlock()
-//        }
-//        self.timers.append(lastTimer)
-//    }
-//
-//    func eventTimer(event: Event, countInTime: TimeInterval) -> Timer {
-//        print(event.time)
-//        let timeInterval = TimeInterval(event.time) + TimeInterval(countInTime)
-//        print(timeInterval)
-//        return Timer(timeInterval: timeInterval, repeats: false) { _ in
-//            if event is ChordEvent {
-//                let chordEvent = event as! ChordEvent
-//                guard let note = Note(rawValue: Int(chordEvent.baseNote)), let chord = Chord(rawValue: Int(chordEvent.chord)) else {
-//                    return
-//                }
-////                self.play(root: note, chord: chord)
-//            } else if event is MelodicEvent {
-//                let melodicEvent = event as! MelodicEvent
-////                self.play(note: Int(melodicEvent.note))
-//            } else if event is RhythmEvent {
-//                let rhythmEvent = event as! RhythmEvent
-//                self.playDrum(note: Int(rhythmEvent.beat))
-//            }
-//        }
-//    }
+//    func
 }
 
 

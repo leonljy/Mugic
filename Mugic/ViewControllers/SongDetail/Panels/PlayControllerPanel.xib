@@ -30,18 +30,18 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36D-MP-LDu">
                             <rect key="frame" x="187.5" y="0.0" width="94" height="40"/>
-                            <color key="tintColor" name="MugicMain"/>
+                            <color key="tintColor" name="mugicMain"/>
                             <state key="normal" image="play.fill" catalog="system">
-                                <color key="titleColor" name="MugicMain"/>
+                                <color key="titleColor" name="mugicMain"/>
                             </state>
-                            <state key="selected" image="square" catalog="system"/>
+                            <state key="selected" image="pause.fill" catalog="system"/>
                             <connections>
                                 <action selector="handlePlay:" destination="ce9-AA-EA2" eventType="touchUpInside" id="zJs-Sz-Bok"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpA-V9-Ij7">
                             <rect key="frame" x="281.5" y="0.0" width="93.5" height="40"/>
-                            <color key="tintColor" name="MugicRed"/>
+                            <color key="tintColor" name="mugicRed"/>
                             <state key="normal" image="circle.fill" catalog="system"/>
                             <state key="selected" image="square" catalog="system"/>
                             <connections>
@@ -63,25 +63,28 @@
             <connections>
                 <outlet property="playButton" destination="36D-MP-LDu" id="grC-VQ-W7b"/>
                 <outlet property="recordButton" destination="hpA-V9-Ij7" id="bDD-8n-0if"/>
+                <outlet property="tempo" destination="vZd-Yg-UpC" id="bzx-h4-dY9"/>
+                <outlet property="timeSignature" destination="yvA-yw-tme" id="UEJ-JK-Qg8"/>
             </connections>
             <point key="canvasLocation" x="50" y="-117"/>
         </view>
     </objects>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="MugicBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MugicMain">
-            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="MugicRed">
-            <color red="0.92199999094009399" green="0.3529999852180481" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="MugicWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mugicMain">
+            <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mugicRed">
+            <color red="0.92199999094009399" green="0.3529999852180481" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -72,6 +72,9 @@ class SongDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let playControllerPanel = self.playControllerPanel {
+            playControllerPanel.song = self.song
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -125,6 +128,7 @@ class SongDetailViewController: UIViewController {
         guard let playControllerPanel = UINib(nibName: "PlayControllerPanel", bundle: nil).instantiate(withOwner: nil, options: nil).first as? PlayControllerPanel else {
             return
         }
+        playControllerPanel.song = self.song
         self.playControllerPanel = playControllerPanel
         self.playControllerBackgroundView.addSubview(playControllerPanel)
         self.playControllerPanel?.topAnchor.constraint(equalTo: self.playControllerBackgroundView.topAnchor, constant: 0).isActive = true
@@ -233,19 +237,24 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
     func panel(_ panel: PlayControllerPanel, didPlayButtonTouched sender: UIButton) {
         //TODO: Exception There's no song
         let completionBlock: () -> Void = {
+            panel.playButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             self.conductor.stop()
         }
-        if self.conductor.isPlaying {
-            completionBlock()
-            return
-        } else {
-            guard let song = self.song else {
-                completionBlock()
-                return
-            }
-            self.conductor.replay(song: song, completionBlock: completionBlock)
+        switch self.conductor.playStatus {
+            case .Stop:
+                guard let song = self.song else {
+                    completionBlock()
+                    return
+                }
+                panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                self.conductor.replay(song: song, completionBlock: completionBlock)
+            case .Play:
+                panel.playButton.setImage(UIImage(systemName: "playpause.fill"), for: .normal)
+                self.conductor.pause()
+            case .Pause:
+                panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                self.conductor.replay()
         }
-        
     }
 }
 

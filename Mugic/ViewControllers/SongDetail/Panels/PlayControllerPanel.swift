@@ -19,6 +19,17 @@ class PlayControllerPanel: UIView {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     
+    @IBOutlet weak var tempo: UILabel!
+    @IBOutlet weak var timeSignature: UILabel!
+    
+    var song: Song? {
+        didSet {
+            guard let song = self.song else { return }
+            self.tempo.text = "\(song.tempo) BPM"
+            self.timeSignature.text = "\(song.timeSignatureString)"
+        }
+    }
+    
     var delegate: PlayControllerPanelDelegate?
     
     @IBAction func handleRecordOrStop(_ sender: UIButton) {
@@ -27,7 +38,6 @@ class PlayControllerPanel: UIView {
     }
     
     @IBAction func handlePlay(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
         self.delegate?.panel(self, didPlayButtonTouched: sender)
     }
 }

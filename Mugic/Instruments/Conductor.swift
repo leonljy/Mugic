@@ -9,15 +9,23 @@
 import Foundation
 import AudioKit
 
-enum Instruments: Int {
-    case Guitar = 0
-    case Piano
-    case Drumkit
-    case Voice
-    case Guitar2
-}
 
 class Conductor {
+    
+    enum PlayStatus {
+        case Stop
+        case Play
+        case Pause
+    }
+    
+    enum Instruments: Int {
+        case Guitar = 0
+        case Piano
+        case Drumkit
+        case Voice
+        case Guitar2
+    }
+    
     static let shared: Conductor = Conductor()
     let mixer = AKMixer()
     let piano: Piano
@@ -28,8 +36,14 @@ class Conductor {
     
     var sequencer: AKSequencer?
     
-    var playing = false
-    var isPlaying: Bool {
+    var completionTimer: Timer = Timer()
+    
+    var startDate: Date = Date()
+    var remainSongLength: Double = 0
+    var completionBlock: () -> Void = {}
+    
+    var playing = PlayStatus.Stop
+    var playStatus: PlayStatus {
         get {
             return self.playing
         }
@@ -37,8 +51,6 @@ class Conductor {
             self.playing = newValue
         }
     }
-    
-    var timers: [Timer] = []
     
     init() {
         self.piano = Piano()
@@ -95,14 +107,29 @@ class Conductor {
     }
     
     func stop() {
-        for timer in self.timers {
-            timer.invalidate()
-        }
-        self.timers.removeAll()
-        self.timers = []
         self.sequencer?.stop()
         self.sequencer?.rewind()
-        self.isPlaying = false
+        self.playStatus = .Stop
+    }
+    
+    func pause() {
+        self.sequencer?.pause()
+        self.playStatus = .Pause
+        self.completionTimer.invalidate()
+        self.remainSongLength -= Double(Date().timeIntervalSince(self.startDate))
+    }
+    
+    func replay() {
+        self.startDate = Date()
+        let completionDate = Calendar.current.date(byAdding: .second, value: Int(self.remainSongLength) + 1, to: self.startDate)!
+        self.completionTimer = Timer(fire: completionDate, interval: 0, repeats: false, block: { (timer) in
+            self.completionBlock()
+        })
+        DispatchQueue.main.async {
+            RunLoop.current.add(self.completionTimer, forMode: .default)
+        }
+        self.sequencer?.play()
+        self.playStatus = .Play
     }
 }
 
@@ -115,6 +142,7 @@ extension Conductor {
         }
         let sequencer = AKSequencer()
         self.sequencer = sequencer
+        self.completionBlock = completionBlock
         var lastTime: Double = 0
         tracks.forEach {
             guard let instrument = InstrumentType(rawValue: $0.instrument) else {
@@ -171,16 +199,19 @@ extension Conductor {
             track.loopEnabled = false
             track >>> self.mixer
         }
-        self.isPlaying = true
+        self.playStatus = .Play
         
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + lastTime + 1) {
-            completionBlock()
+        self.remainSongLength = lastTime
+        self.startDate = Date()
+        let completionDate = Calendar.current.date(byAdding: .second, value: Int(self.remainSongLength) + 1, to: self.startDate)!
+        self.completionTimer = Timer(fire: completionDate, interval: 0, repeats: false, block: { (timer) in
+            self.completionBlock()
+        })
+        DispatchQueue.main.async {
+            RunLoop.current.add(self.completionTimer, forMode: .default)
         }
-        
         sequencer.play()
         sequencer.tempo = Double(song.tempo)
-        
     }
     
     func playMetronomeBeats(song: Song) {
@@ -193,8 +224,6 @@ extension Conductor {
         self.metronome.stop()
         self.metronome.reset()
     }
-    
-//    func
 }
 
 

@@ -28,7 +28,6 @@ class Drum: BeatInstrument {
     
     override init() {
         super.init()
-        self.sampler = AKAppleSampler()
         var audioFiles: [AKAudioFile] = []
 
         Drum.DrumKit.allCases.forEach {

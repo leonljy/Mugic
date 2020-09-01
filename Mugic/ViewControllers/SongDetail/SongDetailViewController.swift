@@ -48,6 +48,7 @@ class SongDetailViewController: UIViewController {
                 return
             }
             self.recorder.track = track
+            self.conductor.currentTrack = index
         }
     }
     
@@ -63,7 +64,7 @@ class SongDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.conductor.song = self.song
         self.tableView.tableFooterView = UIView()
         self.initializeViews()
         self.initializeTableView()
@@ -273,20 +274,7 @@ extension SongDetailViewController: ChordPanelDelegate {
             return
         }
         self.chordString = sender.titleLabel?.text
-        
-        guard self.selectedTrackIndex != nil else {
-            return
-        }
-        guard let tracks = self.song?.tracks?.reversed else {
-            return
-        }
-        guard let track = tracks[selectedTrackIndex!] as? Track else {
-            return
-        }
-        guard let instrumentType = InstrumentType(rawValue: track.instrument) else {
-            return
-        }
-        self.conductor.play(instrument: instrumentType, root: note, chord: chord, amplitude: track.volume)
+        self.conductor.play(root: note, chord: chord)
         self.recorder.save(root: note, chord: chord)
     }
     
@@ -314,21 +302,7 @@ extension SongDetailViewController: ChordPanelDelegate {
 extension SongDetailViewController: MelodyPanelDelegate {
     func melodyTouchDown(sender: UIButton) {
         let tag = sender.tag
-        
-        guard self.selectedTrackIndex != nil else {
-            return
-        }
-        guard let tracks = self.song?.tracks?.reversed else {
-            return
-        }
-        guard let track = tracks[selectedTrackIndex!] as? Track else {
-            return
-        }
-        guard let instrumentType = InstrumentType(rawValue: track.instrument) else {
-            return
-        }
-        
-        self.conductor.play(instrument: instrumentType, note: MIDINoteNumber(tag), amplitude: track.volume)
+        self.conductor.play(note: MIDINoteNumber(tag))
         self.recorder.save(note: tag)
     }
     func melodyTouchUpInside(sender: UIButton) {
@@ -466,6 +440,7 @@ extension SongDetailViewController: TrackCellDelegate {
         }
         track.volume = volume
         self.save()
+        self.conductor.changeVolume(trackIndex: indexPath.row, volume: volume)
     }
     
     func didTrackCell(_ cell: TrackTableViewCell, muteChanged isMuted: Bool) {

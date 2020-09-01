@@ -13,7 +13,6 @@ class Guitar: ChordInstrument {
     
     init(midiFileName: String = "Sounds/Guitar/Acoustic Guitars JNv2.4") {
         super.init()
-        self.sampler = AKAppleSampler()
         do {
             try self.sampler.loadMelodicSoundFont(midiFileName, preset: 0)
         } catch {

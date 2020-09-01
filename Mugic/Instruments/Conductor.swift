@@ -27,14 +27,11 @@ class Conductor {
     }
     
     static let shared: Conductor = Conductor()
-    let mixer = AKMixer()
-    let piano: Piano
-    let guitar: Guitar
-    let drum: Drum
     
+    let mixer = AKMixer()
     let metronome = AKMetronome()
     
-    var sequencer: AKSequencer?
+    var sequencer = AKSequencer()
     
     var completionTimer: Timer = Timer()
     
@@ -52,15 +49,21 @@ class Conductor {
         }
     }
     
+    var instruments: [Instrument] = []
+    
+    var currentTrack: Int = 0
+    
+    var song: Song? {
+        didSet {
+            guard let song = self.song else { return }
+            guard let tracks = song.tracks?.array as? [Track] else { return }
+            tracks.forEach({
+                self.addInstrument(track: $0)
+            })
+        }
+    }
+    
     init() {
-        self.piano = Piano()
-        self.guitar = Guitar()
-        self.drum = Drum()
-        
-        self.mixer.connect(input: self.piano.sampler)
-        self.mixer.connect(input: self.guitar.sampler)
-        self.mixer.connect(input: self.drum.sampler)
-        
         AudioKit.output = self.mixer
         
         self.metronome.frequency1 = 2000
@@ -73,47 +76,60 @@ class Conductor {
         }
     }
     
-    func play(instrument: InstrumentType, root: Note, chord: Chord, amplitude: Double = 1.0) {
-        switch instrument {
-        case .PianoChord:
-            self.piano.sampler.volume = amplitude
-            self.piano.play(root: root, chord: chord)
-        case .GuitarChord:
-            self.guitar.sampler.volume = amplitude
-            self.guitar.play(root: root, chord: chord)
-        default:
-            return
+    func addInstrument(track: Track) {
+        let instrumentType = InstrumentType(rawValue: track.instrument)
+        let instrument: Instrument
+        switch instrumentType {
+            case .PianoChord, .PianoMelody:
+                instrument = Piano()
+            case .GuitarMelody, .GuitarChord:
+                instrument = Guitar()
+            case .DrumKit:
+                instrument = Drum()
+            case .none:
+                instrument = Instrument()
         }
+        self.instruments.append(instrument)
+        self.mixer.connect(input: instrument.sampler)
     }
     
-    func play(instrument: InstrumentType, note: MIDINoteNumber, amplitude: Double = 1.0) {
-        switch instrument {
-        case .PianoMelody:
-            self.piano.sampler.volume = amplitude
-            self.piano.play(note: note)
-        case .GuitarMelody:
-            self.guitar.sampler.volume = amplitude
-            self.guitar.play(note: note)
-        default:
-            return
-        }
+    func changeVolume(trackIndex: Int, volume: Double) {
+        let instrument = self.instruments[trackIndex]
+        instrument.sampler.volume = volume
+    }
+    
+    func play(root: Note, chord: Chord) {
+        let instrument = self.instruments[self.currentTrack]
+        guard instrument.self is ChordInstrument else { return }
+        print(instrument.sampler.volume)
+        (instrument as! ChordInstrument).play(root: root, chord: chord)
+    }
+    
+    func play(note: MIDINoteNumber) {
+        let instrument = self.instruments[self.currentTrack]
+        guard instrument.self is ChordInstrument else { return }
+        print(instrument.sampler.volume)
+        (instrument as! ChordInstrument).play(note: note)
     }
     
     func playDrum(note: Int) {
         guard let drumKit = Drum.DrumKit(rawValue: note) else {
             return
         }
-        self.drum.play(drumKit)
+        let instrument = self.instruments[self.currentTrack]
+        guard instrument.self is Drum else { return }
+        print(instrument.sampler.volume)
+        (instrument as! Drum).play(drumKit)
     }
     
     func stop() {
-        self.sequencer?.stop()
-        self.sequencer?.rewind()
+        self.sequencer.stop()
+        self.sequencer.rewind()
         self.playStatus = .Stop
     }
     
     func pause() {
-        self.sequencer?.pause()
+        self.sequencer.pause()
         self.playStatus = .Pause
         self.completionTimer.invalidate()
         self.remainSongLength -= Double(Date().timeIntervalSince(self.startDate))
@@ -128,9 +144,17 @@ class Conductor {
         DispatchQueue.main.async {
             RunLoop.current.add(self.completionTimer, forMode: .default)
         }
-        self.sequencer?.play()
+        self.sequencer.play()
         self.playStatus = .Play
     }
+    
+//    func endAudioKit() {
+//        do {
+//            try AudioKit.stop()
+//        } catch let error as NSError {
+//            print(error)
+//        }
+//    }
 }
 
 
@@ -140,25 +164,16 @@ extension Conductor {
         guard let tracks = song.tracks?.array as? [Track] else {
             return
         }
-        let sequencer = AKSequencer()
-        self.sequencer = sequencer
+        self.sequencer = AKSequencer()
         self.completionBlock = completionBlock
         var lastTime: Double = 0
-        tracks.forEach {
-            guard let instrument = InstrumentType(rawValue: $0.instrument) else {
-                return
-            }
-            let track: AKSequencerTrack
-            switch instrument {
-            case .PianoChord, .PianoMelody:
-                track = sequencer.addTrack(for: self.piano.sampler)
-            case .GuitarMelody, .GuitarChord:
-                track = sequencer.addTrack(for: self.guitar.sampler)
-            case .DrumKit:
-                track = sequencer.addTrack(for: self.drum.sampler)
-            }
+        
+        for (index, track) in tracks.enumerated() {
+            let sampler = self.instruments[index].sampler
+            sampler.volume = track.volume
+            let sequencerTrack: AKSequencerTrack = self.sequencer.addTrack(for: sampler)
 
-            guard let events = $0.events?.allObjects else {
+            guard let events = track.events?.allObjects else {
                 return
             }
 
@@ -176,18 +191,18 @@ extension Conductor {
                     }
                     let notes = ChordInstrument().chordNotes(root: note, chord: chord)
                     notes.forEach { note in
-                        track.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 3)
+                        sequencerTrack.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 3)
                     }
                     beats.append(event.time * beat)
                     lastTime = event.time > lastTime ? event.time : lastTime
                 } else if $0 is MelodicEvent {
                     let event = $0 as! MelodicEvent
-                    track.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 3)
+                    sequencerTrack.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 3)
                     beats.append(event.time * beat)
                     lastTime = event.time > lastTime ? event.time : lastTime
                 } else if $0 is RhythmEvent {
                     let event = $0 as! RhythmEvent
-                    track.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 3)
+                    sequencerTrack.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 3)
                     beats.append(event.time * beat)
                     lastTime = event.time > lastTime ? event.time : lastTime
                 }
@@ -195,10 +210,11 @@ extension Conductor {
             guard let last = beats.sorted().last else {
                 return
             }
-            track.length = last + 1
-            track.loopEnabled = false
-            track >>> self.mixer
+            sequencerTrack.length = last + 1
+            sequencerTrack.loopEnabled = false
+            sequencerTrack >>> self.mixer
         }
+        
         self.playStatus = .Play
         
         self.remainSongLength = lastTime
@@ -210,8 +226,8 @@ extension Conductor {
         DispatchQueue.main.async {
             RunLoop.current.add(self.completionTimer, forMode: .default)
         }
-        sequencer.play()
-        sequencer.tempo = Double(song.tempo)
+        self.sequencer.play()
+        self.sequencer.tempo = Double(song.tempo)
     }
     
     func playMetronomeBeats(song: Song) {

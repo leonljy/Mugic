@@ -12,7 +12,6 @@ import AudioKit
 class Piano: ChordInstrument {
     init(midiFileName: String = "Sounds/Piano/Piano") {
         super.init()
-        self.sampler = AKAppleSampler()
         do {
             try self.sampler.loadMelodicSoundFont(midiFileName, preset: 0)
         } catch  {

@@ -19,7 +19,7 @@
                     <subviews>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.40000000000000002" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wjk-vP-DIN">
                             <rect key="frame" x="8" y="50" width="164" height="31"/>
-                            <color key="tintColor" name="MugicMain"/>
+                            <color key="tintColor" name="mugicMain"/>
                             <connections>
                                 <action selector="didChangedTrackVolumeWithSender:" destination="iN0-l3-epB" eventType="valueChanged" id="QPa-ei-JD0"/>
                             </connections>
@@ -31,10 +31,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="53.5" height="30"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Mute">
-                                        <color key="titleColor" name="MugicLightGray"/>
+                                        <color key="titleColor" name="mugicLightGray"/>
                                     </state>
                                     <state key="selected">
-                                        <color key="titleColor" name="MugicYellow"/>
+                                        <color key="titleColor" name="mugicYellow"/>
                                     </state>
                                     <connections>
                                         <action selector="didMutedChangedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="mhZ-fG-roG"/>
@@ -44,10 +44,10 @@
                                     <rect key="frame" x="53.5" y="0.0" width="53" height="30"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Solo">
-                                        <color key="titleColor" name="MugicLightGray"/>
+                                        <color key="titleColor" name="mugicLightGray"/>
                                     </state>
                                     <state key="selected">
-                                        <color key="titleColor" name="MugicYellow"/>
+                                        <color key="titleColor" name="mugicYellow"/>
                                     </state>
                                     <connections>
                                         <action selector="didSoloChangedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="GZT-mi-fCc"/>
@@ -55,7 +55,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-Ri-XyS">
                                     <rect key="frame" x="106.5" y="0.0" width="53.5" height="30"/>
-                                    <color key="tintColor" name="MugicMain"/>
+                                    <color key="tintColor" name="mugicMain"/>
                                     <state key="normal" image="trash.fill" catalog="system"/>
                                     <connections>
                                         <action selector="deleteButtonTouchedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="dd2-uy-itF"/>
@@ -79,7 +79,7 @@
                     <rect key="frame" x="50" y="30" width="130" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Chord">
-                        <color key="titleColor" name="MugicWhite"/>
+                        <color key="titleColor" name="mugicWhite"/>
                     </state>
                     <connections>
                         <action selector="handleChangeTrackNameWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="ddJ-vx-Dw2"/>
@@ -87,7 +87,7 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WO7-JN-Y5w">
                     <rect key="frame" x="15" y="35" width="20" height="20"/>
-                    <color key="backgroundColor" name="MugicDarkGray"/>
+                    <color key="backgroundColor" name="mugicDarkGray"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="5gM-eP-iSd"/>
                         <constraint firstAttribute="width" constant="20" id="aHG-XT-v2u"/>
@@ -123,19 +123,19 @@
         <namedColor name="MugicBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MugicDarkGray">
+        <namedColor name="mugicDarkGray">
             <color red="0.11800000071525574" green="0.11800000071525574" blue="0.11800000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MugicLightGray">
+        <namedColor name="mugicLightGray">
             <color red="0.47099998593330383" green="0.47099998593330383" blue="0.47099998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MugicMain">
+        <namedColor name="mugicMain">
             <color red="0.0" green="0.83099997043609619" blue="0.77600002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MugicWhite">
+        <namedColor name="mugicWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MugicYellow">
+        <namedColor name="mugicYellow">
             <color red="1" green="0.86274509803921573" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

@@ -28,8 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     // Unlock content
                 case .failed, .purchasing, .deferred:
-                    break // do nothing
+                    break
+                @unknown default:
+                    break
                 }
+                
             }
         }
         return true

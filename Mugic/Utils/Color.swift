@@ -12,49 +12,49 @@ import UIKit
 extension UIColor {
     static var mugicMain: UIColor {
         get {
-            guard let color = UIColor(named: "MugicMain") else { return .clear }
+            guard let color = UIColor(named: "mugicMain") else { return .clear }
             return color
         }
     }
     
     static var mugicBlack: UIColor {
         get {
-            guard let color = UIColor(named: "MugicBlack") else { return .clear }
+            guard let color = UIColor(named: "mugicBlack") else { return .clear }
             return color
         }
     }
     
     static var mugicLightGray: UIColor {
         get {
-            guard let color = UIColor(named: "LightGray") else { return .black }
+            guard let color = UIColor(named: "mugicLightGray") else { return .black }
             return color
         }
     }
     
     static var mugicDarkGray: UIColor {
         get {
-            guard let color = UIColor(named: "MugicDarkGray") else { return .clear }
+            guard let color = UIColor(named: "mugicDarkGray") else { return .clear }
             return color
         }
     }
     
     static var mugicWhite: UIColor {
         get {
-            guard let color = UIColor(named: "MugicWhite") else { return .clear }
+            guard let color = UIColor(named: "mugicWhite") else { return .clear }
             return color
         }
     }
     
     static var mugicRed: UIColor {
         get {
-            guard let color = UIColor(named: "MugicRed") else { return .clear }
+            guard let color = UIColor(named: "mugicRed") else { return .clear }
             return color
         }
     }
     
     static var mugicYellow: UIColor {
         get {
-            guard let color = UIColor(named: "MugicYellow") else { return .clear }
+            guard let color = UIColor(named: "mugicYellow") else { return .clear }
             return color
         }
     }

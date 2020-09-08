@@ -8,7 +8,7 @@ class AccountManager {
     func purchase(completion: ((Error?) -> Void)?) {
         SwiftyStoreKit.purchaseProduct("Mugic.Inapp.ProVersion", atomically: true) { results in
             switch results {
-            case .success (let _):
+            case .success ( _):
 //                Answers.logPurchase(withPrice: purchase.product.price,
 //                    currency: purchase.product.priceLocale.currencyCode,
 //                    success: true,

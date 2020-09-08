@@ -31,6 +31,15 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak var changeNameButton: UIButton!
     @IBOutlet weak var selectionMarkView: UIView!
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: true)
+        if selected {
+            self.selectionMarkView.backgroundColor = UIColor.mugicMain
+        } else {
+            self.selectionMarkView.backgroundColor = UIColor.mugicDarkGray
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let backgroundView = UIView()
@@ -50,9 +59,11 @@ class TrackTableViewCell: UITableViewCell {
         guard let isMuted = self.track?.isMuted else {
             return
         }
-        self.track?.isMuted = !isMuted
+        let newValue = !isMuted
+        self.track?.isMuted = newValue
         self.save()
         self.muteButton.isSelected = self.track?.isMuted ?? false
+        self.delegate?.didTrackCell(self, muteChanged: newValue)
     }
     
     @IBAction func didSoloChanged(sender: UIButton) {

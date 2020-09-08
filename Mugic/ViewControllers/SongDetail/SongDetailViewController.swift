@@ -42,13 +42,17 @@ class SongDetailViewController: UIViewController {
     var selectedTrackIndex: Int? = nil {
         didSet {
             guard let index = self.selectedTrackIndex else {
+                self.selectPanel(PanelType.Empty)
                 return
             }
             guard let track = self.tracks?[index] else {
+                self.selectPanel(PanelType.Empty)
                 return
             }
             self.recorder.track = track
             self.conductor.currentTrack = index
+            let instrument = InstrumentType(rawValue: track.instrument)
+            self.selectPanel(instrument?.panelType ?? PanelType.Empty)
         }
     }
     
@@ -225,6 +229,7 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
                 self.showAlert(message: "Please select a track first")
                 return
             }
+            track.events = []
             self.recorder.track = track
             self.recorder.startRecord(countInTime: song.countInTime) { (passedTime) in
 
@@ -358,10 +363,14 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TrackTableViewCell") as? TrackTableViewCell else { return UITableViewCell() }
-        guard let song = self.song else { return cell }
-        guard let track = song.tracks?.reversed[indexPath.row] as? Track else { return cell }
+        guard let track = self.tracks?[indexPath.row] else { return cell }
         cell.track = track
         cell.delegate = self
+        if let selectedTrackIndex = self.selectedTrackIndex, indexPath.row == selectedTrackIndex {
+            cell.setSelected(true, animated: true)
+        } else {
+            cell.setSelected(false, animated: false)
+        }
         return cell
     }
     
@@ -384,6 +393,8 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
             track.instrument = instrumentType.rawValue
             track.name = instrumentType.name
             self.save()
+            self.conductor.song = self.song
+            self.selectedTrackIndex = nil
             self.tableView.reloadData()
         }
         let alertController = UIAlertController(title: "Select Instrument", message: "Choose new instrument sound", preferredStyle: .actionSheet)
@@ -413,17 +424,6 @@ extension SongDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedTrackIndex = indexPath.row
-        guard let song = self.song else { return }
-        guard let track = song.tracks?.reversed[indexPath.row] as? Track else { return }
-        let instrument = InstrumentType(rawValue: track.instrument)
-        self.selectPanel(instrument?.panelType ?? PanelType.Empty)
-        guard let cell = tableView.cellForRow(at: indexPath) as? TrackTableViewCell else { return }
-        cell.selectionMarkView.backgroundColor = UIColor.mugicMain
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? TrackTableViewCell else { return }
-        cell.selectionMarkView.backgroundColor = UIColor.mugicDarkGray
     }
 }
 
@@ -432,10 +432,7 @@ extension SongDetailViewController: TrackCellDelegate {
         guard let indexPath = self.tableView.indexPath(for: cell) else {
             return
         }
-        guard let tracks = self.song?.tracks else {
-            return
-        }
-        guard let track = tracks[indexPath.row] as? Track else {
+        guard let track = self.tracks?[indexPath.row] else {
             return
         }
         track.volume = volume
@@ -444,7 +441,18 @@ extension SongDetailViewController: TrackCellDelegate {
     }
     
     func didTrackCell(_ cell: TrackTableViewCell, muteChanged isMuted: Bool) {
+        guard let indexPath = self.tableView.indexPath(for: cell) else {
+            return
+        }
+        guard let track = self.tracks?[indexPath.row] else {
+            return
+        }
         
+        if isMuted {
+            self.conductor.changeVolume(trackIndex: indexPath.row, volume: 0)
+        } else {
+            self.conductor.changeVolume(trackIndex: indexPath.row, volume: track.volume)
+        }
     }
     
     func didTrackCell(_ cell: TrackTableViewCell, soloChanged isSolo: Bool) {
@@ -459,6 +467,7 @@ extension SongDetailViewController: TrackCellDelegate {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.persistentContainer.viewContext.delete(track)
         self.save()
+        self.conductor.song = self.song
         self.selectedTrackIndex = nil
         self.tableView.reloadData()
     }

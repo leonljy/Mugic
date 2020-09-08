@@ -213,12 +213,12 @@
 			children = (
 				FDB8040A24C5D23700D35F9E /* InstrumentType.swift */,
 				917ADCCB200B3A940062B79A /* Instrument.swift */,
+				FDB80404249DB14100D35F9E /* ChordInstrument.swift */,
+				FDB80406249DB14F00D35F9E /* BeatInstrument.swift */,
 				914BA55A2029D8EF00A2CBC3 /* Piano.swift */,
 				91FF504F20394484008460C3 /* Guitar.swift */,
 				918E3790206262CF004C08CB /* Drum.swift */,
 				914BA5582029C0EC00A2CBC3 /* Conductor.swift */,
-				FDB80404249DB14100D35F9E /* ChordInstrument.swift */,
-				FDB80406249DB14F00D35F9E /* BeatInstrument.swift */,
 			);
 			path = Instruments;
 			sourceTree = "<group>";

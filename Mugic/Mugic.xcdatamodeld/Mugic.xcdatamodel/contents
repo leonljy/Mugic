@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ChordEvent" representedClassName="ChordEvent" parentEntity="Event" syncable="YES" codeGenerationType="class">
         <attribute name="baseNote" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="chord" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -27,6 +27,7 @@
         <attribute name="isMuted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isSolo" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="volume" attributeType="Double" defaultValueString="0.8" usesScalarValueType="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="track" inverseEntity="Event"/>
         <relationship name="song" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="tracks" inverseEntity="Song"/>
@@ -37,6 +38,6 @@
         <element name="MelodicEvent" positionX="-11" positionY="27" width="128" height="58"/>
         <element name="RhythmEvent" positionX="169" positionY="30" width="128" height="58"/>
         <element name="Song" positionX="-27" positionY="-522" width="128" height="133"/>
-        <element name="Track" positionX="-36" positionY="-315" width="128" height="148"/>
+        <element name="Track" positionX="-36" positionY="-315" width="128" height="163"/>
     </elements>
 </model>

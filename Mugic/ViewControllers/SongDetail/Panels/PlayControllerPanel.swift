@@ -25,7 +25,7 @@ class PlayControllerPanel: UIView {
     var song: Song? {
         didSet {
             guard let song = self.song else { return }
-            self.tempo.text = "\(song.tempo) BPM"
+            self.tempo.text = "\(song.tempo) bpm"
             self.timeSignature.text = "\(song.timeSignatureString)"
         }
     }

@@ -56,7 +56,8 @@ class Conductor {
     var song: Song? {
         didSet {
             guard let song = self.song else { return }
-            guard let tracks = song.tracks?.array as? [Track] else { return }
+            guard let tracks = song.tracks?.reversed.array as? [Track] else { return }
+            self.instruments = []
             tracks.forEach({
                 self.addInstrument(track: $0)
             })
@@ -101,14 +102,12 @@ class Conductor {
     func play(root: Note, chord: Chord) {
         let instrument = self.instruments[self.currentTrack]
         guard instrument.self is ChordInstrument else { return }
-        print(instrument.sampler.volume)
         (instrument as! ChordInstrument).play(root: root, chord: chord)
     }
     
     func play(note: MIDINoteNumber) {
         let instrument = self.instruments[self.currentTrack]
         guard instrument.self is ChordInstrument else { return }
-        print(instrument.sampler.volume)
         (instrument as! ChordInstrument).play(note: note)
     }
     
@@ -118,7 +117,6 @@ class Conductor {
         }
         let instrument = self.instruments[self.currentTrack]
         guard instrument.self is Drum else { return }
-        print(instrument.sampler.volume)
         (instrument as! Drum).play(drumKit)
     }
     
@@ -161,16 +159,20 @@ class Conductor {
 extension Conductor {
     
     func replay(withMetronome: Bool = false, song: Song, completionBlock: @escaping () -> Void) {
-        guard let tracks = song.tracks?.array as? [Track] else {
-            return
-        }
+        guard let tracks = song.tracks?.reversed.array as? [Track] else { return }
         self.sequencer = AKSequencer()
         self.completionBlock = completionBlock
         var lastTime: Double = 0
         
         for (index, track) in tracks.enumerated() {
             let sampler = self.instruments[index].sampler
-            sampler.volume = track.volume
+            
+            if track.isMuted {
+                sampler.volume = 0
+            } else {
+                sampler.volume = track.volume
+            }
+            
             let sequencerTrack: AKSequencerTrack = self.sequencer.addTrack(for: sampler)
 
             guard let events = track.events?.allObjects else {
@@ -178,11 +180,15 @@ extension Conductor {
             }
 
             let beat: Double = Double(song.tempo) / 60
+            
             var beats: [Double] = []
+            print(events)
+            if events.count > 0 {
+                
+            }
             events.forEach {
                 if $0 is ChordEvent {
                     let event = $0 as! ChordEvent
-                    print(event.time)
                     guard let note = Note(rawValue: Int(event.baseNote)) else {
                         return
                     }
@@ -191,28 +197,27 @@ extension Conductor {
                     }
                     let notes = ChordInstrument().chordNotes(root: note, chord: chord)
                     notes.forEach { note in
-                        sequencerTrack.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 3)
+                        sequencerTrack.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 2)
                     }
                     beats.append(event.time * beat)
                     lastTime = event.time > lastTime ? event.time : lastTime
                 } else if $0 is MelodicEvent {
                     let event = $0 as! MelodicEvent
-                    sequencerTrack.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 3)
+                    sequencerTrack.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 2)
                     beats.append(event.time * beat)
                     lastTime = event.time > lastTime ? event.time : lastTime
                 } else if $0 is RhythmEvent {
                     let event = $0 as! RhythmEvent
-                    sequencerTrack.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 3)
+                    sequencerTrack.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 2)
                     beats.append(event.time * beat)
                     lastTime = event.time > lastTime ? event.time : lastTime
                 }
             }
-            guard let last = beats.sorted().last else {
-                return
+            if let last = beats.sorted().last {
+                sequencerTrack.length = last + 1
+                sequencerTrack.loopEnabled = false
+                sequencerTrack >>> self.mixer
             }
-            sequencerTrack.length = last + 1
-            sequencerTrack.loopEnabled = false
-            sequencerTrack >>> self.mixer
         }
         
         self.playStatus = .Play

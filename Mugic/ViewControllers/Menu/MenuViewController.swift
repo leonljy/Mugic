@@ -84,7 +84,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             AccountManager.shared.purchase { (error) in
                 if error != nil {
                     //TODO: Alert Action
-                    print(error)
+                    print(error!)
                     return
                 }
                 
@@ -97,7 +97,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 AccountManager.shared.restore { (error) in
                     if error != nil {
                         //TODO: Alert Action
-                        print(error)
+                        print(error!)
                         return
                     }
                     

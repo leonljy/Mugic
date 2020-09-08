@@ -37,10 +37,8 @@ class Recorder {
     
     func startRecord(countInTime: TimeInterval ,timerBlock: @escaping (_ timeInterval: TimeInterval) -> Void) {
         self.isRecording = true
-        print("Now: \(Date())")
         self.startTime = Date(timeIntervalSinceNow: countInTime)
         self.track?.events = NSSet()
-        print("StartTime: \(self.startTime)")
         self.events = [Event]()
 //        self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
 //            let now = Date()

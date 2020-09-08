@@ -92,12 +92,29 @@ class ChordInstrument: Instrument {
         case .dim7:
             noteNumbers.removeAll()
             noteNumbers.append(bass)
-            //            self.noteNumbers.insert(bass - Piano.OCTAVE)
             third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
             noteNumbers.append(third)
             let flatFive = ChordInstrument.adding(root, interval: Interval.FLAT_FIVE)
             noteNumbers.append(flatFive)
             seventh = ChordInstrument.adding(root, interval: Interval.SIXTH)
+            noteNumbers.append(seventh)
+        case .m7b5:
+            noteNumbers.removeAll()
+            noteNumbers.append(bass)
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            noteNumbers.append(third)
+            let flatFive = ChordInstrument.adding(root, interval: Interval.FLAT_FIVE)
+            noteNumbers.append(flatFive)
+            seventh = ChordInstrument.adding(root, interval: Interval.DOMINENT_SEVENTH)
+            noteNumbers.append(seventh)
+        case .mM7:
+            noteNumbers.removeAll()
+            noteNumbers.append(bass)
+            third = ChordInstrument.adding(root, interval: Interval.MIN_TRIAD)
+            noteNumbers.append(third)
+            let flatFive = ChordInstrument.adding(root, interval: Interval.PERFECT_FIFTH)
+            noteNumbers.append(flatFive)
+            seventh = ChordInstrument.adding(root, interval: Interval.MAJ_SEVENTH)
             noteNumbers.append(seventh)
         }
         

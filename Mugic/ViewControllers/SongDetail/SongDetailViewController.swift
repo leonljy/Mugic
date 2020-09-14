@@ -219,10 +219,8 @@ class SongDetailViewController: UIViewController {
 
 extension SongDetailViewController: PlayControllerPanelDelegate {
     func panel(_ panel: PlayControllerPanel, didRecordButtonTouched sender: UIButton) {
-        if self.recorder.isRecording {
-            self.recorder.stopRecord()
-            self.conductor.stop()
-        } else {
+        switch self.conductor.playStatus {
+        case .Stop:
             guard let song = self.song else { return }
             guard let selectedTrackIndex = self.selectedTrackIndex else { return }
             guard let track = self.tracks?[selectedTrackIndex] else {
@@ -232,11 +230,14 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
             track.events = []
             self.recorder.track = track
             self.recorder.startRecord(countInTime: song.countInTime) { (passedTime) in
-
+                
             }
             Conductor.shared.replay(withMetronome: true, song: song) {
                 Conductor.shared.stop()
             }
+        case .Record, .Pause, .Play:
+            self.recorder.stopRecord()
+            self.conductor.stop()
         }
     }
     
@@ -258,6 +259,9 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
                 panel.playButton.setImage(UIImage(systemName: "playpause.fill"), for: .normal)
                 self.conductor.pause()
             case .Pause:
+                panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                self.conductor.replay()
+            case .Record:
                 panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 self.conductor.replay()
         }

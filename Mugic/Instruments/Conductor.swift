@@ -16,6 +16,7 @@ class Conductor {
         case Stop
         case Play
         case Pause
+        case Record
     }
     
     enum Instruments: Int {

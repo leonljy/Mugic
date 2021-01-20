@@ -1,25 +1,16 @@
 PODS:
-  - AudioKit (4.9.5):
-    - AudioKit/Core (= 4.9.5)
-    - AudioKit/UI (= 4.9.5)
-  - AudioKit/Core (4.9.5)
-  - AudioKit/UI (4.9.5):
-    - AudioKit/Core
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
-  - AudioKit
   - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
-    - AudioKit
     - SwiftyStoreKit
 
 SPEC CHECKSUMS:
-  AudioKit: ccf4e39c89ed6e5cbbce5fef58d819db39446437
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 29580d325ae13723b035076462912decfe621ac2
+PODFILE CHECKSUM: eb8a1deac29ff4f1220ec686c6d46ac3ef2394df
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

@@ -255,15 +255,19 @@ extension SongDetailViewController: PlayControllerPanelDelegate {
                 }
                 panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 self.conductor.replay(song: song, completionBlock: completionBlock)
+                panel.recordButton.isSelected = true
             case .Play:
                 panel.playButton.setImage(UIImage(systemName: "playpause.fill"), for: .normal)
                 self.conductor.pause()
+                panel.recordButton.isSelected = true
             case .Pause:
                 panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 self.conductor.replay()
+                panel.recordButton.isSelected = true
             case .Record:
                 panel.playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 self.conductor.replay()
+                panel.recordButton.isSelected = true
         }
     }
 }

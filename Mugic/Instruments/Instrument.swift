@@ -61,10 +61,10 @@ class Instrument {
     static let OCTAVE = 12
     static let AHz = 440
     
-    var sampler: AKAppleSampler
+    var sampler: AppleSampler
     
     init() {
-        self.sampler = AKAppleSampler()
+        self.sampler = AppleSampler()
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 import AudioKit
 
 
@@ -28,11 +29,12 @@ class Drum: BeatInstrument {
     
     override init() {
         super.init()
-        var audioFiles: [AKAudioFile] = []
+        var audioFiles: [AVAudioFile] = []
 
         Drum.DrumKit.allCases.forEach {
             do {
-                let audioFile = try AKAudioFile(readFileName: $0.fileName)
+                let url = Bundle.main.url(forResource: $0.kitName, withExtension: ".wav")!
+                let audioFile = try AVAudioFile(forReading: url)
                 audioFiles.append(audioFile)
             } catch {
                 print(error.localizedDescription)

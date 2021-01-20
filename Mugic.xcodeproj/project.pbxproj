@@ -48,6 +48,7 @@
 		AC30BCEC8A9CE1B581C1463B /* Pods_MugicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2EFEA2E61A65C195BC8198 /* Pods_MugicTests.framework */; };
 		CA91CF924AC7A41DD0422141 /* Pods_Mugic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D215FEA4F84B2B255276C541 /* Pods_Mugic.framework */; };
 		FD082E0B24542E1800133526 /* EditSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD082E0A24542E1800133526 /* EditSong.storyboard */; };
+		FD5B909E255965D2001F65D4 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD5B909D255965D2001F65D4 /* AudioKit */; };
 		FD6E7B742455663C00E56593 /* MelodyPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B732455663C00E56593 /* MelodyPanelView.swift */; };
 		FD6E7B762455664700E56593 /* ChordPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B752455664700E56593 /* ChordPanelView.swift */; };
 		FD6E7B782455665000E56593 /* DrumKitPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6E7B772455665000E56593 /* DrumKitPanelView.swift */; };
@@ -162,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5B909E255965D2001F65D4 /* AudioKit in Frameworks */,
 				CA91CF924AC7A41DD0422141 /* Pods_Mugic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +426,9 @@
 			dependencies = (
 			);
 			name = Mugic;
+			packageProductDependencies = (
+				FD5B909D255965D2001F65D4 /* AudioKit */,
+			);
 			productName = Mugic;
 			productReference = 91CD367A2001E78300124BD3 /* Mugic.app */;
 			productType = "com.apple.product-type.application";
@@ -509,6 +514,9 @@
 				Base,
 			);
 			mainGroup = 91CD36712001E78200124BD3;
+			packageReferences = (
+				FD5B909C255965D2001F65D4 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 91CD367B2001E78300124BD3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -806,13 +814,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -860,12 +868,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -878,7 +886,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWS7D33ESH;
 				INFOPLIST_FILE = Mugic/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -898,7 +906,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWS7D33ESH;
 				INFOPLIST_FILE = Mugic/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1032,6 +1040,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD5B909C255965D2001F65D4 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				branch = "v5-main";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD5B909D255965D2001F65D4 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5B909C255965D2001F65D4 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		91CD36842001E78300124BD3 /* Mugic.xcdatamodeld */ = {

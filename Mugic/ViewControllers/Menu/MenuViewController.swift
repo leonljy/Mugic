@@ -92,7 +92,8 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             if indexPath.row == 0  {
-                SKStoreReviewController.requestReview()
+                //TODO: Request review
+//                SKStoreReviewController.requestReview(in: sel)
             } else if indexPath.row == 1 {
                 AccountManager.shared.restore { (error) in
                     if error != nil {

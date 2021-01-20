@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import AudioKit
+//import AudioKit
 
 class Piano: ChordInstrument {
     init(midiFileName: String = "Sounds/Piano/Piano") {

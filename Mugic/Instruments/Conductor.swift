@@ -34,6 +34,8 @@ class Conductor {
     
     var sequencer = Sequencer()
     
+    let engine = AudioEngine()
+    
     var completionTimer: Timer = Timer()
     
     var startDate: Date = Date()
@@ -67,7 +69,7 @@ class Conductor {
     
     init() {
         self.compressor = Compressor(self.mixer)
-        let engine = AudioEngine()
+        self.engine.output = self.compressor
         do {
             try engine.start()
         } catch let error as NSError {
@@ -158,77 +160,79 @@ extension Conductor {
     
     func replay(withMetronome: Bool = false, song: Song, completionBlock: @escaping () -> Void) {
         guard let tracks = song.tracks?.reversed.array as? [Track] else { return }
-        self.sequencer = Sequencer()
+//        self.sequencer = Sequencer()
         self.completionBlock = completionBlock
-        var lastTime: Double = 0
+//        var lastTime: Double = 0
         
-        for (trackIndex, track) in tracks.enumerated() {
+        for (trackIndex, track ) in tracks.enumerated() {
             let sampler = self.instruments[trackIndex].sampler
             
-            if track.isMuted {
-                sampler.volume = 0
-            } else {
-                sampler.volume = AUValue(track.volume)
-            }
+//            if track.isMuted {
+//                sampler.volume = 0
+//            } else {
+//                sampler.volume = AUValue(track.volume)
+//            }
             
-            let sequencerTrack: SequencerTrack = self.sequencer.addTrack(for: sampler)
+//            let sequencerTrack: SequencerTrack = self.sequencer.addTrack(for: sampler)
 
-            guard let events = track.events?.allObjects else {
+            guard let events = track.events?.allObjects as? [Event] else {
                 return
             }
 
-            let beat: Double = Double(song.tempo) / 60
-            
-            var beats: [Double] = []
+//            let beat: Double = Double(song.tempo) / 60
+//
+//            var beats: [Double] = []
             
             events.forEach {
-                if $0 is ChordEvent {
-                    let event = $0 as! ChordEvent
-                    guard let note = Note(rawValue: Int(event.baseNote)) else {
-                        return
-                    }
-                    guard let chord = Chord(rawValue: Int(event.chord)) else {
-                        return
-                    }
-                    let notes = ChordInstrument().chordNotes(root: note, chord: chord)
-                    notes.forEach { note in
-                        sequencer.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 2, trackIndex: trackIndex)
-                    }
-                    beats.append(event.time * beat)
-                    lastTime = event.time > lastTime ? event.time : lastTime
-                } else if $0 is MelodicEvent {
-                    let event = $0 as! MelodicEvent
-                    sequencer.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 2, trackIndex: trackIndex)
-                    beats.append(event.time * beat)
-                    lastTime = event.time > lastTime ? event.time : lastTime
-                } else if $0 is RhythmEvent {
-                    let event = $0 as! RhythmEvent
-                    sequencer.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 2, trackIndex: trackIndex)
-                    beats.append(event.time * beat)
-                    lastTime = event.time > lastTime ? event.time : lastTime
-                }
+                print($0.time)
             }
-            if let last = beats.sorted().last {
-                sequencerTrack.length = last + 1
-                sequencerTrack.loopEnabled = false
-                guard let targetNode = sequencerTrack.targetNode else { return }
-                self.mixer.addInput(targetNode)
-            }
+//                if $0 is ChordEvent {
+//                    let event = $0 as! ChordEvent
+//                    guard let note = Note(rawValue: Int(event.baseNote)) else {
+//                        return
+//                    }
+//                    guard let chord = Chord(rawValue: Int(event.chord)) else {
+//                        return
+//                    }
+//                    let notes = ChordInstrument().chordNotes(root: note, chord: chord)
+//                    notes.forEach { note in
+//                        sequencer.add(noteNumber: MIDINoteNumber(note), position: event.time * beat, duration: 2, trackIndex: trackIndex)
+//                    }
+//                    beats.append(event.time * beat)
+//                    lastTime = event.time > lastTime ? event.time : lastTime
+//                } else if $0 is MelodicEvent {
+//                    let event = $0 as! MelodicEvent
+//                    sequencer.add(noteNumber: MIDINoteNumber(Int(event.note)), position: event.time * beat, duration: 2, trackIndex: trackIndex)
+//                    beats.append(event.time * beat)
+//                    lastTime = event.time > lastTime ? event.time : lastTime
+//                } else if $0 is RhythmEvent {
+//                    let event = $0 as! RhythmEvent
+//                    sequencer.add(noteNumber: MIDINoteNumber(Int(event.beat)), position: event.time * beat, duration: 2, trackIndex: trackIndex)
+//                    beats.append(event.time * beat)
+//                    lastTime = event.time > lastTime ? event.time : lastTime
+//                }
+//            }
+//            if let last = beats.sorted().last {
+//                sequencerTrack.length = last + 1
+//                sequencerTrack.loopEnabled = false
+//                guard let targetNode = sequencerTrack.targetNode else { return }
+//                self.mixer.addInput(targetNode)
+//            }
         }
         
-        self.playStatus = .Play
+//        self.playStatus = .Play
         
-        self.remainSongLength = lastTime
-        self.startDate = Date()
-        let completionDate = Calendar.current.date(byAdding: .second, value: Int(self.remainSongLength) + 1, to: self.startDate)!
-        self.completionTimer = Timer(fire: completionDate, interval: 0, repeats: false, block: { (timer) in
-            self.completionBlock()
-        })
-        DispatchQueue.main.async {
-            RunLoop.current.add(self.completionTimer, forMode: .default)
-        }
-        self.sequencer.play()
-        self.sequencer.tempo = Double(song.tempo)
+//        self.remainSongLength = lastTime
+//        self.startDate = Date()
+//        let completionDate = Calendar.current.date(byAdding: .second, value: Int(self.remainSongLength) + 1, to: self.startDate)!
+//        self.completionTimer = Timer(fire: completionDate, interval: 0, repeats: false, block: { (timer) in
+//            self.completionBlock()
+//        })
+//        DispatchQueue.main.async {
+//            RunLoop.current.add(self.completionTimer, forMode: .default)
+//        }
+//        self.sequencer.play()
+//        self.sequencer.tempo = Double(song.tempo)
     }
 }
 
